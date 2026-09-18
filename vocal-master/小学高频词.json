@@ -1,0 +1,3789 @@
+[
+  {
+    "en": "book",
+    "zh": "书",
+    "emoji": "📖",
+    "category": "学习类",
+    "id": 0
+  },
+  {
+    "en": "pen",
+    "zh": "钢笔",
+    "emoji": "🖊️",
+    "category": "学习类",
+    "id": 1
+  },
+  {
+    "en": "pencil box",
+    "zh": "铅笔盒",
+    "emoji": "📚",
+    "category": "学习类",
+    "id": 2
+  },
+  {
+    "en": "ruler",
+    "zh": "尺子",
+    "emoji": "📏",
+    "category": "学习类",
+    "id": 3
+  },
+  {
+    "en": "pencil",
+    "zh": "铅笔",
+    "emoji": "✏️",
+    "category": "学习类",
+    "id": 4
+  },
+  {
+    "en": "eraser",
+    "zh": "橡皮",
+    "emoji": "🧽",
+    "category": "学习类",
+    "id": 5
+  },
+  {
+    "en": "crayon",
+    "zh": "蜡笔",
+    "emoji": "🖍️",
+    "category": "学习类",
+    "id": 6
+  },
+  {
+    "en": "bag",
+    "zh": "包",
+    "emoji": "👜",
+    "category": "学习类",
+    "id": 7
+  },
+  {
+    "en": "schoolbag",
+    "zh": "书包",
+    "emoji": "🎒",
+    "category": "学习类",
+    "id": 8
+  },
+  {
+    "en": "word",
+    "zh": "单词",
+    "emoji": "📚",
+    "category": "学习类",
+    "id": 9
+  },
+  {
+    "en": "word book",
+    "zh": "单词书",
+    "emoji": "📚",
+    "category": "学习类",
+    "id": 10
+  },
+  {
+    "en": "dictionary",
+    "zh": "词典",
+    "emoji": "📘",
+    "category": "学习类",
+    "id": 11
+  },
+  {
+    "en": "lesson",
+    "zh": "课",
+    "emoji": "📚",
+    "category": "学习类",
+    "id": 12
+  },
+  {
+    "en": "problem",
+    "zh": "问题",
+    "emoji": "📚",
+    "category": "学习类",
+    "id": 13
+  },
+  {
+    "en": "notebook",
+    "zh": "笔记本",
+    "emoji": "📓",
+    "category": "学习类",
+    "id": 14
+  },
+  {
+    "en": "homework",
+    "zh": "作业",
+    "emoji": "📝",
+    "category": "学习类",
+    "id": 15
+  },
+  {
+    "en": "blackboard",
+    "zh": "黑板",
+    "emoji": "⬛",
+    "category": "学习类",
+    "id": 16
+  },
+  {
+    "en": "teacher's desk",
+    "zh": "讲台",
+    "emoji": "📚",
+    "category": "学习类",
+    "id": 17
+  },
+  {
+    "en": "study",
+    "zh": "学习",
+    "emoji": "📚",
+    "category": "学习类",
+    "id": 18
+  },
+  {
+    "en": "English class",
+    "zh": "英语课",
+    "emoji": "📚",
+    "category": "学习类",
+    "id": 19
+  },
+  {
+    "en": "music class",
+    "zh": "音乐课",
+    "emoji": "📚",
+    "category": "学习类",
+    "id": 20
+  },
+  {
+    "en": "PE class",
+    "zh": "体育课",
+    "emoji": "📚",
+    "category": "学习类",
+    "id": 21
+  },
+  {
+    "en": "science",
+    "zh": "科学",
+    "emoji": "📚",
+    "category": "学习类",
+    "id": 22
+  },
+  {
+    "en": "maths book",
+    "zh": "数学书",
+    "emoji": "📚",
+    "category": "学习类",
+    "id": 23
+  },
+  {
+    "en": "English book",
+    "zh": "英语书",
+    "emoji": "📚",
+    "category": "学习类",
+    "id": 24
+  },
+  {
+    "en": "Chinese book",
+    "zh": "语文书",
+    "emoji": "📚",
+    "category": "学习类",
+    "id": 25
+  },
+  {
+    "en": "school",
+    "zh": "学校",
+    "emoji": "🏫",
+    "category": "学习类",
+    "id": 26
+  },
+  {
+    "en": "class",
+    "zh": "班；班级",
+    "emoji": "📚",
+    "category": "学习类",
+    "id": 27
+  },
+  {
+    "en": "classroom",
+    "zh": "教室",
+    "emoji": "🏫",
+    "category": "学习类",
+    "id": 28
+  },
+  {
+    "en": "playground",
+    "zh": "操场",
+    "emoji": "🏞️",
+    "category": "学习类",
+    "id": 29
+  },
+  {
+    "en": "teachers' office",
+    "zh": "教师办公室",
+    "emoji": "📚",
+    "category": "学习类",
+    "id": 30
+  },
+  {
+    "en": "library",
+    "zh": "图书馆",
+    "emoji": "📚",
+    "category": "学习类",
+    "id": 31
+  },
+  {
+    "en": "art room",
+    "zh": "美术教室",
+    "emoji": "📚",
+    "category": "学习类",
+    "id": 32
+  },
+  {
+    "en": "music room",
+    "zh": "音乐教室",
+    "emoji": "📚",
+    "category": "学习类",
+    "id": 33
+  },
+  {
+    "en": "computer room",
+    "zh": "计算机房",
+    "emoji": "📚",
+    "category": "学习类",
+    "id": 34
+  },
+  {
+    "en": "gym",
+    "zh": "体育馆",
+    "emoji": "🏋️",
+    "category": "学习类",
+    "id": 35
+  },
+  {
+    "en": "sport",
+    "zh": "体育运动",
+    "emoji": "⚽",
+    "category": "体育类",
+    "id": 36
+  },
+  {
+    "en": "race",
+    "zh": "赛跑",
+    "emoji": "⚽",
+    "category": "体育类",
+    "id": 37
+  },
+  {
+    "en": "ice-skate",
+    "zh": "滑冰",
+    "emoji": "⚽",
+    "category": "体育类",
+    "id": 38
+  },
+  {
+    "en": "hiking",
+    "zh": "远足",
+    "emoji": "🥾",
+    "category": "体育类",
+    "id": 39
+  },
+  {
+    "en": "fishing",
+    "zh": "钓鱼；捕鱼",
+    "emoji": "🎣",
+    "category": "体育类",
+    "id": 40
+  },
+  {
+    "en": "boating",
+    "zh": "划船",
+    "emoji": "🚣",
+    "category": "体育类",
+    "id": 41
+  },
+  {
+    "en": "cycling",
+    "zh": "骑自行车",
+    "emoji": "🚴",
+    "category": "体育类",
+    "id": 42
+  },
+  {
+    "en": "badminton",
+    "zh": "羽毛球",
+    "emoji": "🏸",
+    "category": "体育类",
+    "id": 43
+  },
+  {
+    "en": "basketball",
+    "zh": "篮球",
+    "emoji": "🏀",
+    "category": "体育类",
+    "id": 44
+  },
+  {
+    "en": "goal",
+    "zh": "射门",
+    "emoji": "⚽",
+    "category": "体育类",
+    "id": 45
+  },
+  {
+    "en": "football player",
+    "zh": "足球运动员",
+    "emoji": "⚽",
+    "category": "体育类",
+    "id": 46
+  },
+  {
+    "en": "computer",
+    "zh": "计算机",
+    "emoji": "💻",
+    "category": "课外生活类",
+    "id": 47
+  },
+  {
+    "en": "Internet",
+    "zh": "互联网",
+    "emoji": "🌐",
+    "category": "课外生活类",
+    "id": 48
+  },
+  {
+    "en": "email",
+    "zh": "电子邮件",
+    "emoji": "📧",
+    "category": "课外生活类",
+    "id": 49
+  },
+  {
+    "en": "robot",
+    "zh": "机器人",
+    "emoji": "🤖",
+    "category": "课外生活类",
+    "id": 50
+  },
+  {
+    "en": "storybook",
+    "zh": "故事书",
+    "emoji": "🎮",
+    "category": "课外生活类",
+    "id": 51
+  },
+  {
+    "en": "comic book",
+    "zh": "（儿童的）连环画册",
+    "emoji": "🎮",
+    "category": "课外生活类",
+    "id": 52
+  },
+  {
+    "en": "cartoon",
+    "zh": "漫画",
+    "emoji": "📺",
+    "category": "课外生活类",
+    "id": 53
+  },
+  {
+    "en": "magazine",
+    "zh": "杂志",
+    "emoji": "📰",
+    "category": "课外生活类",
+    "id": 54
+  },
+  {
+    "en": "song",
+    "zh": "歌曲",
+    "emoji": "🎵",
+    "category": "课外生活类",
+    "id": 55
+  },
+  {
+    "en": "dancing",
+    "zh": "跳舞；舞蹈",
+    "emoji": "💃",
+    "category": "课外生活类",
+    "id": 56
+  },
+  {
+    "en": "picture",
+    "zh": "图画",
+    "emoji": "🎮",
+    "category": "课外生活类",
+    "id": 57
+  },
+  {
+    "en": "kung fu",
+    "zh": "功夫；武术",
+    "emoji": "🎮",
+    "category": "课外生活类",
+    "id": 58
+  },
+  {
+    "en": "play",
+    "zh": "戏剧；剧本",
+    "emoji": "🎮",
+    "category": "课外生活类",
+    "id": 59
+  },
+  {
+    "en": "part",
+    "zh": "角色",
+    "emoji": "🎮",
+    "category": "课外生活类",
+    "id": 60
+  },
+  {
+    "en": "film",
+    "zh": "电影",
+    "emoji": "🎬",
+    "category": "课外生活类",
+    "id": 61
+  },
+  {
+    "en": "trip",
+    "zh": "旅行",
+    "emoji": "🎮",
+    "category": "课外生活类",
+    "id": 62
+  },
+  {
+    "en": "exhibition",
+    "zh": "展览",
+    "emoji": "🎮",
+    "category": "课外生活类",
+    "id": 63
+  },
+  {
+    "en": "party",
+    "zh": "聚会；派对",
+    "emoji": "🎉",
+    "category": "课外生活类",
+    "id": 64
+  },
+  {
+    "en": "meet",
+    "zh": "集会；开会",
+    "emoji": "🎮",
+    "category": "课外生活类",
+    "id": 65
+  },
+  {
+    "en": "contest",
+    "zh": "比赛；竞赛",
+    "emoji": "🎮",
+    "category": "课外生活类",
+    "id": 66
+  },
+  {
+    "en": "exercise",
+    "zh": "锻炼；运动",
+    "emoji": "🎮",
+    "category": "课外生活类",
+    "id": 67
+  },
+  {
+    "en": "vacation",
+    "zh": "假期",
+    "emoji": "🎮",
+    "category": "课外生活类",
+    "id": 68
+  },
+  {
+    "en": "game",
+    "zh": "游戏",
+    "emoji": "🎮",
+    "category": "课外生活类",
+    "id": 69
+  },
+  {
+    "en": "camp",
+    "zh": "野营",
+    "emoji": "🎮",
+    "category": "课外生活类",
+    "id": 70
+  },
+  {
+    "en": "hobby",
+    "zh": "业余爱好",
+    "emoji": "🎮",
+    "category": "课外生活类",
+    "id": 71
+  },
+  {
+    "en": "gift",
+    "zh": "礼物",
+    "emoji": "🎁",
+    "category": "课外生活类",
+    "id": 72
+  },
+  {
+    "en": "postcard",
+    "zh": "明信片",
+    "emoji": "🎮",
+    "category": "课外生活类",
+    "id": 73
+  },
+  {
+    "en": "poem",
+    "zh": "诗",
+    "emoji": "🎮",
+    "category": "课外生活类",
+    "id": 74
+  },
+  {
+    "en": "dream",
+    "zh": "梦",
+    "emoji": "🎮",
+    "category": "课外生活类",
+    "id": 75
+  },
+  {
+    "en": "shadow",
+    "zh": "阴影；影子",
+    "emoji": "🎮",
+    "category": "课外生活类",
+    "id": 76
+  },
+  {
+    "en": "noise",
+    "zh": "声音；响声；噪音",
+    "emoji": "🎮",
+    "category": "课外生活类",
+    "id": 77
+  },
+  {
+    "en": "thing",
+    "zh": "事情",
+    "emoji": "🎮",
+    "category": "课外生活类",
+    "id": 78
+  },
+  {
+    "en": "idea",
+    "zh": "想法；主意",
+    "emoji": "🎮",
+    "category": "课外生活类",
+    "id": 79
+  },
+  {
+    "en": "puzzle",
+    "zh": "谜",
+    "emoji": "🎮",
+    "category": "课外生活类",
+    "id": 80
+  },
+  {
+    "en": "attention",
+    "zh": "注意",
+    "emoji": "🎮",
+    "category": "课外生活类",
+    "id": 81
+  },
+  {
+    "en": "feature",
+    "zh": "特点",
+    "emoji": "🎮",
+    "category": "课外生活类",
+    "id": 82
+  },
+  {
+    "en": "diary",
+    "zh": "日记",
+    "emoji": "📔",
+    "category": "课外生活类",
+    "id": 83
+  },
+  {
+    "en": "letter",
+    "zh": "信",
+    "emoji": "✉️",
+    "category": "课外生活类",
+    "id": 84
+  },
+  {
+    "en": "Dear",
+    "zh": "（用于信函抬头的名字或头衔前）亲爱的",
+    "emoji": "🎮",
+    "category": "课外生活类",
+    "id": 85
+  },
+  {
+    "en": "Love",
+    "zh": "（写信结尾的热情问候语）爱你的",
+    "emoji": "🎮",
+    "category": "课外生活类",
+    "id": 86
+  },
+  {
+    "en": "RSVP",
+    "zh": "（尤用于请柬）请赐复",
+    "emoji": "🎮",
+    "category": "课外生活类",
+    "id": 87
+  },
+  {
+    "en": "door",
+    "zh": "门",
+    "emoji": "🚪",
+    "category": "居家类",
+    "id": 88
+  },
+  {
+    "en": "window",
+    "zh": "窗户",
+    "emoji": "🪟",
+    "category": "居家类",
+    "id": 89
+  },
+  {
+    "en": "wall",
+    "zh": "墙壁",
+    "emoji": "🏠",
+    "category": "居家类",
+    "id": 90
+  },
+  {
+    "en": "floor",
+    "zh": "地板",
+    "emoji": "🏠",
+    "category": "居家类",
+    "id": 91
+  },
+  {
+    "en": "bed",
+    "zh": "床",
+    "emoji": "🛏️",
+    "category": "居家类",
+    "id": 92
+  },
+  {
+    "en": "table",
+    "zh": "桌子",
+    "emoji": "🪑",
+    "category": "居家类",
+    "id": 93
+  },
+  {
+    "en": "sofa",
+    "zh": "沙发；长椅",
+    "emoji": "🛋️",
+    "category": "居家类",
+    "id": 94
+  },
+  {
+    "en": "light",
+    "zh": "灯",
+    "emoji": "💡",
+    "category": "居家类",
+    "id": 95
+  },
+  {
+    "en": "lamp",
+    "zh": "台灯",
+    "emoji": "💡",
+    "category": "居家类",
+    "id": 96
+  },
+  {
+    "en": "phone",
+    "zh": "电话",
+    "emoji": "📱",
+    "category": "居家类",
+    "id": 97
+  },
+  {
+    "en": "clock",
+    "zh": "时钟；钟",
+    "emoji": "🕐",
+    "category": "居家类",
+    "id": 98
+  },
+  {
+    "en": "fridge",
+    "zh": "冰箱",
+    "emoji": "🧊",
+    "category": "居家类",
+    "id": 99
+  },
+  {
+    "en": "TV",
+    "zh": "电视",
+    "emoji": "📺",
+    "category": "居家类",
+    "id": 100
+  },
+  {
+    "en": "fan",
+    "zh": "风扇",
+    "emoji": "💨",
+    "category": "居家类",
+    "id": 101
+  },
+  {
+    "en": "basket",
+    "zh": "篮；筐",
+    "emoji": "🏠",
+    "category": "居家类",
+    "id": 102
+  },
+  {
+    "en": "bottle",
+    "zh": "瓶子",
+    "emoji": "🏠",
+    "category": "居家类",
+    "id": 103
+  },
+  {
+    "en": "water bottle",
+    "zh": "水瓶",
+    "emoji": "🏠",
+    "category": "居家类",
+    "id": 104
+  },
+  {
+    "en": "photo",
+    "zh": "照片；相片",
+    "emoji": "🏠",
+    "category": "居家类",
+    "id": 105
+  },
+  {
+    "en": "bike",
+    "zh": "自行车；脚踏车",
+    "emoji": "🚲",
+    "category": "居家类",
+    "id": 106
+  },
+  {
+    "en": "key",
+    "zh": "钥匙",
+    "emoji": "🔑",
+    "category": "居家类",
+    "id": 107
+  },
+  {
+    "en": "toy",
+    "zh": "玩具",
+    "emoji": "🧸",
+    "category": "居家类",
+    "id": 108
+  },
+  {
+    "en": "umbrella",
+    "zh": "伞；雨伞",
+    "emoji": "☂️",
+    "category": "居家类",
+    "id": 109
+  },
+  {
+    "en": "bedroom",
+    "zh": "卧室",
+    "emoji": "🛏️",
+    "category": "居家类",
+    "id": 110
+  },
+  {
+    "en": "living room",
+    "zh": "客厅；起居室",
+    "emoji": "🏠",
+    "category": "居家类",
+    "id": 111
+  },
+  {
+    "en": "study",
+    "zh": "书房",
+    "emoji": "🏠",
+    "category": "居家类",
+    "id": 112
+  },
+  {
+    "en": "kitchen",
+    "zh": "厨房",
+    "emoji": "🍳",
+    "category": "居家类",
+    "id": 113
+  },
+  {
+    "en": "bathroom",
+    "zh": "浴室；洗手间",
+    "emoji": "🚿",
+    "category": "居家类",
+    "id": 114
+  },
+  {
+    "en": "park",
+    "zh": "公园",
+    "emoji": "🏞️",
+    "category": "场所类",
+    "id": 115
+  },
+  {
+    "en": "garden",
+    "zh": "花园；菜园",
+    "emoji": "🌺",
+    "category": "场所类",
+    "id": 116
+  },
+  {
+    "en": "farm",
+    "zh": "农场",
+    "emoji": "🚜",
+    "category": "场所类",
+    "id": 117
+  },
+  {
+    "en": "zoo",
+    "zh": "动物园",
+    "emoji": "🦁",
+    "category": "场所类",
+    "id": 118
+  },
+  {
+    "en": "museum",
+    "zh": "博物馆",
+    "emoji": "🏛️",
+    "category": "场所类",
+    "id": 119
+  },
+  {
+    "en": "post office",
+    "zh": "邮局",
+    "emoji": "📍",
+    "category": "场所类",
+    "id": 120
+  },
+  {
+    "en": "bookstore",
+    "zh": "书店",
+    "emoji": "📍",
+    "category": "场所类",
+    "id": 121
+  },
+  {
+    "en": "cinema",
+    "zh": "电影院",
+    "emoji": "📍",
+    "category": "场所类",
+    "id": 122
+  },
+  {
+    "en": "hospital",
+    "zh": "医院",
+    "emoji": "🏥",
+    "category": "场所类",
+    "id": 123
+  },
+  {
+    "en": "restaurant",
+    "zh": "餐馆",
+    "emoji": "🍴",
+    "category": "场所类",
+    "id": 124
+  },
+  {
+    "en": "hotel",
+    "zh": "旅馆",
+    "emoji": "🏨",
+    "category": "场所类",
+    "id": 125
+  },
+  {
+    "en": "supermarket",
+    "zh": "超市",
+    "emoji": "🛒",
+    "category": "场所类",
+    "id": 126
+  },
+  {
+    "en": "club",
+    "zh": "俱乐部",
+    "emoji": "📍",
+    "category": "场所类",
+    "id": 127
+  },
+  {
+    "en": "factory",
+    "zh": "工厂",
+    "emoji": "📍",
+    "category": "场所类",
+    "id": 128
+  },
+  {
+    "en": "countryside",
+    "zh": "乡村",
+    "emoji": "📍",
+    "category": "场所类",
+    "id": 129
+  },
+  {
+    "en": "university",
+    "zh": "大学",
+    "emoji": "📍",
+    "category": "场所类",
+    "id": 130
+  },
+  {
+    "en": "dining hall",
+    "zh": "饭厅",
+    "emoji": "📍",
+    "category": "场所类",
+    "id": 131
+  },
+  {
+    "en": "hall",
+    "zh": "大厅",
+    "emoji": "📍",
+    "category": "场所类",
+    "id": 132
+  },
+  {
+    "en": "bridge",
+    "zh": "桥",
+    "emoji": "🌉",
+    "category": "场所类",
+    "id": 133
+  },
+  {
+    "en": "building",
+    "zh": "建筑物；房子；楼房",
+    "emoji": "📍",
+    "category": "场所类",
+    "id": 134
+  },
+  {
+    "en": "village",
+    "zh": "村庄；村镇",
+    "emoji": "📍",
+    "category": "场所类",
+    "id": 135
+  },
+  {
+    "en": "house",
+    "zh": "房屋；房子；住宅",
+    "emoji": "🏠",
+    "category": "场所类",
+    "id": 136
+  },
+  {
+    "en": "street",
+    "zh": "大街；街道",
+    "emoji": "🛣️",
+    "category": "场所类",
+    "id": 137
+  },
+  {
+    "en": "crossing",
+    "zh": "十字路口",
+    "emoji": "📍",
+    "category": "场所类",
+    "id": 138
+  },
+  {
+    "en": "first floor",
+    "zh": "一楼",
+    "emoji": "📍",
+    "category": "场所类",
+    "id": 139
+  },
+  {
+    "en": "second floor",
+    "zh": "二楼",
+    "emoji": "📍",
+    "category": "场所类",
+    "id": 140
+  },
+  {
+    "en": "nature",
+    "zh": "自然界；大自然",
+    "emoji": "🌿",
+    "category": "自然类",
+    "id": 141
+  },
+  {
+    "en": "space",
+    "zh": "太空",
+    "emoji": "🌿",
+    "category": "自然类",
+    "id": 142
+  },
+  {
+    "en": "moon",
+    "zh": "月亮",
+    "emoji": "🌙",
+    "category": "自然类",
+    "id": 143
+  },
+  {
+    "en": "star",
+    "zh": "星",
+    "emoji": "⭐",
+    "category": "自然类",
+    "id": 144
+  },
+  {
+    "en": "sea",
+    "zh": "大海",
+    "emoji": "🌊",
+    "category": "自然类",
+    "id": 145
+  },
+  {
+    "en": "river",
+    "zh": "河；江",
+    "emoji": "🏞️",
+    "category": "自然类",
+    "id": 146
+  },
+  {
+    "en": "lake",
+    "zh": "湖；湖泊",
+    "emoji": "🏞️",
+    "category": "自然类",
+    "id": 147
+  },
+  {
+    "en": "mountain",
+    "zh": "高山；山岳",
+    "emoji": "⛰️",
+    "category": "自然类",
+    "id": 148
+  },
+  {
+    "en": "hill",
+    "zh": "山丘；小山",
+    "emoji": "🌿",
+    "category": "自然类",
+    "id": 149
+  },
+  {
+    "en": "cave",
+    "zh": "山洞；洞穴",
+    "emoji": "🌿",
+    "category": "自然类",
+    "id": 150
+  },
+  {
+    "en": "island",
+    "zh": "岛",
+    "emoji": "🏝️",
+    "category": "自然类",
+    "id": 151
+  },
+  {
+    "en": "beach",
+    "zh": "海滩；沙滩",
+    "emoji": "🏖️",
+    "category": "自然类",
+    "id": 152
+  },
+  {
+    "en": "mud",
+    "zh": "泥",
+    "emoji": "🌿",
+    "category": "自然类",
+    "id": 153
+  },
+  {
+    "en": "forest",
+    "zh": "森林；林区",
+    "emoji": "🌲",
+    "category": "自然类",
+    "id": 154
+  },
+  {
+    "en": "plant",
+    "zh": "植物",
+    "emoji": "🌿",
+    "category": "自然类",
+    "id": 155
+  },
+  {
+    "en": "tree",
+    "zh": "树；树木；乔木",
+    "emoji": "🌳",
+    "category": "自然类",
+    "id": 156
+  },
+  {
+    "en": "bamboo",
+    "zh": "竹子",
+    "emoji": "🌿",
+    "category": "自然类",
+    "id": 157
+  },
+  {
+    "en": "jasmine",
+    "zh": "茉莉",
+    "emoji": "🌿",
+    "category": "自然类",
+    "id": 158
+  },
+  {
+    "en": "grass",
+    "zh": "草；草地",
+    "emoji": "🌿",
+    "category": "自然类",
+    "id": 159
+  },
+  {
+    "en": "flower",
+    "zh": "花；花朵",
+    "emoji": "🌸",
+    "category": "自然类",
+    "id": 160
+  },
+  {
+    "en": "leaf",
+    "zh": "叶子（复数 leaves）",
+    "emoji": "🌿",
+    "category": "自然类",
+    "id": 161
+  },
+  {
+    "en": "weather",
+    "zh": "天气",
+    "emoji": "🌿",
+    "category": "自然类",
+    "id": 162
+  },
+  {
+    "en": "snow",
+    "zh": "雪",
+    "emoji": "❄️",
+    "category": "自然类",
+    "id": 163
+  },
+  {
+    "en": "snowman",
+    "zh": "雪人",
+    "emoji": "⛄",
+    "category": "自然类",
+    "id": 164
+  },
+  {
+    "en": "grandparent",
+    "zh": "（外）祖父；（外）祖母",
+    "emoji": "👨‍👩‍👧",
+    "category": "家人类",
+    "id": 165
+  },
+  {
+    "en": "grandmother",
+    "zh": "（外）祖母",
+    "emoji": "👨‍👩‍👧",
+    "category": "家人类",
+    "id": 166
+  },
+  {
+    "en": "grandma",
+    "zh": "（口语）（外）祖母",
+    "emoji": "👨‍👩‍👧",
+    "category": "家人类",
+    "id": 167
+  },
+  {
+    "en": "grandpa",
+    "zh": "（口语）（外）祖父",
+    "emoji": "👨‍👩‍👧",
+    "category": "家人类",
+    "id": 168
+  },
+  {
+    "en": "parent",
+    "zh": "父亲（或母亲）",
+    "emoji": "👨‍👩‍👧",
+    "category": "家人类",
+    "id": 169
+  },
+  {
+    "en": "father",
+    "zh": "父亲；爸爸",
+    "emoji": "👨",
+    "category": "家人类",
+    "id": 170
+  },
+  {
+    "en": "dad",
+    "zh": "（口语）爸爸；爹爹",
+    "emoji": "👨",
+    "category": "家人类",
+    "id": 171
+  },
+  {
+    "en": "mother",
+    "zh": "母亲；妈妈",
+    "emoji": "👩",
+    "category": "家人类",
+    "id": 172
+  },
+  {
+    "en": "mum",
+    "zh": "妈妈（美式英语：mom）",
+    "emoji": "👩",
+    "category": "家人类",
+    "id": 173
+  },
+  {
+    "en": "uncle",
+    "zh": "舅父；叔父；伯父；姑父；姨夫",
+    "emoji": "👨‍👩‍👧",
+    "category": "家人类",
+    "id": 174
+  },
+  {
+    "en": "aunt",
+    "zh": "姑母；姨母",
+    "emoji": "👨‍👩‍👧",
+    "category": "家人类",
+    "id": 175
+  },
+  {
+    "en": "sister",
+    "zh": "姐；妹",
+    "emoji": "👧",
+    "category": "家人类",
+    "id": 176
+  },
+  {
+    "en": "brother",
+    "zh": "兄；弟",
+    "emoji": "👦",
+    "category": "家人类",
+    "id": 177
+  },
+  {
+    "en": "baby brother",
+    "zh": "婴儿小弟弟",
+    "emoji": "👶",
+    "category": "家人类",
+    "id": 178
+  },
+  {
+    "en": "cousin",
+    "zh": "同辈表亲（或堂亲）",
+    "emoji": "👨‍👩‍👧",
+    "category": "家人类",
+    "id": 179
+  },
+  {
+    "en": "people",
+    "zh": "人；人类",
+    "emoji": "👥",
+    "category": "人物类",
+    "id": 180
+  },
+  {
+    "en": "family",
+    "zh": "家；家庭",
+    "emoji": "👨‍👩‍👧",
+    "category": "人物类",
+    "id": 181
+  },
+  {
+    "en": "friend",
+    "zh": "朋友",
+    "emoji": "🤝",
+    "category": "人物类",
+    "id": 182
+  },
+  {
+    "en": "man",
+    "zh": "男人",
+    "emoji": "👥",
+    "category": "人物类",
+    "id": 183
+  },
+  {
+    "en": "woman",
+    "zh": "女人",
+    "emoji": "👥",
+    "category": "人物类",
+    "id": 184
+  },
+  {
+    "en": "girl",
+    "zh": "女孩",
+    "emoji": "👧",
+    "category": "人物类",
+    "id": 185
+  },
+  {
+    "en": "boy",
+    "zh": "男孩",
+    "emoji": "👦",
+    "category": "人物类",
+    "id": 186
+  },
+  {
+    "en": "children",
+    "zh": "（child的复数）儿童",
+    "emoji": "👥",
+    "category": "人物类",
+    "id": 187
+  },
+  {
+    "en": "kid",
+    "zh": "小孩",
+    "emoji": "👥",
+    "category": "人物类",
+    "id": 188
+  },
+  {
+    "en": "fool",
+    "zh": "蠢人；傻瓜",
+    "emoji": "👥",
+    "category": "人物类",
+    "id": 189
+  },
+  {
+    "en": "sir",
+    "zh": "（对男子的礼貌称呼）先生",
+    "emoji": "👥",
+    "category": "人物类",
+    "id": 190
+  },
+  {
+    "en": "Mrs",
+    "zh": "夫人",
+    "emoji": "👥",
+    "category": "人物类",
+    "id": 191
+  },
+  {
+    "en": "Ms",
+    "zh": "（用于女子的姓氏或姓名前，不指明婚否）女士",
+    "emoji": "👥",
+    "category": "人物类",
+    "id": 192
+  },
+  {
+    "en": "pen pal",
+    "zh": "笔友",
+    "emoji": "👥",
+    "category": "人物类",
+    "id": 193
+  },
+  {
+    "en": "glove",
+    "zh": "（分手指的）手套",
+    "emoji": "🧤",
+    "category": "服饰类",
+    "id": 194
+  },
+  {
+    "en": "scarf",
+    "zh": "围巾；披巾",
+    "emoji": "🧣",
+    "category": "服饰类",
+    "id": 195
+  },
+  {
+    "en": "clothes",
+    "zh": "衣服；服装",
+    "emoji": "👕",
+    "category": "服饰类",
+    "id": 196
+  },
+  {
+    "en": "pants",
+    "zh": "裤子",
+    "emoji": "👖",
+    "category": "服饰类",
+    "id": 197
+  },
+  {
+    "en": "hat",
+    "zh": "（常指带檐的）帽子",
+    "emoji": "🎩",
+    "category": "服饰类",
+    "id": 198
+  },
+  {
+    "en": "dress",
+    "zh": "连衣裙",
+    "emoji": "👗",
+    "category": "服饰类",
+    "id": 199
+  },
+  {
+    "en": "skirt",
+    "zh": "女裙；半身裙",
+    "emoji": "👗",
+    "category": "服饰类",
+    "id": 200
+  },
+  {
+    "en": "coat",
+    "zh": "外衣；大衣",
+    "emoji": "🧥",
+    "category": "服饰类",
+    "id": 201
+  },
+  {
+    "en": "sweater",
+    "zh": "毛衣",
+    "emoji": "🧶",
+    "category": "服饰类",
+    "id": 202
+  },
+  {
+    "en": "sock",
+    "zh": "短袜",
+    "emoji": "🧦",
+    "category": "服饰类",
+    "id": 203
+  },
+  {
+    "en": "shorts",
+    "zh": "短裤",
+    "emoji": "🩳",
+    "category": "服饰类",
+    "id": 204
+  },
+  {
+    "en": "jacket",
+    "zh": "夹克衫",
+    "emoji": "🧥",
+    "category": "服饰类",
+    "id": 205
+  },
+  {
+    "en": "shirt",
+    "zh": "衬衫",
+    "emoji": "👔",
+    "category": "服饰类",
+    "id": 206
+  },
+  {
+    "en": "glasses",
+    "zh": "眼镜",
+    "emoji": "👓",
+    "category": "服饰类",
+    "id": 207
+  },
+  {
+    "en": "sunglasses",
+    "zh": "太阳镜",
+    "emoji": "🕶️",
+    "category": "服饰类",
+    "id": 208
+  },
+  {
+    "en": "helmet",
+    "zh": "头盔",
+    "emoji": "⛑️",
+    "category": "服饰类",
+    "id": 209
+  },
+  {
+    "en": "shoes",
+    "zh": "鞋",
+    "emoji": "👟",
+    "category": "服饰类",
+    "id": 210
+  },
+  {
+    "en": "red",
+    "zh": "红色；红色的",
+    "emoji": "🔴",
+    "category": "色彩类",
+    "id": 211
+  },
+  {
+    "en": "green",
+    "zh": "绿色；绿色的",
+    "emoji": "🟢",
+    "category": "色彩类",
+    "id": 212
+  },
+  {
+    "en": "yellow",
+    "zh": "黄色；黄色的",
+    "emoji": "🟡",
+    "category": "色彩类",
+    "id": 213
+  },
+  {
+    "en": "blue",
+    "zh": "蓝色；蓝色的",
+    "emoji": "🔵",
+    "category": "色彩类",
+    "id": 214
+  },
+  {
+    "en": "black",
+    "zh": "黑色；黑色的",
+    "emoji": "⚫",
+    "category": "色彩类",
+    "id": 215
+  },
+  {
+    "en": "brown",
+    "zh": "棕色；棕色的",
+    "emoji": "🟤",
+    "category": "色彩类",
+    "id": 216
+  },
+  {
+    "en": "white",
+    "zh": "白色；白色的",
+    "emoji": "⚪",
+    "category": "色彩类",
+    "id": 217
+  },
+  {
+    "en": "orange",
+    "zh": "橙色；橙色的",
+    "emoji": "🟠",
+    "category": "色彩类",
+    "id": 218
+  },
+  {
+    "en": "pink",
+    "zh": "粉色；粉色的",
+    "emoji": "🩷",
+    "category": "色彩类",
+    "id": 219
+  },
+  {
+    "en": "face",
+    "zh": "脸",
+    "emoji": "😊",
+    "category": "身体类",
+    "id": 220
+  },
+  {
+    "en": "ear",
+    "zh": "耳朵",
+    "emoji": "👂",
+    "category": "身体类",
+    "id": 221
+  },
+  {
+    "en": "eye",
+    "zh": "眼睛",
+    "emoji": "👁️",
+    "category": "身体类",
+    "id": 222
+  },
+  {
+    "en": "nose",
+    "zh": "鼻子",
+    "emoji": "👃",
+    "category": "身体类",
+    "id": 223
+  },
+  {
+    "en": "mouth",
+    "zh": "嘴",
+    "emoji": "👄",
+    "category": "身体类",
+    "id": 224
+  },
+  {
+    "en": "arm",
+    "zh": "胳膊",
+    "emoji": "💪",
+    "category": "身体类",
+    "id": 225
+  },
+  {
+    "en": "hand",
+    "zh": "手",
+    "emoji": "✋",
+    "category": "身体类",
+    "id": 226
+  },
+  {
+    "en": "head",
+    "zh": "头",
+    "emoji": "🗣️",
+    "category": "身体类",
+    "id": 227
+  },
+  {
+    "en": "body",
+    "zh": "身体",
+    "emoji": "🧍",
+    "category": "身体类",
+    "id": 228
+  },
+  {
+    "en": "leg",
+    "zh": "腿",
+    "emoji": "🦵",
+    "category": "身体类",
+    "id": 229
+  },
+  {
+    "en": "foot",
+    "zh": "脚",
+    "emoji": "🦶",
+    "category": "身体类",
+    "id": 230
+  },
+  {
+    "en": "tail",
+    "zh": "尾巴",
+    "emoji": "🐾",
+    "category": "身体类",
+    "id": 231
+  },
+  {
+    "en": "hair",
+    "zh": "头发",
+    "emoji": "💇",
+    "category": "身体类",
+    "id": 232
+  },
+  {
+    "en": "fur",
+    "zh": "（某些动物的）浓密的软毛",
+    "emoji": "🧍",
+    "category": "身体类",
+    "id": 233
+  },
+  {
+    "en": "animal",
+    "zh": "兽；动物",
+    "emoji": "🐾",
+    "category": "动物类",
+    "id": 234
+  },
+  {
+    "en": "duck",
+    "zh": "鸭子",
+    "emoji": "🦆",
+    "category": "动物类",
+    "id": 235
+  },
+  {
+    "en": "pig",
+    "zh": "猪",
+    "emoji": "🐷",
+    "category": "动物类",
+    "id": 236
+  },
+  {
+    "en": "cat",
+    "zh": "猫",
+    "emoji": "🐱",
+    "category": "动物类",
+    "id": 237
+  },
+  {
+    "en": "kitten",
+    "zh": "小猫",
+    "emoji": "🐱",
+    "category": "动物类",
+    "id": 238
+  },
+  {
+    "en": "dog",
+    "zh": "狗",
+    "emoji": "🐶",
+    "category": "动物类",
+    "id": 239
+  },
+  {
+    "en": "puppy",
+    "zh": "小狗",
+    "emoji": "🐶",
+    "category": "动物类",
+    "id": 240
+  },
+  {
+    "en": "elephant",
+    "zh": "大象",
+    "emoji": "🐘",
+    "category": "动物类",
+    "id": 241
+  },
+  {
+    "en": "monkey",
+    "zh": "猴子",
+    "emoji": "🐵",
+    "category": "动物类",
+    "id": 242
+  },
+  {
+    "en": "bird",
+    "zh": "鸟",
+    "emoji": "🐦",
+    "category": "动物类",
+    "id": 243
+  },
+  {
+    "en": "tiger",
+    "zh": "老虎",
+    "emoji": "🐯",
+    "category": "动物类",
+    "id": 244
+  },
+  {
+    "en": "cheetah",
+    "zh": "猎豹",
+    "emoji": "🐆",
+    "category": "动物类",
+    "id": 245
+  },
+  {
+    "en": "bear",
+    "zh": "熊",
+    "emoji": "🐻",
+    "category": "动物类",
+    "id": 246
+  },
+  {
+    "en": "panda",
+    "zh": "大熊猫",
+    "emoji": "🐼",
+    "category": "动物类",
+    "id": 247
+  },
+  {
+    "en": "dinosaur",
+    "zh": "恐龙",
+    "emoji": "🦕",
+    "category": "动物类",
+    "id": 248
+  },
+  {
+    "en": "giraffe",
+    "zh": "长颈鹿",
+    "emoji": "🦒",
+    "category": "动物类",
+    "id": 249
+  },
+  {
+    "en": "horse",
+    "zh": "马",
+    "emoji": "🐴",
+    "category": "动物类",
+    "id": 250
+  },
+  {
+    "en": "cow",
+    "zh": "母牛；奶牛",
+    "emoji": "🐮",
+    "category": "动物类",
+    "id": 251
+  },
+  {
+    "en": "mule",
+    "zh": "骡子",
+    "emoji": "🐾",
+    "category": "动物类",
+    "id": 252
+  },
+  {
+    "en": "sheep",
+    "zh": "羊；绵羊",
+    "emoji": "🐑",
+    "category": "动物类",
+    "id": 253
+  },
+  {
+    "en": "goat",
+    "zh": "山羊",
+    "emoji": "🐐",
+    "category": "动物类",
+    "id": 254
+  },
+  {
+    "en": "hen",
+    "zh": "母鸡",
+    "emoji": "🐔",
+    "category": "动物类",
+    "id": 255
+  },
+  {
+    "en": "mouse",
+    "zh": "老鼠",
+    "emoji": "🐭",
+    "category": "动物类",
+    "id": 256
+  },
+  {
+    "en": "mice",
+    "zh": "（mouse 的复数）老鼠",
+    "emoji": "🐭",
+    "category": "动物类",
+    "id": 257
+  },
+  {
+    "en": "rabbit",
+    "zh": "兔；野兔",
+    "emoji": "🐰",
+    "category": "动物类",
+    "id": 258
+  },
+  {
+    "en": "bunny",
+    "zh": "（儿童用语）兔子",
+    "emoji": "🐰",
+    "category": "动物类",
+    "id": 259
+  },
+  {
+    "en": "ant",
+    "zh": "蚂蚁",
+    "emoji": "🐜",
+    "category": "动物类",
+    "id": 260
+  },
+  {
+    "en": "food",
+    "zh": "食物",
+    "emoji": "🍽️",
+    "category": "餐饮类",
+    "id": 261
+  },
+  {
+    "en": "egg",
+    "zh": "蛋",
+    "emoji": "🥚",
+    "category": "餐饮类",
+    "id": 262
+  },
+  {
+    "en": "cake",
+    "zh": "蛋糕",
+    "emoji": "🎂",
+    "category": "餐饮类",
+    "id": 263
+  },
+  {
+    "en": "hamburger",
+    "zh": "汉堡包",
+    "emoji": "🍔",
+    "category": "餐饮类",
+    "id": 264
+  },
+  {
+    "en": "sandwich",
+    "zh": "三明治",
+    "emoji": "🥪",
+    "category": "餐饮类",
+    "id": 265
+  },
+  {
+    "en": "sushi",
+    "zh": "寿司",
+    "emoji": "🍣",
+    "category": "餐饮类",
+    "id": 266
+  },
+  {
+    "en": "bread",
+    "zh": "面包",
+    "emoji": "🍞",
+    "category": "餐饮类",
+    "id": 267
+  },
+  {
+    "en": "juice",
+    "zh": "果汁",
+    "emoji": "🧃",
+    "category": "餐饮类",
+    "id": 268
+  },
+  {
+    "en": "milk",
+    "zh": "牛奶",
+    "emoji": "🥛",
+    "category": "餐饮类",
+    "id": 269
+  },
+  {
+    "en": "tea",
+    "zh": "茶；茶水",
+    "emoji": "🍵",
+    "category": "餐饮类",
+    "id": 270
+  },
+  {
+    "en": "water",
+    "zh": "水",
+    "emoji": "💧",
+    "category": "餐饮类",
+    "id": 271
+  },
+  {
+    "en": "pizza",
+    "zh": "比萨饼",
+    "emoji": "🍕",
+    "category": "餐饮类",
+    "id": 272
+  },
+  {
+    "en": "mooncake",
+    "zh": "月饼",
+    "emoji": "🥮",
+    "category": "餐饮类",
+    "id": 273
+  },
+  {
+    "en": "rice",
+    "zh": "米饭",
+    "emoji": "🍚",
+    "category": "餐饮类",
+    "id": 274
+  },
+  {
+    "en": "noodle",
+    "zh": "面条",
+    "emoji": "🍜",
+    "category": "餐饮类",
+    "id": 275
+  },
+  {
+    "en": "soup",
+    "zh": "汤",
+    "emoji": "🥣",
+    "category": "餐饮类",
+    "id": 276
+  },
+  {
+    "en": "fish",
+    "zh": "鱼肉；鱼",
+    "emoji": "🐟",
+    "category": "餐饮类",
+    "id": 277
+  },
+  {
+    "en": "beef",
+    "zh": "牛肉",
+    "emoji": "🥩",
+    "category": "餐饮类",
+    "id": 278
+  },
+  {
+    "en": "chicken",
+    "zh": "鸡肉",
+    "emoji": "🍗",
+    "category": "餐饮类",
+    "id": 279
+  },
+  {
+    "en": "vegetable",
+    "zh": "蔬菜",
+    "emoji": "🥬",
+    "category": "餐饮类",
+    "id": 280
+  },
+  {
+    "en": "tomato",
+    "zh": "西红柿",
+    "emoji": "🍅",
+    "category": "餐饮类",
+    "id": 281
+  },
+  {
+    "en": "potato",
+    "zh": "马铃薯；土豆",
+    "emoji": "🥔",
+    "category": "餐饮类",
+    "id": 282
+  },
+  {
+    "en": "green bean",
+    "zh": "豆角；四季豆",
+    "emoji": "🍽️",
+    "category": "餐饮类",
+    "id": 283
+  },
+  {
+    "en": "carrot",
+    "zh": "胡萝卜",
+    "emoji": "🥕",
+    "category": "餐饮类",
+    "id": 284
+  },
+  {
+    "en": "salad",
+    "zh": "蔬菜沙拉；混合沙拉",
+    "emoji": "🥗",
+    "category": "餐饮类",
+    "id": 285
+  },
+  {
+    "en": "onion",
+    "zh": "洋葱；葱头",
+    "emoji": "🧅",
+    "category": "餐饮类",
+    "id": 286
+  },
+  {
+    "en": "candy",
+    "zh": "糖果",
+    "emoji": "🍬",
+    "category": "餐饮类",
+    "id": 287
+  },
+  {
+    "en": "chocolate",
+    "zh": "巧克力",
+    "emoji": "🍫",
+    "category": "餐饮类",
+    "id": 288
+  },
+  {
+    "en": "ice cream",
+    "zh": "冰激凌",
+    "emoji": "🍦",
+    "category": "餐饮类",
+    "id": 289
+  },
+  {
+    "en": "bowl",
+    "zh": "碗",
+    "emoji": "🥣",
+    "category": "餐饮类",
+    "id": 290
+  },
+  {
+    "en": "plate",
+    "zh": "盘子",
+    "emoji": "🍽️",
+    "category": "餐饮类",
+    "id": 291
+  },
+  {
+    "en": "chopstick",
+    "zh": "筷子",
+    "emoji": "🍽️",
+    "category": "餐饮类",
+    "id": 292
+  },
+  {
+    "en": "spoon",
+    "zh": "勺",
+    "emoji": "🥄",
+    "category": "餐饮类",
+    "id": 293
+  },
+  {
+    "en": "knife",
+    "zh": "刀",
+    "emoji": "🔪",
+    "category": "餐饮类",
+    "id": 294
+  },
+  {
+    "en": "fork",
+    "zh": "餐叉",
+    "emoji": "🍴",
+    "category": "餐饮类",
+    "id": 295
+  },
+  {
+    "en": "breakfast",
+    "zh": "早餐；早饭",
+    "emoji": "🥐",
+    "category": "餐饮类",
+    "id": 296
+  },
+  {
+    "en": "lunch",
+    "zh": "午餐；午饭",
+    "emoji": "🍱",
+    "category": "餐饮类",
+    "id": 297
+  },
+  {
+    "en": "dinner",
+    "zh": "（中午或晚上吃的）正餐",
+    "emoji": "🍽️",
+    "category": "餐饮类",
+    "id": 298
+  },
+  {
+    "en": "picnic",
+    "zh": "野餐",
+    "emoji": "🧺",
+    "category": "餐饮类",
+    "id": 299
+  },
+  {
+    "en": "traffic",
+    "zh": "交通",
+    "emoji": "🚗",
+    "category": "交通类",
+    "id": 300
+  },
+  {
+    "en": "traffic lights",
+    "zh": "交通信号灯",
+    "emoji": "🚦",
+    "category": "交通类",
+    "id": 301
+  },
+  {
+    "en": "bus",
+    "zh": "公共汽车",
+    "emoji": "🚌",
+    "category": "交通类",
+    "id": 302
+  },
+  {
+    "en": "plane",
+    "zh": "飞机",
+    "emoji": "✈️",
+    "category": "交通类",
+    "id": 303
+  },
+  {
+    "en": "taxi",
+    "zh": "出租汽车",
+    "emoji": "🚕",
+    "category": "交通类",
+    "id": 304
+  },
+  {
+    "en": "ship",
+    "zh": "（大）船",
+    "emoji": "🚢",
+    "category": "交通类",
+    "id": 305
+  },
+  {
+    "en": "ferry",
+    "zh": "轮渡",
+    "emoji": "⛴️",
+    "category": "交通类",
+    "id": 306
+  },
+  {
+    "en": "subway",
+    "zh": "地铁",
+    "emoji": "🚇",
+    "category": "交通类",
+    "id": 307
+  },
+  {
+    "en": "train",
+    "zh": "火车",
+    "emoji": "🚆",
+    "category": "交通类",
+    "id": 308
+  },
+  {
+    "en": "sled",
+    "zh": "雪橇",
+    "emoji": "🛷",
+    "category": "交通类",
+    "id": 309
+  },
+  {
+    "en": "China",
+    "zh": "中国",
+    "emoji": "🇨🇳",
+    "category": "地名类",
+    "id": 310
+  },
+  {
+    "en": "Turpan",
+    "zh": "吐鲁番",
+    "emoji": "🌍",
+    "category": "地名类",
+    "id": 311
+  },
+  {
+    "en": "world",
+    "zh": "世界",
+    "emoji": "🌍",
+    "category": "地名类",
+    "id": 312
+  },
+  {
+    "en": "country",
+    "zh": "国家",
+    "emoji": "🌍",
+    "category": "地名类",
+    "id": 313
+  },
+  {
+    "en": "the UK",
+    "zh": "英国",
+    "emoji": "🇬🇧",
+    "category": "地名类",
+    "id": 314
+  },
+  {
+    "en": "Canada",
+    "zh": "加拿大",
+    "emoji": "🇨🇦",
+    "category": "地名类",
+    "id": 315
+  },
+  {
+    "en": "the USA",
+    "zh": "美国",
+    "emoji": "🇺🇸",
+    "category": "地名类",
+    "id": 316
+  },
+  {
+    "en": "Germany",
+    "zh": "德国",
+    "emoji": "🇩🇪",
+    "category": "地名类",
+    "id": 317
+  },
+  {
+    "en": "Scotland",
+    "zh": "苏格兰",
+    "emoji": "🌍",
+    "category": "地名类",
+    "id": 318
+  },
+  {
+    "en": "Spain",
+    "zh": "西班牙",
+    "emoji": "🇪🇸",
+    "category": "地名类",
+    "id": 319
+  },
+  {
+    "en": "New York",
+    "zh": "纽约",
+    "emoji": "🌍",
+    "category": "地名类",
+    "id": 320
+  },
+  {
+    "en": "Singapore",
+    "zh": "新加坡（市）",
+    "emoji": "🇸🇬",
+    "category": "地名类",
+    "id": 321
+  },
+  {
+    "en": "London",
+    "zh": "伦敦",
+    "emoji": "🌍",
+    "category": "地名类",
+    "id": 322
+  },
+  {
+    "en": "Moscow",
+    "zh": "莫斯科",
+    "emoji": "🌍",
+    "category": "地名类",
+    "id": 323
+  },
+  {
+    "en": "Sydney",
+    "zh": "悉尼",
+    "emoji": "🌍",
+    "category": "地名类",
+    "id": 324
+  },
+  {
+    "en": "Canberra",
+    "zh": "堪培拉（澳大利亚首都）",
+    "emoji": "🌍",
+    "category": "地名类",
+    "id": 325
+  },
+  {
+    "en": "Munich",
+    "zh": "慕尼黑（德国城市）",
+    "emoji": "🌍",
+    "category": "地名类",
+    "id": 326
+  },
+  {
+    "en": "Alaska",
+    "zh": "阿拉斯加州（美国州名）",
+    "emoji": "🌍",
+    "category": "地名类",
+    "id": 327
+  },
+  {
+    "en": "Papa Westray",
+    "zh": "帕帕韦斯特雷岛",
+    "emoji": "🌍",
+    "category": "地名类",
+    "id": 328
+  },
+  {
+    "en": "national",
+    "zh": "国家的",
+    "emoji": "🌍",
+    "category": "地名类",
+    "id": 329
+  },
+  {
+    "en": "American",
+    "zh": "美国的；美国人",
+    "emoji": "🌍",
+    "category": "地名类",
+    "id": 330
+  },
+  {
+    "en": "Canadian",
+    "zh": "加拿大的；加拿大人",
+    "emoji": "🌍",
+    "category": "地名类",
+    "id": 331
+  },
+  {
+    "en": "Spanish",
+    "zh": "西班牙的；西班牙人",
+    "emoji": "🌍",
+    "category": "地名类",
+    "id": 332
+  },
+  {
+    "en": "Italian",
+    "zh": "意大利的；意大利人",
+    "emoji": "🌍",
+    "category": "地名类",
+    "id": 333
+  },
+  {
+    "en": "job",
+    "zh": "工作",
+    "emoji": "💼",
+    "category": "职业类",
+    "id": 334
+  },
+  {
+    "en": "doctor",
+    "zh": "医生",
+    "emoji": "👨‍⚕️",
+    "category": "职业类",
+    "id": 335
+  },
+  {
+    "en": "cook",
+    "zh": "厨师",
+    "emoji": "👨‍🍳",
+    "category": "职业类",
+    "id": 336
+  },
+  {
+    "en": "driver",
+    "zh": "司机",
+    "emoji": "🚗",
+    "category": "职业类",
+    "id": 337
+  },
+  {
+    "en": "farmer",
+    "zh": "农民",
+    "emoji": "👨‍🌾",
+    "category": "职业类",
+    "id": 338
+  },
+  {
+    "en": "nurse",
+    "zh": "护士",
+    "emoji": "👩‍⚕️",
+    "category": "职业类",
+    "id": 339
+  },
+  {
+    "en": "teacher",
+    "zh": "教师",
+    "emoji": "👩‍🏫",
+    "category": "职业类",
+    "id": 340
+  },
+  {
+    "en": "student",
+    "zh": "学生",
+    "emoji": "👨‍🎓",
+    "category": "职业类",
+    "id": 341
+  },
+  {
+    "en": "pupil",
+    "zh": "学生；（尤指）小学生",
+    "emoji": "💼",
+    "category": "职业类",
+    "id": 342
+  },
+  {
+    "en": "worker",
+    "zh": "工人",
+    "emoji": "👷",
+    "category": "职业类",
+    "id": 343
+  },
+  {
+    "en": "postman",
+    "zh": "邮递员",
+    "emoji": "📬",
+    "category": "职业类",
+    "id": 344
+  },
+  {
+    "en": "businessman",
+    "zh": "商人；企业家",
+    "emoji": "💼",
+    "category": "职业类",
+    "id": 345
+  },
+  {
+    "en": "police officer",
+    "zh": "警察",
+    "emoji": "👮",
+    "category": "职业类",
+    "id": 346
+  },
+  {
+    "en": "fisherman",
+    "zh": "渔民",
+    "emoji": "💼",
+    "category": "职业类",
+    "id": 347
+  },
+  {
+    "en": "scientist",
+    "zh": "科学家",
+    "emoji": "🧑‍🔬",
+    "category": "职业类",
+    "id": 348
+  },
+  {
+    "en": "pilot",
+    "zh": "飞行员",
+    "emoji": "✈️",
+    "category": "职业类",
+    "id": 349
+  },
+  {
+    "en": "coach",
+    "zh": "教练",
+    "emoji": "🏋️",
+    "category": "职业类",
+    "id": 350
+  },
+  {
+    "en": "head teacher",
+    "zh": "校长",
+    "emoji": "💼",
+    "category": "职业类",
+    "id": 351
+  },
+  {
+    "en": "reporter",
+    "zh": "记者",
+    "emoji": "🎤",
+    "category": "职业类",
+    "id": 352
+  },
+  {
+    "en": "secretary",
+    "zh": "秘书",
+    "emoji": "💼",
+    "category": "职业类",
+    "id": 353
+  },
+  {
+    "en": "one",
+    "zh": "一",
+    "emoji": "1️⃣",
+    "category": "数字类",
+    "id": 354
+  },
+  {
+    "en": "two",
+    "zh": "二",
+    "emoji": "2️⃣",
+    "category": "数字类",
+    "id": 355
+  },
+  {
+    "en": "three",
+    "zh": "三",
+    "emoji": "3️⃣",
+    "category": "数字类",
+    "id": 356
+  },
+  {
+    "en": "four",
+    "zh": "四",
+    "emoji": "4️⃣",
+    "category": "数字类",
+    "id": 357
+  },
+  {
+    "en": "five",
+    "zh": "五",
+    "emoji": "5️⃣",
+    "category": "数字类",
+    "id": 358
+  },
+  {
+    "en": "six",
+    "zh": "六",
+    "emoji": "6️⃣",
+    "category": "数字类",
+    "id": 359
+  },
+  {
+    "en": "seven",
+    "zh": "七",
+    "emoji": "7️⃣",
+    "category": "数字类",
+    "id": 360
+  },
+  {
+    "en": "eight",
+    "zh": "八",
+    "emoji": "8️⃣",
+    "category": "数字类",
+    "id": 361
+  },
+  {
+    "en": "nine",
+    "zh": "九",
+    "emoji": "9️⃣",
+    "category": "数字类",
+    "id": 362
+  },
+  {
+    "en": "ten",
+    "zh": "十",
+    "emoji": "🔟",
+    "category": "数字类",
+    "id": 363
+  },
+  {
+    "en": "twenty",
+    "zh": "二十",
+    "emoji": "🔢",
+    "category": "数字类",
+    "id": 364
+  },
+  {
+    "en": "thirty",
+    "zh": "三十",
+    "emoji": "🔢",
+    "category": "数字类",
+    "id": 365
+  },
+  {
+    "en": "forty",
+    "zh": "四十",
+    "emoji": "🔢",
+    "category": "数字类",
+    "id": 366
+  },
+  {
+    "en": "fifty",
+    "zh": "五十",
+    "emoji": "🔢",
+    "category": "数字类",
+    "id": 367
+  },
+  {
+    "en": "sixty",
+    "zh": "六十",
+    "emoji": "🔢",
+    "category": "数字类",
+    "id": 368
+  },
+  {
+    "en": "seventy",
+    "zh": "七十",
+    "emoji": "🔢",
+    "category": "数字类",
+    "id": 369
+  },
+  {
+    "en": "eighty",
+    "zh": "八十",
+    "emoji": "🔢",
+    "category": "数字类",
+    "id": 370
+  },
+  {
+    "en": "ninety",
+    "zh": "九十",
+    "emoji": "🔢",
+    "category": "数字类",
+    "id": 371
+  },
+  {
+    "en": "hundred",
+    "zh": "百",
+    "emoji": "🔢",
+    "category": "数字类",
+    "id": 372
+  },
+  {
+    "en": "first (1st)",
+    "zh": "第一（的）",
+    "emoji": "🔢",
+    "category": "数字类",
+    "id": 373
+  },
+  {
+    "en": "second (2nd)",
+    "zh": "第二（的）",
+    "emoji": "🔢",
+    "category": "数字类",
+    "id": 374
+  },
+  {
+    "en": "third (3rd)",
+    "zh": "第三（的）",
+    "emoji": "🔢",
+    "category": "数字类",
+    "id": 375
+  },
+  {
+    "en": "fourth (4th)",
+    "zh": "第四（的）",
+    "emoji": "🔢",
+    "category": "数字类",
+    "id": 376
+  },
+  {
+    "en": "fifth (5th)",
+    "zh": "第五（的）",
+    "emoji": "🔢",
+    "category": "数字类",
+    "id": 377
+  },
+  {
+    "en": "twelfth (12th)",
+    "zh": "第十二（的）",
+    "emoji": "🔢",
+    "category": "数字类",
+    "id": 378
+  },
+  {
+    "en": "twentieth (20th)",
+    "zh": "第二十（的）",
+    "emoji": "🔢",
+    "category": "数字类",
+    "id": 379
+  },
+  {
+    "en": "twenty-first (21st)",
+    "zh": "第二十一（的）",
+    "emoji": "🔢",
+    "category": "数字类",
+    "id": 380
+  },
+  {
+    "en": "twenty-third (23rd)",
+    "zh": "第二十三（的）",
+    "emoji": "🔢",
+    "category": "数字类",
+    "id": 381
+  },
+  {
+    "en": "thirtieth (30th)",
+    "zh": "第三十（的）",
+    "emoji": "🔢",
+    "category": "数字类",
+    "id": 382
+  },
+  {
+    "en": "Monday",
+    "zh": "星期一",
+    "emoji": "📅",
+    "category": "时间类",
+    "id": 383
+  },
+  {
+    "en": "Tuesday",
+    "zh": "星期二",
+    "emoji": "📅",
+    "category": "时间类",
+    "id": 384
+  },
+  {
+    "en": "Wednesday",
+    "zh": "星期三",
+    "emoji": "📅",
+    "category": "时间类",
+    "id": 385
+  },
+  {
+    "en": "Thursday",
+    "zh": "星期四",
+    "emoji": "📅",
+    "category": "时间类",
+    "id": 386
+  },
+  {
+    "en": "Friday",
+    "zh": "星期五",
+    "emoji": "📅",
+    "category": "时间类",
+    "id": 387
+  },
+  {
+    "en": "Saturday",
+    "zh": "星期六",
+    "emoji": "📅",
+    "category": "时间类",
+    "id": 388
+  },
+  {
+    "en": "Sunday",
+    "zh": "星期日",
+    "emoji": "📅",
+    "category": "时间类",
+    "id": 389
+  },
+  {
+    "en": "day",
+    "zh": "一天；一日",
+    "emoji": "📅",
+    "category": "时间类",
+    "id": 390
+  },
+  {
+    "en": "today",
+    "zh": "今天",
+    "emoji": "📅",
+    "category": "时间类",
+    "id": 391
+  },
+  {
+    "en": "tonight",
+    "zh": "今晚",
+    "emoji": "📅",
+    "category": "时间类",
+    "id": 392
+  },
+  {
+    "en": "yesterday",
+    "zh": "昨天",
+    "emoji": "📅",
+    "category": "时间类",
+    "id": 393
+  },
+  {
+    "en": "tomorrow",
+    "zh": "明天",
+    "emoji": "📅",
+    "category": "时间类",
+    "id": 394
+  },
+  {
+    "en": "weekend",
+    "zh": "周末",
+    "emoji": "📅",
+    "category": "时间类",
+    "id": 395
+  },
+  {
+    "en": "next week",
+    "zh": "下周",
+    "emoji": "📅",
+    "category": "时间类",
+    "id": 396
+  },
+  {
+    "en": "now",
+    "zh": "现在；目前",
+    "emoji": "📅",
+    "category": "时间类",
+    "id": 397
+  },
+  {
+    "en": "a.m.",
+    "zh": "午前；上午",
+    "emoji": "📅",
+    "category": "时间类",
+    "id": 398
+  },
+  {
+    "en": "p.m.",
+    "zh": "午后；下午",
+    "emoji": "📅",
+    "category": "时间类",
+    "id": 399
+  },
+  {
+    "en": "evening",
+    "zh": "晚上；傍晚",
+    "emoji": "📅",
+    "category": "时间类",
+    "id": 400
+  },
+  {
+    "en": "spring",
+    "zh": "春天",
+    "emoji": "🌸",
+    "category": "时间类",
+    "id": 401
+  },
+  {
+    "en": "summer",
+    "zh": "夏天",
+    "emoji": "☀️",
+    "category": "时间类",
+    "id": 402
+  },
+  {
+    "en": "autumn",
+    "zh": "秋天",
+    "emoji": "🍂",
+    "category": "时间类",
+    "id": 403
+  },
+  {
+    "en": "winter",
+    "zh": "冬天",
+    "emoji": "❄️",
+    "category": "时间类",
+    "id": 404
+  },
+  {
+    "en": "season",
+    "zh": "季节",
+    "emoji": "📅",
+    "category": "时间类",
+    "id": 405
+  },
+  {
+    "en": "year",
+    "zh": "年",
+    "emoji": "📅",
+    "category": "时间类",
+    "id": 406
+  },
+  {
+    "en": "January",
+    "zh": "一月",
+    "emoji": "📅",
+    "category": "时间类",
+    "id": 407
+  },
+  {
+    "en": "February",
+    "zh": "二月",
+    "emoji": "📅",
+    "category": "时间类",
+    "id": 408
+  },
+  {
+    "en": "March",
+    "zh": "三月",
+    "emoji": "📅",
+    "category": "时间类",
+    "id": 409
+  },
+  {
+    "en": "April",
+    "zh": "四月",
+    "emoji": "📅",
+    "category": "时间类",
+    "id": 410
+  },
+  {
+    "en": "May",
+    "zh": "五月",
+    "emoji": "📅",
+    "category": "时间类",
+    "id": 411
+  },
+  {
+    "en": "June",
+    "zh": "六月",
+    "emoji": "📅",
+    "category": "时间类",
+    "id": 412
+  },
+  {
+    "en": "July",
+    "zh": "七月",
+    "emoji": "📅",
+    "category": "时间类",
+    "id": 413
+  },
+  {
+    "en": "August",
+    "zh": "八月",
+    "emoji": "📅",
+    "category": "时间类",
+    "id": 414
+  },
+  {
+    "en": "September",
+    "zh": "九月",
+    "emoji": "📅",
+    "category": "时间类",
+    "id": 415
+  },
+  {
+    "en": "October",
+    "zh": "十月",
+    "emoji": "📅",
+    "category": "时间类",
+    "id": 416
+  },
+  {
+    "en": "November",
+    "zh": "十一月",
+    "emoji": "📅",
+    "category": "时间类",
+    "id": 417
+  },
+  {
+    "en": "December",
+    "zh": "十二月",
+    "emoji": "📅",
+    "category": "时间类",
+    "id": 418
+  },
+  {
+    "en": "holiday",
+    "zh": "假日；节日",
+    "emoji": "📅",
+    "category": "时间类",
+    "id": 419
+  },
+  {
+    "en": "National Day",
+    "zh": "国庆日",
+    "emoji": "📅",
+    "category": "时间类",
+    "id": 420
+  },
+  {
+    "en": "Labour Day",
+    "zh": "劳动节",
+    "emoji": "📅",
+    "category": "时间类",
+    "id": 421
+  },
+  {
+    "en": "the Mid-Autumn Festival",
+    "zh": "中秋节",
+    "emoji": "📅",
+    "category": "时间类",
+    "id": 422
+  },
+  {
+    "en": "Thanksgiving",
+    "zh": "感恩节",
+    "emoji": "📅",
+    "category": "时间类",
+    "id": 423
+  },
+  {
+    "en": "Easter",
+    "zh": "复活节",
+    "emoji": "📅",
+    "category": "时间类",
+    "id": 424
+  },
+  {
+    "en": "Christmas",
+    "zh": "圣诞节",
+    "emoji": "🎄",
+    "category": "时间类",
+    "id": 425
+  },
+  {
+    "en": "new",
+    "zh": "新的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 426
+  },
+  {
+    "en": "thin",
+    "zh": "瘦的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 427
+  },
+  {
+    "en": "tall",
+    "zh": "高的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 428
+  },
+  {
+    "en": "short",
+    "zh": "矮的；短的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 429
+  },
+  {
+    "en": "long",
+    "zh": "长的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 430
+  },
+  {
+    "en": "little",
+    "zh": "小的；少量的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 431
+  },
+  {
+    "en": "small",
+    "zh": "（尺寸、数量、程度等）小的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 432
+  },
+  {
+    "en": "big",
+    "zh": "大的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 433
+  },
+  {
+    "en": "windy",
+    "zh": "多风的；风大的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 434
+  },
+  {
+    "en": "cloudy",
+    "zh": "阴天的；多云的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 435
+  },
+  {
+    "en": "snowy",
+    "zh": "下雪（多）的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 436
+  },
+  {
+    "en": "rainy",
+    "zh": "阴雨的；多雨的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 437
+  },
+  {
+    "en": "sunny",
+    "zh": "阳光充足的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 438
+  },
+  {
+    "en": "funny",
+    "zh": "滑稽的；好笑的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 439
+  },
+  {
+    "en": "cute",
+    "zh": "可爱的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 440
+  },
+  {
+    "en": "strong",
+    "zh": "强壮的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 441
+  },
+  {
+    "en": "friendly",
+    "zh": "友好的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 442
+  },
+  {
+    "en": "quiet",
+    "zh": "安静的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 443
+  },
+  {
+    "en": "right",
+    "zh": "正确的；对的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 444
+  },
+  {
+    "en": "cold",
+    "zh": "寒冷的；冷的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 445
+  },
+  {
+    "en": "cool",
+    "zh": "凉的；凉爽的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 446
+  },
+  {
+    "en": "warm",
+    "zh": "温暖的；暖和的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 447
+  },
+  {
+    "en": "hot",
+    "zh": "热的；烫的；辣的；辛辣的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 448
+  },
+  {
+    "en": "pretty",
+    "zh": "美观的；精致的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 449
+  },
+  {
+    "en": "expensive",
+    "zh": "昂贵的；花钱多的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 450
+  },
+  {
+    "en": "cheap",
+    "zh": "花钱少的；便宜的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 451
+  },
+  {
+    "en": "nice",
+    "zh": "好的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 452
+  },
+  {
+    "en": "tired",
+    "zh": "疲倦的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 453
+  },
+  {
+    "en": "fresh",
+    "zh": "新鲜的；刚摘的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 454
+  },
+  {
+    "en": "healthy",
+    "zh": "健康的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 455
+  },
+  {
+    "en": "well",
+    "zh": "健康；身体好",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 456
+  },
+  {
+    "en": "ill",
+    "zh": "有病；不舒服",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 457
+  },
+  {
+    "en": "delicious",
+    "zh": "美味的；可口的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 458
+  },
+  {
+    "en": "sweet",
+    "zh": "含糖的；甜的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 459
+  },
+  {
+    "en": "old",
+    "zh": "老的；年纪大的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 460
+  },
+  {
+    "en": "young",
+    "zh": "年轻的；岁数不大的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 461
+  },
+  {
+    "en": "kind",
+    "zh": "体贴的；慈祥的；宽容的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 462
+  },
+  {
+    "en": "strict",
+    "zh": "要求严格的；严厉的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 463
+  },
+  {
+    "en": "polite",
+    "zh": "有礼貌的；客气的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 464
+  },
+  {
+    "en": "hard-working",
+    "zh": "工作努力的；辛勤的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 465
+  },
+  {
+    "en": "helpful",
+    "zh": "有用的；愿意帮忙的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 466
+  },
+  {
+    "en": "clever",
+    "zh": "聪明的；聪颖的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 467
+  },
+  {
+    "en": "shy",
+    "zh": "羞怯的；腼腆的；怕生的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 468
+  },
+  {
+    "en": "thirsty",
+    "zh": "渴的；口渴的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 469
+  },
+  {
+    "en": "favourite",
+    "zh": "特别喜爱的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 470
+  },
+  {
+    "en": "wonderful",
+    "zh": "极好的；了不起的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 471
+  },
+  {
+    "en": "dirty",
+    "zh": "肮脏的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 472
+  },
+  {
+    "en": "high",
+    "zh": "高的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 473
+  },
+  {
+    "en": "lovely",
+    "zh": "可爱的；美丽的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 474
+  },
+  {
+    "en": "special",
+    "zh": "特殊的；特别的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 475
+  },
+  {
+    "en": "open",
+    "zh": "开着的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 476
+  },
+  {
+    "en": "excited",
+    "zh": "兴奋的；激动的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 477
+  },
+  {
+    "en": "angry",
+    "zh": "生气的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 478
+  },
+  {
+    "en": "afraid",
+    "zh": "害怕",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 479
+  },
+  {
+    "en": "sad",
+    "zh": "难过的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 480
+  },
+  {
+    "en": "worried",
+    "zh": "担心的；发愁的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 481
+  },
+  {
+    "en": "happy",
+    "zh": "高兴的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 482
+  },
+  {
+    "en": "more",
+    "zh": "更多的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 483
+  },
+  {
+    "en": "deep",
+    "zh": "深的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 484
+  },
+  {
+    "en": "bad",
+    "zh": "邪恶的；坏的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 485
+  },
+  {
+    "en": "wrong",
+    "zh": "（身体）有毛病的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 486
+  },
+  {
+    "en": "early",
+    "zh": "早到的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 487
+  },
+  {
+    "en": "late",
+    "zh": "晚；迟",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 488
+  },
+  {
+    "en": "busy",
+    "zh": "忙的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 489
+  },
+  {
+    "en": "interesting",
+    "zh": "有趣的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 490
+  },
+  {
+    "en": "far",
+    "zh": "较远的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 491
+  },
+  {
+    "en": "comic",
+    "zh": "滑稽的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 492
+  },
+  {
+    "en": "amazing",
+    "zh": "令人惊奇的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 493
+  },
+  {
+    "en": "fast",
+    "zh": "快的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 494
+  },
+  {
+    "en": "slow",
+    "zh": "慢的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 495
+  },
+  {
+    "en": "broken",
+    "zh": "破损的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 496
+  },
+  {
+    "en": "loud",
+    "zh": "喧闹的；大声的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 497
+  },
+  {
+    "en": "easy",
+    "zh": "容易的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 498
+  },
+  {
+    "en": "different",
+    "zh": "不同的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 499
+  },
+  {
+    "en": "active",
+    "zh": "积极的；活跃的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 500
+  },
+  {
+    "en": "last",
+    "zh": "最近的；上一个的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 501
+  },
+  {
+    "en": "next",
+    "zh": "下一个的；紧接着的；接下来的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 502
+  },
+  {
+    "en": "any",
+    "zh": "任何的；任一的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 503
+  },
+  {
+    "en": "ready",
+    "zh": "准备好的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 504
+  },
+  {
+    "en": "quickly",
+    "zh": "迅速地",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 505
+  },
+  {
+    "en": "usually",
+    "zh": "通常地；惯常地",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 506
+  },
+  {
+    "en": "straight",
+    "zh": "笔直地",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 507
+  },
+  {
+    "en": "down",
+    "zh": "朝下；向下",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 508
+  },
+  {
+    "en": "there",
+    "zh": "在那里",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 509
+  },
+  {
+    "en": "younger",
+    "zh": "（young 的比较级）更年轻的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 510
+  },
+  {
+    "en": "older",
+    "zh": "（old 的比较级）更年长的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 511
+  },
+  {
+    "en": "taller",
+    "zh": "（tall 的比较级）更高的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 512
+  },
+  {
+    "en": "shorter",
+    "zh": "（short 的比较级）更矮的；更短的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 513
+  },
+  {
+    "en": "longer",
+    "zh": "（long 的比较级）更长的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 514
+  },
+  {
+    "en": "thinner",
+    "zh": "（thin 的比较级）更瘦的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 515
+  },
+  {
+    "en": "heavier",
+    "zh": "（heavy 的比较级）更重的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 516
+  },
+  {
+    "en": "bigger",
+    "zh": "（big 的比较级）更大的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 517
+  },
+  {
+    "en": "smaller",
+    "zh": "（small 的比较级）更小的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 518
+  },
+  {
+    "en": "stronger",
+    "zh": "（strong 的比较级）更强壮的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 519
+  },
+  {
+    "en": "lower",
+    "zh": "（low的比较级）更低地",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 520
+  },
+  {
+    "en": "smarter",
+    "zh": "（smart 的比较级）更聪明的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 521
+  },
+  {
+    "en": "better",
+    "zh": "（well/good 的比较级）更好的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 522
+  },
+  {
+    "en": "faster",
+    "zh": "（fast 的比较级）更快的",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 523
+  },
+  {
+    "en": "best",
+    "zh": "最；最高程度地",
+    "emoji": "✨",
+    "category": "形容词、副词类",
+    "id": 524
+  },
+  {
+    "en": "mine",
+    "zh": "我的",
+    "emoji": "💬",
+    "category": "代词类",
+    "id": 525
+  },
+  {
+    "en": "us",
+    "zh": "我们",
+    "emoji": "💬",
+    "category": "代词类",
+    "id": 526
+  },
+  {
+    "en": "our",
+    "zh": "我们的",
+    "emoji": "💬",
+    "category": "代词类",
+    "id": 527
+  },
+  {
+    "en": "ours",
+    "zh": "我们的（东西）",
+    "emoji": "💬",
+    "category": "代词类",
+    "id": 528
+  },
+  {
+    "en": "your",
+    "zh": "你（们）的",
+    "emoji": "💬",
+    "category": "代词类",
+    "id": 529
+  },
+  {
+    "en": "yours",
+    "zh": "你的；你们的（东西）",
+    "emoji": "💬",
+    "category": "代词类",
+    "id": 530
+  },
+  {
+    "en": "she",
+    "zh": "她",
+    "emoji": "💬",
+    "category": "代词类",
+    "id": 531
+  },
+  {
+    "en": "her",
+    "zh": "她的；（用作宾语或表语）她",
+    "emoji": "💬",
+    "category": "代词类",
+    "id": 532
+  },
+  {
+    "en": "hers",
+    "zh": "她的（东西）",
+    "emoji": "💬",
+    "category": "代词类",
+    "id": 533
+  },
+  {
+    "en": "he",
+    "zh": "他",
+    "emoji": "💬",
+    "category": "代词类",
+    "id": 534
+  },
+  {
+    "en": "him",
+    "zh": "（用作宾语或表语）他",
+    "emoji": "💬",
+    "category": "代词类",
+    "id": 535
+  },
+  {
+    "en": "his",
+    "zh": "他的；他的（东西）",
+    "emoji": "💬",
+    "category": "代词类",
+    "id": 536
+  },
+  {
+    "en": "them",
+    "zh": "他（她、它）们",
+    "emoji": "💬",
+    "category": "代词类",
+    "id": 537
+  },
+  {
+    "en": "their",
+    "zh": "他们的；她们的；它们的",
+    "emoji": "💬",
+    "category": "代词类",
+    "id": 538
+  },
+  {
+    "en": "theirs",
+    "zh": "他们的；她们的；它们的（东西）",
+    "emoji": "💬",
+    "category": "代词类",
+    "id": 539
+  },
+  {
+    "en": "its",
+    "zh": "（指事物、动物或幼儿）它的；他的；她的",
+    "emoji": "💬",
+    "category": "代词类",
+    "id": 540
+  }
+]

@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>景山学校远洋分校2025-2026 · 九九消寒 · 古诗诵读打卡</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+      background: #ffffff;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    
+    h1 {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 32px;
+      color: #2c3e50;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+    
+    .intro {
+      max-width: 100%;
+      margin: 0 auto 24px;
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 16px 20px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.06);
+      line-height: 1.6;
+      border: 1px solid #f0f0f0;
+    }
+    
+    .intro p {
+      margin: 12px 0;
+    }
+    
+    .intro strong {
+      color: #d4a84f;
+      font-weight: 600;
+    }
+    
+    .task-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #d4a84f 0%, #c9a24d 100%);
+      color: white;
+      padding: 12px 20px;
+      border-radius: 20px;
+      font-weight: 500;
+      margin-left: 8px;
+      box-shadow: 0 4px 8px rgba(212,168,79,0.3);
+      line-height: 1.6;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .task-badge:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(212,168,79,0.4);
+    }
+    
+    .task-badge:active {
+      transform: translateY(0);
+    }
+    
+    .progress-info {
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      font-size: 14px;
+      color: #2c3e50;
+    }
+    
+    .progress-text {
+      margin-bottom: 8px;
+      font-weight: 600;
+      font-size: 16px;
+      color: #2c3e50;
+    }
+    
+    .progress-bar-container {
+      width: 100%;
+      height: 18px;
+      background: #f0f0f0;
+      border-radius: 9px;
+      overflow: hidden;
+      position: relative;
+      border: 1px solid #e0e0e0;
+    }
+    
+    .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #d4a84f 0%, #f4c430 100%);
+      border-radius: 9px;
+      transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .progress-stats {
+      margin-top: 8px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      color: #666;
+    }
+    
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(9, 1fr);
+      gap: 14px;
+      max-width: 100%;
+      margin: 0 auto;
+      padding: 28px;
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.06);
+      border: 1px solid #f0f0f0;
+    }
+    
+    .coin {
+      aspect-ratio: 1 / 1;
+      border-radius: 12px;
+      border: 2px solid #d4a84f;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      background: #ffffff;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.04);
+      padding: 8px;
+    }
+    
+    .coin-number {
+      font-size: 11px;
+      font-weight: 600;
+      color: #d4a84f;
+      line-height: 1.2;
+      margin-bottom: 2px;
+    }
+    
+    .coin-date {
+      font-size: 9px;
+      color: #666;
+      line-height: 1.2;
+      margin-bottom: 4px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 100%;
+    }
+    
+    .coin-title {
+      font-size: 10px;
+      font-weight: 500;
+      color: #2c3e50;
+      line-height: 1.3;
+      text-align: center;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      word-break: break-all;
+    }
+    
+    .coin::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .coin:hover::before {
+      opacity: 1;
+    }
+    
+    .coin:hover:not(.disabled) {
+      transform: translateY(-4px) scale(1.05);
+      box-shadow: 0 6px 16px rgba(212,168,79,0.25), 0 0 0 2px rgba(212,168,79,0.2);
+      border-color: #d4a84f;
+    }
+    
+    .coin.active {
+      background: linear-gradient(135deg, #ffe8a3 0%, #f4c430 50%, #d4a84f 100%);
+      color: #7a4b00;
+      font-weight: bold;
+      box-shadow: 0 4px 16px rgba(212,168,79,0.3), 
+                  inset 0 2px 4px rgba(255,255,255,0.3);
+      border-color: #b8943f;
+    }
+    
+    .coin.active .coin-number {
+      color: #7a4b00;
+    }
+    
+    .coin.active .coin-date {
+      color: #5a3a00;
+    }
+    
+    .coin.active .coin-title {
+      color: #5a3a00;
+    }
+    
+    .coin.today:not(.active) {
+      border: 3px solid #d4a84f;
+      box-shadow: 0 0 0 3px rgba(212,168,79,0.15), 0 4px 12px rgba(212,168,79,0.2);
+    }
+    
+    .coin:active:not(.disabled) {
+      transform: translateY(-2px) scale(1.02);
+    }
+    
+    .footer {
+      text-align: center;
+      margin-top: 48px;
+      font-size: 14px;
+      color: #666;
+      padding: 24px;
+    }
+    
+    .footer p {
+      margin: 8px 0;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+    }
+    
+    .poem {
+      max-width: 100%;
+      margin: 32px auto;
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 36px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.06);
+      border: 1px solid #f0f0f0;
+    }
+    
+    .poem-header {
+      font-size: 16px;
+      font-weight: 500;
+      color: #666;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid rgba(212,168,79,0.2);
+      text-align: center;
+    }
+    
+    .poem-title {
+      font-size: 28px;
+      font-weight: 700;
+      background: linear-gradient(135deg, #d4a84f 0%, #c9a24d 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 12px;
+      text-align: center;
+      letter-spacing: 2px;
+    }
+    
+    .poem-meta {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 24px;
+      font-size: 14px;
+      color: #666;
+    }
+    
+    .poem-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      background: rgba(212,168,79,0.1);
+      border-radius: 20px;
+      border: 1px solid rgba(212,168,79,0.2);
+    }
+    
+    .poem-meta-item strong {
+      color: #d4a84f;
+      font-weight: 600;
+    }
+    
+    .poem-author {
+      font-size: 18px;
+      color: #888;
+      margin-bottom: 32px;
+      text-align: center;
+      font-style: italic;
+      font-weight: 400;
+    }
+    
+    .poem-author-dynasty {
+      color: #999;
+      font-size: 16px;
+      margin-left: 8px;
+    }
+    
+    .poem-content {
+      font-size: 22px;
+      line-height: 2.4;
+      color: #2c3e50;
+      white-space: pre-line;
+      text-align: center;
+      font-weight: 400;
+      letter-spacing: 2px;
+      padding: 32px;
+      background: #fafafa;
+      border-radius: 12px;
+      border: 1px solid #e8e8e8;
+    }
+    
+    .checkin-button {
+      display: block;
+      width: 220px;
+      margin: 32px auto 0;
+      padding: 16px 32px;
+      background: linear-gradient(135deg, #d4a84f 0%, #f4c430 50%, #ffd700 100%);
+      color: white;
+      border: none;
+      border-radius: 30px;
+      font-size: 17px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 6px 20px rgba(212,168,79,0.4), 0 0 0 0 rgba(212,168,79,0.5);
+      position: relative;
+      overflow: hidden;
+      letter-spacing: 1px;
+    }
+    
+    .checkin-button::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.3);
+      transform: translate(-50%, -50%);
+      transition: width 0.6s, height 0.6s;
+    }
+    
+    .checkin-button:hover::before {
+      width: 300px;
+      height: 300px;
+    }
+    
+    .checkin-button:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 8px 25px rgba(212,168,79,0.5), 0 0 0 4px rgba(212,168,79,0.2);
+    }
+    
+    .checkin-button:active {
+      transform: translateY(-1px) scale(0.98);
+    }
+    
+    .checkin-button.checked {
+      background: linear-gradient(135deg, #95a5a6 0%, #7f8c8d 100%);
+      box-shadow: 0 6px 20px rgba(149,165,166,0.4);
+    }
+    
+    .checkin-button.checked:hover {
+      box-shadow: 0 8px 25px rgba(149,165,166,0.5);
+    }
+    
+    .checkin-button span {
+      position: relative;
+      z-index: 1;
+    }
+    
+    @media (max-width: 768px) {
+      body {
+        padding: 12px;
+      }
+      
+      h1 {
+        font-size: 28px;
+        margin-bottom: 20px;
+      }
+      
+      .grid {
+        grid-template-columns: repeat(6, 1fr);
+        gap: 12px;
+        padding: 24px;
+      }
+      
+      .coin {
+        padding: 6px;
+        border-width: 2px;
+      }
+      
+      .coin-number {
+        font-size: 10px;
+      }
+      
+      .coin-date {
+        font-size: 8px;
+      }
+      
+      .coin-title {
+        font-size: 9px;
+      }
+      
+      .intro, .poem {
+        padding: 24px;
+        border-radius: 20px;
+      }
+      
+      .poem-content {
+        font-size: 20px;
+        line-height: 2.2;
+        padding: 24px;
+        letter-spacing: 1.5px;
+      }
+      
+      .poem-title {
+        font-size: 24px;
+      }
+      
+      .poem-author {
+        font-size: 16px;
+      }
+      
+      .poem-meta {
+        gap: 10px;
+        font-size: 13px;
+      }
+      
+      .poem-meta-item {
+        padding: 6px 12px;
+        font-size: 12px;
+      }
+      
+      .poem-author-dynasty {
+        font-size: 14px;
+      }
+      
+      .checkin-button {
+        width: 200px;
+        padding: 14px 28px;
+        font-size: 16px;
+      }
+      
+      .progress-text {
+        font-size: 14px;
+        margin-bottom: 6px;
+      }
+      
+      .progress-bar-container {
+        height: 16px;
+      }
+      
+      .progress-stats {
+        font-size: 12px;
+        margin-top: 6px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 24px;
+      }
+      
+      .grid {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 10px;
+        padding: 20px;
+      }
+      
+      .coin {
+        padding: 5px;
+        border-width: 2px;
+      }
+      
+      .coin-number {
+        font-size: 9px;
+      }
+      
+      .coin-date {
+        font-size: 7px;
+      }
+      
+      .coin-title {
+        font-size: 8px;
+      }
+      
+      .poem-content {
+        font-size: 18px;
+        line-height: 2;
+        padding: 20px;
+        letter-spacing: 1px;
+      }
+      
+      .poem-title {
+        font-size: 22px;
+      }
+      
+      .poem-meta {
+        flex-direction: column;
+        gap: 8px;
+        font-size: 12px;
+      }
+      
+      .poem-meta-item {
+        padding: 6px 12px;
+        font-size: 11px;
+        width: 100%;
+        justify-content: center;
+      }
+      
+      .poem-author {
+        font-size: 15px;
+      }
+      
+      .poem-author-dynasty {
+        font-size: 13px;
+      }
+      
+      .checkin-button {
+        width: 180px;
+        padding: 12px 24px;
+        font-size: 15px;
+      }
+      
+      .intro, .poem {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>九九消寒 · 古诗诵读打卡 🐎</h1>
+
+    <div class="intro">
+      <div class="progress-info" id="progressInfo"></div>
+    </div>
+
+    <div class="poem">
+      <div class="poem-header">📖 诵读古诗（点击铜钱查看对应诗词，点击下方按钮完成打卡）</div>
+      <div id="todayPoem"></div>
+      <button class="checkin-button" id="checkinButton" style="display: none;"><span>完成打卡</span></button>
+    </div>
+
+    <div class="grid" id="coinGrid"></div>
+
+    <div class="footer">
+      <p>每日一诗 · 每日一币 · 九九消寒</p>
+      <p>班级共读 · 坚持打卡 · 马到成功 🐎</p>
+    </div>
+  </div>
+
+  <script>
+    const grid = document.getElementById('coinGrid');
+    const total = 81;
+    const startDate = new Date('2025-12-21');
+    const today = new Date();
+    const dayIndex = Math.floor((today - startDate) / (1000 * 60 * 60 * 24)) + 1;
+
+    const poems = [
+      {title: "咏鹅", author: "骆宾王", content: "鹅，鹅，鹅，\n曲项向天歌。\n白毛浮绿水，\n红掌拨清波。"},
+      {title: "画", author: "王维", content: "远看山有色，\n近听水无声。\n春去花还在，\n人来鸟不惊。"},
+      {title: "悯农（其二）", author: "李绅", content: "锄禾日当午，\n汗滴禾下土。\n谁知盘中餐，\n粒粒皆辛苦。"},
+      {title: "江南", author: "汉乐府", content: "江南可采莲，\n莲叶何田田。\n鱼戏莲叶间。\n鱼戏莲叶东，\n鱼戏莲叶西，\n鱼戏莲叶南，\n鱼戏莲叶北。"},
+      {title: "古朗月行（节选）", author: "李白", content: "小时不识月，\n呼作白玉盘。\n又疑瑶台镜，\n飞在青云端。"},
+      {title: "风", author: "李峤", content: "解落三秋叶，\n能开二月花。\n过江千尺浪，\n入竹万竿斜。"},
+      {title: "春晓", author: "孟浩然", content: "春眠不觉晓，\n处处闻啼鸟。\n夜来风雨声，\n花落知多少。"},
+      {title: "赠汪伦", author: "李白", content: "李白乘舟将欲行，\n忽闻岸上踏歌声。\n桃花潭水深千尺，\n不及汪伦送我情。"},
+      {title: "静夜思", author: "李白", content: "床前明月光，\n疑是地上霜。\n举头望明月，\n低头思故乡。"},
+      {title: "寻隐者不遇", author: "贾岛", content: "松下问童子，\n言师采药去。\n只在此山中，\n云深不知处。"},
+      {title: "池上", author: "白居易", content: "小娃撑小艇，\n偷采白莲回。\n不解藏踪迹，\n浮萍一道开。"},
+      {title: "小池", author: "杨万里", content: "泉眼无声惜细流，\n树阴照水爱晴柔。\n小荷才露尖尖角，\n早有蜻蜓立上头。"},
+      {title: "画鸡", author: "唐寅", content: "头上红冠不用裁，\n满身雪白走将来。\n平生不敢轻言语，\n一叫千门万户开。"},
+      {title: "梅花", author: "王安石", content: "墙角数枝梅，\n凌寒独自开。\n遥知不是雪，\n为有暗香来。"},
+      {title: "小儿垂钓", author: "胡令能", content: "蓬头稚子学垂纶，\n侧坐莓苔草映身。\n路人借问遥招手，\n怕得鱼惊不应人。"},
+      {title: "登鹳雀楼", author: "王之涣", content: "白日依山尽，\n黄河入海流。\n欲穷千里目，\n更上一层楼。"},
+      {title: "望庐山瀑布", author: "李白", content: "日照香炉生紫烟，\n遥看瀑布挂前川。\n飞流直下三千尺，\n疑是银河落九天。"},
+      {title: "江雪", author: "柳宗元", content: "千山鸟飞绝，\n万径人踪灭。\n孤舟蓑笠翁，\n独钓寒江雪。"},
+      {title: "夜宿山寺", author: "李白", content: "危楼高百尺，\n手可摘星辰。\n不敢高声语，\n恐惊天上人。"},
+      {title: "敕勒歌", author: "北朝民歌", content: "敕勒川，阴山下。\n天似穹庐，笼盖四野。\n天苍苍，野茫茫。\n风吹草低见牛羊。"},
+      {title: "村居", author: "高鼎", content: "草长莺飞二月天，\n拂堤杨柳醉春烟。\n儿童散学归来早，\n忙趁东风放纸鸢。"},
+      {title: "咏柳", author: "贺知章", content: "碧玉妆成一树高，\n万条垂下绿丝绦。\n不知细叶谁裁出，\n二月春风似剪刀。"},
+      {title: "赋得古原草送别", author: "白居易", content: "离离原上草，\n一岁一枯荣。\n野火烧不尽，\n春风吹又生。\n远芳侵古道，\n晴翠接荒城。\n又送王孙去，\n萋萋满别情。"},
+      {title: "晓出净慈寺送林子方", author: "杨万里", content: "毕竟西湖六月中，\n风光不与四时同。\n接天莲叶无穷碧，\n映日荷花别样红。"},
+      {title: "绝句", author: "杜甫", content: "两个黄鹂鸣翠柳，\n一行白鹭上青天。\n窗含西岭千秋雪，\n门泊东吴万里船。"},
+      {title: "悯农（其一）", author: "李绅", content: "春种一粒粟，\n秋收万颗子。\n四海无闲田，\n农夫犹饿死。"},
+      {title: "赠刘景文", author: "苏轼", content: "荷尽已无擎雨盖，\n菊残犹有傲霜枝。\n一年好景君须记，\n最是橙黄橘绿时。"},
+      {title: "所见", author: "袁枚", content: "牧童骑黄牛，\n歌声振林樾。\n意欲捕鸣蝉，\n忽然闭口立。"},
+      {title: "山行", author: "杜牧", content: "远上寒山石径斜，\n白云生处有人家。\n停车坐爱枫林晚，\n霜叶红于二月花。"},
+      {title: "夜书所见", author: "叶绍翁", content: "萧萧梧叶送寒声，\n江上秋风动客情。\n知有儿童挑促织，\n夜深篱落一灯明。"},
+      {title: "舟夜书所见", author: "查慎行", content: "月黑见渔灯，\n孤光一点萤。\n微微风簇浪，\n散作满河星。"},
+      {title: "望天门山", author: "李白", content: "天门中断楚江开，\n碧水东流至此回。\n两岸青山相对出，\n孤帆一片日边来。"},
+      {title: "饮湖上初晴后雨", author: "苏轼", content: "水光潋滟晴方好，\n山色空蒙雨亦奇。\n欲把西湖比西子，\n淡妆浓抹总相宜。"},
+      {title: "望洞庭", author: "刘禹锡", content: "湖光秋月两相和，\n潭面无风镜未磨。\n遥望洞庭山水翠，\n白银盘里一青螺。"},
+      {title: "早发白帝城", author: "李白", content: "朝辞白帝彩云间，\n千里江陵一日还。\n两岸猿声啼不住，\n轻舟已过万重山。"},
+      {title: "采莲曲", author: "王昌龄", content: "荷叶罗裙一色裁，\n芙蓉向脸两边开。\n乱入池中看不见，\n闻歌始觉有人来。"},
+      {title: "绝句", author: "杜甫", content: "迟日江山丽，\n春风花草香。\n泥融飞燕子，\n沙暖睡鸳鸯。"},
+      {title: "惠崇春江晚景", author: "苏轼", content: "竹外桃花三两枝，\n春江水暖鸭先知。\n蒌蒿满地芦芽短，\n正是河豚欲上时。"},
+      {title: "三衢道中", author: "曾几", content: "梅子黄时日日晴，\n小溪泛尽却山行。\n绿阴不减来时路，\n添得黄鹂四五声。"},
+      {title: "忆江南", author: "白居易", content: "江南好，\n风景旧曾谙。\n日出江花红胜火，\n春来江水绿如蓝。\n能不忆江南？"},
+      {title: "元日", author: "王安石", content: "爆竹声中一岁除，\n春风送暖入屠苏。\n千门万户曈曈日，\n总把新桃换旧符。"},
+      {title: "清明", author: "杜牧", content: "清明时节雨纷纷，\n路上行人欲断魂。\n借问酒家何处有？\n牧童遥指杏花村。"},
+      {title: "九月九日忆山东兄弟", author: "王维", content: "独在异乡为异客，\n每逢佳节倍思亲。\n遥知兄弟登高处，\n遍插茱萸少一人。"},
+      {title: "除夜作", author: "高适", content: "旅馆寒灯独不眠，\n客心何事转凄然。\n故乡今夜思千里，\n霜鬓明朝又一年。"},
+      {title: "大林寺桃花", author: "白居易", content: "人间四月芳菲尽，\n山寺桃花始盛开。\n长恨春归无觅处，\n不知转入此中来。"},
+      {title: "鹿柴", author: "王维", content: "空山不见人，\n但闻人语响。\n返景入深林，\n复照青苔上。"},
+      {title: "暮江吟", author: "白居易", content: "一道残阳铺水中，\n半江瑟瑟半江红。\n可怜九月初三夜，\n露似真珠月似弓。"},
+      {title: "题西林壁", author: "苏轼", content: "横看成岭侧成峰，\n远近高低各不同。\n不识庐山真面目，\n只缘身在此山中。"},
+      {title: "雪梅", author: "卢钺", content: "梅雪争春未肯降，\n骚人阁笔费评章。\n梅须逊雪三分白，\n雪却输梅一段香。"},
+      {title: "嫦娥", author: "李商隐", content: "云母屏风烛影深，\n长河渐落晓星沉。\n嫦娥应悔偷灵药，\n碧海青天夜夜心。"},
+      {title: "出塞", author: "王昌龄", content: "秦时明月汉时关，\n万里长征人未还。\n但使龙城飞将在，\n不教胡马度阴山。"},
+      {title: "凉州词", author: "王翰", content: "葡萄美酒夜光杯，\n欲饮琵琶马上催。\n醉卧沙场君莫笑，\n古来征战几人回？"},
+      {title: "夏日绝句", author: "李清照", content: "生当作人杰，\n死亦为鬼雄。\n至今思项羽，\n不肯过江东。"},
+      {title: "别董大", author: "高适", content: "千里黄云白日曛，\n北风吹雁雪纷纷。\n莫愁前路无知己，\n天下谁人不识君。"},
+      {title: "四时田园杂兴", author: "范成大", content: "昼出耘田夜绩麻，\n村庄儿女各当家。\n童孙未解供耕织，\n也傍桑阴学种瓜。"},
+      {title: "宿新市徐公店", author: "杨万里", content: "篱落疏疏一径深，\n树头新绿未成阴。\n儿童急走追黄蝶，\n飞入菜花无处寻。"},
+      {title: "清平乐·村居", author: "辛弃疾", content: "茅檐低小，溪上青青草。\n醉里吴音相媚好，白发谁家翁媪？\n大儿锄豆溪东，中儿正织鸡笼。\n最喜小儿亡赖，溪头卧剥莲蓬。"},
+      {title: "卜算子·咏梅", author: "毛泽东", content: "风雨送春归，\n飞雪迎春到。\n已是悬崖百丈冰，\n犹有花枝俏。\n俏也不争春，\n只把春来报。\n待到山花烂漫时，\n她在丛中笑。"},
+      {title: "江畔独步寻花", author: "杜甫", content: "黄四娘家花满蹊，\n千朵万朵压枝低。\n留连戏蝶时时舞，\n自在娇莺恰恰啼。"},
+      {title: "蜂", author: "罗隐", content: "不论平地与山尖，\n无限风光尽被占。\n采得百花成蜜后，\n为谁辛苦为谁甜？"},
+      {title: "独坐敬亭山", author: "李白", content: "众鸟高飞尽，\n孤云独去闲。\n相看两不厌，\n只有敬亭山。"},
+      {title: "芙蓉楼送辛渐", author: "王昌龄", content: "寒雨连江夜入吴，\n平明送客楚山孤。\n洛阳亲友如相问，\n一片冰心在玉壶。"},
+      {title: "塞下曲", author: "卢纶", content: "月黑雁飞高，\n单于夜遁逃。\n欲将轻骑逐，\n大雪满弓刀。"},
+      {title: "墨梅", author: "王冕", content: "我家洗砚池头树，\n朵朵花开淡墨痕。\n不要人夸好颜色，\n只留清气满乾坤。"},
+      {title: "蝉", author: "虞世南", content: "垂緌饮清露，\n流响出疏桐。\n居高声自远，\n非是藉秋风。"},
+      {title: "示儿", author: "陆游", content: "死去元知万事空，\n但悲不见九州同。\n王师北定中原日，\n家祭无忘告乃翁。"},
+      {title: "题临安邸", author: "林升", content: "山外青山楼外楼，\n西湖歌舞几时休？\n暖风熏得游人醉，\n直把杭州作汴州。"},
+      {title: "己亥杂诗", author: "龚自珍", content: "九州生气恃风雷，\n万马齐喑究可哀。\n我劝天公重抖擞，\n不拘一格降人才。"},
+      {title: "山居秋暝", author: "王维", content: "空山新雨后，\n天气晚来秋。\n明月松间照，\n清泉石上流。\n竹喧归浣女，\n莲动下渔舟。\n随意春芳歇，\n王孙自可留。"},
+      {title: "枫桥夜泊", author: "张继", content: "月落乌啼霜满天，\n江枫渔火对愁眠。\n姑苏城外寒山寺，\n夜半钟声到客船。"},
+      {title: "长相思", author: "纳兰性德", content: "山一程，水一程，\n身向榆关那畔行，\n夜深千帐灯。\n风一更，雪一更，\n聒碎乡心梦不成，\n故园无此声。"},
+      {title: "渔歌子", author: "张志和", content: "西塞山前白鹭飞，\n桃花流水鳜鱼肥。\n青箬笠，绿蓑衣，\n斜风细雨不须归。"},
+      {title: "观书有感（其一）", author: "朱熹", content: "半亩方塘一鉴开，\n天光云影共徘徊。\n问渠那得清如许？\n为有源头活水来。"},
+      {title: "观书有感（其二）", author: "朱熹", content: "昨夜江边春水生，\n蒙冲巨舰一毛轻。\n向来枉费推移力，\n此日中流自在行。"},
+      {title: "四时田园杂兴", author: "范成大", content: "梅子金黄杏子肥，\n麦花雪白菜花稀。\n日长篱落无人过，\n惟有蜻蜓蛱蝶飞。"},
+      {title: "稚子弄冰", author: "杨万里", content: "稚子金盆脱晓冰，\n彩丝穿取当银钲。\n敲成玉磬穿林响，\n忽作玻璃碎地声。"},
+      {title: "村晚", author: "雷震", content: "草满池塘水满陂，\n山衔落日浸寒漪。\n牧童归去横牛背，\n短笛无腔信口吹。"},
+      {title: "游子吟", author: "孟郊", content: "慈母手中线，\n游子身上衣。\n临行密密缝，\n意恐迟迟归。\n谁言寸草心，\n报得三春晖。"},
+      {title: "鸟鸣涧", author: "王维", content: "人闲桂花落，\n夜静春山空。\n月出惊山鸟，\n时鸣春涧中。"},
+      {title: "从军行", author: "王昌龄", content: "青海长云暗雪山，\n孤城遥望玉门关。\n黄沙百战穿金甲，\n不破楼兰终不还。"},
+      {title: "秋夜将晓出篱门迎凉有感", author: "陆游", content: "三万里河东入海，\n五千仞岳上摩天。\n遗民泪尽胡尘里，\n南望王师又一年。"}
+    ];
+
+    const saved = JSON.parse(localStorage.getItem('coins') || '[]');
+    const completedCount = saved.length;
+    const progressPercent = Math.round((completedCount / total) * 100);
+
+    // Format date display
+    function formatDate(date) {
+      const year = date.getFullYear();
+      const month = String(date.getMonth() + 1).padStart(2, '0');
+      const day = String(date.getDate()).padStart(2, '0');
+      const weekdays = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+      const weekday = weekdays[date.getDay()];
+      return `${year}年${month}月${day}日 ${weekday}`;
+    }
+    
+    // Get date for a specific day index
+    function getDateForIndex(index) {
+      const date = new Date(startDate);
+      date.setDate(date.getDate() + index - 1);
+      return formatDate(date);
+    }
+    
+    // Format short date for coin display (MM/DD)
+    function formatShortDate(date) {
+      const month = String(date.getMonth() + 1).padStart(2, '0');
+      const day = String(date.getDate()).padStart(2, '0');
+      return `${month}/${day}`;
+    }
+    
+    // Get short date for a specific day index
+    function getShortDateForIndex(index) {
+      const date = new Date(startDate);
+      date.setDate(date.getDate() + index - 1);
+      return formatShortDate(date);
+    }
+    
+    // Grade levels array (81 items)
+    const grades = [
+      "一年级上册", "一年级上册", "一年级上册", "一年级上册", "一年级上册", "一年级上册", "一年级上册", "一年级上册", "一年级上册",
+      "一年级下册", "一年级下册", "一年级下册", "一年级下册", "一年级下册", "一年级下册", "一年级下册", "一年级下册", "一年级下册",
+      "二年级上册", "二年级上册", "二年级上册", "二年级上册", "二年级上册", "二年级上册", "二年级上册", "二年级上册", "二年级上册",
+      "二年级下册", "二年级下册", "二年级下册", "二年级下册", "二年级下册", "二年级下册", "二年级下册", "二年级下册", "二年级下册",
+      "三年级上册", "三年级上册", "三年级上册", "三年级上册", "三年级上册", "三年级上册", "三年级上册", "三年级上册", "三年级上册",
+      "三年级下册", "三年级下册", "三年级下册", "三年级下册", "三年级下册", "三年级下册", "三年级下册", "三年级下册", "三年级下册",
+      "四年级上册", "四年级上册", "四年级上册", "四年级上册", "四年级上册", "四年级上册", "四年级上册", "四年级上册", "四年级上册",
+      "四年级下册", "四年级下册", "四年级下册", "四年级下册", "四年级下册", "四年级下册", "四年级下册", "四年级下册", "四年级下册",
+      "五年级上册", "五年级上册", "五年级上册", "五年级上册", "五年级上册", "五年级上册", "五年级上册", "五年级上册", "五年级上册"
+    ];
+    
+    // Author dynasties mapping
+    const authorDynasties = {
+      "骆宾王": "唐", "王维": "唐", "李绅": "唐", "汉乐府": "", "李白": "唐", "李峤": "唐", "孟浩然": "唐",
+      "贾岛": "唐", "白居易": "唐", "杨万里": "宋", "唐寅": "明", "王安石": "宋", "胡令能": "唐", "王之涣": "唐",
+      "柳宗元": "唐", "北朝民歌": "", "高鼎": "清", "贺知章": "唐", "杜甫": "唐", "苏轼": "宋", "袁枚": "清",
+      "杜牧": "唐", "叶绍翁": "宋", "查慎行": "清", "刘禹锡": "唐", "王昌龄": "唐", "曾几": "宋", "范成大": "宋",
+      "辛弃疾": "宋", "毛泽东": "现代", "罗隐": "唐", "王冕": "元", "虞世南": "唐", "陆游": "宋", "林升": "宋",
+      "龚自珍": "清", "张继": "唐", "纳兰性德": "清", "张志和": "唐", "朱熹": "宋", "雷震": "宋", "孟郊": "唐",
+      "卢纶": "唐", "李商隐": "唐", "王翰": "唐", "李清照": "宋", "高适": "唐"
+    };
+
+    // Function to update progress display
+    function updateProgressDisplay() {
+      const currentCompleted = saved.length;
+      const currentPercent = Math.round((currentCompleted / total) * 100);
+      document.getElementById('progressInfo').innerHTML = `
+        <div class="progress-text">📊 打卡进度</div>
+        <div class="progress-bar-container">
+          <div class="progress-bar" style="width: ${currentPercent}%"></div>
+        </div>
+        <div class="progress-stats">
+          <span>已完成 <strong style="color: #d4a84f; font-size: 15px;">${currentCompleted}</strong> 天</span>
+          <span>进度 <strong style="color: #d4a84f; font-size: 15px;">${currentPercent}%</strong></span>
+        </div>
+      `;
+    }
+    
+    updateProgressDisplay();
+
+    // Function to render poem with all info
+    function renderPoem(index, poem) {
+      const date = getDateForIndex(index);
+      const grade = grades[index - 1] || '';
+      const dynasty = authorDynasties[poem.author] || '';
+      const authorDisplay = dynasty ? `${poem.author}<span class="poem-author-dynasty">(${dynasty})</span>` : poem.author;
+      
+      return `
+        <div class="poem-meta">
+          <div class="poem-meta-item">
+            <span>📌</span>
+            <span>序号：<strong>${index}</strong></span>
+          </div>
+          <div class="poem-meta-item">
+            <span>📅</span>
+            <span>${date}</span>
+          </div>
+          <div class="poem-meta-item">
+            <span>📚</span>
+            <span>年级：<strong>${grade}</strong></span>
+          </div>
+        </div>
+        <div class="poem-title">《${poem.title}》</div>
+        <div class="poem-author">${authorDisplay}</div>
+        <div class="poem-content">${poem.content}</div>
+      `;
+    }
+    
+    // Show today's poem by default, but allow clicking any coin to view its poem
+    const todayPoem = poems[dayIndex - 1] || poems[0];
+    const poemDiv = document.getElementById('todayPoem');
+    if (todayPoem) {
+      poemDiv.innerHTML = renderPoem(dayIndex, todayPoem);
+      // Show checkin button for today's poem
+      const checkinButton = document.getElementById('checkinButton');
+      checkinButton.style.display = 'block';
+    } else {
+      poemDiv.innerHTML = '<div style="text-align: center; color: #999; padding: 20px;">暂无诗词</div>';
+    }
+    
+    // Track current viewing coin index
+    let currentViewingIndex = dayIndex;
+    
+    // Function to update poem display
+    function updatePoem(index) {
+      const poem = poems[index - 1];
+      if (poem) {
+        currentViewingIndex = index;
+        poemDiv.innerHTML = renderPoem(index, poem);
+        
+        // Show checkin button and update its state
+        const checkinButton = document.getElementById('checkinButton');
+        checkinButton.style.display = 'block';
+        updateCheckinButton();
+      }
+    }
+    
+    // Function to update checkin button state
+    function updateCheckinButton() {
+      const checkinButton = document.getElementById('checkinButton');
+      const buttonSpan = checkinButton.querySelector('span');
+      const isChecked = saved.includes(currentViewingIndex);
+      
+      if (isChecked) {
+        buttonSpan.textContent = '已打卡 ✓';
+        checkinButton.classList.add('checked');
+      } else {
+        buttonSpan.textContent = '完成打卡';
+        checkinButton.classList.remove('checked');
+      }
+    }
+    
+    // Function to perform checkin
+    function performCheckin() {
+      const coin = coinElements[currentViewingIndex - 1];
+      if (!coin) return;
+      
+      const wasActive = coin.classList.contains('active');
+      coin.classList.toggle('active');
+      
+      if (!wasActive && !saved.includes(currentViewingIndex)) {
+        saved.push(currentViewingIndex);
+        localStorage.setItem('coins', JSON.stringify(saved));
+        
+        // Update progress
+        updateProgressDisplay();
+        
+        // Add celebration effect
+        coin.style.animation = 'none';
+        setTimeout(() => {
+          coin.style.animation = 'coinGlow 2s ease-in-out infinite';
+        }, 10);
+      } else if (wasActive) {
+        const index = saved.indexOf(currentViewingIndex);
+        if (index > -1) {
+          saved.splice(index, 1);
+          localStorage.setItem('coins', JSON.stringify(saved));
+          
+          // Update progress
+          updateProgressDisplay();
+        }
+      }
+      
+      updateCheckinButton();
+    }
+    
+    // Store all coin elements
+    const coinElements = [];
+    
+    // Function to highlight a specific coin
+    function highlightCoin(index) {
+      // Remove highlight from all coins
+      coinElements.forEach(coin => {
+        coin.classList.remove('today');
+      });
+      
+      // Add highlight to target coin
+      if (index > 0 && index <= total) {
+        const targetCoin = coinElements[index - 1];
+        if (targetCoin) {
+          targetCoin.classList.add('today');
+          
+          // Scroll to the coin
+          targetCoin.scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'center',
+            inline: 'center'
+          });
+          
+          // Add a temporary highlight animation
+          targetCoin.style.transition = 'all 0.3s ease';
+          setTimeout(() => {
+            targetCoin.style.transition = '';
+          }, 300);
+        }
+      }
+    }
+
+    for (let i = 1; i <= total; i++) {
+      const coin = document.createElement('div');
+      coin.className = 'coin';
+      
+      const poem = poems[i - 1];
+      const shortDate = getShortDateForIndex(i);
+      const poemTitle = poem ? poem.title : '';
+      
+      coin.innerHTML = `
+        <div class="coin-number">${i}</div>
+        <div class="coin-date">${shortDate}</div>
+        <div class="coin-title">${poemTitle}</div>
+      `;
+
+      if (saved.includes(i)) {
+        coin.classList.add('active');
+      }
+
+      if (i === dayIndex) {
+        coin.classList.add('today');
+      }
+
+      // Store coin element reference
+      coinElements.push(coin);
+      
+      coin.addEventListener('click', () => {
+        // Only update poem display when clicking a coin (view only, no checkin)
+        updatePoem(i);
+        
+        // Highlight clicked coin
+        highlightCoin(i);
+      });
+
+      grid.appendChild(coin);
+    }
+    
+    // Add click event to checkin button
+    const checkinButton = document.getElementById('checkinButton');
+    checkinButton.addEventListener('click', performCheckin);
+    
+    // Initialize checkin button state
+    if (todayPoem) {
+      updateCheckinButton();
+    }
+  </script>
+</body>
+</html>

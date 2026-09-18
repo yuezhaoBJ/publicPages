@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Public Pages · 站点导航</title>
+    <style>
+      :root {
+        --ink: #1c242b;
+        --muted: #5c6b76;
+        --paper: #f3efe6;
+        --card: #fffdf8;
+        --line: rgba(28, 36, 43, 0.12);
+        --accent: #0d6e6e;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", sans-serif;
+        color: var(--ink);
+        background:
+          radial-gradient(ellipse 70% 50% at 10% 0%, rgba(13, 110, 110, 0.12), transparent 55%),
+          radial-gradient(ellipse 60% 40% at 100% 100%, rgba(196, 120, 60, 0.1), transparent 50%),
+          linear-gradient(165deg, #e8eef1, #d5dde3 45%, #c8d2da);
+      }
+      main {
+        width: min(960px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 48px 0 72px;
+      }
+      h1 {
+        margin: 0 0 8px;
+        font-family: "ZCOOL XiaoWei", "Noto Serif SC", serif;
+        font-size: clamp(1.8rem, 4vw, 2.6rem);
+        font-weight: 400;
+        letter-spacing: 0.04em;
+      }
+      .sub {
+        margin: 0 0 36px;
+        color: var(--muted);
+        font-size: 0.98rem;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 14px;
+      }
+      a.card {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        padding: 18px 16px;
+        text-decoration: none;
+        color: inherit;
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        box-shadow: 0 8px 24px rgba(28, 36, 43, 0.06);
+        transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+      }
+      a.card:hover {
+        transform: translateY(-2px);
+        border-color: rgba(13, 110, 110, 0.35);
+        box-shadow: 0 12px 28px rgba(28, 36, 43, 0.1);
+      }
+      .name {
+        font-size: 1.05rem;
+        font-weight: 600;
+      }
+      .path {
+        font-size: 0.82rem;
+        color: var(--muted);
+        word-break: break-all;
+      }
+      .tag {
+        align-self: flex-start;
+        margin-top: auto;
+        padding: 2px 8px;
+        border-radius: 999px;
+        font-size: 0.72rem;
+        color: var(--accent);
+        background: rgba(13, 110, 110, 0.1);
+      }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;600&family=ZCOOL+XiaoWei&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <main>
+      <h1>Public Pages</h1>
+      <p class="sub">yuezhaoBJ 公开站点合集 · 点击进入各子站点</p>
+      <div class="grid">
+        <a class="card" href="./birthdayGame/"><span class="name">六月生日会</span><span class="path">/birthdayGame/</span><span class="tag">游戏</span></a>
+        <a class="card" href="./gesp-turtle-camp/"><span class="name">小海龟冲关营</span><span class="path">/gesp-turtle-camp/</span><span class="tag">学习</span></a>
+        <a class="card" href="./gridLayout_public/"><span class="name">田字格布局</span><span class="path">/gridLayout_public/</span><span class="tag">工具</span></a>
+        <a class="card" href="./KnowledgeGraph/"><span class="name">Knowledge Graph</span><span class="path">/KnowledgeGraph/</span><span class="tag">可视化</span></a>
+        <a class="card" href="./lottery-wheel/"><span class="name">转盘抽奖</span><span class="path">/lottery-wheel/</span><span class="tag">互动</span></a>
+        <a class="card" href="./tour_beijing/"><span class="name">故宫寻宝</span><span class="path">/tour_beijing/</span><span class="tag">打卡</span></a>
+        <a class="card" href="./tour_pingyao/"><span class="name">山西时空小特工</span><span class="path">/tour_pingyao/</span><span class="tag">打卡</span></a>
+        <a class="card" href="./vocal-master/"><span class="name">Vocab Master</span><span class="path">/vocal-master/</span><span class="tag">单词</span></a>
+        <a class="card" href="./school/"><span class="name">九九消寒诗词打卡</span><span class="path">/school/</span><span class="tag">诗词</span></a>
+        <a class="card" href="./teleprompter/"><span class="name">提词器</span><span class="path">/teleprompter/</span><span class="tag">工具</span></a>
+      </div>
+    </main>
+  </body>
+</html>

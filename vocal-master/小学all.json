@@ -1,0 +1,5105 @@
+[
+  {
+    "en": "where",
+    "zh": "哪里；在哪里",
+    "emoji": "📍",
+    "category": "Question Words",
+    "id": 0
+  },
+  {
+    "en": "in",
+    "zh": "在……内，在……中",
+    "emoji": "📦",
+    "category": "Prepositions",
+    "id": 1
+  },
+  {
+    "en": "box",
+    "zh": "盒子；箱子",
+    "emoji": "📦",
+    "category": "Objects",
+    "id": 2
+  },
+  {
+    "en": "cap",
+    "zh": "帽子",
+    "emoji": "🧢",
+    "category": "Clothes",
+    "id": 3
+  },
+  {
+    "en": "on",
+    "zh": "在……上",
+    "emoji": "➡️",
+    "category": "Prepositions",
+    "id": 4
+  },
+  {
+    "en": "next to",
+    "zh": "旁边，在……近旁",
+    "emoji": "↔️",
+    "category": "Prepositions",
+    "id": 5
+  },
+  {
+    "en": "schoolbag",
+    "zh": "书包",
+    "emoji": "🎒",
+    "category": "Objects",
+    "id": 6
+  },
+  {
+    "en": "ruler",
+    "zh": "尺子",
+    "emoji": "📏",
+    "category": "Stationery",
+    "id": 7
+  },
+  {
+    "en": "the",
+    "zh": "指已提到或正在谈到的人或物",
+    "emoji": "📝",
+    "category": "Articles",
+    "id": 8
+  },
+  {
+    "en": "my",
+    "zh": "我的",
+    "emoji": "🙋",
+    "category": "Pronouns",
+    "id": 9
+  },
+  {
+    "en": "under",
+    "zh": "在……之下",
+    "emoji": "⬇️",
+    "category": "Prepositions",
+    "id": 10
+  },
+  {
+    "en": "English",
+    "zh": "英文的；英语",
+    "emoji": "🇬🇧",
+    "category": "Languages",
+    "id": 11
+  },
+  {
+    "en": "desk",
+    "zh": "书桌",
+    "emoji": "🪑",
+    "category": "Objects",
+    "id": 12
+  },
+  {
+    "en": "clothes",
+    "zh": "衣服，衣物",
+    "emoji": "👗",
+    "category": "Clothes",
+    "id": 13
+  },
+  {
+    "en": "in order",
+    "zh": "整齐，秩序井然",
+    "emoji": "✅",
+    "category": "Phrases",
+    "id": 14
+  },
+  {
+    "en": "these",
+    "zh": "这些",
+    "emoji": "👉",
+    "category": "Demonstratives",
+    "id": 15
+  },
+  {
+    "en": "trousers",
+    "zh": "裤子，长裤",
+    "emoji": "👖",
+    "category": "Clothes",
+    "id": 16
+  },
+  {
+    "en": "sock",
+    "zh": "短袜",
+    "emoji": "🧦",
+    "category": "Clothes",
+    "id": 17
+  },
+  {
+    "en": "shorts",
+    "zh": "短裤",
+    "emoji": "🩳",
+    "category": "Clothes",
+    "id": 18
+  },
+  {
+    "en": "behind",
+    "zh": "在……之后",
+    "emoji": "↩️",
+    "category": "Prepositions",
+    "id": 19
+  },
+  {
+    "en": "pen",
+    "zh": "钢笔",
+    "emoji": "🖊️",
+    "category": "Stationery",
+    "id": 20
+  },
+  {
+    "en": "doll",
+    "zh": "洋娃娃；玩偶",
+    "emoji": "🪆",
+    "category": "Toys",
+    "id": 21
+  },
+  {
+    "en": "Chinese",
+    "zh": "中国的；中文；中国人",
+    "emoji": "🇨🇳",
+    "category": "Languages",
+    "id": 22
+  },
+  {
+    "en": "tidy",
+    "zh": "整理，收拾",
+    "emoji": "🧹",
+    "category": "Actions",
+    "id": 23
+  },
+  {
+    "en": "weather",
+    "zh": "天气",
+    "emoji": "🌤️",
+    "category": "Nature",
+    "id": 24
+  },
+  {
+    "en": "rainy",
+    "zh": "下雨的；多雨的",
+    "emoji": "🌧️",
+    "category": "Weather",
+    "id": 25
+  },
+  {
+    "en": "snowy",
+    "zh": "下雪的",
+    "emoji": "❄️",
+    "category": "Weather",
+    "id": 26
+  },
+  {
+    "en": "windy",
+    "zh": "有风的",
+    "emoji": "💨",
+    "category": "Weather",
+    "id": 27
+  },
+  {
+    "en": "cold",
+    "zh": "冷的",
+    "emoji": "🥶",
+    "category": "Weather/Feelings",
+    "id": 28
+  },
+  {
+    "en": "snow",
+    "zh": "雪；下雪",
+    "emoji": "❄️",
+    "category": "Weather",
+    "id": 29
+  },
+  {
+    "en": "sunny",
+    "zh": "晴朗的",
+    "emoji": "☀️",
+    "category": "Weather",
+    "id": 30
+  },
+  {
+    "en": "hot",
+    "zh": "热的",
+    "emoji": "🔥",
+    "category": "Weather/Feelings",
+    "id": 31
+  },
+  {
+    "en": "swim",
+    "zh": "游泳",
+    "emoji": "🏊",
+    "category": "Actions",
+    "id": 32
+  },
+  {
+    "en": "sea",
+    "zh": "海，海洋",
+    "emoji": "🌊",
+    "category": "Nature",
+    "id": 33
+  },
+  {
+    "en": "get up",
+    "zh": "起床",
+    "emoji": "⏰",
+    "category": "Actions",
+    "id": 34
+  },
+  {
+    "en": "park",
+    "zh": "公园",
+    "emoji": "🏞️",
+    "category": "Places",
+    "id": 35
+  },
+  {
+    "en": "OK",
+    "zh": "好的；行；很好",
+    "emoji": "👍",
+    "category": "Expressions",
+    "id": 36
+  },
+  {
+    "en": "rain",
+    "zh": "雨；下雨",
+    "emoji": "🌧️",
+    "category": "Weather",
+    "id": 37
+  },
+  {
+    "en": "kite",
+    "zh": "风筝",
+    "emoji": "🪁",
+    "category": "Toys",
+    "id": 38
+  },
+  {
+    "en": "umbrella",
+    "zh": "雨伞",
+    "emoji": "☂️",
+    "category": "Objects",
+    "id": 39
+  },
+  {
+    "en": "be",
+    "zh": "是",
+    "emoji": "✅",
+    "category": "Verbs",
+    "id": 40
+  },
+  {
+    "en": "wear",
+    "zh": "穿；戴；佩戴",
+    "emoji": "👚",
+    "category": "Actions",
+    "id": 41
+  },
+  {
+    "en": "coat",
+    "zh": "上衣，外套",
+    "emoji": "🧥",
+    "category": "Clothes",
+    "id": 42
+  },
+  {
+    "en": "cloudy",
+    "zh": "多云的",
+    "emoji": "☁️",
+    "category": "Weather",
+    "id": 43
+  },
+  {
+    "en": "raincoat",
+    "zh": "雨衣",
+    "emoji": "🧥🌧️",
+    "category": "Clothes",
+    "id": 44
+  },
+  {
+    "en": "Monday",
+    "zh": "星期一",
+    "emoji": "📅",
+    "category": "Days of the Week",
+    "id": 45
+  },
+  {
+    "en": "spacewoman",
+    "zh": "女航天员",
+    "emoji": "👩‍🚀",
+    "category": "People",
+    "id": 46
+  },
+  {
+    "en": "day",
+    "zh": "一天，一日",
+    "emoji": "🌞",
+    "category": "Time",
+    "id": 47
+  },
+  {
+    "en": "Tuesday",
+    "zh": "星期二",
+    "emoji": "📅",
+    "category": "Days of the Week",
+    "id": 48
+  },
+  {
+    "en": "library",
+    "zh": "图书馆",
+    "emoji": "📚",
+    "category": "Places",
+    "id": 49
+  },
+  {
+    "en": "about",
+    "zh": "关于；大约",
+    "emoji": "ℹ️",
+    "category": "Prepositions",
+    "id": 50
+  },
+  {
+    "en": "space",
+    "zh": "太空；空间",
+    "emoji": "🌌",
+    "category": "Nature",
+    "id": 51
+  },
+  {
+    "en": "when",
+    "zh": "什么时候；当……时候",
+    "emoji": "❓",
+    "category": "Question Words",
+    "id": 52
+  },
+  {
+    "en": "film",
+    "zh": "电影",
+    "emoji": "🎬",
+    "category": "Entertainment",
+    "id": 53
+  },
+  {
+    "en": "Wednesday",
+    "zh": "星期三",
+    "emoji": "📅",
+    "category": "Days of the Week",
+    "id": 54
+  },
+  {
+    "en": "museum",
+    "zh": "博物馆",
+    "emoji": "🏛️",
+    "category": "Places",
+    "id": 55
+  },
+  {
+    "en": "Thursday",
+    "zh": "星期四",
+    "emoji": "📅",
+    "category": "Days of the Week",
+    "id": 56
+  },
+  {
+    "en": "Friday",
+    "zh": "星期五",
+    "emoji": "📅",
+    "category": "Days of the Week",
+    "id": 57
+  },
+  {
+    "en": "always",
+    "zh": "总是，一直",
+    "emoji": "♾️",
+    "category": "Adverbs",
+    "id": 58
+  },
+  {
+    "en": "to",
+    "zh": "往，向",
+    "emoji": "➡️",
+    "category": "Prepositions",
+    "id": 59
+  },
+  {
+    "en": "Saturday",
+    "zh": "星期六",
+    "emoji": "📅",
+    "category": "Days of the Week",
+    "id": 60
+  },
+  {
+    "en": "Sunday",
+    "zh": "星期日",
+    "emoji": "📅",
+    "category": "Days of the Week",
+    "id": 61
+  },
+  {
+    "en": "football",
+    "zh": "足球",
+    "emoji": "⚽",
+    "category": "Sports",
+    "id": 62
+  },
+  {
+    "en": "opera",
+    "zh": "歌剧",
+    "emoji": "🎭",
+    "category": "Entertainment",
+    "id": 63
+  },
+  {
+    "en": "Beijing opera",
+    "zh": "京剧",
+    "emoji": "🎭",
+    "category": "Entertainment",
+    "id": 64
+  },
+  {
+    "en": "week",
+    "zh": "星期，周",
+    "emoji": "📅",
+    "category": "Time",
+    "id": 65
+  },
+  {
+    "en": "learn",
+    "zh": "学习",
+    "emoji": "📖",
+    "category": "Actions",
+    "id": 66
+  },
+  {
+    "en": "also",
+    "zh": "也",
+    "emoji": "➕",
+    "category": "Adverbs",
+    "id": 67
+  },
+  {
+    "en": "not",
+    "zh": "不",
+    "emoji": "❌",
+    "category": "Adverbs",
+    "id": 68
+  },
+  {
+    "en": "sport",
+    "zh": "体育运动",
+    "emoji": "🏀",
+    "category": "Sports",
+    "id": 69
+  },
+  {
+    "en": "breakfast",
+    "zh": "早餐",
+    "emoji": "🍳",
+    "category": "Food",
+    "id": 70
+  },
+  {
+    "en": "noodles",
+    "zh": "面条",
+    "emoji": "🍜",
+    "category": "Food",
+    "id": 71
+  },
+  {
+    "en": "bread",
+    "zh": "面包",
+    "emoji": "🍞",
+    "category": "Food",
+    "id": 72
+  },
+  {
+    "en": "milk",
+    "zh": "牛奶",
+    "emoji": "🥛",
+    "category": "Food",
+    "id": 73
+  },
+  {
+    "en": "egg",
+    "zh": "鸡蛋",
+    "emoji": "🥚",
+    "category": "Food",
+    "id": 74
+  },
+  {
+    "en": "very",
+    "zh": "非常，很……",
+    "emoji": "🔆",
+    "category": "Adverbs",
+    "id": 75
+  },
+  {
+    "en": "hungry",
+    "zh": "饥饿的",
+    "emoji": "🍽️",
+    "category": "Adjectives",
+    "id": 76
+  },
+  {
+    "en": "thirsty",
+    "zh": "口渴的",
+    "emoji": "🥤",
+    "category": "Adjectives",
+    "id": 77
+  },
+  {
+    "en": "juice",
+    "zh": "果汁",
+    "emoji": "🧃",
+    "category": "Food",
+    "id": 78
+  },
+  {
+    "en": "dinner",
+    "zh": "晚餐；正餐",
+    "emoji": "🍽️",
+    "category": "Food",
+    "id": 79
+  },
+  {
+    "en": "piece",
+    "zh": "片；块；部分",
+    "emoji": "🍰",
+    "category": "Measurements",
+    "id": 80
+  },
+  {
+    "en": "picnic",
+    "zh": "野餐",
+    "emoji": "🧺",
+    "category": "Activities",
+    "id": 81
+  },
+  {
+    "en": "food",
+    "zh": "食物",
+    "emoji": "🍲",
+    "category": "Food",
+    "id": 82
+  },
+  {
+    "en": "drink",
+    "zh": "饮料；喝",
+    "emoji": "🥤",
+    "category": "Food",
+    "id": 83
+  },
+  {
+    "en": "favourite",
+    "zh": "最喜爱的",
+    "emoji": "💖",
+    "category": "Adjectives",
+    "id": 84
+  },
+  {
+    "en": "hot dog",
+    "zh": "热狗",
+    "emoji": "🌭",
+    "category": "Food",
+    "id": 85
+  },
+  {
+    "en": "chicken",
+    "zh": "鸡肉",
+    "emoji": "🍗",
+    "category": "Food",
+    "id": 86
+  },
+  {
+    "en": "lovely",
+    "zh": "可爱的；令人愉快的",
+    "emoji": "😊",
+    "category": "Adjectives",
+    "id": 87
+  },
+  {
+    "en": "healthy",
+    "zh": "健康的",
+    "emoji": "💪",
+    "category": "Adjectives",
+    "id": 88
+  },
+  {
+    "en": "rice",
+    "zh": "大米；米饭",
+    "emoji": "🍚",
+    "category": "Food",
+    "id": 89
+  },
+  {
+    "en": "water",
+    "zh": "水",
+    "emoji": "💧",
+    "category": "Food",
+    "id": 90
+  },
+  {
+    "en": "meat",
+    "zh": "肉",
+    "emoji": "🥩",
+    "category": "Food",
+    "id": 91
+  },
+  {
+    "en": "fruit",
+    "zh": "水果",
+    "emoji": "🍎",
+    "category": "Food",
+    "id": 92
+  },
+  {
+    "en": "candy",
+    "zh": "糖果",
+    "emoji": "🍬",
+    "category": "Food",
+    "id": 93
+  },
+  {
+    "en": "spring",
+    "zh": "春天；春季",
+    "emoji": "🌸",
+    "category": "Seasons",
+    "id": 94
+  },
+  {
+    "en": "summer",
+    "zh": "夏天；夏季",
+    "emoji": "☀️",
+    "category": "Seasons",
+    "id": 95
+  },
+  {
+    "en": "autumn",
+    "zh": "秋天；秋季",
+    "emoji": "🍂",
+    "category": "Seasons",
+    "id": 96
+  },
+  {
+    "en": "winter",
+    "zh": "冬天；冬季",
+    "emoji": "❄️",
+    "category": "Seasons",
+    "id": 97
+  },
+  {
+    "en": "season",
+    "zh": "季节",
+    "emoji": "🗓️",
+    "category": "Seasons",
+    "id": 98
+  },
+  {
+    "en": "year",
+    "zh": "年",
+    "emoji": "📅",
+    "category": "Time",
+    "id": 99
+  },
+  {
+    "en": "warm",
+    "zh": "温暖的",
+    "emoji": "🔥",
+    "category": "Weather",
+    "id": 100
+  },
+  {
+    "en": "cool",
+    "zh": "凉爽的；冷静的",
+    "emoji": "🧊",
+    "category": "Weather",
+    "id": 101
+  },
+  {
+    "en": "sweater",
+    "zh": "毛衣，线衣",
+    "emoji": "🧥",
+    "category": "Clothes",
+    "id": 102
+  },
+  {
+    "en": "skirt",
+    "zh": "裙子",
+    "emoji": "👗",
+    "category": "Clothes",
+    "id": 103
+  },
+  {
+    "en": "leaf",
+    "zh": "树叶",
+    "emoji": "🍃",
+    "category": "Nature",
+    "id": 104
+  },
+  {
+    "en": "shirt",
+    "zh": "衬衫，衬衣",
+    "emoji": "👕",
+    "category": "Clothes",
+    "id": 105
+  },
+  {
+    "en": "row",
+    "zh": "划（船）",
+    "emoji": "🚣",
+    "category": "Actions",
+    "id": 106
+  },
+  {
+    "en": "boat",
+    "zh": "小船",
+    "emoji": "🛶",
+    "category": "Transport",
+    "id": 107
+  },
+  {
+    "en": "walk",
+    "zh": "散步，步行",
+    "emoji": "🚶",
+    "category": "Actions",
+    "id": 108
+  },
+  {
+    "en": "ice",
+    "zh": "冰",
+    "emoji": "🧊",
+    "category": "Nature",
+    "id": 109
+  },
+  {
+    "en": "ice-skating",
+    "zh": "滑冰",
+    "emoji": "⛸️",
+    "category": "Sports",
+    "id": 110
+  },
+  {
+    "en": "for",
+    "zh": "为，为了；给；对于；因为",
+    "emoji": "➡️",
+    "category": "Prepositions",
+    "id": 111
+  },
+  {
+    "en": "climb",
+    "zh": "爬，攀登",
+    "emoji": "🧗",
+    "category": "Actions",
+    "id": 112
+  },
+  {
+    "en": "tree",
+    "zh": "树",
+    "emoji": "🌳",
+    "category": "Nature",
+    "id": 113
+  },
+  {
+    "en": "river",
+    "zh": "河；江",
+    "emoji": "🏞️",
+    "category": "Nature",
+    "id": 114
+  },
+  {
+    "en": "fish",
+    "zh": "鱼",
+    "emoji": "🐟",
+    "category": "Animals",
+    "id": 115
+  },
+  {
+    "en": "lot",
+    "zh": "许多",
+    "emoji": "🧺",
+    "category": "Quantities",
+    "id": 116
+  },
+  {
+    "en": "sleep",
+    "zh": "睡；睡觉",
+    "emoji": "😴",
+    "category": "Actions",
+    "id": 117
+  },
+  {
+    "en": "time",
+    "zh": "时间",
+    "emoji": "⏰",
+    "category": "Time",
+    "id": 118
+  },
+  {
+    "en": "o’clock",
+    "zh": "……点钟",
+    "emoji": "🕰️",
+    "category": "Time",
+    "id": 119
+  },
+  {
+    "en": "up",
+    "zh": "向上；起来；在……之上",
+    "emoji": "⬆️",
+    "category": "Prepositions",
+    "id": 120
+  },
+  {
+    "en": "twenty",
+    "zh": "二十",
+    "emoji": "2️⃣0️⃣",
+    "category": "Numbers",
+    "id": 121
+  },
+  {
+    "en": "kid",
+    "zh": "小孩",
+    "emoji": "👦",
+    "category": "People",
+    "id": 122
+  },
+  {
+    "en": "classroom",
+    "zh": "教室",
+    "emoji": "🏫",
+    "category": "Places",
+    "id": 123
+  },
+  {
+    "en": "at",
+    "zh": "在；于；向",
+    "emoji": "📍",
+    "category": "Prepositions",
+    "id": 124
+  },
+  {
+    "en": "thirty",
+    "zh": "三十",
+    "emoji": "3️⃣0️⃣",
+    "category": "Numbers",
+    "id": 125
+  },
+  {
+    "en": "draw",
+    "zh": "画；绘画",
+    "emoji": "✏️",
+    "category": "Actions",
+    "id": 126
+  },
+  {
+    "en": "art",
+    "zh": "艺术；美术",
+    "emoji": "🎨",
+    "category": "Subjects",
+    "id": 127
+  },
+  {
+    "en": "forty",
+    "zh": "四十",
+    "emoji": "4️⃣0️⃣",
+    "category": "Numbers",
+    "id": 128
+  },
+  {
+    "en": "hurry",
+    "zh": "匆忙，急忙",
+    "emoji": "🏃",
+    "category": "Actions",
+    "id": 129
+  },
+  {
+    "en": "half",
+    "zh": "半，一半",
+    "emoji": "🌓",
+    "category": "Quantities",
+    "id": 130
+  },
+  {
+    "en": "past",
+    "zh": "过去的；过去",
+    "emoji": "⏳",
+    "category": "Time",
+    "id": 131
+  },
+  {
+    "en": "go",
+    "zh": "走；去",
+    "emoji": "🚶",
+    "category": "Actions",
+    "id": 132
+  },
+  {
+    "en": "birthday",
+    "zh": "生日",
+    "emoji": "🎂",
+    "category": "Events",
+    "id": 133
+  },
+  {
+    "en": "party",
+    "zh": "聚会，派对",
+    "emoji": "🎉",
+    "category": "Events",
+    "id": 134
+  },
+  {
+    "en": "happy",
+    "zh": "高兴的",
+    "emoji": "😊",
+    "category": "Emotions",
+    "id": 135
+  },
+  {
+    "en": "hand",
+    "zh": "指针；手",
+    "emoji": "✋",
+    "category": "Body Parts",
+    "id": 136
+  },
+  {
+    "en": "short",
+    "zh": "短的",
+    "emoji": "🔽",
+    "category": "Descriptions",
+    "id": 137
+  },
+  {
+    "en": "wake",
+    "zh": "醒来；唤醒",
+    "emoji": "☀️",
+    "category": "Actions",
+    "id": 138
+  },
+  {
+    "en": "lunch",
+    "zh": "午餐",
+    "emoji": "🍱",
+    "category": "Food",
+    "id": 139
+  },
+  {
+    "en": "home",
+    "zh": "家；住宅",
+    "emoji": "🏠",
+    "category": "Places",
+    "id": 140
+  },
+  {
+    "en": "worried",
+    "zh": "担心的",
+    "emoji": "😟",
+    "category": "Emotions",
+    "id": 141
+  },
+  {
+    "en": "late",
+    "zh": "晚的",
+    "emoji": "⏰",
+    "category": "Time",
+    "id": 142
+  },
+  {
+    "en": "worry",
+    "zh": "担心",
+    "emoji": "😰",
+    "category": "Emotions",
+    "id": 143
+  },
+  {
+    "en": "just",
+    "zh": "正，恰恰",
+    "emoji": "✔️",
+    "category": "Adverbs",
+    "id": 144
+  },
+  {
+    "en": "in time",
+    "zh": "及时，按时",
+    "emoji": "⏳",
+    "category": "Time",
+    "id": 145
+  },
+  {
+    "en": "welcome",
+    "zh": "欢迎",
+    "emoji": "👋",
+    "category": "Expressions",
+    "id": 146
+  },
+  {
+    "en": "feel",
+    "zh": "感受",
+    "emoji": "🤗",
+    "category": "Actions",
+    "id": 147
+  },
+  {
+    "en": "today",
+    "zh": "今天",
+    "emoji": "📅",
+    "category": "Time",
+    "id": 148
+  },
+  {
+    "en": "so",
+    "zh": "如此，非常",
+    "emoji": "🔆",
+    "category": "Adverbs",
+    "id": 149
+  },
+  {
+    "en": "excited",
+    "zh": "兴奋的",
+    "emoji": "🤩",
+    "category": "Emotions",
+    "id": 150
+  },
+  {
+    "en": "matter",
+    "zh": "问题；事情",
+    "emoji": "❓",
+    "category": "Nouns",
+    "id": 151
+  },
+  {
+    "en": "sad",
+    "zh": "悲伤的",
+    "emoji": "😢",
+    "category": "Emotions",
+    "id": 152
+  },
+  {
+    "en": "find",
+    "zh": "找到",
+    "emoji": "🔍",
+    "category": "Actions",
+    "id": 153
+  },
+  {
+    "en": "dog",
+    "zh": "狗",
+    "emoji": "🐶",
+    "category": "Animals",
+    "id": 154
+  },
+  {
+    "en": "cry",
+    "zh": "哭泣",
+    "emoji": "😭",
+    "category": "Actions",
+    "id": 155
+  },
+  {
+    "en": "together",
+    "zh": "一起",
+    "emoji": "🤝",
+    "category": "Adverbs",
+    "id": 156
+  },
+  {
+    "en": "with",
+    "zh": "有",
+    "emoji": "➕",
+    "category": "Prepositions",
+    "id": 157
+  },
+  {
+    "en": "model",
+    "zh": "模型",
+    "emoji": "🛍️",
+    "category": "Objects",
+    "id": 158
+  },
+  {
+    "en": "plane",
+    "zh": "飞机",
+    "emoji": "✈️",
+    "category": "Transport",
+    "id": 159
+  },
+  {
+    "en": "angry",
+    "zh": "生气的",
+    "emoji": "😠",
+    "category": "Emotions",
+    "id": 160
+  },
+  {
+    "en": "better",
+    "zh": "更好地",
+    "emoji": "👍",
+    "category": "Adverbs",
+    "id": 161
+  },
+  {
+    "en": "calm down",
+    "zh": "冷静",
+    "emoji": "😌",
+    "category": "Actions",
+    "id": 162
+  },
+  {
+    "en": "fix",
+    "zh": "修理",
+    "emoji": "🔧",
+    "category": "Actions",
+    "id": 163
+  },
+  {
+    "en": "his",
+    "zh": "他的",
+    "emoji": "👦",
+    "category": "Pronouns",
+    "id": 164
+  },
+  {
+    "en": "mouse",
+    "zh": "老鼠",
+    "emoji": "🐭",
+    "category": "Animals",
+    "id": 165
+  },
+  {
+    "en": "come",
+    "zh": "来",
+    "emoji": "➡️",
+    "category": "Actions",
+    "id": 166
+  },
+  {
+    "en": "have",
+    "zh": "有",
+    "emoji": "🙌",
+    "category": "Verbs",
+    "id": 167
+  },
+  {
+    "en": "idea",
+    "zh": "主意",
+    "emoji": "💡",
+    "category": "Nouns",
+    "id": 168
+  },
+  {
+    "en": "stop",
+    "zh": "停止",
+    "emoji": "🛑",
+    "category": "Actions",
+    "id": 169
+  },
+  {
+    "en": "but",
+    "zh": "但是",
+    "emoji": "❗",
+    "category": "Conjunctions",
+    "id": 170
+  },
+  {
+    "en": "animal",
+    "zh": "动物",
+    "emoji": "🐾",
+    "category": "Animals",
+    "id": 171
+  },
+  {
+    "en": "different",
+    "zh": "不同的",
+    "emoji": "⚖️",
+    "category": "Adjectives",
+    "id": 172
+  },
+  {
+    "en": "interesting",
+    "zh": "有趣的",
+    "emoji": "🤔",
+    "category": "Adjectives",
+    "id": 173
+  },
+  {
+    "en": "story",
+    "zh": "故事",
+    "emoji": "📖",
+    "category": "Nouns",
+    "id": 174
+  },
+  {
+    "en": "brush",
+    "zh": "刷子；画笔",
+    "emoji": "🖌️",
+    "category": "Objects",
+    "id": 175
+  },
+  {
+    "en": "remember",
+    "zh": "记住",
+    "emoji": "🧠",
+    "category": "Actions",
+    "id": 176
+  },
+  {
+    "en": "poem",
+    "zh": "诗",
+    "emoji": "📜",
+    "category": "Nouns",
+    "id": 177
+  },
+  {
+    "en": "hard",
+    "zh": "难的",
+    "emoji": "💪",
+    "category": "Adjectives",
+    "id": 178
+  },
+  {
+    "en": "may",
+    "zh": "可能，也许",
+    "emoji": "❓",
+    "category": "Modal Verbs",
+    "id": 179
+  },
+  {
+    "en": "try",
+    "zh": "尝试",
+    "emoji": "🎯",
+    "category": "Actions",
+    "id": 180
+  },
+  {
+    "en": "ill",
+    "zh": "生病的，不舒服的；疾病",
+    "emoji": "🤒",
+    "category": "Health",
+    "id": 181
+  },
+  {
+    "en": "call",
+    "zh": "打电话",
+    "emoji": "📞",
+    "category": "Actions",
+    "id": 182
+  },
+  {
+    "en": "her",
+    "zh": "她（宾格）；她的",
+    "emoji": "👧",
+    "category": "Pronouns",
+    "id": 183
+  },
+  {
+    "en": "tomorrow",
+    "zh": "明天",
+    "emoji": "📅",
+    "category": "Time",
+    "id": 184
+  },
+  {
+    "en": "should",
+    "zh": "应该",
+    "emoji": "✔️",
+    "category": "Modal Verbs",
+    "id": 185
+  },
+  {
+    "en": "rest",
+    "zh": "休息",
+    "emoji": "🛌",
+    "category": "Actions",
+    "id": 186
+  },
+  {
+    "en": "nature",
+    "zh": "自然",
+    "emoji": "🌿",
+    "category": "Environment",
+    "id": 187
+  },
+  {
+    "en": "Internet",
+    "zh": "互联网",
+    "emoji": "🌐",
+    "category": "Technology",
+    "id": 188
+  },
+  {
+    "en": "everything",
+    "zh": "每件事；一切",
+    "emoji": "🔄",
+    "category": "General",
+    "id": 189
+  },
+  {
+    "en": "air",
+    "zh": "空气",
+    "emoji": "💨",
+    "category": "Environment",
+    "id": 190
+  },
+  {
+    "en": "around",
+    "zh": "到处",
+    "emoji": "🔄",
+    "category": "Prepositions",
+    "id": 191
+  },
+  {
+    "en": "live",
+    "zh": "生活；活着",
+    "emoji": "🎥",
+    "category": "Verbs",
+    "id": 192
+  },
+  {
+    "en": "without",
+    "zh": "没有，缺乏",
+    "emoji": "🚫",
+    "category": "Prepositions",
+    "id": 193
+  },
+  {
+    "en": "farm",
+    "zh": "农场",
+    "emoji": "🚜",
+    "category": "Places",
+    "id": 194
+  },
+  {
+    "en": "feed",
+    "zh": "饲养，喂养",
+    "emoji": "🍽️",
+    "category": "Verbs",
+    "id": 195
+  },
+  {
+    "en": "pig",
+    "zh": "猪",
+    "emoji": "🐖",
+    "category": "Animals",
+    "id": 196
+  },
+  {
+    "en": "smell",
+    "zh": "闻，嗅",
+    "emoji": "👃",
+    "category": "Verbs",
+    "id": 197
+  },
+  {
+    "en": "listen",
+    "zh": "听",
+    "emoji": "👂",
+    "category": "Verbs",
+    "id": 198
+  },
+  {
+    "en": "hear",
+    "zh": "听到",
+    "emoji": "👂",
+    "category": "Verbs",
+    "id": 199
+  },
+  {
+    "en": "glass",
+    "zh": "玻璃",
+    "emoji": "🥛",
+    "category": "Objects",
+    "id": 200
+  },
+  {
+    "en": "turn",
+    "zh": "转向，改变",
+    "emoji": "🔄",
+    "category": "Verbs",
+    "id": 201
+  },
+  {
+    "en": "after",
+    "zh": "在……之后",
+    "emoji": "➡️",
+    "category": "Prepositions",
+    "id": 202
+  },
+  {
+    "en": "sun",
+    "zh": "太阳",
+    "emoji": "☀️",
+    "category": "Environment",
+    "id": 203
+  },
+  {
+    "en": "bad",
+    "zh": "糟糕的",
+    "emoji": "👎",
+    "category": "Adjectives",
+    "id": 204
+  },
+  {
+    "en": "start",
+    "zh": "开始",
+    "emoji": "🏁",
+    "category": "Verbs",
+    "id": 205
+  },
+  {
+    "en": "forest",
+    "zh": "森林，林区",
+    "emoji": "🌳",
+    "category": "Environment",
+    "id": 206
+  },
+  {
+    "en": "cross",
+    "zh": "穿过",
+    "emoji": "🚶",
+    "category": "Verbs",
+    "id": 207
+  },
+  {
+    "en": "gift",
+    "zh": "礼物",
+    "emoji": "🎁",
+    "category": "Objects",
+    "id": 208
+  },
+  {
+    "en": "firework",
+    "zh": "鞭炮，烟花",
+    "emoji": "🎆",
+    "category": "Objects",
+    "id": 209
+  },
+  {
+    "en": "January",
+    "zh": "一月",
+    "emoji": "🗓️",
+    "category": "Time",
+    "id": 210
+  },
+  {
+    "en": "goal",
+    "zh": "目标",
+    "emoji": "🎯",
+    "category": "Nouns",
+    "id": 211
+  },
+  {
+    "en": "fifty",
+    "zh": "五十",
+    "emoji": "5️⃣0️⃣",
+    "category": "Numbers",
+    "id": 212
+  },
+  {
+    "en": "sixty",
+    "zh": "六十",
+    "emoji": "6️⃣0️⃣",
+    "category": "Numbers",
+    "id": 213
+  },
+  {
+    "en": "Spring Festival",
+    "zh": "春节",
+    "emoji": "🎉",
+    "category": "Festivals",
+    "id": 214
+  },
+  {
+    "en": "Mrs",
+    "zh": "女士；太太",
+    "emoji": "👩‍🦳",
+    "category": "Titles",
+    "id": 215
+  },
+  {
+    "en": "lucky",
+    "zh": "幸运的",
+    "emoji": "🍀",
+    "category": "Adjectives",
+    "id": 216
+  },
+  {
+    "en": "money",
+    "zh": "金钱",
+    "emoji": "💰",
+    "category": "Nouns",
+    "id": 217
+  },
+  {
+    "en": "wish",
+    "zh": "希望",
+    "emoji": "🙏",
+    "category": "Verbs",
+    "id": 218
+  },
+  {
+    "en": "mean",
+    "zh": "意味着；代表",
+    "emoji": "❗",
+    "category": "Verbs",
+    "id": 219
+  },
+  {
+    "en": "Lantern Festival",
+    "zh": "元宵节",
+    "emoji": "🏮",
+    "category": "Festivals",
+    "id": 220
+  },
+  {
+    "en": "February",
+    "zh": "二月",
+    "emoji": "🗓️",
+    "category": "Time",
+    "id": 221
+  },
+  {
+    "en": "riddle",
+    "zh": "谜语",
+    "emoji": "❓",
+    "category": "Nouns",
+    "id": 222
+  },
+  {
+    "en": "guess",
+    "zh": "猜测",
+    "emoji": "🤔",
+    "category": "Verbs",
+    "id": 223
+  },
+  {
+    "en": "of",
+    "zh": "……的",
+    "emoji": "🔗",
+    "category": "Prepositions",
+    "id": 224
+  },
+  {
+    "en": "loud",
+    "zh": "大声的",
+    "emoji": "🔊",
+    "category": "Adjectives",
+    "id": 225
+  },
+  {
+    "en": "sound",
+    "zh": "声音",
+    "emoji": "🔉",
+    "category": "Nouns",
+    "id": 226
+  },
+  {
+    "en": "run",
+    "zh": "跑",
+    "emoji": "🏃",
+    "category": "Verbs",
+    "id": 227
+  },
+  {
+    "en": "wait",
+    "zh": "等待",
+    "emoji": "⌛",
+    "category": "Actions",
+    "id": 228
+  },
+  {
+    "en": "mouth",
+    "zh": "嘴",
+    "emoji": "👄",
+    "category": "Body Parts",
+    "id": 229
+  },
+  {
+    "en": "best",
+    "zh": "最好的",
+    "emoji": "🏆",
+    "category": "Qualities",
+    "id": 230
+  },
+  {
+    "en": "share",
+    "zh": "分享",
+    "emoji": "🤝",
+    "category": "Actions",
+    "id": 231
+  },
+  {
+    "en": "little",
+    "zh": "小的",
+    "emoji": "👶",
+    "category": "Size",
+    "id": 232
+  },
+  {
+    "en": "small",
+    "zh": "小的",
+    "emoji": "📏",
+    "category": "Size",
+    "id": 233
+  },
+  {
+    "en": "excuse me",
+    "zh": "抱歉",
+    "emoji": "🙏",
+    "category": "Politeness",
+    "id": 234
+  },
+  {
+    "en": "please",
+    "zh": "请",
+    "emoji": "🙏",
+    "category": "Politeness",
+    "id": 235
+  },
+  {
+    "en": "bat",
+    "zh": "球拍",
+    "emoji": "🏏",
+    "category": "Sports Equipment",
+    "id": 236
+  },
+  {
+    "en": "use",
+    "zh": "使用",
+    "emoji": "🛠️",
+    "category": "Actions",
+    "id": 237
+  },
+  {
+    "en": "sorry",
+    "zh": "抱歉的；难过的",
+    "emoji": "😔",
+    "category": "Politeness",
+    "id": 238
+  },
+  {
+    "en": "would",
+    "zh": "将会",
+    "emoji": "🔮",
+    "category": "Grammar",
+    "id": 239
+  },
+  {
+    "en": "open",
+    "zh": "打开；敞开的",
+    "emoji": "🚪",
+    "category": "Actions",
+    "id": 240
+  },
+  {
+    "en": "door",
+    "zh": "门",
+    "emoji": "🚪",
+    "category": "Objects",
+    "id": 241
+  },
+  {
+    "en": "problem",
+    "zh": "问题",
+    "emoji": "❓",
+    "category": "Concepts",
+    "id": 242
+  },
+  {
+    "en": "must",
+    "zh": "必须",
+    "emoji": "✔️",
+    "category": "Grammar",
+    "id": 243
+  },
+  {
+    "en": "stand",
+    "zh": "站立",
+    "emoji": "🧍",
+    "category": "Actions",
+    "id": 244
+  },
+  {
+    "en": "polite",
+    "zh": "有礼貌的",
+    "emoji": "🤵",
+    "category": "Personality",
+    "id": 245
+  },
+  {
+    "en": "could",
+    "zh": "能够（表礼貌）",
+    "emoji": "👍",
+    "category": "Grammar",
+    "id": 246
+  },
+  {
+    "en": "get",
+    "zh": "给；得到；使得",
+    "emoji": "🎁",
+    "category": "Actions",
+    "id": 247
+  },
+  {
+    "en": "monkey",
+    "zh": "猴子",
+    "emoji": "🐒",
+    "category": "Animals",
+    "id": 248
+  },
+  {
+    "en": "banana",
+    "zh": "香蕉",
+    "emoji": "🍌",
+    "category": "Food",
+    "id": 249
+  },
+  {
+    "en": "garden",
+    "zh": "果园，花园",
+    "emoji": "🌻",
+    "category": "Places",
+    "id": 250
+  },
+  {
+    "en": "want",
+    "zh": "想要",
+    "emoji": "🤲",
+    "category": "Verbs",
+    "id": 251
+  },
+  {
+    "en": "sandwich",
+    "zh": "三明治",
+    "emoji": "🥪",
+    "category": "Food",
+    "id": 252
+  },
+  {
+    "en": "tomato",
+    "zh": "西红柿",
+    "emoji": "🍅",
+    "category": "Food",
+    "id": 253
+  },
+  {
+    "en": "potato",
+    "zh": "土豆",
+    "emoji": "🥔",
+    "category": "Food",
+    "id": 254
+  },
+  {
+    "en": "meatball",
+    "zh": "肉丸子",
+    "emoji": "🍖",
+    "category": "Food",
+    "id": 255
+  },
+  {
+    "en": "eat",
+    "zh": "吃",
+    "emoji": "🍽️",
+    "category": "Actions",
+    "id": 256
+  },
+  {
+    "en": "steak",
+    "zh": "牛排",
+    "emoji": "🥩",
+    "category": "Food",
+    "id": 257
+  },
+  {
+    "en": "soup",
+    "zh": "汤，羹",
+    "emoji": "🍲",
+    "category": "Food",
+    "id": 258
+  },
+  {
+    "en": "dessert",
+    "zh": "甜点",
+    "emoji": "🍰",
+    "category": "Food",
+    "id": 259
+  },
+  {
+    "en": "ice cream",
+    "zh": "冰激凌",
+    "emoji": "🍦",
+    "category": "Food",
+    "id": 260
+  },
+  {
+    "en": "chopsticks",
+    "zh": "筷子",
+    "emoji": "🥢",
+    "category": "Utensils",
+    "id": 261
+  },
+  {
+    "en": "them",
+    "zh": "他们；她们；它们",
+    "emoji": "👥",
+    "category": "Pronouns",
+    "id": 262
+  },
+  {
+    "en": "cut",
+    "zh": "切，割",
+    "emoji": "🔪",
+    "category": "Actions",
+    "id": 263
+  },
+  {
+    "en": "knife",
+    "zh": "餐刀，刀具",
+    "emoji": "🔪",
+    "category": "Utensils",
+    "id": 264
+  },
+  {
+    "en": "fork",
+    "zh": "餐叉",
+    "emoji": "🍴",
+    "category": "Utensils",
+    "id": 265
+  },
+  {
+    "en": "right",
+    "zh": "右边的；正确的",
+    "emoji": "➡️",
+    "category": "Directions",
+    "id": 266
+  },
+  {
+    "en": "left",
+    "zh": "左边的",
+    "emoji": "⬅️",
+    "category": "Directions",
+    "id": 267
+  },
+  {
+    "en": "apple",
+    "zh": "苹果",
+    "emoji": "🍎",
+    "category": "Food",
+    "id": 268
+  },
+  {
+    "en": "salad",
+    "zh": "沙拉",
+    "emoji": "🥗",
+    "category": "Food",
+    "id": 269
+  },
+  {
+    "en": "first",
+    "zh": "首先",
+    "emoji": "1️⃣",
+    "category": "Order",
+    "id": 270
+  },
+  {
+    "en": "next",
+    "zh": "接下来，随后",
+    "emoji": "➡️",
+    "category": "Order",
+    "id": 271
+  },
+  {
+    "en": "then",
+    "zh": "然后，接着",
+    "emoji": "⏭️",
+    "category": "Order",
+    "id": 272
+  },
+  {
+    "en": "last",
+    "zh": "最后",
+    "emoji": "🏁",
+    "category": "Order",
+    "id": 273
+  },
+  {
+    "en": "writer",
+    "zh": "作家",
+    "emoji": "✍️",
+    "category": "People",
+    "id": 274
+  },
+  {
+    "en": "future",
+    "zh": "未来，将来",
+    "emoji": "🔮",
+    "category": "Time",
+    "id": 275
+  },
+  {
+    "en": "sick",
+    "zh": "生病的",
+    "emoji": "🤒",
+    "category": "Health",
+    "id": 276
+  },
+  {
+    "en": "born",
+    "zh": "出生；天生的",
+    "emoji": "👶",
+    "category": "Life",
+    "id": 277
+  },
+  {
+    "en": "fall over",
+    "zh": "跌倒",
+    "emoji": "🤸",
+    "category": "Actions",
+    "id": 278
+  },
+  {
+    "en": "from then on",
+    "zh": "从那时起",
+    "emoji": "⏳",
+    "category": "Time",
+    "id": 279
+  },
+  {
+    "en": "come true",
+    "zh": "（希望或愿望）实现",
+    "emoji": "✨",
+    "category": "Achievement",
+    "id": 280
+  },
+  {
+    "en": "exercise",
+    "zh": "锻炼；练习",
+    "emoji": "🏋️",
+    "category": "Health",
+    "id": 281
+  },
+  {
+    "en": "minute",
+    "zh": "分钟，分；一会儿",
+    "emoji": "🕒",
+    "category": "Time",
+    "id": 282
+  },
+  {
+    "en": "take ... lesson",
+    "zh": "上……课程",
+    "emoji": "📚",
+    "category": "Education",
+    "id": 283
+  },
+  {
+    "en": "give up",
+    "zh": "放弃，认输",
+    "emoji": "🏳️",
+    "category": "Actions",
+    "id": 284
+  },
+  {
+    "en": "scientist",
+    "zh": "科学家",
+    "emoji": "🔬",
+    "category": "People",
+    "id": 285
+  },
+  {
+    "en": "the Medal of the Republic",
+    "zh": "共和国勋章",
+    "emoji": "🏅",
+    "category": "Awards",
+    "id": 286
+  },
+  {
+    "en": "honour",
+    "zh": "荣誉",
+    "emoji": "🎖️",
+    "category": "Awards",
+    "id": 287
+  },
+  {
+    "en": "hybrid rice",
+    "zh": "杂交水稻",
+    "emoji": "🌾",
+    "category": "Agriculture",
+    "id": 288
+  },
+  {
+    "en": "once",
+    "zh": "一次；曾经",
+    "emoji": "1️⃣",
+    "category": "Time",
+    "id": 289
+  },
+  {
+    "en": "farmer",
+    "zh": "农民，农夫",
+    "emoji": "👩‍🌾",
+    "category": "People",
+    "id": 290
+  },
+  {
+    "en": "invent",
+    "zh": "发明",
+    "emoji": "💡",
+    "category": "Actions",
+    "id": 291
+  },
+  {
+    "en": "output",
+    "zh": "产量",
+    "emoji": "📈",
+    "category": "Economy",
+    "id": 292
+  },
+  {
+    "en": "each",
+    "zh": "每个，各，各自",
+    "emoji": "🔢",
+    "category": "General",
+    "id": 293
+  },
+  {
+    "en": "square",
+    "zh": "广场；正方形",
+    "emoji": "◼️",
+    "category": "Shapes & Places",
+    "id": 294
+  },
+  {
+    "en": "the Summer Palace",
+    "zh": "颐和园",
+    "emoji": "🏯",
+    "category": "Places",
+    "id": 295
+  },
+  {
+    "en": "well-kept",
+    "zh": "保存完好的",
+    "emoji": "👌",
+    "category": "Qualities",
+    "id": 296
+  },
+  {
+    "en": "colourful",
+    "zh": "五彩缤纷的；生动的",
+    "emoji": "🌈",
+    "category": "Descriptions",
+    "id": 297
+  },
+  {
+    "en": "international",
+    "zh": "国际的；国际上的",
+    "emoji": "🌍",
+    "category": "General",
+    "id": 298
+  },
+  {
+    "en": "airport",
+    "zh": "机场",
+    "emoji": "✈️",
+    "category": "Places",
+    "id": 299
+  },
+  {
+    "en": "modern",
+    "zh": "现代的；近代的",
+    "emoji": "🏙️",
+    "category": "Descriptions",
+    "id": 300
+  },
+  {
+    "en": "computer",
+    "zh": "计算机；电脑",
+    "emoji": "💻",
+    "category": "Technology",
+    "id": 301
+  },
+  {
+    "en": "subway",
+    "zh": "地铁",
+    "emoji": "🚇",
+    "category": "Transport",
+    "id": 302
+  },
+  {
+    "en": "line",
+    "zh": "线，线条；行，排",
+    "emoji": "➖",
+    "category": "Shapes",
+    "id": 303
+  },
+  {
+    "en": "its",
+    "zh": "它的",
+    "emoji": "📍",
+    "category": "General",
+    "id": 304
+  },
+  {
+    "en": "Beijing roast duck",
+    "zh": "北京烤鸭",
+    "emoji": "🦆",
+    "category": "Food",
+    "id": 305
+  },
+  {
+    "en": "hot pot",
+    "zh": "火锅",
+    "emoji": "🍲",
+    "category": "Food",
+    "id": 306
+  },
+  {
+    "en": "Central Axis",
+    "zh": "中轴线",
+    "emoji": "🛤️",
+    "category": "Places",
+    "id": 307
+  },
+  {
+    "en": "Bell and Drum Towers",
+    "zh": "钟鼓楼",
+    "emoji": "🔔🥁",
+    "category": "Places",
+    "id": 308
+  },
+  {
+    "en": "northern",
+    "zh": "在北部的；北方的",
+    "emoji": "⬆️",
+    "category": "Directions",
+    "id": 309
+  },
+  {
+    "en": "end",
+    "zh": "最后部分；末尾；（使）结束",
+    "emoji": "🏁",
+    "category": "General",
+    "id": 310
+  },
+  {
+    "en": "bird's-eye view",
+    "zh": "鸟瞰",
+    "emoji": "🦅",
+    "category": "View",
+    "id": 311
+  },
+  {
+    "en": "the Palace Museum",
+    "zh": "故宫博物院",
+    "emoji": "🏯",
+    "category": "Places",
+    "id": 312
+  },
+  {
+    "en": "wooden",
+    "zh": "木质的",
+    "emoji": "🪵",
+    "category": "Material",
+    "id": 313
+  },
+  {
+    "en": "palace",
+    "zh": "宫殿；大厦",
+    "emoji": "🏰",
+    "category": "Places",
+    "id": 314
+  },
+  {
+    "en": "treasure",
+    "zh": "财富；财宝",
+    "emoji": "💰",
+    "category": "Wealth",
+    "id": 315
+  },
+  {
+    "en": "bus",
+    "zh": "公交车，巴士",
+    "emoji": "🚌",
+    "category": "Transport",
+    "id": 316
+  },
+  {
+    "en": "gate",
+    "zh": "大门；登机口",
+    "emoji": "🚪",
+    "category": "Places",
+    "id": 317
+  },
+  {
+    "en": "Tian'anmen Square Complex",
+    "zh": "天安门广场及建筑群",
+    "emoji": "🀄",
+    "category": "Places",
+    "id": 318
+  },
+  {
+    "en": "southern",
+    "zh": "南部的；南方的",
+    "emoji": "⬇️",
+    "category": "Directions",
+    "id": 319
+  },
+  {
+    "en": "own",
+    "zh": "自己的；拥有",
+    "emoji": "🔑",
+    "category": "Possession",
+    "id": 320
+  },
+  {
+    "en": "young",
+    "zh": "年轻的；青少年的",
+    "emoji": "🧒",
+    "category": "People",
+    "id": 321
+  },
+  {
+    "en": "Bird's Nest",
+    "zh": "鸟巢",
+    "emoji": "🐦",
+    "category": "Places",
+    "id": 322
+  },
+  {
+    "en": "well-known",
+    "zh": "众所周知的；著名的",
+    "emoji": "⭐",
+    "category": "Descriptions",
+    "id": 323
+  },
+  {
+    "en": "hold",
+    "zh": "召开，举行",
+    "emoji": "🤝",
+    "category": "Actions",
+    "id": 324
+  },
+  {
+    "en": "ceremony",
+    "zh": "仪式；典礼",
+    "emoji": "🎉",
+    "category": "Events",
+    "id": 325
+  },
+  {
+    "en": "come out",
+    "zh": "出来，出现",
+    "emoji": "🚶‍♂️",
+    "category": "Phrasal Verb",
+    "id": 326
+  },
+  {
+    "en": "job",
+    "zh": "工作",
+    "emoji": "💼",
+    "category": "Work",
+    "id": 327
+  },
+  {
+    "en": "cabbage",
+    "zh": "卷心菜",
+    "emoji": "🥬",
+    "category": "Food",
+    "id": 328
+  },
+  {
+    "en": "come from",
+    "zh": "来自",
+    "emoji": "🌍",
+    "category": "Phrasal Verb",
+    "id": 329
+  },
+  {
+    "en": "give",
+    "zh": "提供；给予",
+    "emoji": "🎁",
+    "category": "Verbs",
+    "id": 330
+  },
+  {
+    "en": "else",
+    "zh": "其他的，另外的；此外",
+    "emoji": "➕",
+    "category": "Adjectives",
+    "id": 331
+  },
+  {
+    "en": "Mother's Day",
+    "zh": "母亲节",
+    "emoji": "👩‍👧",
+    "category": "Holidays",
+    "id": 332
+  },
+  {
+    "en": "Teachers' Day",
+    "zh": "教师节",
+    "emoji": "👩‍🏫",
+    "category": "Holidays",
+    "id": 333
+  },
+  {
+    "en": "pear",
+    "zh": "梨",
+    "emoji": "🍐",
+    "category": "Food",
+    "id": 334
+  },
+  {
+    "en": "peach",
+    "zh": "桃子",
+    "emoji": "🍑",
+    "category": "Food",
+    "id": 335
+  },
+  {
+    "en": "wood",
+    "zh": "木材，木料",
+    "emoji": "🪵",
+    "category": "Material",
+    "id": 336
+  },
+  {
+    "en": "paper",
+    "zh": "纸",
+    "emoji": "📄",
+    "category": "Material",
+    "id": 337
+  },
+  {
+    "en": "table",
+    "zh": "桌子，餐桌，饭桌",
+    "emoji": "🪑",
+    "category": "Furniture",
+    "id": 338
+  },
+  {
+    "en": "chair",
+    "zh": "(单人)椅子",
+    "emoji": "🪑",
+    "category": "Furniture",
+    "id": 339
+  },
+  {
+    "en": "house",
+    "zh": "房子，住宅；大楼",
+    "emoji": "🏠",
+    "category": "Building",
+    "id": 340
+  },
+  {
+    "en": "wash away",
+    "zh": "冲走",
+    "emoji": "🌊",
+    "category": "Phrasal Verb",
+    "id": 341
+  },
+  {
+    "en": "in short",
+    "zh": "简而言之",
+    "emoji": "📝",
+    "category": "Phrases",
+    "id": 342
+  },
+  {
+    "en": "medicine",
+    "zh": "药，药品",
+    "emoji": "💊",
+    "category": "Health",
+    "id": 343
+  },
+  {
+    "en": "balance",
+    "zh": "平衡",
+    "emoji": "⚖️",
+    "category": "Concepts",
+    "id": 344
+  },
+  {
+    "en": "recycle",
+    "zh": "回收利用；使再循环",
+    "emoji": "♻️",
+    "category": "Environment",
+    "id": 345
+  },
+  {
+    "en": "print",
+    "zh": "打印；印刷",
+    "emoji": "🖨️",
+    "category": "Actions",
+    "id": 346
+  },
+  {
+    "en": "step on",
+    "zh": "踩在......上",
+    "emoji": "👣",
+    "category": "Phrasal Verb",
+    "id": 347
+  },
+  {
+    "en": "go shopping",
+    "zh": "去购物",
+    "emoji": "🛍️",
+    "category": "Actions",
+    "id": 348
+  },
+  {
+    "en": "toy",
+    "zh": "玩具",
+    "emoji": "🧸",
+    "category": "Item",
+    "id": 349
+  },
+  {
+    "en": "quite a few",
+    "zh": "不少，很多",
+    "emoji": "🔢",
+    "category": "Phrases",
+    "id": 350
+  },
+  {
+    "en": "go well with ...",
+    "zh": "跟......搭配得好",
+    "emoji": "✔️",
+    "category": "Phrases",
+    "id": 351
+  },
+  {
+    "en": "try ... on",
+    "zh": "试一试",
+    "emoji": "👗",
+    "category": "Phrases",
+    "id": 352
+  },
+  {
+    "en": "pair",
+    "zh": "一双，一对",
+    "emoji": "👟",
+    "category": "Clothes",
+    "id": 353
+  },
+  {
+    "en": "shoe",
+    "zh": "鞋子",
+    "emoji": "👞",
+    "category": "Clothes",
+    "id": 354
+  },
+  {
+    "en": "size",
+    "zh": "大小，尺码",
+    "emoji": "📏",
+    "category": "Measurements",
+    "id": 355
+  },
+  {
+    "en": "comfortable",
+    "zh": "舒适的，舒服的",
+    "emoji": "🛋️",
+    "category": "Adjectives",
+    "id": 356
+  },
+  {
+    "en": "off",
+    "zh": "减价；关掉",
+    "emoji": "❌",
+    "category": "Adverbs",
+    "id": 357
+  },
+  {
+    "en": "flea market",
+    "zh": "跳蚤市场",
+    "emoji": "🛒",
+    "category": "Places",
+    "id": 358
+  },
+  {
+    "en": "sell",
+    "zh": "卖，出售",
+    "emoji": "💰",
+    "category": "Actions",
+    "id": 359
+  },
+  {
+    "en": "ago",
+    "zh": "之前，以前",
+    "emoji": "⌛",
+    "category": "Adverbs",
+    "id": 360
+  },
+  {
+    "en": "white",
+    "zh": "白色；白色的，白的",
+    "emoji": "⚪",
+    "category": "Color",
+    "id": 361
+  },
+  {
+    "en": "shape",
+    "zh": "形状，外形，轮廓",
+    "emoji": "🔷",
+    "category": "Nouns",
+    "id": 362
+  },
+  {
+    "en": "online",
+    "zh": "网上的；在网上",
+    "emoji": "💻",
+    "category": "Adjectives",
+    "id": 363
+  },
+  {
+    "en": "choose",
+    "zh": "选择",
+    "emoji": "🤔",
+    "category": "Verbs",
+    "id": 364
+  },
+  {
+    "en": "app (=application)",
+    "zh": "应用程序，应用软件",
+    "emoji": "📱",
+    "category": "Technology",
+    "id": 365
+  },
+  {
+    "en": "goods",
+    "zh": "货物；商品",
+    "emoji": "📦",
+    "category": "Nouns",
+    "id": 366
+  },
+  {
+    "en": "decide",
+    "zh": "确定；选定",
+    "emoji": "✅",
+    "category": "Verbs",
+    "id": 367
+  },
+  {
+    "en": "address",
+    "zh": "地址",
+    "emoji": "🏠",
+    "category": "Nouns",
+    "id": 368
+  },
+  {
+    "en": "pay",
+    "zh": "付款；偿还；给予",
+    "emoji": "💵",
+    "category": "Verbs",
+    "id": 369
+  },
+  {
+    "en": "worker",
+    "zh": "工人；员工",
+    "emoji": "👷",
+    "category": "Occupation",
+    "id": 370
+  },
+  {
+    "en": "pilot",
+    "zh": "飞行员；驾驶飞行器",
+    "emoji": "🛩️",
+    "category": "Occupation",
+    "id": 371
+  },
+  {
+    "en": "astronaut",
+    "zh": "宇航员；航天员",
+    "emoji": "👨‍🚀",
+    "category": "Occupation",
+    "id": 372
+  },
+  {
+    "en": "be interested in ...",
+    "zh": "对……感兴趣",
+    "emoji": "✨",
+    "category": "Phrases",
+    "id": 373
+  },
+  {
+    "en": "rocket",
+    "zh": "火箭",
+    "emoji": "🚀",
+    "category": "Transport",
+    "id": 374
+  },
+  {
+    "en": "launch",
+    "zh": "发射",
+    "emoji": "🚀",
+    "category": "Verbs",
+    "id": 375
+  },
+  {
+    "en": "spaceship",
+    "zh": "宇宙飞船",
+    "emoji": "🛸",
+    "category": "Transport",
+    "id": 376
+  },
+  {
+    "en": "research",
+    "zh": "研究；做研究",
+    "emoji": "🔬",
+    "category": "Actions",
+    "id": 377
+  },
+  {
+    "en": "mess",
+    "zh": "杂乱，凌乱",
+    "emoji": "💥",
+    "category": "Emotions",
+    "id": 378
+  },
+  {
+    "en": "yesterday",
+    "zh": "昨天",
+    "emoji": "📅",
+    "category": "Time",
+    "id": 379
+  },
+  {
+    "en": "whose",
+    "zh": "谁的",
+    "emoji": "❓",
+    "category": "Pronouns",
+    "id": 380
+  },
+  {
+    "en": "living room",
+    "zh": "客厅；起居室",
+    "emoji": "🛋️",
+    "category": "Places",
+    "id": 381
+  },
+  {
+    "en": "happen",
+    "zh": "发生",
+    "emoji": "⚡",
+    "category": "Verbs",
+    "id": 382
+  },
+  {
+    "en": "wet",
+    "zh": "弄湿，把……尿湿；湿的，潮的",
+    "emoji": "💧",
+    "category": "Emotions",
+    "id": 383
+  },
+  {
+    "en": "forget",
+    "zh": "遗忘；忘记",
+    "emoji": "❌🧠",
+    "category": "Verbs",
+    "id": 384
+  },
+  {
+    "en": "deal with",
+    "zh": "处理",
+    "emoji": "🤝",
+    "category": "Verbs",
+    "id": 385
+  },
+  {
+    "en": "bring",
+    "zh": "拿来；带到；引起",
+    "emoji": "👜",
+    "category": "Verbs",
+    "id": 386
+  },
+  {
+    "en": "back",
+    "zh": "往回；后面；背部",
+    "emoji": "↩️",
+    "category": "Directions",
+    "id": 387
+  },
+  {
+    "en": "list",
+    "zh": "列表，清单",
+    "emoji": "📋",
+    "category": "Nouns",
+    "id": 388
+  },
+  {
+    "en": "check",
+    "zh": "检查，核对；查看",
+    "emoji": "✔️",
+    "category": "Verbs",
+    "id": 389
+  },
+  {
+    "en": "method",
+    "zh": "方法",
+    "emoji": "🧪",
+    "category": "Nouns",
+    "id": 390
+  },
+  {
+    "en": "word",
+    "zh": "词汇，单词",
+    "emoji": "🔤",
+    "category": "Nouns",
+    "id": 391
+  },
+  {
+    "en": "Ms (AmE Ms.)",
+    "zh": "女士（用于婚姻状况不明或不愿提及婚姻状况的女子的姓或姓名之前）",
+    "emoji": "👩",
+    "category": "Titles",
+    "id": 392
+  },
+  {
+    "en": "card",
+    "zh": "卡，卡片",
+    "emoji": "💳",
+    "category": "Nouns",
+    "id": 393
+  },
+  {
+    "en": "go over",
+    "zh": "温习；重复",
+    "emoji": "🔄",
+    "category": "Verbs",
+    "id": 394
+  },
+  {
+    "en": "free",
+    "zh": "自由的；免费的",
+    "emoji": "🆓",
+    "category": "Adjectives",
+    "id": 395
+  },
+  {
+    "en": "song",
+    "zh": "歌，歌曲",
+    "emoji": "🎵",
+    "category": "Nouns",
+    "id": 396
+  },
+  {
+    "en": "aloud",
+    "zh": "大声地",
+    "emoji": "🗣️",
+    "category": "Adverbs",
+    "id": 397
+  },
+  {
+    "en": "solve",
+    "zh": "解决；处理",
+    "emoji": "🧩",
+    "category": "Verbs",
+    "id": 398
+  },
+  {
+    "en": "break",
+    "zh": "打破，打碎；损坏",
+    "emoji": "💔",
+    "category": "Verbs",
+    "id": 399
+  },
+  {
+    "en": "afraid",
+    "zh": "害怕的；担忧的",
+    "emoji": "😨",
+    "category": "Adjectives",
+    "id": 400
+  },
+  {
+    "en": "close",
+    "zh": "关闭；合上",
+    "emoji": "🔒",
+    "category": "Verbs",
+    "id": 401
+  },
+  {
+    "en": "window",
+    "zh": "窗户",
+    "emoji": "🪟",
+    "category": "Nouns",
+    "id": 402
+  },
+  {
+    "en": "away",
+    "zh": "不在，离开",
+    "emoji": "🚶‍♂️",
+    "category": "Adverbs",
+    "id": 403
+  },
+  {
+    "en": "put up",
+    "zh": "张贴",
+    "emoji": "📌",
+    "category": "Verbs",
+    "id": 404
+  },
+  {
+    "en": "notice",
+    "zh": "布告；通知",
+    "emoji": "📢",
+    "category": "Nouns",
+    "id": 405
+  },
+  {
+    "en": "picture",
+    "zh": "照片，图像",
+    "emoji": "🖼️",
+    "category": "Nouns",
+    "id": 406
+  },
+  {
+    "en": "phone",
+    "zh": "电话",
+    "emoji": "📞",
+    "category": "Nouns",
+    "id": 407
+  },
+  {
+    "en": "part",
+    "zh": "部分；（动植物的）器官，部位",
+    "emoji": "🧩",
+    "category": "Nouns",
+    "id": 408
+  },
+  {
+    "en": "grass",
+    "zh": "草，小草；草地",
+    "emoji": "🌿",
+    "category": "Nature",
+    "id": 409
+  },
+  {
+    "en": "root",
+    "zh": "（植物的）根，根茎",
+    "emoji": "🌱",
+    "category": "Nature",
+    "id": 410
+  },
+  {
+    "en": "stem",
+    "zh": "（植物的）茎，干",
+    "emoji": "🌿",
+    "category": "Nature",
+    "id": 411
+  },
+  {
+    "en": "seed",
+    "zh": "种子，籽",
+    "emoji": "🌰",
+    "category": "Nature",
+    "id": 412
+  },
+  {
+    "en": "ground",
+    "zh": "地，地面；土地",
+    "emoji": "🌍",
+    "category": "Nature",
+    "id": 413
+  },
+  {
+    "en": "take in",
+    "zh": "吸收",
+    "emoji": "🌬️",
+    "category": "Verbs",
+    "id": 414
+  },
+  {
+    "en": "soil",
+    "zh": "泥土，土壤",
+    "emoji": "🟫",
+    "category": "Nature",
+    "id": 415
+  },
+  {
+    "en": "carry",
+    "zh": "运输；传输(水、电等)",
+    "emoji": "🚚",
+    "category": "Verbs",
+    "id": 416
+  },
+  {
+    "en": "protect",
+    "zh": "保护",
+    "emoji": "🛡️",
+    "category": "Verbs",
+    "id": 417
+  },
+  {
+    "en": "foot (pl. feet)",
+    "zh": "脚，足",
+    "emoji": "🦶",
+    "category": "Body Parts",
+    "id": 418
+  },
+  {
+    "en": "wind",
+    "zh": "风",
+    "emoji": "💨",
+    "category": "Nature",
+    "id": 419
+  },
+  {
+    "en": "take ... away",
+    "zh": "把……带走",
+    "emoji": "🚶",
+    "category": "Verbs",
+    "id": 420
+  },
+  {
+    "en": "stick",
+    "zh": "粘，贴；棍，棍状物",
+    "emoji": "🥢",
+    "category": "Objects",
+    "id": 421
+  },
+  {
+    "en": "thick",
+    "zh": "厚的；粗的",
+    "emoji": "🧱",
+    "category": "Adjectives",
+    "id": 422
+  },
+  {
+    "en": "growth",
+    "zh": "成长；生长",
+    "emoji": "🌱",
+    "category": "Nouns",
+    "id": 423
+  },
+  {
+    "en": "bean",
+    "zh": "豆，菜豆；豆科植物",
+    "emoji": "🫘",
+    "category": "Nature",
+    "id": 424
+  },
+  {
+    "en": "begin",
+    "zh": "开始，开端",
+    "emoji": "🔛",
+    "category": "Verbs",
+    "id": 425
+  },
+  {
+    "en": "sunlight",
+    "zh": "阳光，日光",
+    "emoji": "☀️",
+    "category": "Nature",
+    "id": 426
+  },
+  {
+    "en": "little by little",
+    "zh": "逐渐地，渐渐地",
+    "emoji": "➕",
+    "category": "Adverbs",
+    "id": 427
+  },
+  {
+    "en": "pod",
+    "zh": "豆荚",
+    "emoji": "🟢",
+    "category": "Nature",
+    "id": 428
+  },
+  {
+    "en": "solar term",
+    "zh": "节气",
+    "emoji": "☀️",
+    "category": "Nature",
+    "id": 429
+  },
+  {
+    "en": "crop",
+    "zh": "庄稼，作物",
+    "emoji": "🌾",
+    "category": "Agriculture",
+    "id": 430
+  },
+  {
+    "en": "north",
+    "zh": "北方；北部",
+    "emoji": "⬆️",
+    "category": "Directions",
+    "id": 431
+  },
+  {
+    "en": "grow",
+    "zh": "生长；栽种",
+    "emoji": "🌱",
+    "category": "Actions",
+    "id": 432
+  },
+  {
+    "en": "thing",
+    "zh": "物品；事情；情形",
+    "emoji": "📦",
+    "category": "Objects",
+    "id": 433
+  },
+  {
+    "en": "harvest",
+    "zh": "收割，收获",
+    "emoji": "🌾",
+    "category": "Agriculture",
+    "id": 434
+  },
+  {
+    "en": "keep",
+    "zh": "保持",
+    "emoji": "🤲",
+    "category": "Actions",
+    "id": 435
+  },
+  {
+    "en": "store up",
+    "zh": "储存",
+    "emoji": "🏪",
+    "category": "Actions",
+    "id": 436
+  },
+  {
+    "en": "camp",
+    "zh": "营地；露营，野营",
+    "emoji": "🏕️",
+    "category": "Outdoor",
+    "id": 437
+  },
+  {
+    "en": "trip",
+    "zh": "旅行，旅游；出行",
+    "emoji": "🧳",
+    "category": "Travel",
+    "id": 438
+  },
+  {
+    "en": "pick",
+    "zh": "摘；选择，挑选",
+    "emoji": "🍒",
+    "category": "Actions",
+    "id": 439
+  },
+  {
+    "en": "vegetable",
+    "zh": "蔬菜",
+    "emoji": "🥦",
+    "category": "Food",
+    "id": 440
+  },
+  {
+    "en": "set",
+    "zh": "设置",
+    "emoji": "⚙️",
+    "category": "Actions",
+    "id": 441
+  },
+  {
+    "en": "ourselves",
+    "zh": "我们自己",
+    "emoji": "🙋‍♂️🙋‍♀️",
+    "category": "Pronouns",
+    "id": 442
+  },
+  {
+    "en": "myself",
+    "zh": "我自己；我本人",
+    "emoji": "🙋",
+    "category": "Pronouns",
+    "id": 443
+  },
+  {
+    "en": "never",
+    "zh": "从不，不可能",
+    "emoji": "🚫",
+    "category": "Adverbs",
+    "id": 444
+  },
+  {
+    "en": "before",
+    "zh": "以前，从前",
+    "emoji": "⏳",
+    "category": "Time",
+    "id": 445
+  },
+  {
+    "en": "take out",
+    "zh": "拿出去",
+    "emoji": "👜",
+    "category": "Actions",
+    "id": 446
+  },
+  {
+    "en": "rubbish",
+    "zh": "垃圾",
+    "emoji": "🗑️",
+    "category": "Waste",
+    "id": 447
+  },
+  {
+    "en": "all",
+    "zh": "都是，全",
+    "emoji": "🔢",
+    "category": "Quantifiers",
+    "id": 448
+  },
+  {
+    "en": "helper",
+    "zh": "帮手",
+    "emoji": "🤝",
+    "category": "Person",
+    "id": 449
+  },
+  {
+    "en": "poster",
+    "zh": "海报",
+    "emoji": "📃",
+    "category": "Objects",
+    "id": 450
+  },
+  {
+    "en": "ask",
+    "zh": "询问，邀请",
+    "emoji": "❓",
+    "category": "Actions",
+    "id": 451
+  },
+  {
+    "en": "service",
+    "zh": "服务",
+    "emoji": "🛎️",
+    "category": "Nouns",
+    "id": 452
+  },
+  {
+    "en": "sort",
+    "zh": "把……分类；种类",
+    "emoji": "📂",
+    "category": "Actions",
+    "id": 453
+  },
+  {
+    "en": "wall",
+    "zh": "墙，墙壁",
+    "emoji": "🧱",
+    "category": "Objects",
+    "id": 454
+  },
+  {
+    "en": "helpful",
+    "zh": "有帮助的",
+    "emoji": "👍",
+    "category": "Adjectives",
+    "id": 455
+  },
+  {
+    "en": "recyclable",
+    "zh": "可回收利用的",
+    "emoji": "♻️",
+    "category": "Adjectives",
+    "id": 456
+  },
+  {
+    "en": "harmful",
+    "zh": "有害的",
+    "emoji": "☠️",
+    "category": "Adjectives",
+    "id": 457
+  },
+  {
+    "en": "waste",
+    "zh": "废弃物",
+    "emoji": "🚮",
+    "category": "Nouns",
+    "id": 458
+  },
+  {
+    "en": "bag",
+    "zh": "袋，包",
+    "emoji": "👜",
+    "category": "Objects",
+    "id": 459
+  },
+  {
+    "en": "bin",
+    "zh": "垃圾桶",
+    "emoji": "🗑️",
+    "category": "Waste",
+    "id": 460
+  },
+  {
+    "en": "will",
+    "zh": "将要",
+    "emoji": "⏳",
+    "category": "Modal Verbs",
+    "id": 461
+  },
+  {
+    "en": "amazing",
+    "zh": "令人惊喜的；了不起的",
+    "emoji": "🤩",
+    "category": "Adjectives",
+    "id": 462
+  },
+  {
+    "en": "famous",
+    "zh": "著名的，出名的",
+    "emoji": "🌟",
+    "category": "Adjectives",
+    "id": 463
+  },
+  {
+    "en": "hometown",
+    "zh": "家乡",
+    "emoji": "🏡",
+    "category": "Places",
+    "id": 464
+  },
+  {
+    "en": "stay",
+    "zh": "停留，待",
+    "emoji": "🏨",
+    "category": "Actions",
+    "id": 465
+  },
+  {
+    "en": "few",
+    "zh": "一些，少许",
+    "emoji": "🌱",
+    "category": "Quantifiers",
+    "id": 466
+  },
+  {
+    "en": "by",
+    "zh": "乘，通过",
+    "emoji": "🚶",
+    "category": "Prepositions",
+    "id": 467
+  },
+  {
+    "en": "choice",
+    "zh": "选择",
+    "emoji": "✅",
+    "category": "Nouns",
+    "id": 468
+  },
+  {
+    "en": "train",
+    "zh": "火车，列车",
+    "emoji": "🚆",
+    "category": "Transport",
+    "id": 469
+  },
+  {
+    "en": "car",
+    "zh": "汽车，小轿车",
+    "emoji": "🚗",
+    "category": "Transport",
+    "id": 470
+  },
+  {
+    "en": "sure",
+    "zh": "确定",
+    "emoji": "✔️",
+    "category": "Adjectives",
+    "id": 471
+  },
+  {
+    "en": "only",
+    "zh": "仅，只",
+    "emoji": "🔒",
+    "category": "Adverbs",
+    "id": 472
+  },
+  {
+    "en": "hour",
+    "zh": "小时",
+    "emoji": "🕒",
+    "category": "Time",
+    "id": 473
+  },
+  {
+    "en": "high-speed train",
+    "zh": "高铁",
+    "emoji": "🚄",
+    "category": "Transport",
+    "id": 474
+  },
+  {
+    "en": "convenient",
+    "zh": "方便的",
+    "emoji": "👍",
+    "category": "Adjectives",
+    "id": 475
+  },
+  {
+    "en": "more than",
+    "zh": "比……更多",
+    "emoji": "➕",
+    "category": "Phrases",
+    "id": 476
+  },
+  {
+    "en": "plan",
+    "zh": "计划",
+    "emoji": "📅",
+    "category": "Nouns",
+    "id": 477
+  },
+  {
+    "en": "p.m.",
+    "zh": "下午",
+    "emoji": "🌙",
+    "category": "Time",
+    "id": 478
+  },
+  {
+    "en": "history",
+    "zh": "历史",
+    "emoji": "📜",
+    "category": "Nouns",
+    "id": 479
+  },
+  {
+    "en": "busy",
+    "zh": "忙的，繁忙的",
+    "emoji": "🏃",
+    "category": "Adjectives",
+    "id": 480
+  },
+  {
+    "en": "leave",
+    "zh": "离开，出发",
+    "emoji": "🏃‍♂️",
+    "category": "Actions",
+    "id": 481
+  },
+  {
+    "en": "a.m.",
+    "zh": "上午",
+    "emoji": "🌞",
+    "category": "Time",
+    "id": 482
+  },
+  {
+    "en": "say",
+    "zh": "说",
+    "emoji": "🗣️",
+    "category": "Actions",
+    "id": 483
+  },
+  {
+    "en": "ride",
+    "zh": "骑",
+    "emoji": "🚴",
+    "category": "Actions",
+    "id": 484
+  },
+  {
+    "en": "bike",
+    "zh": "自行车",
+    "emoji": "🚲",
+    "category": "Transport",
+    "id": 485
+  },
+  {
+    "en": "east",
+    "zh": "东方；东部",
+    "emoji": "➡️",
+    "category": "Directions",
+    "id": 486
+  },
+  {
+    "en": "west",
+    "zh": "西方；西部",
+    "emoji": "⬅️",
+    "category": "Directions",
+    "id": 487
+  },
+  {
+    "en": "view",
+    "zh": "景色；观点",
+    "emoji": "🌄",
+    "category": "Nouns",
+    "id": 488
+  },
+  {
+    "en": "clear",
+    "zh": "清澈的",
+    "emoji": "💧",
+    "category": "Adjectives",
+    "id": 489
+  },
+  {
+    "en": "slow",
+    "zh": "慢的，缓慢的",
+    "emoji": "🐢",
+    "category": "Adjectives",
+    "id": 490
+  },
+  {
+    "en": "which",
+    "zh": "哪个，哪些",
+    "emoji": "❓",
+    "category": "Question Words",
+    "id": 491
+  },
+  {
+    "en": "journey",
+    "zh": "旅行，旅程",
+    "emoji": "🛤️",
+    "category": "Travel",
+    "id": 492
+  },
+  {
+    "en": "difficult",
+    "zh": "困难的",
+    "emoji": "💪",
+    "category": "Adjectives",
+    "id": 493
+  },
+  {
+    "en": "ancient",
+    "zh": "古代的，古老的",
+    "emoji": "🏺",
+    "category": "Adjectives",
+    "id": 494
+  },
+  {
+    "en": "India",
+    "zh": "印度",
+    "emoji": "🇮🇳",
+    "category": "Countries",
+    "id": 495
+  },
+  {
+    "en": "Pigsy",
+    "zh": "猪八戒",
+    "emoji": "🐷",
+    "category": "Characters",
+    "id": 496
+  },
+  {
+    "en": "subject",
+    "zh": "学科，主题",
+    "emoji": "📚",
+    "category": "Education",
+    "id": 497
+  },
+  {
+    "en": "maths",
+    "zh": "数学",
+    "emoji": "➗",
+    "category": "Education",
+    "id": 498
+  },
+  {
+    "en": "music",
+    "zh": "音乐",
+    "emoji": "🎵",
+    "category": "Arts",
+    "id": 499
+  },
+  {
+    "en": "calligraphy",
+    "zh": "书法",
+    "emoji": "✒️",
+    "category": "Arts",
+    "id": 500
+  },
+  {
+    "en": "PE",
+    "zh": "体育",
+    "emoji": "🏀",
+    "category": "Education",
+    "id": 501
+  },
+  {
+    "en": "important",
+    "zh": "重要的",
+    "emoji": "⚠️",
+    "category": "Adjectives",
+    "id": 502
+  },
+  {
+    "en": "over",
+    "zh": "在……远处 / 上面",
+    "emoji": "⬆️",
+    "category": "Prepositions",
+    "id": 503
+  },
+  {
+    "en": "quiet",
+    "zh": "安静的；不嘈杂的",
+    "emoji": "🤫",
+    "category": "Adjectives",
+    "id": 504
+  },
+  {
+    "en": "place",
+    "zh": "地方；地点",
+    "emoji": "📍",
+    "category": "Nouns",
+    "id": 505
+  },
+  {
+    "en": "hill",
+    "zh": "小山，山岗",
+    "emoji": "⛰️",
+    "category": "Nature",
+    "id": 506
+  },
+  {
+    "en": "take",
+    "zh": "带领，引领；拿",
+    "emoji": "🤲",
+    "category": "Verbs",
+    "id": 507
+  },
+  {
+    "en": "some",
+    "zh": "一些",
+    "emoji": "🔢",
+    "category": "Quantifiers",
+    "id": 508
+  },
+  {
+    "en": "delicious",
+    "zh": "美味的",
+    "emoji": "😋",
+    "category": "Adjectives",
+    "id": 509
+  },
+  {
+    "en": "us",
+    "zh": "我们（宾格）",
+    "emoji": "👥",
+    "category": "Pronouns",
+    "id": 510
+  },
+  {
+    "en": "practice",
+    "zh": "练习",
+    "emoji": "🏋️",
+    "category": "Verbs",
+    "id": 511
+  },
+  {
+    "en": "every",
+    "zh": "每个，每一个",
+    "emoji": "🕒",
+    "category": "Quantifiers",
+    "id": 512
+  },
+  {
+    "en": "write",
+    "zh": "写，书写",
+    "emoji": "✍️",
+    "category": "Verbs",
+    "id": 513
+  },
+  {
+    "en": "character",
+    "zh": "符号，文字；角色",
+    "emoji": "🅰️",
+    "category": "Nouns",
+    "id": 514
+  },
+  {
+    "en": "Mid-Autumn Festival",
+    "zh": "中秋节",
+    "emoji": "🌕",
+    "category": "Festivals",
+    "id": 515
+  },
+  {
+    "en": "fifteenth",
+    "zh": "第十五",
+    "emoji": "🔟➕5️⃣",
+    "category": "Numbers",
+    "id": 516
+  },
+  {
+    "en": "eighth",
+    "zh": "第八（个）",
+    "emoji": "8️⃣",
+    "category": "Numbers",
+    "id": 517
+  },
+  {
+    "en": "month",
+    "zh": "月（份）",
+    "emoji": "📅",
+    "category": "Time",
+    "id": 518
+  },
+  {
+    "en": "lunar calendar",
+    "zh": "阴历",
+    "emoji": "🌓",
+    "category": "Time",
+    "id": 519
+  },
+  {
+    "en": "usually",
+    "zh": "通常；一般地",
+    "emoji": "👍",
+    "category": "Adverbs",
+    "id": 520
+  },
+  {
+    "en": "middle",
+    "zh": "中间",
+    "emoji": "⚖️",
+    "category": "Positions",
+    "id": 521
+  },
+  {
+    "en": "moon",
+    "zh": "月亮",
+    "emoji": "🌙",
+    "category": "Nature",
+    "id": 522
+  },
+  {
+    "en": "cake",
+    "zh": "蛋糕",
+    "emoji": "🍰",
+    "category": "Food",
+    "id": 523
+  },
+  {
+    "en": "any",
+    "zh": "任何，一些",
+    "emoji": "🔀",
+    "category": "Quantifiers",
+    "id": 524
+  },
+  {
+    "en": "Double Ninth Festival",
+    "zh": "重阳节",
+    "emoji": "🎋",
+    "category": "Festivals",
+    "id": 525
+  },
+  {
+    "en": "ninth",
+    "zh": "第九（个）",
+    "emoji": "9️⃣",
+    "category": "Numbers",
+    "id": 526
+  },
+  {
+    "en": "elder",
+    "zh": "年长者；有威望的长者",
+    "emoji": "👴",
+    "category": "People",
+    "id": 527
+  },
+  {
+    "en": "here",
+    "zh": "这里",
+    "emoji": "📍",
+    "category": "Positions",
+    "id": 528
+  },
+  {
+    "en": "life",
+    "zh": "生活，生命；寿命",
+    "emoji": "🌱",
+    "category": "Nouns",
+    "id": 529
+  },
+  {
+    "en": "something",
+    "zh": "某物，某事",
+    "emoji": "🔍",
+    "category": "Pronouns",
+    "id": 530
+  },
+  {
+    "en": "care",
+    "zh": "关心；照顾",
+    "emoji": "❤️",
+    "category": "Verbs",
+    "id": 531
+  },
+  {
+    "en": "Tomb-sweeping Day",
+    "zh": "清明节",
+    "emoji": "🪦",
+    "category": "Festivals",
+    "id": 532
+  },
+  {
+    "en": "traditional",
+    "zh": "传统的，习俗的",
+    "emoji": "🎎",
+    "category": "Adjectives",
+    "id": 533
+  },
+  {
+    "en": "mostly",
+    "zh": "大多，一般",
+    "emoji": "🔝",
+    "category": "Adverbs",
+    "id": 534
+  },
+  {
+    "en": "tomb",
+    "zh": "坟墓",
+    "emoji": "⚰️",
+    "category": "Nouns",
+    "id": 535
+  },
+  {
+    "en": "their",
+    "zh": "他们的",
+    "emoji": "👥",
+    "category": "Pronouns",
+    "id": 536
+  },
+  {
+    "en": "national",
+    "zh": "国家的",
+    "emoji": "🏳️",
+    "category": "Adjectives",
+    "id": 537
+  },
+  {
+    "en": "hero",
+    "zh": "英雄",
+    "emoji": "🦸",
+    "category": "Nouns",
+    "id": 538
+  },
+  {
+    "en": "public",
+    "zh": "公共的",
+    "emoji": "🏢",
+    "category": "Adjectives",
+    "id": 539
+  },
+  {
+    "en": "south",
+    "zh": "南方；南部",
+    "emoji": "⬇️",
+    "category": "Directions",
+    "id": 540
+  },
+  {
+    "en": "ball",
+    "zh": "球",
+    "emoji": "⚽",
+    "category": "Sports",
+    "id": 541
+  },
+  {
+    "en": "email",
+    "zh": "电子邮件",
+    "emoji": "📧",
+    "category": "Communication",
+    "id": 542
+  },
+  {
+    "en": "map",
+    "zh": "地图",
+    "emoji": "🗺️",
+    "category": "Geography",
+    "id": 543
+  },
+  {
+    "en": "China",
+    "zh": "中国",
+    "emoji": "🇨🇳",
+    "category": "Countries",
+    "id": 544
+  },
+  {
+    "en": "Asia",
+    "zh": "亚洲",
+    "emoji": "🌏",
+    "category": "Continent",
+    "id": 545
+  },
+  {
+    "en": "rooster",
+    "zh": "公鸡",
+    "emoji": "🐓",
+    "category": "Animals",
+    "id": 546
+  },
+  {
+    "en": "Canada",
+    "zh": "加拿大",
+    "emoji": "🇨🇦",
+    "category": "Countries",
+    "id": 547
+  },
+  {
+    "en": "North America",
+    "zh": "北美洲",
+    "emoji": "🌎",
+    "category": "Continent",
+    "id": 548
+  },
+  {
+    "en": "UK",
+    "zh": "英国",
+    "emoji": "🇬🇧",
+    "category": "Countries",
+    "id": 549
+  },
+  {
+    "en": "Europe",
+    "zh": "欧洲",
+    "emoji": "🌍",
+    "category": "Continent",
+    "id": 550
+  },
+  {
+    "en": "capital",
+    "zh": "首都",
+    "emoji": "🏛️",
+    "category": "Cities",
+    "id": 551
+  },
+  {
+    "en": "city",
+    "zh": "城市，都市",
+    "emoji": "🏙️",
+    "category": "Cities",
+    "id": 552
+  },
+  {
+    "en": "France",
+    "zh": "法国",
+    "emoji": "🇫🇷",
+    "category": "Countries",
+    "id": 553
+  },
+  {
+    "en": "Paris",
+    "zh": "巴黎",
+    "emoji": "🗼",
+    "category": "Cities",
+    "id": 554
+  },
+  {
+    "en": "speak",
+    "zh": "说，讲话",
+    "emoji": "🗣️",
+    "category": "Actions",
+    "id": 555
+  },
+  {
+    "en": "French",
+    "zh": "法语；法国的，法国人的",
+    "emoji": "🇫🇷",
+    "category": "Language/Nationality",
+    "id": 556
+  },
+  {
+    "en": "Canadian",
+    "zh": "加拿大人；加拿大的，加拿大人的",
+    "emoji": "🇨🇦",
+    "category": "Nationality",
+    "id": 557
+  },
+  {
+    "en": "London",
+    "zh": "伦敦",
+    "emoji": "🎡",
+    "category": "Cities",
+    "id": 558
+  },
+  {
+    "en": "River Thames",
+    "zh": "泰晤士河",
+    "emoji": "🌊",
+    "category": "Geography",
+    "id": 559
+  },
+  {
+    "en": "other",
+    "zh": "别的，其他的",
+    "emoji": "⚪",
+    "category": "Adjectives",
+    "id": 560
+  },
+  {
+    "en": "Big Ben",
+    "zh": "大本钟",
+    "emoji": "🕰️",
+    "category": "Landmark",
+    "id": 561
+  },
+  {
+    "en": "clock",
+    "zh": "钟，钟表",
+    "emoji": "⏰",
+    "category": "Objects",
+    "id": 562
+  },
+  {
+    "en": "heavy",
+    "zh": "沉的，沉重的",
+    "emoji": "⚖️",
+    "category": "Adjectives",
+    "id": 563
+  },
+  {
+    "en": "tower",
+    "zh": "塔，塔楼",
+    "emoji": "🏰",
+    "category": "Architecture",
+    "id": 564
+  },
+  {
+    "en": "wheel",
+    "zh": "轮，轮子",
+    "emoji": "🔄",
+    "category": "Objects",
+    "id": 565
+  },
+  {
+    "en": "sky wheel",
+    "zh": "摩天轮",
+    "emoji": "🎡",
+    "category": "Ride",
+    "id": 566
+  },
+  {
+    "en": "bank",
+    "zh": "岸；银行",
+    "emoji": "🏦",
+    "category": "Place/Finance",
+    "id": 567
+  },
+  {
+    "en": "top",
+    "zh": "顶端，顶部",
+    "emoji": "🔝",
+    "category": "Positions",
+    "id": 568
+  },
+  {
+    "en": "New Delhi",
+    "zh": "新德里",
+    "emoji": "🏙️",
+    "category": "Cities",
+    "id": 569
+  },
+  {
+    "en": "Taj Mahal",
+    "zh": "泰姬陵",
+    "emoji": "🏯",
+    "category": "Landmark",
+    "id": 570
+  },
+  {
+    "en": "most",
+    "zh": "最大，最多",
+    "emoji": "🔝",
+    "category": "Adjectives",
+    "id": 571
+  },
+  {
+    "en": "wonder",
+    "zh": "奇观；惊奇",
+    "emoji": "🌟",
+    "category": "Nouns",
+    "id": 572
+  },
+  {
+    "en": "Italy",
+    "zh": "意大利",
+    "emoji": "🇮🇹",
+    "category": "Countries",
+    "id": 573
+  },
+  {
+    "en": "Rome",
+    "zh": "罗马",
+    "emoji": "🏛️",
+    "category": "Cities",
+    "id": 574
+  },
+  {
+    "en": "Venice",
+    "zh": "威尼斯",
+    "emoji": "🚤",
+    "category": "Cities",
+    "id": 575
+  },
+  {
+    "en": "taxi",
+    "zh": "出租车，的士",
+    "emoji": "🚕",
+    "category": "Transport",
+    "id": 576
+  },
+  {
+    "en": "Washington, D. C.",
+    "zh": "华盛顿特区",
+    "emoji": "🏙️",
+    "category": "Cities",
+    "id": 577
+  },
+  {
+    "en": "UN",
+    "zh": "联合国",
+    "emoji": "🌐",
+    "category": "Organizations",
+    "id": 578
+  },
+  {
+    "en": "New York",
+    "zh": "纽约",
+    "emoji": "🗽",
+    "category": "Cities",
+    "id": 579
+  },
+  {
+    "en": "work",
+    "zh": "工作",
+    "emoji": "💼",
+    "category": "Actions",
+    "id": 580
+  },
+  {
+    "en": "popular",
+    "zh": "受欢迎的",
+    "emoji": "👍",
+    "category": "Adjectives",
+    "id": 581
+  },
+  {
+    "en": "badminton",
+    "zh": "羽毛球",
+    "emoji": "🏸",
+    "category": "Sports",
+    "id": 582
+  },
+  {
+    "en": "hit",
+    "zh": "打，击",
+    "emoji": "👊",
+    "category": "Actions",
+    "id": 583
+  },
+  {
+    "en": "miss",
+    "zh": "未击中",
+    "emoji": "❌",
+    "category": "Actions",
+    "id": 584
+  },
+  {
+    "en": "another",
+    "zh": "再加一个的",
+    "emoji": "➕",
+    "category": "Determiners",
+    "id": 585
+  },
+  {
+    "en": "British",
+    "zh": "英国人",
+    "emoji": "🇬🇧",
+    "category": "Nationality",
+    "id": 586
+  },
+  {
+    "en": "much",
+    "zh": "很多，非常",
+    "emoji": "🔢",
+    "category": "Adverbs",
+    "id": 587
+  },
+  {
+    "en": "tennis",
+    "zh": "网球",
+    "emoji": "🎾",
+    "category": "Sports",
+    "id": 588
+  },
+  {
+    "en": "rugby",
+    "zh": "英式橄榄球",
+    "emoji": "🏉",
+    "category": "Sports",
+    "id": 589
+  },
+  {
+    "en": "lesson",
+    "zh": "一节课；一堂课",
+    "emoji": "📚",
+    "category": "Education",
+    "id": 590
+  },
+  {
+    "en": "team",
+    "zh": "运动队；（工作）队/组",
+    "emoji": "🤼",
+    "category": "Group",
+    "id": 591
+  },
+  {
+    "en": "really",
+    "zh": "确实，真正地",
+    "emoji": "✔️",
+    "category": "Adverbs",
+    "id": 592
+  },
+  {
+    "en": "news",
+    "zh": "新闻",
+    "emoji": "📰",
+    "category": "Media",
+    "id": 593
+  },
+  {
+    "en": "skiing",
+    "zh": "滑雪",
+    "emoji": "🎿",
+    "category": "Sports",
+    "id": 594
+  },
+  {
+    "en": "ice hockey",
+    "zh": "冰球",
+    "emoji": "🏒",
+    "category": "Sports",
+    "id": 595
+  },
+  {
+    "en": "age",
+    "zh": "年龄；时期",
+    "emoji": "🎂",
+    "category": "Time",
+    "id": 596
+  },
+  {
+    "en": "medal",
+    "zh": "奖牌；奖章；勋章",
+    "emoji": "🏅",
+    "category": "Awards",
+    "id": 597
+  },
+  {
+    "en": "Olympics",
+    "zh": "奥林匹克运动会",
+    "emoji": "🥇",
+    "category": "Events",
+    "id": 598
+  },
+  {
+    "en": "exciting",
+    "zh": "令人兴奋的；令人激动的",
+    "emoji": "🎉",
+    "category": "Adjectives",
+    "id": 599
+  },
+  {
+    "en": "single",
+    "zh": "单个的",
+    "emoji": "1️⃣",
+    "category": "Adjectives",
+    "id": 600
+  },
+  {
+    "en": "double",
+    "zh": "双的",
+    "emoji": "2️⃣",
+    "category": "Adjectives",
+    "id": 601
+  },
+  {
+    "en": "tired",
+    "zh": "疲惫的",
+    "emoji": "😩",
+    "category": "Emotions",
+    "id": 602
+  },
+  {
+    "en": "win",
+    "zh": "赢；获胜",
+    "emoji": "🏆",
+    "category": "Actions",
+    "id": 603
+  },
+  {
+    "en": "hundred",
+    "zh": "一百",
+    "emoji": "💯",
+    "category": "Numbers",
+    "id": 604
+  },
+  {
+    "en": "kung fu",
+    "zh": "功夫",
+    "emoji": "🥋",
+    "category": "Sports",
+    "id": 605
+  },
+  {
+    "en": "leg",
+    "zh": "腿",
+    "emoji": "🦵",
+    "category": "Body Parts",
+    "id": 606
+  },
+  {
+    "en": "hurt",
+    "zh": "受伤",
+    "emoji": "🤕",
+    "category": "Emotions",
+    "id": 607
+  },
+  {
+    "en": "badly",
+    "zh": "严重地",
+    "emoji": "⚠️",
+    "category": "Adverbs",
+    "id": 608
+  },
+  {
+    "en": "king",
+    "zh": "国王；大王",
+    "emoji": "🤴",
+    "category": "People",
+    "id": 609
+  },
+  {
+    "en": "visit",
+    "zh": "拜访；参观",
+    "emoji": "🏃‍♂️",
+    "category": "Actions",
+    "id": 610
+  },
+  {
+    "en": "the Great Wall",
+    "zh": "长城",
+    "emoji": "🧱",
+    "category": "Places",
+    "id": 611
+  },
+  {
+    "en": "hero",
+    "zh": "英雄；崇拜的对象",
+    "emoji": "🦸",
+    "category": "People",
+    "id": 612
+  },
+  {
+    "en": "him",
+    "zh": "他（宾格）",
+    "emoji": "👦",
+    "category": "Pronouns",
+    "id": 613
+  },
+  {
+    "en": "Labour Day",
+    "zh": "劳动节",
+    "emoji": "👷",
+    "category": "Holidays",
+    "id": 614
+  },
+  {
+    "en": "holiday",
+    "zh": "假期；节日",
+    "emoji": "🎉",
+    "category": "Holidays",
+    "id": 615
+  },
+  {
+    "en": "May",
+    "zh": "五月",
+    "emoji": "🌸",
+    "category": "Time",
+    "id": 616
+  },
+  {
+    "en": "chore",
+    "zh": "家务",
+    "emoji": "🧹",
+    "category": "Actions",
+    "id": 617
+  },
+  {
+    "en": "the USA",
+    "zh": "美国",
+    "emoji": "🇺🇸",
+    "category": "Countries",
+    "id": 618
+  },
+  {
+    "en": "September",
+    "zh": "九月",
+    "emoji": "🍂",
+    "category": "Time",
+    "id": 619
+  },
+  {
+    "en": "June",
+    "zh": "六月",
+    "emoji": "🌞",
+    "category": "Time",
+    "id": 620
+  },
+  {
+    "en": "November",
+    "zh": "十一月",
+    "emoji": "🍁",
+    "category": "Time",
+    "id": 621
+  },
+  {
+    "en": "Canada",
+    "zh": "加拿大",
+    "emoji": "🇨🇦",
+    "category": "Countries",
+    "id": 622
+  },
+  {
+    "en": "often",
+    "zh": "经常",
+    "emoji": "🔄",
+    "category": "Adverbs",
+    "id": 623
+  },
+  {
+    "en": "cinema",
+    "zh": "电影院",
+    "emoji": "🎬",
+    "category": "Places",
+    "id": 624
+  },
+  {
+    "en": "zoo",
+    "zh": "动物园",
+    "emoji": "🐒",
+    "category": "Places",
+    "id": 625
+  },
+  {
+    "en": "National Day",
+    "zh": "国庆节",
+    "emoji": "🎆",
+    "category": "Holidays",
+    "id": 626
+  },
+  {
+    "en": "October",
+    "zh": "十月",
+    "emoji": "🎃",
+    "category": "Time",
+    "id": 627
+  },
+  {
+    "en": "flag",
+    "zh": "旗；旗帜",
+    "emoji": "🚩",
+    "category": "Objects",
+    "id": 628
+  },
+  {
+    "en": "watch",
+    "zh": "看，观看",
+    "emoji": "👀",
+    "category": "Actions",
+    "id": 629
+  },
+  {
+    "en": "early",
+    "zh": "早的；早期的",
+    "emoji": "⏰",
+    "category": "Adjectives",
+    "id": 630
+  },
+  {
+    "en": "special",
+    "zh": "特别的",
+    "emoji": "✨",
+    "category": "Adjectives",
+    "id": 631
+  },
+  {
+    "en": "Water-Splashing Festival",
+    "zh": "泼水节",
+    "emoji": "💦",
+    "category": "Holidays",
+    "id": 632
+  },
+  {
+    "en": "April",
+    "zh": "四月",
+    "emoji": "🌦️",
+    "category": "Time",
+    "id": 633
+  },
+  {
+    "en": "Inner Mongolia",
+    "zh": "内蒙古",
+    "emoji": "🐏",
+    "category": "Places",
+    "id": 634
+  },
+  {
+    "en": "Naadam",
+    "zh": "那达慕",
+    "emoji": "🏇",
+    "category": "Festivals",
+    "id": 635
+  },
+  {
+    "en": "July",
+    "zh": "七月",
+    "emoji": "🌞",
+    "category": "Time",
+    "id": 636
+  },
+  {
+    "en": "August",
+    "zh": "八月",
+    "emoji": "🌻",
+    "category": "Time",
+    "id": 637
+  },
+  {
+    "en": "grandma",
+    "zh": "奶奶，（外）祖母；外婆，姥姥",
+    "emoji": "👵",
+    "category": "Family",
+    "id": 638
+  },
+  {
+    "en": "dear",
+    "zh": "亲爱的",
+    "emoji": "❤️",
+    "category": "Adjectives",
+    "id": 639
+  },
+  {
+    "en": "TV",
+    "zh": "电视",
+    "emoji": "📺",
+    "category": "Objects",
+    "id": 640
+  },
+  {
+    "en": "grandpa",
+    "zh": "爷爷，（外）祖父；外公，姥爷",
+    "emoji": "👴",
+    "category": "Family",
+    "id": 641
+  },
+  {
+    "en": "plant",
+    "zh": "植物；种植",
+    "emoji": "🌱",
+    "category": "Nature",
+    "id": 642
+  },
+  {
+    "en": "kitchen",
+    "zh": "厨房",
+    "emoji": "🍳",
+    "category": "Places",
+    "id": 643
+  },
+  {
+    "en": "weekend",
+    "zh": "周末",
+    "emoji": "📅",
+    "category": "Time",
+    "id": 644
+  },
+  {
+    "en": "people",
+    "zh": "人们；人",
+    "emoji": "👥",
+    "category": "People",
+    "id": 645
+  },
+  {
+    "en": "they",
+    "zh": "他（她，它）们",
+    "emoji": "🧑‍🤝‍🧑",
+    "category": "Pronouns",
+    "id": 646
+  },
+  {
+    "en": "sky",
+    "zh": "天空；天",
+    "emoji": "☁️",
+    "category": "Nature",
+    "id": 647
+  },
+  {
+    "en": "fly",
+    "zh": "飞；飞行",
+    "emoji": "🪰",
+    "category": "Animals/Actions",
+    "id": 648
+  },
+  {
+    "en": "put",
+    "zh": "放；安置",
+    "emoji": "📥",
+    "category": "Actions",
+    "id": 649
+  },
+  {
+    "en": "role",
+    "zh": "角色；作用",
+    "emoji": "🎭",
+    "category": "Concepts",
+    "id": 650
+  },
+  {
+    "en": "paint",
+    "zh": "把……描绘成",
+    "emoji": "🎨",
+    "category": "Actions",
+    "id": 651
+  },
+  {
+    "en": "funny",
+    "zh": "滑稽的；好笑的",
+    "emoji": "😂",
+    "category": "Adjectives",
+    "id": 652
+  },
+  {
+    "en": "brave",
+    "zh": "勇敢的",
+    "emoji": "🦁",
+    "category": "Adjectives",
+    "id": 653
+  },
+  {
+    "en": "enjoy",
+    "zh": "喜爱；享受",
+    "emoji": "😊",
+    "category": "Actions",
+    "id": 654
+  },
+  {
+    "en": "world",
+    "zh": "世界",
+    "emoji": "🌍",
+    "category": "Places",
+    "id": 655
+  },
+  {
+    "en": "woman",
+    "zh": "成年女子",
+    "emoji": "👩",
+    "category": "People",
+    "id": 656
+  },
+  {
+    "en": "tea",
+    "zh": "茶；茶叶",
+    "emoji": "🍵",
+    "category": "Food & Drink",
+    "id": 657
+  },
+  {
+    "en": "rabbit",
+    "zh": "兔子",
+    "emoji": "🐰",
+    "category": "Animals",
+    "id": 658
+  },
+  {
+    "en": "glad",
+    "zh": "高兴的，满意的",
+    "emoji": "😄",
+    "category": "Adjectives",
+    "id": 659
+  },
+  {
+    "en": "need",
+    "zh": "需要",
+    "emoji": "🆘",
+    "category": "Verbs",
+    "id": 660
+  },
+  {
+    "en": "buy",
+    "zh": "买，购买",
+    "emoji": "🛒",
+    "category": "Actions",
+    "id": 661
+  },
+  {
+    "en": "tell",
+    "zh": "告诉；讲述",
+    "emoji": "🗣️",
+    "category": "Actions",
+    "id": 662
+  },
+  {
+    "en": "way",
+    "zh": "路，道路；方法",
+    "emoji": "🛣️",
+    "category": "Places",
+    "id": 663
+  },
+  {
+    "en": "shop",
+    "zh": "商店",
+    "emoji": "🏪",
+    "category": "Places",
+    "id": 664
+  },
+  {
+    "en": "near",
+    "zh": "在……附近",
+    "emoji": "📍",
+    "category": "Prepositions",
+    "id": 665
+  },
+  {
+    "en": "front",
+    "zh": "前面的；前面",
+    "emoji": "⬅️",
+    "category": "Adjectives",
+    "id": 666
+  },
+  {
+    "en": "in front of",
+    "zh": "在……前面",
+    "emoji": "🚪",
+    "category": "Prepositions",
+    "id": 667
+  },
+  {
+    "en": "building",
+    "zh": "房子",
+    "emoji": "🏠",
+    "category": "Places",
+    "id": 668
+  },
+  {
+    "en": "far",
+    "zh": "较远的",
+    "emoji": "🌌",
+    "category": "Adjectives",
+    "id": 669
+  },
+  {
+    "en": "robot",
+    "zh": "机器人",
+    "emoji": "🤖",
+    "category": "Technology",
+    "id": 670
+  },
+  {
+    "en": "know",
+    "zh": "知道；认识到",
+    "emoji": "🧠",
+    "category": "Verbs",
+    "id": 671
+  },
+  {
+    "en": "third",
+    "zh": "第三；第三的",
+    "emoji": "3️⃣",
+    "category": "Numbers",
+    "id": 672
+  },
+  {
+    "en": "shelf (pl. shelves)",
+    "zh": "架子",
+    "emoji": "📚",
+    "category": "Furniture",
+    "id": 673
+  },
+  {
+    "en": "letter",
+    "zh": "字母；信",
+    "emoji": "✉️",
+    "category": "Objects",
+    "id": 674
+  },
+  {
+    "en": "second",
+    "zh": "第二；第二的",
+    "emoji": "2️⃣",
+    "category": "Numbers",
+    "id": 675
+  },
+  {
+    "en": "beside",
+    "zh": "在……旁边",
+    "emoji": "↔️",
+    "category": "Prepositions",
+    "id": 676
+  },
+  {
+    "en": "playground",
+    "zh": "操场；活动场所",
+    "emoji": "🏞️",
+    "category": "Places",
+    "id": 677
+  },
+  {
+    "en": "centre (AmE center)",
+    "zh": "中心；中央",
+    "emoji": "📍",
+    "category": "Places",
+    "id": 678
+  },
+  {
+    "en": "smart",
+    "zh": "智能的；聪明的",
+    "emoji": "🧠",
+    "category": "Adjectives",
+    "id": 679
+  },
+  {
+    "en": "community",
+    "zh": "社区",
+    "emoji": "🏘️",
+    "category": "Places",
+    "id": 680
+  },
+  {
+    "en": "themselves",
+    "zh": "他（她，它）们自己",
+    "emoji": "👥",
+    "category": "Pronouns",
+    "id": 681
+  },
+  {
+    "en": "dark",
+    "zh": "黑暗的",
+    "emoji": "🌑",
+    "category": "Adjectives",
+    "id": 682
+  },
+  {
+    "en": "toilet",
+    "zh": "马桶；卫生间",
+    "emoji": "🚽",
+    "category": "Places",
+    "id": 683
+  },
+  {
+    "en": "between",
+    "zh": "在……之间",
+    "emoji": "↔️",
+    "category": "Prepositions",
+    "id": 684
+  },
+  {
+    "en": "supermarket",
+    "zh": "超市",
+    "emoji": "🏬",
+    "category": "Places",
+    "id": 685
+  },
+  {
+    "en": "quickly",
+    "zh": "快速地",
+    "emoji": "⚡",
+    "category": "Adverbs",
+    "id": 686
+  },
+  {
+    "en": "hobby",
+    "zh": "爱好",
+    "emoji": "🎨",
+    "category": "Interests",
+    "id": 687
+  },
+  {
+    "en": "kind",
+    "zh": "种类",
+    "emoji": "🗂️",
+    "category": "Classification",
+    "id": 688
+  },
+  {
+    "en": "folk",
+    "zh": "民间的，民俗的",
+    "emoji": "👥",
+    "category": "Culture",
+    "id": 689
+  },
+  {
+    "en": "club",
+    "zh": "俱乐部，社团",
+    "emoji": "🏆",
+    "category": "Organizations",
+    "id": 690
+  },
+  {
+    "en": "join",
+    "zh": "参加",
+    "emoji": "🤝",
+    "category": "Actions",
+    "id": 691
+  },
+  {
+    "en": "because",
+    "zh": "因为",
+    "emoji": "⚠️",
+    "category": "Conjunctions",
+    "id": 692
+  },
+  {
+    "en": "science",
+    "zh": "科学",
+    "emoji": "🔬",
+    "category": "Subjects",
+    "id": 693
+  },
+  {
+    "en": "chess",
+    "zh": "国际象棋",
+    "emoji": "♟️",
+    "category": "Games",
+    "id": 694
+  },
+  {
+    "en": "well",
+    "zh": "好",
+    "emoji": "👍",
+    "category": "Adjectives",
+    "id": 695
+  },
+  {
+    "en": "why",
+    "zh": "为什么",
+    "emoji": "❓",
+    "category": "Question Words",
+    "id": 696
+  },
+  {
+    "en": "fan",
+    "zh": "狂热爱好者，迷",
+    "emoji": "🌀",
+    "category": "People",
+    "id": 697
+  },
+  {
+    "en": "travel",
+    "zh": "旅游",
+    "emoji": "✈️",
+    "category": "Verbs",
+    "id": 698
+  },
+  {
+    "en": "study",
+    "zh": "观察；学习；研究",
+    "emoji": "📚",
+    "category": "Verbs",
+    "id": 699
+  },
+  {
+    "en": "face",
+    "zh": "脸",
+    "emoji": "😀",
+    "category": "Body Parts",
+    "id": 700
+  },
+  {
+    "en": "feeling",
+    "zh": "情绪",
+    "emoji": "❤️",
+    "category": "Emotions",
+    "id": 701
+  },
+  {
+    "en": "throw",
+    "zh": "扔；随手扔下（某物）",
+    "emoji": "🎯",
+    "category": "Actions",
+    "id": 702
+  },
+  {
+    "en": "thing",
+    "zh": "东西；事情",
+    "emoji": "🧩",
+    "category": "Nouns",
+    "id": 703
+  },
+  {
+    "en": "out",
+    "zh": "在……之外",
+    "emoji": "🚪",
+    "category": "Prepositions",
+    "id": 704
+  },
+  {
+    "en": "safe",
+    "zh": "安全的",
+    "emoji": "🛡️",
+    "category": "Adjectives",
+    "id": 705
+  },
+  {
+    "en": "down",
+    "zh": "向下",
+    "emoji": "⬇️",
+    "category": "Prepositions",
+    "id": 706
+  },
+  {
+    "en": "stair",
+    "zh": "楼梯",
+    "emoji": "🪜",
+    "category": "Objects",
+    "id": 707
+  },
+  {
+    "en": "skate",
+    "zh": "滑冰",
+    "emoji": "⛸️",
+    "category": "Verbs",
+    "id": 708
+  },
+  {
+    "en": "fall",
+    "zh": "掉进",
+    "emoji": "🍂",
+    "category": "Verbs",
+    "id": 709
+  },
+  {
+    "en": "March",
+    "zh": "三月",
+    "emoji": "📅",
+    "category": "Time",
+    "id": 710
+  },
+  {
+    "en": "thin",
+    "zh": "薄的",
+    "emoji": "🥀",
+    "category": "Adjectives",
+    "id": 711
+  },
+  {
+    "en": "dangerous",
+    "zh": "危险的",
+    "emoji": "⚠️",
+    "category": "Adjectives",
+    "id": 712
+  },
+  {
+    "en": "board",
+    "zh": "告示牌",
+    "emoji": "📋",
+    "category": "Objects",
+    "id": 713
+  },
+  {
+    "en": "lake",
+    "zh": "湖；湖泊",
+    "emoji": "🏞️",
+    "category": "Nature",
+    "id": 714
+  },
+  {
+    "en": "careful",
+    "zh": "小心的",
+    "emoji": "👀",
+    "category": "Adjectives",
+    "id": 715
+  },
+  {
+    "en": "push",
+    "zh": "推；揉",
+    "emoji": "🤜",
+    "category": "Actions",
+    "id": 716
+  },
+  {
+    "en": "crowd",
+    "zh": "人群",
+    "emoji": "👥",
+    "category": "Nouns",
+    "id": 717
+  },
+  {
+    "en": "slowly",
+    "zh": "缓慢地",
+    "emoji": "🐢",
+    "category": "Adverbs",
+    "id": 718
+  },
+  {
+    "en": "fast",
+    "zh": "快速地",
+    "emoji": "🏃‍♂️",
+    "category": "Adverbs",
+    "id": 719
+  },
+  {
+    "en": "street",
+    "zh": "街道",
+    "emoji": "🛣️",
+    "category": "Places",
+    "id": 720
+  },
+  {
+    "en": "light",
+    "zh": "灯；光线",
+    "emoji": "💡",
+    "category": "Objects",
+    "id": 721
+  },
+  {
+    "en": "again",
+    "zh": "再一次",
+    "emoji": "🔁",
+    "category": "Adverbs",
+    "id": 722
+  },
+  {
+    "en": "fun",
+    "zh": "有趣的",
+    "emoji": "🎉",
+    "category": "Adjectives",
+    "id": 723
+  },
+  {
+    "en": "game",
+    "zh": "游戏；比赛",
+    "emoji": "🎮",
+    "category": "Entertainment",
+    "id": 724
+  },
+  {
+    "en": "be good at",
+    "zh": "擅长",
+    "emoji": "👍",
+    "category": "Phrases",
+    "id": 725
+  },
+  {
+    "en": "seventy",
+    "zh": "七十",
+    "emoji": "7️⃣0️⃣",
+    "category": "Numbers",
+    "id": 726
+  },
+  {
+    "en": "eighty",
+    "zh": "八十",
+    "emoji": "8️⃣0️⃣",
+    "category": "Numbers",
+    "id": 727
+  },
+  {
+    "en": "ninety",
+    "zh": "九十",
+    "emoji": "9️⃣0️⃣",
+    "category": "Numbers",
+    "id": 728
+  }
+]

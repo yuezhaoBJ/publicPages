@@ -1,0 +1,5155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="theme-color" content="#070d16" />
+  <title>山西时空小特工 · 多景点打卡任务清单</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --cyan: #3dd5ff;
+      --cyan-dim: rgba(61, 213, 255, 0.16);
+      --cyan-glow: rgba(61, 213, 255, 0.45);
+      --red: #ef5350;
+      --gold: #f0c14b;
+      --ink: #e8eef5;
+      --text: #e8eef5;
+      --text-muted: rgba(232, 238, 245, 0.68);
+      --panel: rgba(12, 20, 32, 0.82);
+      --panel-solid: #101a28;
+      --card-bg: rgba(18, 28, 42, 0.88);
+      --hud: #070d16;
+      --success: #3dd68c;
+      --border: rgba(61, 213, 255, 0.28);
+      --radius: 14px;
+      --shadow-glow: 0 0 22px var(--cyan-glow);
+      --font-display: "Ma Shan Zheng", "STKaiti", cursive;
+      --font-body: "Noto Sans SC", "PingFang SC", sans-serif;
+      color-scheme: dark;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--text);
+      min-height: 100vh;
+      background:
+        linear-gradient(180deg, rgba(4, 8, 16, 0.78) 0%, rgba(6, 12, 22, 0.88) 50%, rgba(3, 6, 12, 0.94) 100%),
+        url("assets/checklist-hero.png") center top / cover no-repeat fixed;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 45% at 50% 0%, rgba(61, 213, 255, 0.14), transparent 55%),
+        radial-gradient(ellipse 50% 40% at 10% 90%, rgba(198, 40, 40, 0.12), transparent),
+        radial-gradient(ellipse 50% 40% at 90% 90%, rgba(198, 40, 40, 0.1), transparent);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .scanline {
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 3px,
+        rgba(0, 0, 0, 0.04) 3px,
+        rgba(0, 0, 0, 0.04) 6px
+      );
+      pointer-events: none;
+      z-index: 999;
+      opacity: 0.5;
+    }
+
+    .app {
+      position: relative;
+      z-index: 1;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1.25rem 1rem 3rem;
+    }
+
+    /* —— Header —— */
+    .hud-frame {
+      border: 2px solid rgba(61, 213, 255, 0.45);
+      border-radius: 18px;
+      box-shadow:
+        0 0 30px rgba(61, 213, 255, 0.22),
+        0 16px 48px rgba(0, 0, 0, 0.55),
+        inset 0 0 60px rgba(61, 213, 255, 0.04);
+      background: rgba(8, 14, 24, 0.78);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      overflow: hidden;
+      position: relative;
+      color: var(--text);
+    }
+
+    .hud-frame::before,
+    .hud-frame::after {
+      content: "";
+      position: absolute;
+      width: 56px;
+      height: 56px;
+      border: 2px solid rgba(61, 213, 255, 0.65);
+      pointer-events: none;
+      z-index: 5;
+      box-shadow: 0 0 12px rgba(61, 213, 255, 0.35);
+    }
+    .hud-frame::before { top: 8px; left: 8px; border-right: none; border-bottom: none; }
+    .hud-frame::after { bottom: 8px; right: 8px; border-left: none; border-top: none; }
+
+    .hero {
+      position: relative;
+      padding: 1.5rem 1.25rem 1.25rem;
+      text-align: center;
+      background:
+        linear-gradient(180deg, rgba(6, 12, 22, 0.35), rgba(6, 12, 22, 0.82)),
+        url("assets/tasks/header_center.jpg") center 30% / cover no-repeat;
+      min-height: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    .hero-emblem {
+      width: min(160px, 42vw);
+      height: min(160px, 42vw);
+      border-radius: 50%;
+      border: 2px solid rgba(61, 213, 255, 0.55);
+      box-shadow: 0 0 24px rgba(61, 213, 255, 0.35), inset 0 0 20px rgba(61, 213, 255, 0.15);
+      background: url("assets/tasks/header_center.jpg") center / cover no-repeat;
+      margin: 0.35rem auto 0.85rem;
+      position: relative;
+      animation: pulse-glow 3s ease-in-out infinite;
+    }
+
+    .hero-emblem::after {
+      content: "时空特工";
+      position: absolute;
+      left: 50%;
+      bottom: -0.35rem;
+      transform: translateX(-50%);
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      color: var(--cyan);
+      background: rgba(4, 10, 18, 0.85);
+      padding: 0.15rem 0.5rem;
+      border-radius: 999px;
+      border: 1px solid rgba(61, 213, 255, 0.35);
+      white-space: nowrap;
+    }
+
+    @media (min-width: 720px) {
+      .hero {
+        min-height: auto;
+        padding: 1.75rem 1.5rem 1.4rem;
+      }
+      .hero-emblem { width: 180px; height: 180px; }
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      color: var(--cyan);
+      border: 1px solid rgba(61, 213, 255, 0.4);
+      background: rgba(61, 213, 255, 0.1);
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      margin-bottom: 0.75rem;
+      animation: pulse-glow 2.4s ease-in-out infinite;
+    }
+
+    @keyframes pulse-glow {
+      0%, 100% { box-shadow: 0 0 6px rgba(61, 213, 255, 0.25); }
+      50% { box-shadow: 0 0 16px rgba(61, 213, 255, 0.45); }
+    }
+
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(1.85rem, 5vw, 2.75rem);
+      font-weight: 400;
+      line-height: 1.25;
+      color: #f4f8fc;
+      text-shadow: 0 0 24px rgba(61, 213, 255, 0.35), 0 2px 10px rgba(0, 0, 0, 0.6);
+      margin-bottom: 0.5rem;
+    }
+
+    .hero p {
+      max-width: 36rem;
+      margin: 0 auto;
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    .progress-wrap {
+      margin: 1.25rem auto 0;
+      max-width: 420px;
+      width: 100%;
+    }
+
+    .progress-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      color: var(--cyan);
+      margin-bottom: 0.4rem;
+    }
+
+    .progress-bar {
+      height: 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(61, 213, 255, 0.28);
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--cyan), #7af0ff);
+      box-shadow: 0 0 12px var(--cyan);
+      border-radius: 999px;
+      transition: width 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    /* —— Task grid —— */
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin: 1.5rem 0 0.9rem;
+      padding: 0 0.25rem;
+      font-size: 1rem;
+      color: var(--cyan);
+    }
+
+    .section-title::before,
+    .section-title::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(61, 213, 255, 0.45), transparent);
+      opacity: 0.8;
+    }
+
+    .task-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.85rem;
+      padding: 0 0.75rem 1rem;
+    }
+
+    @media (min-width: 720px) {
+      .task-grid { grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    }
+
+    .task-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      border: 1.5px solid rgba(61, 213, 255, 0.55);
+      border-radius: 12px;
+      background: linear-gradient(180deg, rgba(14, 24, 40, 0.95), rgba(8, 14, 24, 0.98));
+      box-shadow: 0 0 16px rgba(61, 213, 255, 0.2), inset 0 0 24px rgba(61, 213, 255, 0.04);
+      cursor: pointer;
+      overflow: hidden;
+      text-align: left;
+      color: var(--text);
+      font: inherit;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s;
+      animation: card-in 0.55s ease backwards;
+    }
+
+    .task-card::before,
+    .task-card::after {
+      content: "";
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      border: 2px solid rgba(61, 213, 255, 0.8);
+      z-index: 3;
+      pointer-events: none;
+    }
+    .task-card::before { top: 6px; left: 6px; border-right: none; border-bottom: none; }
+    .task-card::after { bottom: 6px; right: 6px; border-left: none; border-top: none; }
+
+    .task-card:nth-child(1) { animation-delay: 0.05s; }
+    .task-card:nth-child(2) { animation-delay: 0.1s; }
+    .task-card:nth-child(3) { animation-delay: 0.15s; }
+    .task-card:nth-child(4) { animation-delay: 0.2s; }
+    .task-card:nth-child(5) { animation-delay: 0.25s; }
+    .task-card:nth-child(6) { animation-delay: 0.3s; }
+    .task-card:nth-child(7) { animation-delay: 0.35s; }
+
+    @keyframes card-in {
+      from { opacity: 0.2; transform: translateY(12px) scale(0.98); }
+      to { opacity: 1; transform: none; }
+    }
+
+    .task-card:hover,
+    .task-card:focus-visible {
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: 0 0 28px rgba(61, 213, 255, 0.4);
+      border-color: #5ce5ff;
+      outline: none;
+    }
+
+    .task-card.done {
+      border-color: var(--success);
+      box-shadow: 0 0 20px rgba(61, 214, 140, 0.35);
+    }
+
+    .task-card.done .card-check {
+      background: var(--success);
+      border-color: var(--success);
+      color: #052014;
+    }
+
+    .card-top {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.7rem 0.7rem 0.4rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .card-icon {
+      width: 2.1rem;
+      height: 2.1rem;
+      display: grid;
+      place-items: center;
+      font-size: 1.05rem;
+      border-radius: 50%;
+      background: rgba(0, 20, 40, 0.7);
+      border: 2px solid rgba(61, 213, 255, 0.7);
+      box-shadow: 0 0 10px rgba(61, 213, 255, 0.45);
+      flex-shrink: 0;
+    }
+
+    .card-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      line-height: 1.3;
+      color: #fff;
+      text-shadow: 0 0 8px rgba(61, 213, 255, 0.35);
+    }
+
+    .card-num {
+      font-size: 0.65rem;
+      color: var(--cyan);
+      font-weight: 600;
+      letter-spacing: 0.08em;
+    }
+
+    .card-art {
+      margin: 0.2rem 0.55rem;
+      height: 112px;
+      border-radius: 8px;
+      display: block;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(61, 213, 255, 0.35);
+      box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.35);
+      background-color: #0a121c;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+    }
+
+    .card-art img.art-cover {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      z-index: 0;
+      border: 0;
+      pointer-events: none;
+      -webkit-user-select: none;
+      user-select: none;
+    }
+
+    .card-art .art-emoji {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      font-size: 2rem;
+      z-index: 0;
+    }
+
+    .card-art::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(180deg, transparent 45%, rgba(0, 0, 0, 0.35));
+      pointer-events: none;
+    }
+
+    .card-art.has-photo img.art-cover { opacity: 0; }
+
+    .card-desc {
+      padding: 0.5rem 0.7rem 0.75rem;
+      font-size: 0.72rem;
+      line-height: 1.45;
+      color: rgba(230, 240, 250, 0.82);
+      flex: 1;
+    }
+
+    .card-check {
+      position: absolute;
+      right: 0.55rem;
+      bottom: 0.55rem;
+      width: 1.35rem;
+      height: 1.35rem;
+      border: 2px solid rgba(61, 213, 255, 0.65);
+      border-radius: 4px;
+      background: rgba(0, 0, 0, 0.45);
+      display: grid;
+      place-items: center;
+      font-size: 0.85rem;
+      color: transparent;
+      transition: all 0.25s;
+      z-index: 2;
+    }
+
+    .task-card.done .card-check::before { content: "✓"; color: inherit; font-weight: 900; }
+
+    /* —— Footer status —— */
+    .status-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.85rem 1rem 1.1rem;
+      border-top: 1px solid rgba(61, 213, 255, 0.22);
+      background: rgba(0, 0, 0, 0.35);
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.82rem;
+      color: var(--cyan);
+      padding: 0.4rem 0.75rem;
+      border: 1px solid rgba(61, 213, 255, 0.35);
+      border-radius: 999px;
+      background: rgba(61, 213, 255, 0.08);
+    }
+
+    .status-pill .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--cyan);
+      box-shadow: 0 0 8px var(--cyan);
+      animation: blink 1.4s ease-in-out infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.35; }
+    }
+
+    .status-pill.all-done .dot {
+      background: var(--success);
+      box-shadow: 0 0 8px var(--success);
+      animation: none;
+    }
+
+    .btn-reset {
+      font: inherit;
+      font-size: 0.75rem;
+      color: rgba(232, 238, 245, 0.45);
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 8px;
+      padding: 0.35rem 0.65rem;
+      cursor: pointer;
+    }
+    .btn-reset:hover { color: #fff; border-color: rgba(255, 255, 255, 0.4); }
+
+    .reward-banner {
+      display: none;
+      margin: 1rem 0.75rem 0;
+      padding: 1rem;
+      text-align: center;
+      border: 2px solid rgba(240, 193, 75, 0.55);
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(240, 193, 75, 0.18), rgba(198, 40, 40, 0.15));
+      box-shadow: 0 0 24px rgba(240, 193, 75, 0.2);
+      animation: card-in 0.5s ease;
+    }
+
+    .reward-banner.show { display: block; }
+
+    .reward-banner h3 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      color: var(--gold);
+      margin-bottom: 0.35rem;
+    }
+
+    .reward-banner p { font-size: 0.88rem; line-height: 1.55; color: var(--text-muted); }
+
+    /* —— Modal —— */
+    .overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(4, 8, 14, 0.78);
+      backdrop-filter: blur(6px);
+      z-index: 1000;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      padding: 1rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.28s, visibility 0.28s;
+    }
+
+    .overlay.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal {
+      width: min(520px, 100%);
+      max-height: none;
+      margin: auto;
+      overflow: visible;
+      border: 2px solid rgba(61, 213, 255, 0.55);
+      border-radius: 16px;
+      background: linear-gradient(165deg, #0e1a28 0%, #121018 100%);
+      box-shadow: 0 0 40px rgba(61, 213, 255, 0.3), 0 20px 50px rgba(0, 0, 0, 0.55);
+      transform: translateY(18px) scale(0.96);
+      transition: transform 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+      color: var(--text);
+    }
+
+    .overlay.open .modal { transform: none; }
+
+    .modal-head {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 1rem 1rem 0.85rem;
+      background: linear-gradient(180deg, #152636, rgba(21, 38, 54, 0.95));
+      border-bottom: 1px solid rgba(46, 207, 255, 0.25);
+    }
+
+    .modal-icon {
+      width: 2.75rem;
+      height: 2.75rem;
+      display: grid;
+      place-items: center;
+      font-size: 1.4rem;
+      border-radius: 12px;
+      background: var(--cyan-dim);
+      border: 1px solid var(--cyan);
+      flex-shrink: 0;
+    }
+
+    .modal-head h2 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: #f2f6fa;
+    }
+
+    .modal-head .sub {
+      font-size: 0.75rem;
+      color: var(--cyan);
+      margin-top: 0.15rem;
+    }
+
+    .modal-close {
+      margin-left: auto;
+      width: 2rem;
+      height: 2rem;
+      border: 1px solid rgba(46, 207, 255, 0.4);
+      border-radius: 8px;
+      background: transparent;
+      color: var(--cyan);
+      font-size: 1.2rem;
+      cursor: pointer;
+      line-height: 1;
+    }
+    .modal-close:hover { background: var(--cyan-dim); }
+
+    .modal-body { padding: 1rem 1.1rem 1.25rem; }
+
+    .task-hero {
+      display: none;
+      position: relative;
+      width: 100%;
+      height: 160px;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(61, 213, 255, 0.35);
+      background: #0a121c;
+    }
+
+    .task-hero.show { display: block; }
+
+    .task-hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .task-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 40%, rgba(8, 14, 24, 0.75));
+      pointer-events: none;
+    }
+
+    @media (min-width: 520px) {
+      .task-hero { height: 190px; }
+    }
+
+    .info-block {
+      margin-bottom: 0.9rem;
+      padding: 0.75rem 0.85rem;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(46, 207, 255, 0.15);
+    }
+
+    .info-block h3 {
+      font-size: 0.78rem;
+      color: var(--gold);
+      letter-spacing: 0.06em;
+      margin-bottom: 0.35rem;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .info-block p {
+      font-size: 0.88rem;
+      line-height: 1.65;
+      color: rgba(242, 246, 250, 0.9);
+    }
+
+    .challenge-box {
+      border-color: rgba(232, 184, 74, 0.45);
+      background: rgba(232, 184, 74, 0.08);
+    }
+
+    .knowledge-box {
+      border-color: rgba(46, 207, 255, 0.35);
+      background: rgba(46, 207, 255, 0.06);
+    }
+
+    .interact-zone {
+      margin-top: 0.35rem;
+      padding: 1rem;
+      border-radius: 14px;
+      border: 1.5px solid rgba(61, 213, 255, 0.4);
+      background: rgba(18, 32, 48, 0.95);
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+    }
+
+    .interact-zone h3 {
+      font-size: 0.95rem;
+      color: #7ae7ff;
+      margin-bottom: 0.55rem;
+      font-weight: 700;
+      text-shadow: 0 0 10px rgba(61, 213, 255, 0.25);
+    }
+
+    .interact-zone .hint {
+      font-size: 0.84rem;
+      color: rgba(240, 246, 252, 0.88);
+      margin-bottom: 0.75rem;
+      line-height: 1.55;
+    }
+
+    .choice-grid {
+      display: grid;
+      gap: 0.5rem;
+    }
+
+    .choice-btn {
+      font: inherit;
+      text-align: left;
+      padding: 0.75rem 0.9rem;
+      border-radius: 10px;
+      border: 1px solid rgba(61, 213, 255, 0.45);
+      background: rgba(8, 18, 30, 0.95);
+      color: #f5f9fc;
+      cursor: pointer;
+      transition: background 0.2s, border-color 0.2s, transform 0.15s;
+      font-size: 0.9rem;
+      line-height: 1.45;
+      font-weight: 500;
+    }
+
+    .choice-btn:hover { background: rgba(61, 213, 255, 0.18); transform: translateX(3px); border-color: #7ae7ff; }
+    .choice-btn.correct { border-color: var(--success); background: rgba(61, 214, 140, 0.22); color: #d8ffe9; }
+    .choice-btn.wrong { border-color: var(--red); background: rgba(198, 40, 40, 0.22); color: #ffd6d6; opacity: 1; }
+    .choice-btn:disabled { cursor: default; transform: none; }
+
+    .input-row {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .input-row input,
+    .input-row textarea,
+    .input-row select {
+      flex: 1;
+      min-width: 140px;
+      font: inherit;
+      font-size: 0.92rem;
+      padding: 0.7rem 0.8rem;
+      border-radius: 10px;
+      border: 1px solid rgba(61, 213, 255, 0.45);
+      background: rgba(6, 14, 24, 0.95);
+      color: #f5f9fc;
+      outline: none;
+    }
+
+    .input-row input::placeholder,
+    .input-row textarea::placeholder {
+      color: rgba(200, 220, 235, 0.55);
+    }
+
+    .input-row select option {
+      background: #101a28;
+      color: #f5f9fc;
+    }
+
+    .input-row textarea { min-height: 72px; resize: vertical; width: 100%; }
+
+    .btn-primary {
+      font: inherit;
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 0.7rem 1.1rem;
+      border: none;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--cyan), #5adfff);
+      color: #041018;
+      cursor: pointer;
+      box-shadow: 0 0 16px rgba(46, 207, 255, 0.4);
+      transition: transform 0.15s, filter 0.15s;
+      white-space: nowrap;
+    }
+    .btn-primary:hover { transform: scale(1.03); filter: brightness(1.08); }
+    .btn-primary:disabled,
+    .btn-primary.is-disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+      transform: none;
+      filter: none;
+      box-shadow: none;
+    }
+
+    .btn-ghost {
+      font: inherit;
+      font-size: 0.85rem;
+      padding: 0.65rem 1rem;
+      border-radius: 10px;
+      border: 1px solid rgba(46, 207, 255, 0.4);
+      background: transparent;
+      color: var(--cyan);
+      cursor: pointer;
+    }
+
+    .feedback {
+      margin-top: 0.75rem;
+      padding: 0.65rem 0.75rem;
+      border-radius: 10px;
+      font-size: 0.85rem;
+      line-height: 1.5;
+      display: none;
+    }
+    .feedback.show { display: block; }
+    .feedback.ok { background: rgba(61, 214, 140, 0.15); border: 1px solid var(--success); color: #b8f5d4; }
+    .feedback.bad { background: rgba(198, 40, 40, 0.15); border: 1px solid var(--red); color: #ffc9c9; }
+
+    .modal-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin-top: 1rem;
+      padding-top: 0.85rem;
+      border-top: 1px solid rgba(46, 207, 255, 0.2);
+    }
+
+    .abacus {
+      display: flex;
+      gap: 0.35rem;
+      justify-content: center;
+      margin-bottom: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .bead-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .bead {
+      width: 28px;
+      height: 18px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, #f0c14b, #b8860b);
+      border: 1px solid #8b6914;
+      cursor: pointer;
+      transition: transform 0.2s, filter 0.2s;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+    .bead:hover { filter: brightness(1.15); }
+    .bead.active { transform: translateY(-10px); background: linear-gradient(180deg, #ffe082, #e8b84a); }
+
+    .pose-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.45rem;
+      margin-bottom: 0.65rem;
+    }
+
+    .pose-btn {
+      aspect-ratio: 1;
+      font-size: 1.8rem;
+      border-radius: 12px;
+      border: 1.5px solid rgba(46, 207, 255, 0.35);
+      background: rgba(46, 207, 255, 0.08);
+      cursor: pointer;
+      transition: transform 0.15s, border-color 0.15s, background 0.15s;
+    }
+    .pose-btn:hover { transform: scale(1.06); }
+    .pose-btn.selected {
+      border-color: var(--gold);
+      background: rgba(232, 184, 74, 0.2);
+      box-shadow: 0 0 12px rgba(232, 184, 74, 0.4);
+    }
+
+    .star-rate {
+      display: flex;
+      gap: 0.35rem;
+      margin: 0.5rem 0 0.75rem;
+      font-size: 1.6rem;
+    }
+    .star-rate button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      filter: grayscale(1) opacity(0.45);
+      transition: filter 0.15s, transform 0.15s;
+      font-size: inherit;
+      padding: 0;
+    }
+    .star-rate button.on { filter: none; transform: scale(1.1); }
+
+    /* Welcome / reward */
+    .welcome-art {
+      font-size: 3rem;
+      text-align: center;
+      margin: 0.5rem 0 0.75rem;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .confetti {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 2000;
+      overflow: hidden;
+    }
+
+    .confetti i {
+      position: absolute;
+      top: -12px;
+      width: 8px;
+      height: 14px;
+      border-radius: 2px;
+      animation: fall linear forwards;
+    }
+
+    @keyframes fall {
+      to { transform: translateY(105vh) rotate(720deg); opacity: 0.2; }
+    }
+
+    .quiz-progress {
+      display: flex;
+      gap: 0.35rem;
+      margin-bottom: 0.75rem;
+      justify-content: center;
+    }
+
+    .quiz-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(46, 207, 255, 0.25);
+      border: 1px solid rgba(46, 207, 255, 0.45);
+    }
+
+    .quiz-dot.on { background: var(--cyan); box-shadow: 0 0 8px var(--cyan-glow); }
+    .quiz-dot.done { background: var(--success); border-color: var(--success); }
+
+    .quiz-q {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.5;
+      margin-bottom: 0.7rem;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.45);
+    }
+
+    .quiz-tip {
+      margin-top: 0.55rem;
+      font-size: 0.84rem;
+      color: #9becff;
+      line-height: 1.5;
+      display: none;
+      background: rgba(61, 213, 255, 0.12);
+      border: 1px solid rgba(61, 213, 255, 0.3);
+      border-radius: 8px;
+      padding: 0.5rem 0.65rem;
+    }
+
+    .quiz-tip.show { display: block; }
+
+    .step-label {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: #041018;
+      background: linear-gradient(135deg, #7ae7ff, #3dd5ff);
+      border: none;
+      border-radius: 999px;
+      padding: 0.2rem 0.65rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .warmup-done-tag {
+      font-size: 0.86rem;
+      color: #9dffc4;
+      font-weight: 600;
+      margin: 0.35rem 0 0.75rem;
+      display: none;
+    }
+
+    .warmup-done-tag.show { display: block; }
+
+    .interact-zone .choice-btn {
+      color: #f5f9fc;
+      background: rgba(6, 16, 28, 0.98);
+      border-color: rgba(61, 213, 255, 0.5);
+    }
+
+    .interact-zone .choice-btn:hover {
+      background: rgba(61, 213, 255, 0.2);
+      color: #ffffff;
+    }
+
+    .interact-zone h3 { color: #7ae7ff; }
+
+    .interact-zone .hint { color: rgba(240, 246, 252, 0.9); }
+
+    #quizLocked {
+      opacity: 0.72;
+      pointer-events: none;
+      filter: none;
+    }
+
+    #quizLocked.unlocked {
+      opacity: 1;
+      pointer-events: auto;
+      filter: none;
+    }
+
+    #quizLocked:not(.unlocked) .hint,
+    #quizLocked:not(.unlocked) .quiz-q,
+    #quizLocked:not(.unlocked) .choice-btn {
+      color: rgba(230, 240, 250, 0.75);
+    }
+
+    #beadCount {
+      color: rgba(240, 246, 252, 0.9) !important;
+      font-weight: 600;
+    }
+
+    .photo-box {
+      margin-top: 0.85rem;
+      padding: 0.9rem;
+      border-radius: 14px;
+      border: 1.5px dashed rgba(240, 193, 75, 0.45);
+      background: rgba(240, 193, 75, 0.1);
+    }
+
+    .photo-box h3 { color: var(--gold) !important; margin-bottom: 0.35rem; }
+
+    .photo-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.65rem;
+    }
+
+    .photo-actions label.btn-photo,
+    .photo-actions button {
+      font: inherit;
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 0.65rem 0.9rem;
+      border-radius: 10px;
+      cursor: pointer;
+      border: 1px solid rgba(240, 193, 75, 0.4);
+      background: rgba(0, 0, 0, 0.35);
+      color: var(--gold);
+    }
+
+    .photo-actions label.btn-photo.primary,
+    .photo-actions button.primary {
+      background: linear-gradient(135deg, #f0a04a, #e87830);
+      color: #fff;
+      border-color: transparent;
+      box-shadow: 0 4px 12px rgba(232, 120, 48, 0.35);
+    }
+
+    .photo-actions input[type="file"] { display: none; }
+
+    .photo-preview-wrap {
+      margin-top: 0.75rem;
+      display: none;
+      position: relative;
+    }
+
+    .photo-preview-wrap.show { display: block; }
+
+    .photo-preview-wrap img {
+      width: 100%;
+      max-height: 220px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 2px solid rgba(240, 193, 75, 0.35);
+      display: block;
+    }
+
+    .photo-stamp {
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+      background: rgba(8, 28, 42, 0.88);
+      color: var(--cyan);
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.3rem 0.55rem;
+      border-radius: 8px;
+      letter-spacing: 0.04em;
+      border: 1px solid rgba(61, 213, 255, 0.35);
+    }
+
+    .card-art.has-photo {
+      background-size: cover !important;
+      background-position: center !important;
+    }
+
+    .card-art.has-photo .art-cover { opacity: 0; }
+    .card-art.has-photo .art-emoji { display: none; }
+
+    .card-photo-badge {
+      position: absolute;
+      left: 0.55rem;
+      bottom: 0.55rem;
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: #fff;
+      background: rgba(232, 120, 48, 0.92);
+      padding: 0.15rem 0.4rem;
+      border-radius: 6px;
+      z-index: 2;
+    }
+
+    .album-strip {
+      display: none;
+      gap: 0.5rem;
+      overflow-x: auto;
+      padding: 0.75rem 0.75rem 0;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .album-strip.show { display: flex; }
+
+    .album-item {
+      flex: 0 0 auto;
+      width: 88px;
+      text-align: center;
+      padding: 0;
+      border: none;
+      background: transparent;
+      cursor: zoom-in;
+      font: inherit;
+      color: inherit;
+      position: relative;
+    }
+
+    .album-item:focus-visible {
+      outline: 2px solid var(--cyan);
+      outline-offset: 2px;
+      border-radius: 12px;
+    }
+
+    .album-item img {
+      width: 88px;
+      height: 66px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 2px solid rgba(61, 213, 255, 0.3);
+      display: block;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .album-item:hover img,
+    .album-item:active img {
+      border-color: rgba(61, 213, 255, 0.75);
+      box-shadow: 0 0 12px rgba(61, 213, 255, 0.35);
+    }
+
+    .album-item::after {
+      content: "🔍";
+      position: absolute;
+      top: 4px;
+      right: 4px;
+      width: 1.15rem;
+      height: 1.15rem;
+      display: grid;
+      place-items: center;
+      font-size: 0.55rem;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      pointer-events: none;
+    }
+
+    .album-item span {
+      display: block;
+      font-size: 0.65rem;
+      color: var(--cyan);
+      margin-top: 0.25rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .album-title {
+      display: none;
+      padding: 0.85rem 0.75rem 0;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--cyan);
+    }
+
+    .album-title.show { display: block; }
+
+    /* Agent profile */
+    .agent-bar {
+      display: none;
+      align-items: center;
+      gap: 0.75rem;
+      margin: 1rem auto 0;
+      padding: 0.55rem 0.85rem;
+      max-width: 420px;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.35);
+      border: 1px solid rgba(61, 213, 255, 0.3);
+      border-radius: 999px;
+      box-sizing: border-box;
+    }
+
+    .agent-bar.show { display: flex; }
+
+    .agent-bar img {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--cyan);
+      flex-shrink: 0;
+    }
+
+    .agent-avatar-btn {
+      position: relative;
+      padding: 0;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      border-radius: 50%;
+      flex-shrink: 0;
+      line-height: 0;
+    }
+
+    .agent-avatar-btn img {
+      display: block;
+    }
+
+    .agent-avatar-btn::after {
+      content: "换";
+      position: absolute;
+      right: -2px;
+      bottom: -2px;
+      width: 1.1rem;
+      height: 1.1rem;
+      border-radius: 50%;
+      background: var(--cyan);
+      color: #041018;
+      font-size: 0.58rem;
+      font-weight: 900;
+      display: grid;
+      place-items: center;
+      border: 1.5px solid #0a121c;
+      line-height: 1;
+    }
+
+    .agent-bar .agent-meta { text-align: left; min-width: 0; flex: 1; }
+    .agent-bar .agent-name {
+      font-weight: 700;
+      color: #f2f6fa;
+      font-size: 0.95rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .agent-bar .agent-role {
+      font-size: 0.72rem;
+      color: var(--cyan);
+    }
+
+    .btn-change-avatar {
+      font: inherit;
+      font-size: 0.72rem;
+      font-weight: 700;
+      white-space: nowrap;
+      padding: 0.4rem 0.65rem;
+      border-radius: 999px;
+      cursor: pointer;
+      border: 1px solid rgba(61, 213, 255, 0.45);
+      background: rgba(61, 213, 255, 0.12);
+      color: #7ae7ff;
+      flex-shrink: 0;
+    }
+
+    .btn-change-avatar:hover {
+      background: rgba(61, 213, 255, 0.22);
+      color: #fff;
+    }
+
+    .profile-setup {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+      padding: 1rem;
+      border-radius: 14px;
+      background: rgba(61, 213, 255, 0.08);
+      border: 1px solid rgba(61, 213, 255, 0.25);
+    }
+
+    .avatar-pick {
+      position: relative;
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      border: 2px dashed rgba(61, 213, 255, 0.45);
+      background: rgba(0, 0, 0, 0.35);
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .avatar-pick img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: none;
+    }
+
+    .avatar-pick.has-img img { display: block; }
+    .avatar-pick.has-img .avatar-placeholder { display: none; }
+
+    .avatar-placeholder {
+      text-align: center;
+      font-size: 0.72rem;
+      color: var(--cyan);
+      line-height: 1.35;
+      padding: 0.4rem;
+    }
+
+    .avatar-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .avatar-actions label.btn-photo {
+      font: inherit;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 0.55rem 0.85rem;
+      border-radius: 10px;
+      cursor: pointer;
+      border: 1px solid rgba(61, 213, 255, 0.4);
+      background: rgba(0, 0, 0, 0.35);
+      color: #7ae7ff;
+    }
+
+    .avatar-actions label.btn-photo.primary {
+      background: linear-gradient(135deg, #3dd5ff, #1a9bb8);
+      color: #041018;
+      border-color: transparent;
+      box-shadow: 0 4px 12px rgba(61, 213, 255, 0.3);
+    }
+
+    .avatar-actions input[type="file"] { display: none; }
+
+    .avatar-actions button.btn-photo {
+      font: inherit;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 0.55rem 0.85rem;
+      border-radius: 10px;
+      cursor: pointer;
+      border: 1px solid transparent;
+      background: linear-gradient(135deg, #3dd5ff, #1a9bb8);
+      color: #041018;
+      box-shadow: 0 4px 12px rgba(61, 213, 255, 0.3);
+    }
+
+    #avatarPick { cursor: pointer; }
+
+    .cam-stage {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      max-height: min(52vh, 420px);
+      border-radius: 14px;
+      overflow: hidden;
+      background: #000;
+      border: 1px solid rgba(61, 213, 255, 0.3);
+    }
+
+    .cam-stage video,
+    .cam-stage canvas {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transform: scaleX(-1);
+    }
+
+    .cam-stage canvas { display: none; }
+    .cam-stage.shot video { display: none; }
+    .cam-stage.shot canvas { display: block; }
+
+    .cam-hint {
+      margin-top: 0.65rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    .cam-error {
+      color: #ff8a80;
+      font-size: 0.82rem;
+      text-align: center;
+      margin-top: 0.5rem;
+      display: none;
+    }
+
+    .cam-error.show { display: block; }
+
+    .nick-row {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .nick-row label {
+      font-size: 0.8rem;
+      color: var(--cyan);
+      font-weight: 700;
+    }
+
+    .nick-row input {
+      font: inherit;
+      font-size: 1rem;
+      padding: 0.7rem 0.85rem;
+      border-radius: 10px;
+      border: 1px solid rgba(61, 213, 255, 0.35);
+      background: rgba(0, 0, 0, 0.4);
+      color: #f2f6fa;
+      outline: none;
+    }
+
+    .nick-row input:focus {
+      border-color: var(--cyan);
+      box-shadow: 0 0 0 3px rgba(61, 213, 255, 0.15);
+    }
+
+    .profile-error {
+      font-size: 0.8rem;
+      color: #ff8a80;
+      display: none;
+    }
+
+    .profile-error.show { display: block; }
+
+    .btn-report {
+      display: none;
+      width: calc(100% - 1.5rem);
+      margin: 0.85rem 0.75rem 0;
+      font: inherit;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 0.85rem 1rem;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      color: #fff;
+      background: linear-gradient(135deg, #e8a030, #c45c1a);
+      box-shadow: 0 6px 18px rgba(196, 92, 26, 0.35);
+    }
+
+    .btn-report.show { display: block; }
+    .btn-report:hover { filter: brightness(1.05); }
+
+    /* Report — photo-first album */
+    #reportOverlay .modal {
+      width: min(860px, 100%);
+      max-height: min(94vh, 980px);
+      overflow: auto;
+    }
+
+    .report {
+      color: var(--text);
+    }
+
+    .report-hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 0.55rem;
+      padding: 0.35rem 0 1.1rem;
+      margin-bottom: 0.85rem;
+      position: relative;
+    }
+
+    .report-hero::after {
+      content: "";
+      position: absolute;
+      left: 10%;
+      right: 10%;
+      bottom: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(61, 213, 255, 0.45), transparent);
+    }
+
+    .report-avatar-wrap {
+      position: relative;
+      width: 132px;
+      height: 132px;
+      margin-bottom: 0.2rem;
+    }
+
+    .report-avatar-wrap::before {
+      content: "";
+      position: absolute;
+      inset: -8px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(240, 193, 75, 0.35), transparent 70%);
+      animation: avatar-glow 2.4s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    @keyframes avatar-glow {
+      0%, 100% { opacity: 0.55; transform: scale(0.96); }
+      50% { opacity: 1; transform: scale(1.04); }
+    }
+
+    .report-hero img.report-avatar,
+    .report-avatar-fallback {
+      width: 132px;
+      height: 132px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--gold);
+      box-shadow:
+        0 0 0 3px rgba(61, 213, 255, 0.35),
+        0 12px 28px rgba(0, 0, 0, 0.45);
+      position: relative;
+      z-index: 1;
+      background: #1a2838;
+    }
+
+    .report-avatar-fallback {
+      display: grid;
+      place-items: center;
+      font-size: 3rem;
+      color: #7ae7ff;
+    }
+
+    .report-hero h3 {
+      font-family: var(--font-display);
+      font-size: 1.85rem;
+      color: #f4f8fc;
+      font-weight: 400;
+      line-height: 1.2;
+      letter-spacing: 0.02em;
+    }
+
+    .report-hero .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      justify-content: center;
+      margin-top: 0.15rem;
+    }
+
+    .report-hero .chip {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.28rem 0.65rem;
+      border-radius: 999px;
+      border: 1px solid rgba(61, 213, 255, 0.35);
+      background: rgba(61, 213, 255, 0.1);
+      color: #7ae7ff;
+    }
+
+    .report-hero .chip.gold {
+      border-color: rgba(240, 193, 75, 0.45);
+      background: rgba(240, 193, 75, 0.12);
+      color: var(--gold);
+    }
+
+    .report-hero .sub {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 0.15rem;
+    }
+
+    .report-summary {
+      display: none;
+    }
+
+    /* 两列瀑布流：顶底齐平 */
+    .report-gallery {
+      display: flex;
+      align-items: stretch;
+      gap: 0.75rem;
+      width: 100%;
+    }
+
+    .report-col {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    @media (max-width: 520px) {
+      .report-gallery {
+        flex-direction: column;
+      }
+    }
+
+    .report-entry {
+      display: flex;
+      flex-direction: column;
+      flex: 1 1 auto;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      border-radius: 14px;
+      overflow: hidden;
+      background: rgba(8, 14, 24, 0.65);
+      border: 1px solid rgba(61, 213, 255, 0.22);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+      min-height: min-content;
+    }
+
+    .report-entry.grow-tall { flex-grow: 1.35; }
+    .report-entry.grow-wide { flex-grow: 0.92; }
+    .report-entry.grow-sq { flex-grow: 1.08; }
+
+    .report-entry .photo-stage {
+      position: relative;
+      width: 100%;
+      flex: 1 1 auto;
+      min-height: 160px;
+      background: #0a121c;
+    }
+
+    .report-entry .photo-stage.has-zoom {
+      cursor: zoom-in;
+    }
+
+    .report-entry .photo-stage.has-zoom::after {
+      content: "🔍";
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      left: auto;
+      z-index: 3;
+      width: 1.7rem;
+      height: 1.7rem;
+      display: grid;
+      place-items: center;
+      font-size: 0.75rem;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.45);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      opacity: 0.85;
+      pointer-events: none;
+    }
+
+    .report-entry .photo-stage img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border: none;
+      border-radius: 0;
+      margin: 0;
+    }
+
+    /* 相册大图查看 */
+    #photoViewOverlay {
+      z-index: 1200;
+      padding: 0.75rem;
+      background: rgba(2, 6, 12, 0.92);
+    }
+
+    #photoViewOverlay .photo-view-frame {
+      position: relative;
+      width: min(920px, 100%);
+      max-height: min(92vh, 980px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+      transform: translateY(14px) scale(0.97);
+      transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    #photoViewOverlay.open .photo-view-frame {
+      transform: none;
+    }
+
+    #photoViewOverlay .photo-view-close {
+      position: absolute;
+      top: -0.15rem;
+      right: -0.15rem;
+      z-index: 2;
+      width: 2.4rem;
+      height: 2.4rem;
+      border: 1px solid rgba(61, 213, 255, 0.45);
+      border-radius: 999px;
+      background: rgba(10, 18, 28, 0.88);
+      color: #dff8ff;
+      font-size: 1.4rem;
+      line-height: 1;
+      cursor: pointer;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+    }
+
+    #photoViewOverlay .photo-view-close:hover {
+      background: rgba(61, 213, 255, 0.22);
+    }
+
+    #photoViewOverlay .photo-view-img-wrap {
+      width: 100%;
+      max-height: min(78vh, 820px);
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      border-radius: 14px;
+      border: 1px solid rgba(61, 213, 255, 0.35);
+      background: #050a12;
+      box-shadow: 0 0 36px rgba(61, 213, 255, 0.18), 0 18px 48px rgba(0, 0, 0, 0.55);
+    }
+
+    #photoViewOverlay .photo-view-img-wrap img {
+      display: block;
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      max-height: min(78vh, 820px);
+      object-fit: contain;
+    }
+
+    #photoViewOverlay .photo-view-caption {
+      width: 100%;
+      text-align: center;
+      color: #e8f7ff;
+      padding: 0 0.5rem 0.25rem;
+    }
+
+    #photoViewOverlay .photo-view-caption h3 {
+      margin: 0 0 0.2rem;
+      font-size: 1rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    #photoViewOverlay .photo-view-caption p {
+      margin: 0;
+      font-size: 0.82rem;
+      color: rgba(180, 230, 255, 0.88);
+    }
+
+    #photoViewOverlay .photo-view-actions {
+      display: flex;
+      gap: 0.55rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      width: 100%;
+      padding: 0 0.25rem 0.15rem;
+    }
+
+    #photoViewOverlay .photo-view-actions .btn-primary,
+    #photoViewOverlay .photo-view-actions .btn-ghost {
+      margin: 0;
+    }
+
+    /* 错落高度由 flex-grow 控制，顶底由双列拉伸齐平 */
+    .report-entry .photo-stage.empty {
+      display: grid;
+      place-items: center;
+      min-height: 120px;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+    }
+
+    .report-entry .photo-meta {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 1.4rem 0.7rem 0.65rem;
+      background: linear-gradient(180deg, transparent, rgba(4, 10, 18, 0.9));
+      color: #fff;
+    }
+
+    .report-entry .photo-meta h4 {
+      font-size: 0.86rem;
+      color: #fff;
+      margin: 0 0 0.15rem;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      text-shadow: 0 1px 8px rgba(0, 0, 0, 0.55);
+    }
+
+    .report-entry .place {
+      font-size: 0.68rem;
+      color: #7ae7ff;
+      margin: 0;
+      opacity: 0.95;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .report-entry .photo-stamp-time {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      z-index: 2;
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: rgba(255, 255, 255, 0.95);
+      background: rgba(0, 0, 0, 0.48);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      padding: 0.22rem 0.45rem;
+      border-radius: 6px;
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.55);
+      pointer-events: none;
+    }
+
+    .report-entry .photo-stamp-agent {
+      position: absolute;
+      left: 0.5rem;
+      top: 0.5rem;
+      bottom: auto;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      max-width: calc(100% - 1rem);
+      padding: 0.28rem 0.45rem 0.28rem 0.28rem;
+      border-radius: 12px;
+      background: rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      pointer-events: none;
+    }
+
+    .report-entry .photo-stamp-agent img {
+      width: 1.7rem;
+      height: 1.7rem;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1.5px solid #f0c14b;
+      flex-shrink: 0;
+      aspect-ratio: 1;
+      max-height: none;
+    }
+
+    .report-entry .photo-stamp-agent .stamp-avatar-fallback {
+      width: 1.7rem;
+      height: 1.7rem;
+      border-radius: 50%;
+      flex-shrink: 0;
+      display: grid;
+      place-items: center;
+      font-size: 0.85rem;
+      background: #1a2838;
+      border: 1.5px solid #f0c14b;
+    }
+
+    .report-entry .photo-stamp-agent .stamp-lines {
+      min-width: 0;
+      line-height: 1.15;
+    }
+
+    .report-entry .photo-stamp-agent .stamp-title {
+      font-size: 0.6rem;
+      font-weight: 800;
+      color: #fff;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .report-entry .photo-stamp-agent .stamp-place {
+      font-size: 0.58rem;
+      font-weight: 700;
+      color: #7ae7ff;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .report-entry .photo-stamp-agent .stamp-time {
+      font-size: 0.54rem;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.9);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .report-entry .entry-body {
+      padding: 0.55rem 0.7rem 0.7rem;
+      flex: 0 0 auto;
+    }
+
+    .report-entry .caption {
+      font-size: 0.72rem;
+      line-height: 1.5;
+      color: var(--text-muted);
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .report-entry .note {
+      margin-top: 0.3rem;
+      font-size: 0.72rem;
+      color: var(--gold);
+      font-style: italic;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .report-footer {
+      text-align: center;
+      margin-top: 1rem;
+      padding: 1rem 0.85rem;
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(240, 193, 75, 0.18), rgba(61, 213, 255, 0.08));
+      border: 1px solid rgba(240, 193, 75, 0.35);
+      font-size: 0.84rem;
+      line-height: 1.55;
+      color: var(--text-muted);
+    }
+
+    .report-footer strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      color: var(--gold);
+      margin-bottom: 0.3rem;
+      font-weight: 400;
+    }
+
+    #reportCapture {
+      background: #101a28;
+      color: #e8eef5;
+      padding: 0.35rem 0.1rem 0.5rem;
+      border-radius: 8px;
+    }
+
+    .save-img-status {
+      font-size: 0.8rem;
+      color: var(--cyan);
+      text-align: center;
+      margin-top: 0.5rem;
+      display: none;
+    }
+
+    .save-img-status.show { display: block; }
+
+    .spot-nav {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.55rem;
+      padding: 0.85rem 0.75rem 0.15rem;
+    }
+
+    @media (min-width: 720px) {
+      .spot-nav { grid-template-columns: repeat(4, 1fr); }
+    }
+
+    .spot-tab {
+      appearance: none;
+      border: 1.5px solid rgba(61, 213, 255, 0.35);
+      border-radius: 12px;
+      background: rgba(10, 18, 30, 0.85);
+      color: rgba(232, 238, 245, 0.78);
+      font: inherit;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 0.7rem 0.45rem;
+      cursor: pointer;
+      transition: border-color 0.2s, box-shadow 0.2s, color 0.2s, transform 0.2s;
+      line-height: 1.35;
+    }
+
+    .spot-tab .spot-emoji {
+      display: block;
+      font-size: 1.15rem;
+      margin-bottom: 0.15rem;
+    }
+
+    .spot-tab .spot-done {
+      display: block;
+      margin-top: 0.2rem;
+      font-size: 0.68rem;
+      font-weight: 500;
+      color: rgba(122, 231, 255, 0.75);
+    }
+
+    .spot-tab:hover,
+    .spot-tab:focus-visible {
+      border-color: rgba(61, 213, 255, 0.75);
+      color: #fff;
+      outline: none;
+      transform: translateY(-1px);
+    }
+
+    .spot-tab.active {
+      border-color: var(--cyan);
+      color: #fff;
+      box-shadow: 0 0 18px rgba(61, 213, 255, 0.35);
+      background: linear-gradient(180deg, rgba(24, 48, 72, 0.95), rgba(10, 20, 34, 0.98));
+    }
+
+    .spot-tab.cleared {
+      border-color: rgba(61, 214, 140, 0.55);
+    }
+
+    .spot-tab.cleared .spot-done { color: var(--success); }
+
+    .save-pill {
+      font-size: 0.72rem !important;
+      color: rgba(122, 231, 255, 0.85) !important;
+      border-color: rgba(61, 213, 255, 0.22) !important;
+    }
+
+    .save-pill.ok { color: var(--success) !important; border-color: rgba(61, 214, 140, 0.35) !important; }
+    .save-pill.err { color: #ff8a80 !important; border-color: rgba(239, 83, 80, 0.4) !important; }
+
+    .save-toast {
+      position: fixed;
+      left: 50%;
+      bottom: 1.35rem;
+      transform: translateX(-50%) translateY(12px);
+      z-index: 1200;
+      padding: 0.55rem 1rem;
+      border-radius: 999px;
+      background: rgba(8, 18, 30, 0.94);
+      border: 1px solid rgba(61, 213, 255, 0.45);
+      color: #7ae7ff;
+      font-size: 0.82rem;
+      font-weight: 700;
+      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.45);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+      white-space: nowrap;
+    }
+
+    .save-toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .save-toast.err {
+      color: #ffcdd2;
+      border-color: rgba(239, 83, 80, 0.55);
+    }
+  </style>
+</head>
+<body>
+  <div class="scanline" aria-hidden="true"></div>
+  <div class="confetti" id="confetti" aria-hidden="true"></div>
+
+  <div class="app">
+    <div class="hud-frame">
+      <header class="hero">
+        <div class="hero-badge">⏱ 时空特工系统 · ONLINE</div>
+        <div class="hero-emblem" aria-hidden="true"></div>
+        <h1 id="heroTitle">平遥古城：时空小特工任务清单</h1>
+        <p id="heroDesc">穿越 2800 年历史，化身古城守护者！点开任务卡了解详情，完成小挑战后打勾，探索晋商故里的秘密。</p>
+        <div class="progress-wrap">
+          <div class="progress-meta">
+            <span>本景点任务进度</span>
+            <span id="progressText">0 / 7</span>
+          </div>
+          <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="7" aria-valuenow="0">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+        </div>
+        <div class="agent-bar" id="agentBar">
+          <button type="button" class="agent-avatar-btn" id="changeAvatarBtn" aria-label="更换特工照片" title="更换特工照片">
+            <img id="agentAvatarImg" alt="特工头像" />
+          </button>
+          <div class="agent-meta">
+            <div class="agent-name" id="agentNameText">时空小特工</div>
+            <div class="agent-role" id="agentRoleText">古城时空小特工 · 任务进行中</div>
+          </div>
+          <button type="button" class="btn-change-avatar" id="changeAvatarTextBtn">更换照片</button>
+        </div>
+      </header>
+
+      <nav class="spot-nav" id="spotNav" aria-label="打卡景点"></nav>
+
+      <div class="reward-banner" id="rewardBanner">
+        <h3 id="rewardTitle">🏅 古城时空小特工</h3>
+        <p id="rewardDesc">全部任务完成！你已解锁荣誉称号，可以生成专属任务报告啦！</p>
+      </div>
+      <button type="button" class="btn-report" id="reportBtn">📄 生成我的任务报告</button>
+
+      <div class="album-title" id="albumTitle">📷 特工打卡相册</div>
+      <div class="album-strip" id="albumStrip"></div>
+
+      <div class="section-title" id="taskSectionTitle">任务清单</div>
+
+      <div class="task-grid" id="taskGrid"></div>
+
+      <footer class="status-bar">
+        <div class="status-pill" id="statusPill">
+          <span class="dot" aria-hidden="true"></span>
+          <span id="statusText">特工状态：任务进行中</span>
+        </div>
+        <div class="status-pill save-pill" id="savePill" title="进度保存在本机浏览器 localStorage">💾 进度自动保存</div>
+        <div class="status-pill" id="readyPill">准备好接受任务了吗？</div>
+        <button type="button" class="btn-reset" id="resetBtn">重置本景点</button>
+      </footer>
+    </div>
+  </div>
+
+  <div class="save-toast" id="saveToast" role="status" aria-live="polite">进度已保存</div>
+
+  <!-- Welcome -->
+  <div class="overlay open" id="welcomeOverlay" role="dialog" aria-modal="true" aria-labelledby="welcomeTitle">
+    <div class="modal">
+      <div class="modal-head">
+        <div class="modal-icon">🕵️</div>
+        <div>
+          <h2 id="welcomeTitle">欢迎，时空小特工！</h2>
+          <div class="sub">先登记特工身份</div>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="profile-setup">
+          <div class="avatar-pick" id="avatarPick">
+            <span class="avatar-placeholder">🕵️<br />特工头像</span>
+            <img id="welcomeAvatarPreview" alt="头像预览" />
+          </div>
+          <div class="avatar-actions">
+            <button type="button" class="btn-photo primary" id="avatarCameraBtn">📸 拍照设置头像</button>
+          </div>
+          <div class="nick-row">
+            <label for="nickInput">特工昵称</label>
+            <input type="text" id="nickInput" maxlength="12" placeholder="例如：小遥、勇士豆豆" autocomplete="nickname" />
+          </div>
+          <p class="profile-error" id="profileError">请拍照设置头像并填写昵称后再出发～</p>
+        </div>
+        <div class="info-block">
+          <h3>📜 任务背景</h3>
+          <p>小特工，欢迎开启山西时空之旅！可选<strong>平遥古城、王家大院、绵山、壶口瀑布</strong>四大打卡点。每个景点都有独立任务清单——完成挑战、拍照打卡，全部通关后可生成专属任务报告！</p>
+        </div>
+        <div class="info-block knowledge-box">
+          <h3>🎮 怎么玩</h3>
+          <p>1. 拍照设置头像并填写昵称<br />2. 点选上方景点切换任务清单<br />3. 热身闯关 + 知识问答 + 现场拍照打卡<br />4. 进度自动保存在本机，下次打开可继续<br />5. 本景点全部完成后生成图文报告</p>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn-primary" id="startBtn" style="flex:1">接受任务，出发！</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Avatar camera (live capture only) -->
+  <div class="overlay" id="avatarCamOverlay" role="dialog" aria-modal="true" aria-labelledby="avatarCamTitle">
+    <div class="modal">
+      <div class="modal-head">
+        <div class="modal-icon">📸</div>
+        <div>
+          <h2 id="avatarCamTitle">拍摄特工头像</h2>
+          <div class="sub" id="avatarCamSub">仅支持现场拍照，不能从相册选择</div>
+        </div>
+        <button type="button" class="modal-close" id="avatarCamClose" aria-label="关闭">×</button>
+      </div>
+      <div class="modal-body">
+        <div class="cam-stage" id="avatarCamStage">
+          <video id="avatarCamVideo" playsinline autoplay muted></video>
+          <canvas id="avatarCamCanvas"></canvas>
+        </div>
+        <p class="cam-hint" id="avatarCamHint">请对准自己，点击下方快门拍照</p>
+        <p class="cam-error" id="avatarCamError">无法打开摄像头，请允许相机权限后重试</p>
+        <div class="modal-actions">
+          <button type="button" class="btn-ghost" id="avatarCamRetake" style="display:none">重拍</button>
+          <button type="button" class="btn-primary" id="avatarCamShot" style="margin-left:auto">📷 拍照</button>
+          <button type="button" class="btn-primary" id="avatarCamUse" style="display:none;margin-left:auto">✓ 使用这张</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Task detail -->
+  <div class="overlay" id="taskOverlay" role="dialog" aria-modal="true" aria-labelledby="taskTitle">
+    <div class="modal">
+      <div class="modal-head">
+        <div class="modal-icon" id="taskIcon">🏯</div>
+        <div>
+          <h2 id="taskTitle">任务</h2>
+          <div class="sub" id="taskPlace">目标地点</div>
+        </div>
+        <button type="button" class="modal-close" data-close="taskOverlay" aria-label="关闭">×</button>
+      </div>
+      <div class="task-hero" id="taskHero" aria-hidden="true">
+        <img id="taskHeroImg" alt="" />
+      </div>
+      <div class="modal-body" id="taskBody"></div>
+    </div>
+  </div>
+
+  <!-- Report -->
+  <div class="overlay" id="reportOverlay" role="dialog" aria-modal="true" aria-labelledby="reportTitle">
+    <div class="modal">
+      <div class="modal-head">
+        <div class="modal-icon">📄</div>
+        <div>
+          <h2 id="reportTitle">时空特工任务报告</h2>
+          <div class="sub">图文打卡成果</div>
+        </div>
+        <button type="button" class="modal-close" data-close="reportOverlay" aria-label="关闭">×</button>
+      </div>
+      <div class="modal-body report" id="reportBody"></div>
+    </div>
+  </div>
+
+  <!-- Photo lightbox -->
+  <div class="overlay" id="photoViewOverlay" role="dialog" aria-modal="true" aria-labelledby="photoViewTitle">
+    <div class="photo-view-frame">
+      <button type="button" class="photo-view-close" id="photoViewClose" aria-label="关闭大图">×</button>
+      <div class="photo-view-img-wrap">
+        <img id="photoViewImg" alt="打卡大图" />
+      </div>
+      <div class="photo-view-caption">
+        <h3 id="photoViewTitle"></h3>
+        <p id="photoViewMeta"></p>
+      </div>
+      <div class="photo-view-actions">
+        <button type="button" class="btn-ghost" id="photoViewCloseBtn">关闭</button>
+        <button type="button" class="btn-primary" id="photoViewDownloadBtn">📥 下载打卡照</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const STORAGE_KEY = "shanxi-agent-progress-v5";
+    const LEGACY_KEY = "pingyao-agent-progress-v4";
+    let pendingAvatar = "";
+
+    const CN_NUM = ["一", "二", "三", "四", "五", "六", "七", "八"];
+
+    function emptyProgress() {
+      return { done: {}, notes: {}, challengeOk: {}, photos: {}, photoTimes: {} };
+    }
+
+    const LOCATIONS = [
+      {
+        id: "pingyao",
+        name: "平遥古城",
+        emoji: "🏯",
+        title: "平遥古城：时空小特工任务清单",
+        desc: "穿越 2800 年历史，化身古城守护者！点开任务卡了解详情，完成小挑战后打勾，探索晋商故里的秘密。",
+        role: "古城时空小特工",
+        rewardTitle: "🏅 古城时空小特工",
+        rewardText: "全部任务完成！你已解锁荣誉称号，可以生成专属任务报告啦！",
+        reportLabel: "平遥古城 · 时空特工任务报告",
+        reportProve: "平遥古城",
+        welcomeArt: "🎉🐉🏯🐉🎉",
+        reportCopy: {
+          1: "登上平遥古城墙，感受明代城防气势。特工在敌楼与垛口之间巡逻，留下城墙打卡照，守护龟城平安。",
+          2: "走进票号，触摸晋商「汇通天下」的智慧。算盘声声，汇票传信，特工记录下古代金融的秘密。",
+          3: "化身小镖师，了解武装押运的传奇。仗剑护镖的姿态定格成照，一路平安的誓言响彻关山。",
+          4: "走进县衙大堂，看见「明镜高悬」。特工明白：公正清明，才是断案与做人的明镜。",
+          5: "寻访推光漆器与剪纸等非遗宝藏。匠心手作被镜头珍藏，文化之美在特工心里生了根。",
+          6: "舌尖上的平遥：牛肉、碗托、栲栳栳……美食打卡不仅是味道，更是风土人情的一课。",
+          7: "夜色中的古城与《又见平遥》光影，让特工穿越百年。华灯与故事，照亮晋商信义之路。",
+        },
+        tasks: [
+          {
+            id: 1, icon: "🏯", title: "任务一：城墙巡逻",
+            short: "登上城墙，巡逻守卫，发现异常，保护古城安全！",
+            place: "平遥古城墙",
+            content: "登上雄伟的古城墙，沿着城墙走一段路，感受古城的气势。寻找城墙上的「敌楼」（瞭望防守用的小楼）和「垛口」（城垛上的缺口），数一数你看到了多少个？想象一下古代士兵是如何在这里巡逻和防御的。",
+            challenge: "在城墙上拍一张打卡照：敌楼、垛口、角楼，或印有字迹的城砖都可以。",
+            knowledge: "现存平遥城墙主体多为明代重修。墙上约有 72 座敌楼、3000 多个垛口，民间传说对应孔子「七十二贤人」与「三千弟子」。城池与六座城门布局像乌龟，因此又叫「龟城」。",
+            interact: "wall", cover: "assets/tasks/task1.jpg",
+            photo: { title: "城墙打卡照", hint: "拍敌楼、垛口、角楼，或城砖特写都可以！" },
+            quizzes: [
+              { q: "平遥城墙上大约有多少座敌楼？", options: ["12 座", "72 座", "300 座"], a: 1, tip: "传说对应孔子的「七十二贤人」。" },
+              { q: "城墙上约 3000 个垛口，据说象征什么？", options: ["三千士兵", "孔子的三千弟子", "三千块城砖"], a: 1, tip: "军事建筑里藏着儒家文化哦。" },
+              { q: "平遥古城因为形状像什么，又被称为「龟城」？", options: ["凤凰", "龙", "乌龟"], a: 2, tip: "六座城门像龟的头尾和四足。" },
+            ],
+          },
+          {
+            id: 2, icon: "🧮", title: "任务二：票号探秘",
+            short: "走进票号，破解密码，了解古代金融，找到隐藏线索！",
+            place: "日升昌票号 或 协同庆票号",
+            content: "走进中国第一家票号——日升昌，或者参观仍保留「地下金库」的协同庆票号。了解古代的「银行」怎样用汇票把银两汇到远方，晋商如何做到「汇通天下」。如果去协同庆，可以看看通往地下金库的通道，感受金库的隐蔽与安全设计。",
+            challenge: "在票号内找到算盘，拨几下，并拍一张算盘或票号内景打卡照。",
+            knowledge: "票号是清代山西商人创办的金融机构，可办理汇兑、存放银两，是中国近代银行业的重要源头。日升昌创办于清代道光年间，常用纸质汇票代替长途运现银，有「汇通天下」之称；汇票还靠密押暗号、特殊印记等办法防伪。",
+            interact: "abacus", cover: "assets/tasks/task2.jpg",
+            photo: { title: "票号打卡照", hint: "拍算盘、柜台，或「汇通天下」匾额都可以！" },
+            quizzes: [
+              { q: "日升昌票号最像今天的什么机构？", options: ["菜市场", "银行", "学校"], a: 1, tip: "它可以汇银、存银，是金融史上的重要源头。" },
+              { q: "「汇通天下」最接近哪一种意思？", options: ["钱可以汇到很远的地方", "天下人都要来平遥吃饭", "城墙通向四面八方"], a: 0, tip: "一张汇票，银两就能在各地流通。" },
+              { q: "古人出门为什么更喜欢用汇票，而不是背很多银子？", options: ["汇票更漂亮", "更安全、更方便", "银子太沉抬不动而已，没有别的原因"], a: 1, tip: "少运现银，也少了被劫的风险。" },
+            ],
+          },
+          {
+            id: 3, icon: "⚔️", title: "任务三：镖局闯关",
+            short: "护送镖车，击败劫镖贼，完成挑战，守护一路平安！",
+            place: "中国镖局博物馆 或 华北第一镖局",
+            content: "参观镖局，了解古代镖师的职责和生活。看看镖师们使用的兵器和工具，想象他们是如何「走镖」护送贵重物品的。如果条件允许，可以参与一些模拟「运镖」的小游戏或体验活动。",
+            challenge: "模仿镖师的经典姿势，拍一张帅气的护镖打卡照。",
+            knowledge: "镖局像古代的「武装物流公司」，专门护送银两、货物等贵重物品。票号汇票普及后，长途运送现银变少，镖局的传统押运生意也渐渐受到影响。",
+            interact: "escort", cover: "assets/tasks/task3.jpg",
+            photo: { title: "镖师打卡照", hint: "摆个仗剑姿势，或和兵器、镖车合影！" },
+            quizzes: [
+              { q: "镖局的工作，最像今天的哪一种？", options: ["武装押运 / 安保物流", "开饭店", "教书法"], a: 0, tip: "又运货，又保护安全。" },
+              { q: "镖师走镖时，最常护送的是什么？", options: ["玩具和糖", "银两和贵重货物", "只护送信件"], a: 1, tip: "晋商生意大，路上需要保镖。" },
+              { q: "票号用汇票之后，为什么镖局会受影响？", options: ["大家不喜欢镖师了", "少运现银，押运需求变少", "城墙太高过不去"], a: 1, tip: "金融方式一变，运输方式也会变。" },
+            ],
+          },
+          {
+            id: 4, icon: "⚖️", title: "任务四：县衙断案",
+            short: "化身小捕快，搜集证据，公正断案，伸张正义！",
+            place: "平遥县衙",
+            content: "走进平遥县衙，了解古代县太爷是如何审理案件、管理百姓的。参观大堂、二堂、监狱等区域，感受古代衙门的庄严。如果能赶上「升堂表演」，更可以亲身体验古代审案的场景。",
+            challenge: "找到「明镜高悬」牌匾，拍一张大堂或匾额打卡照。",
+            knowledge: "平遥县衙是中国现存规模较大、保存较完整的古代县级衙署之一。大堂是公开审案、办理公务的核心场所；「明镜高悬」提醒官吏断案要公正清明。",
+            interact: "yamen", cover: "assets/tasks/task4.jpg",
+            photo: { title: "县衙打卡照", hint: "拍「明镜高悬」、大堂公案，或升堂场景！" },
+            quizzes: [
+              { q: "「明镜高悬」最接近哪一种意思？", options: ["镜子挂很高，用来照头发", "断案要像明镜一样公正清明", "衙门里禁止使用镜子"], a: 1, tip: "明镜 = 清楚、公正。" },
+              { q: "县衙大堂主要用来做什么？", options: ["开演唱会", "审理案件、办理公务", "卖平遥牛肉"], a: 1, tip: "大堂是县太爷办公审案的地方。" },
+              { q: "平遥县衙在全国古衙中有什么特别之处？", options: ["它是保存较完整、规模很大的县级衙署之一", "它是中国唯一的皇宫", "它没有大堂"], a: 0, tip: "常被称作「中国古衙之最」一类代表。" },
+            ],
+          },
+          {
+            id: 5, icon: "🎁", title: "任务五：非遗寻宝",
+            short: "寻找非遗宝藏，体验传统技艺，解开谜题，传承文化之美！",
+            place: "古城内非遗体验店（推光漆器、剪纸等）",
+            content: "在古城中寻找平遥的非物质文化遗产，例如精美的推光漆器、栩栩如生的剪纸艺术。了解这些传统手工艺品的制作过程，感受匠人的智慧和耐心。如果时间允许，可以尝试亲手制作一件小小的非遗作品。",
+            challenge: "挑选一件最喜欢的非遗作品，拍一张特写打卡照，并说说吸引你的地方。",
+            knowledge: "平遥推光漆器是中国四大名漆器之一，要用手掌反复推光，直到漆面像镜子一样亮；剪纸则以精巧构思展现民间艺术魅力。",
+            interact: "heritage", cover: "assets/tasks/task5.jpg",
+            photo: { title: "非遗打卡照", hint: "拍推光漆器、剪纸，或你亲手做的小作品！" },
+            quizzes: [
+              { q: "推光漆器为什么叫「推光」？", options: ["用推土机推亮", "用手掌反复推磨，让漆面发亮", "放到太阳下晒亮"], a: 1, tip: "匠人的掌心就是「抛光工具」。" },
+              { q: "平遥推光漆器属于什么？", options: ["电子游戏", "非物质文化遗产 / 传统名漆器", "现代塑料玩具"], a: 1, tip: "它是中国四大名漆器之一。" },
+              { q: "平遥常见的剪纸作品，经常用什么颜色？", options: ["荧光绿", "红色", "透明无色"], a: 1, tip: "红色喜庆，最常见。" },
+            ],
+          },
+          {
+            id: 6, icon: "🍜", title: "任务六：舌尖任务",
+            short: "品尝平遥特色美食，完成美食任务，成为美食小达人！",
+            place: "古城内特色小吃店",
+            content: "寻找并品尝平遥的特色美食，如平遥牛肉、碗托、栲栳栳等。感受这些传统小吃背后的历史和文化。",
+            challenge: "选出最喜欢的平遥小吃，拍一张美食打卡照，再告诉爸爸妈妈味道如何。",
+            knowledge: "平遥牛肉是当地招牌特产；碗托多用荞麦面制成，口感爽滑；栲栳栳是山西特色莜面卷成小筒的面食，在平遥也能吃到，常蘸臊子食用。",
+            interact: "food", cover: "assets/tasks/task6.jpg",
+            photo: { title: "美食打卡照", hint: "拍平遥牛肉、碗托或栲栳栳，吃之前先打卡！" },
+            quizzes: [
+              { q: "平遥最有名的招牌特产之一是？", options: ["平遥牛肉", "椰子鸡", "小笼包"], a: 0, tip: "咸香紧实，切片不散。" },
+              { q: "碗托主要用什么做成？", options: ["西瓜皮", "荞麦面", "棉花糖"], a: 1, tip: "拌上醋蒜辣椒油更开胃。" },
+              { q: "栲栳栳的外形最像什么？", options: ["小筒 / 窝窝", "大饼", "冰淇淋球"], a: 0, tip: "莜面卷成筒，蘸臊子吃。" },
+            ],
+          },
+          {
+            id: 7, icon: "🌙", title: "任务七：夜间行动",
+            short: "夜游古城或观看《又见平遥》，穿越百年光影！",
+            place: "《又见平遥》剧场 或 古城夜景",
+            content: "观看大型情境体验剧《又见平遥》，通过「行走式」观演，沉浸式感受晋商「走西口」的悲壮与坚韧；或者在夜晚漫步古城，感受华灯初上、古朴宁静的夜景。",
+            challenge: "夜游古城或观演后，拍一张夜景／剧场打卡照，并分享最深印象。",
+            knowledge: "《又见平遥》是沉浸式情境剧，观众边走边看，感受晋商信义与「走西口」故事；夜游古城也能看见华灯映照下的明清街巷。",
+            interact: "night", cover: "assets/tasks/task7.jpg",
+            photo: { title: "夜景打卡照", hint: "拍华灯下的街巷、市楼，或剧场外景（请遵守场馆规定）！" },
+            quizzes: [
+              { q: "《又见平遥》观演方式特别在哪里？", options: ["只能在家里看电视", "观众边走边看，沉浸式体验", "必须闭着眼睛听"], a: 1, tip: "演员就在你身边演出。" },
+              { q: "这部剧主要想让人感受什么？", options: ["晋商走西口的故事与信义精神", "怎么打游戏通关", "如何做数学题"], a: 0, tip: "血脉里的坚持与担当。" },
+              { q: "夜晚漫步古城，最特别的感觉是？", options: ["和白天完全一样", "华灯初上，更有古韵与宁静", "所有店都关门，什么也看不见"], a: 1, tip: "灯火下的青砖灰瓦别有味道。" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "wangjia",
+        name: "王家大院",
+        emoji: "🏛️",
+        title: "王家大院：民居特工任务清单",
+        desc: "走进「民间故宫」，探索晋商宅院的迷宫与三雕之美！完成任务、拍照打卡，解锁民居小特工称号。",
+        role: "民居时空小特工",
+        rewardTitle: "🏅 民居时空小特工",
+        rewardText: "王家大院任务全部完成！你已读懂一座院子里的晋商密码。",
+        reportLabel: "王家大院 · 时空特工任务报告",
+        reportProve: "王家大院",
+        welcomeArt: "🎉🏛️🪵🧱🎉",
+        reportCopy: {
+          1: "特工抵达高家崖／红门堡，仰望城堡式大院，拍下第一张民居入口照。",
+          2: "穿梭于层层院落，体会「王」字布局与迷宫巷道，留下探秘打卡。",
+          3: "寻访砖雕、木雕、石雕，把匠人手艺定格在镜头里。",
+          4: "走进祠堂／家风展区，理解尊祖敬宗与治家之道。",
+          5: "登高俯瞰屋脊如海，感受华夏民居第一宅的气势。",
+          6: "挑选最喜欢的一处细节，写下特工手记，完成民居通关。",
+        },
+        tasks: [
+          {
+            id: 1, icon: "🚪", title: "任务一：堡门报到",
+            short: "找到高家崖或红门堡大门，开启民居探险！",
+            place: "高家崖 / 红门堡入口",
+            content: "王家大院位于灵石县静升镇，是规模宏大的明清民居建筑群。先找到高家崖或红门堡的入口，观察门楼、抱鼓石和匾额，想象当年晋商家族进出的场景。",
+            challenge: "在堡门或门楼前拍一张报到打卡照。",
+            knowledge: "王家大院被誉为「华夏民居第一宅」「民间故宫」。静升王氏家族在明清两代陆续兴建，现主要开放高家崖、红门堡、崇宁堡等堡院，依山而建、层楼叠院。",
+            interact: "choice", cover: "assets/tasks/wangjia/task1.jpg",
+            warmup: {
+              title: "🔎 民间故宫在哪？",
+              hint: "王家大院最常被称作什么？",
+              note: "确认民间故宫身份",
+              choices: [
+                { label: "民间故宫 / 华夏民居第一宅", ok: true },
+                { label: "中国唯一皇宫", ok: false },
+                { label: "海底世界乐园", ok: false },
+              ],
+            },
+            photo: { title: "堡门打卡照", hint: "拍大门、门楼或抱鼓石都可以！" },
+            quizzes: [
+              { q: "王家大院主要位于山西哪里？", options: ["灵石县静升镇", "海南三亚", "哈尔滨冰雪大世界"], a: 0, tip: "晋中灵石，静升古镇旁。" },
+              { q: "人们常把王家大院比作什么？", options: ["民间故宫", "外星基地", "海上灯塔"], a: 0, tip: "民居里的「紫禁城」气势。" },
+              { q: "王家大院主体常见的两大堡院是？", options: ["高家崖与红门堡", "东宫与西宫", "天坛与地坛"], a: 0, tip: "东边高家崖，西边红门堡。" },
+            ],
+          },
+          {
+            id: 2, icon: "🧭", title: "任务二：院落迷宫",
+            short: "穿巷过院，感受城堡式院落的层叠之美！",
+            place: "大院巷道与四合院",
+            content: "沿着巷道走进一座座院落，注意「前低后高、层层递进」的布局。红门堡的巷道与院落组合，整体平面隐约像一个巨大的「王」字，彰显家族姓氏。数一数你经过了几进院子。",
+            challenge: "在院落或巷道中拍一张「迷宫探险」打卡照。",
+            knowledge: "王家大院开放参观的区域约有二百多座院落、两千余间房屋，堡墙环绕，既是家宅也带防御功能。红门堡布局常被说成隐有「王」字形；高家崖、红门堡、崇宁堡是目前主要开放的三大堡院。",
+            interact: "choice", cover: "assets/tasks/wangjia/task2.jpg",
+            warmup: {
+              title: "🧭 认路小测试",
+              hint: "红门堡平面布局最常被说成像哪个字？",
+              note: "认出「王」字布局",
+              choices: [
+                { label: "「王」字", ok: true },
+                { label: "「水」字", ok: false },
+                { label: "「电」字", ok: false },
+              ],
+            },
+            photo: { title: "院落打卡照", hint: "拍巷道、院门或层层台阶！" },
+            quizzes: [
+              { q: "王家大院的院落规模给人什么感觉？", options: ["像一座小城 / 堡寨", "只有一间小屋", "完全没有院子"], a: 0, tip: "院落成群，像民居城堡。" },
+              { q: "「依山而建、坐北朝南」说明什么？", options: ["讲究风水与居住舒适", "随便盖着玩", "只为了挡雨"], a: 0, tip: "传统民居很讲究朝向。" },
+              { q: "走在巷道里，特工最该注意什么？", options: ["看路、看雕刻、别乱摸文物", "大声尖叫吵醒邻居", "到处涂鸦"], a: 0, tip: "文明参观，保护文物。" },
+            ],
+          },
+          {
+            id: 3, icon: "🪵", title: "任务三：三雕寻宝",
+            short: "寻找砖雕、木雕、石雕，发现藏在细节里的故事！",
+            place: "照壁、门楣、柱础、屋脊等",
+            content: "王家大院以砖雕、木雕、石雕「三雕」闻名。仔细观察照壁、门窗、柱础和屋脊上的图案，看看有没有狮子、花卉、人物故事。选一块你最喜欢的雕刻，说说它像什么。",
+            challenge: "拍一张最喜欢的三雕特写打卡照。",
+            knowledge: "三雕装饰既好看又有寓意：砖雕常见于照壁、屋脊，木雕多在门窗梁枋，石雕常见于柱础、门枕石。狮子、花卉、人物故事等图案，往往寄托吉祥与教化。",
+            interact: "choice", cover: "assets/tasks/wangjia/task3.jpg",
+            warmup: {
+              title: "🎁 三雕是哪三雕？",
+              hint: "选出正确的一组。",
+              note: "记住砖木石三雕",
+              choices: [
+                { label: "砖雕、木雕、石雕", ok: true },
+                { label: "冰雕、沙雕、奶油雕", ok: false },
+                { label: "纸雕、糖雕、雪雕", ok: false },
+              ],
+            },
+            photo: { title: "三雕打卡照", hint: "特写一块砖雕 / 木雕 / 石雕！" },
+            quizzes: [
+              { q: "「三雕」一般指？", options: ["砖雕、木雕、石雕", "刀削面、牛肉、陈醋", "索道、瀑布、城墙"], a: 0, tip: "建筑装饰三大绝活。" },
+              { q: "雕刻出现在大院的什么地方最多？", options: ["门楣、照壁、屋脊、柱础等", "只有停车场", "只有餐厅菜单"], a: 0, tip: "抬头低头都有惊喜。" },
+              { q: "看雕刻时正确做法是？", options: ["用眼睛欣赏，轻轻拍照", "用手抠花纹带回家", "用水彩笔添颜色"], a: 0, tip: "文物不能破坏。" },
+            ],
+          },
+          {
+            id: 4, icon: "📜", title: "任务四：家风寻踪",
+            short: "走进祠堂或家风展区，了解晋商家族的规矩与故事！",
+            place: "祠堂 / 家风展陈区域",
+            content: "晋商家族重视读书、诚信与家规。参观祠堂或相关展陈，看看牌位、匾额和介绍文字，想想「家风」为什么对一个大家族很重要。",
+            challenge: "在祠堂或家风相关展区拍一张打卡照（请保持安静礼貌）。",
+            knowledge: "静升王家亦官亦商，大院营建历经清代康熙至嘉庆等朝、前后约三百年。家祠与匾额常提醒后人：做人做事要守规矩、重德行、讲诚信。",
+            interact: "text", cover: "assets/tasks/wangjia/task4.jpg",
+            warmup: {
+              title: "✍️ 家风一句话",
+              hint: "用至少 6 个字，写下你理解的「好家风」。",
+              min: 6,
+              placeholder: "例如：做人要诚实守信……",
+            },
+            photo: { title: "家风打卡照", hint: "拍祠堂外观、匾额或展陈说明牌！" },
+            quizzes: [
+              { q: "祠堂在传统家族中主要用来做什么？", options: ["祭祖、传承家风", "开游乐场", "卖冰淇淋"], a: 0, tip: "敬祖与教化后代。" },
+              { q: "晋商成功很重要的品质常被提到的是？", options: ["诚信与勤勉", "只会玩游戏", "从不读书"], a: 0, tip: "信誉是晋商的金字招牌。" },
+              { q: "参观祠堂时应该怎样？", options: ["安静、礼貌、不打闹", "大声喧哗", "攀爬摆件"], a: 0, tip: "尊重文化空间。" },
+            ],
+          },
+          {
+            id: 5, icon: "🌄", title: "任务五：屋脊瞭望",
+            short: "登高望远，俯瞰灰瓦连绵的民居海洋！",
+            place: "堡墙或制高观景点",
+            content: "寻找可以登高的位置（注意安全，听从景区指引），俯瞰大院屋脊连绵如海的景象。对比平地上的「迷宫感」和高处的「格局感」。",
+            challenge: "拍一张俯瞰屋脊或远眺静升镇的打卡照。",
+            knowledge: "从高处看，更能理解城堡式民居如何依山布局、巷堡相连。这也是「华夏民居第一宅」气势的来源。",
+            interact: "choice", cover: "assets/tasks/wangjia/task5.jpg",
+            warmup: {
+              title: "👀 高处看什么？",
+              hint: "登高瞭望时，最壮观的画面通常是？",
+              note: "俯瞰屋脊如海",
+              choices: [
+                { label: "灰瓦屋脊连成片，像民居海洋", ok: true },
+                { label: "只有一棵塑料椰子树", ok: false },
+                { label: "完全空无一物", ok: false },
+              ],
+            },
+            photo: { title: "瞭望打卡照", hint: "拍屋脊连绵或远山古镇（注意扶稳）！" },
+            quizzes: [
+              { q: "登高看大院，能帮助我们理解什么？", options: ["整体布局与气势", "手机游戏通关秘籍", "明天中午吃什么"], a: 0, tip: "格局一眼看清。" },
+              { q: "大院墙堡环绕，最接近哪种功能？", options: ["居住 + 一定防御", "只有游泳池", "只放风筝"], a: 0, tip: "家宅也像小城堡。" },
+              { q: "在高处拍照要注意什么？", options: ["安全第一，不翻越护栏", "越危险越好玩", "闭着眼睛往前跑"], a: 0, tip: "特工也要遵守安全规则。" },
+            ],
+          },
+          {
+            id: 6, icon: "✨", title: "任务六：心头好收藏",
+            short: "选出最打动你的一处细节，完成民居通关！",
+            place: "大院任意最爱角落",
+            content: "回顾今天走过的门楼、巷道、三雕与瞭望点，选出最打动你的一个角落：可能是一扇窗、一块照壁，或一进安静的小院。",
+            challenge: "为「心头好」拍一张打卡照，并在热身里写下理由。",
+            knowledge: "旅行不只是打卡数量，更是发现属于自己的美。王家大院的价值，在于把建筑、艺术与家风融为一体。",
+            interact: "text", cover: "assets/tasks/wangjia/task6.jpg",
+            warmup: {
+              title: "💖 我的心头好",
+              hint: "写下最喜欢的角落 + 理由（至少 8 个字）。",
+              min: 8,
+              placeholder: "例如：最爱照壁上的狮子，很威风……",
+            },
+            photo: { title: "心头好打卡照", hint: "拍下你最想带回家（在心里）的那个画面！" },
+            quizzes: [
+              { q: "王家大院最核心的看点之一是？", options: ["民居建筑与三雕艺术", "过山车", "海底隧道"], a: 0, tip: "建筑本身就是博物馆。" },
+              { q: "完成任务后，特工最该记住的是？", options: ["保护文物、文明参观", "把砖块抠回家", "到处乱写名字"], a: 0, tip: "小特工也是小守护者。" },
+              { q: "「民间故宫」强调的是？", options: ["民居达到了很高的艺术与规模水准", "这里真的住着皇帝", "这里禁止参观"], a: 0, tip: "比喻它的珍贵与气派。" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "mianshan",
+        name: "绵山",
+        emoji: "⛰️",
+        title: "绵山：介公特工任务清单",
+        desc: "攀岩寺、听寒食传说，探索介子推与云峰胜境！完成挑战，成为山林小特工。",
+        role: "绵山时空小特工",
+        rewardTitle: "🏅 绵山时空小特工",
+        rewardText: "绵山任务全部完成！寒食故事与山水胜境，都记在你的特工档案里了。",
+        reportLabel: "绵山 · 时空特工任务报告",
+        reportProve: "绵山",
+        welcomeArt: "🎉⛰️🛕💧🎉",
+        reportCopy: {
+          1: "特工听闻介子推与寒食传说，在山门开启山林任务。",
+          2: "乘索道或登山步道，把云海与悬崖收入打卡照。",
+          3: "探访云峰寺等古刹，感受悬壁上的香火与宁静。",
+          4: "走近抱腹岩奇观，惊叹大自然的鬼斧神工。",
+          5: "水涛沟或栈道听泉观瀑，留下清凉一帧。",
+          6: "用一句话写下今日山中印象，通关介公之旅。",
+        },
+        tasks: [
+          {
+            id: 1, icon: "🔥", title: "任务一：寒食传说",
+            short: "了解介子推与寒食节的故事，开启绵山之旅！",
+            place: "绵山景区入口 / 介公相关展区",
+            content: "绵山因介子推的故事而闻名。传说春秋时晋国贤人介子推忠于国君、隐居绵山；后人用寒食节「禁火冷食」等方式纪念他。先在入口或展区了解这个故事的大意。",
+            challenge: "拍一张山门、介公主题雕塑或介绍牌的打卡照。",
+            knowledge: "寒食节是中国传统节日，习俗是不生火、吃冷食，传说与纪念介子推有关；后来常与清明节相连。绵山因此成为重要的历史文化名山。",
+            interact: "choice", cover: "assets/tasks/mianshan/task1.jpg",
+            warmup: {
+              title: "🔥 寒食小问答",
+              hint: "寒食节传统习俗更接近哪一种？",
+              note: "了解寒食禁火",
+              choices: [
+                { label: "不生火，吃冷食", ok: true },
+                { label: "必须天天放烟花", ok: false },
+                { label: "只能吃冰淇淋", ok: false },
+              ],
+            },
+            photo: { title: "山门打卡照", hint: "拍山门、雕塑或故事介绍牌！" },
+            quizzes: [
+              { q: "绵山的历史文化常与谁相关？", options: ["介子推", "孙悟空的师傅", "外星船长"], a: 0, tip: "忠义隐士的故事。" },
+              { q: "寒食节和哪种习惯有关？", options: ["禁火冷食", "必须烤肉", "只能喝汽水"], a: 0, tip: "传说用来纪念介子推。" },
+              { q: "听完故事，特工最该学到的品质是？", options: ["忠贞、气节与敬畏自然", "随便丢垃圾", "大声吵闹"], a: 0, tip: "传说里有精神，山水里有敬畏。" },
+            ],
+          },
+          {
+            id: 2, icon: "🚠", title: "任务二：登云而上",
+            short: "乘坐索道或步行登山，感受「人在云中游」！",
+            place: "索道站 / 登山步道",
+            content: "绵山山势陡峭，许多寺庙建在悬崖之上。可以乘坐索道登高，或沿步道缓缓上行（量力而行）。一路观察山岩、松树与云雾的变化。",
+            challenge: "拍一张索道、步道或云中山景打卡照。",
+            knowledge: "索道能帮助游客更轻松到达高处景区。无论乘索道还是步行，都要注意安全，抓紧扶手，不拥挤推搡。",
+            interact: "choice", cover: "assets/tasks/mianshan/task2.jpg",
+            warmup: {
+              title: "🚠 安全特工守则",
+              hint: "乘索道或登山时，正确做法是？",
+              note: "牢记登山安全",
+              choices: [
+                { label: "听从指引，注意安全", ok: true },
+                { label: "站在护栏外摇摆", ok: false },
+                { label: "闭眼狂奔冲刺", ok: false },
+              ],
+            },
+            photo: { title: "登云打卡照", hint: "拍索道车厢、步道或云雾山景！" },
+            quizzes: [
+              { q: "绵山寺庙为什么常显得很「险」？", options: ["多建在悬崖峭壁上", "建在海底", "建在沙漠正中央"], a: 0, tip: "悬空古建很震撼。" },
+              { q: "登山时感到累了应该？", options: ["休息、喝水、量力而行", "硬撑跑到晕倒", "把水瓶扔掉"], a: 0, tip: "小特工也要照顾自己。" },
+              { q: "在索道上拍照要注意？", options: ["坐好扶稳，不探出护栏", "打开舱门站外面", "乱摇车厢"], a: 0, tip: "安全第一。" },
+            ],
+          },
+          {
+            id: 3, icon: "🛕", title: "任务三：云峰探寺",
+            short: "走进云峰寺等古刹，感受悬崖上的宁静！",
+            place: "云峰寺或景区主要寺庙",
+            content: "参观云峰寺或其他主要寺庙建筑，观察它们如何贴着山势建造。保持安静，感受山林与香火交织的氛围（请尊重宗教场所礼仪）。",
+            challenge: "拍一张寺庙外观或山寺同框的打卡照（勿扰他人礼佛）。",
+            knowledge: "绵山佛道文化深厚，古建与自然融为一体。参观寺庙时应衣着得体、不大声喧哗、不乱摸佛像。",
+            interact: "choice", cover: "assets/tasks/mianshan/task3.jpg",
+            warmup: {
+              title: "🛕 礼寺小提示",
+              hint: "进入寺庙最合适的行为是？",
+              note: "文明礼寺",
+              choices: [
+                { label: "安静参观，尊重礼仪", ok: true },
+                { label: "追逐打闹", ok: false },
+                { label: "随便攀爬雕塑", ok: false },
+              ],
+            },
+            photo: { title: "山寺打卡照", hint: "拍飞檐、山门或寺景与山岩同框！" },
+            quizzes: [
+              { q: "绵山的特色之一是？", options: ["悬崖古建与山水结合", "只有购物商场", "没有山只有平原"], a: 0, tip: "寺在云中。" },
+              { q: "参观宗教场所时不应该？", options: ["大声喧哗、不礼貌拍摄", "安静行走", "听从工作人员提示"], a: 0, tip: "尊重是基本礼。" },
+              { q: "云峰寺名字里的「云峰」让人想到？", options: ["高处云雾中的山峰", "海底火山", "沙漠绿洲超市"], a: 0, tip: "望文生义也对。" },
+            ],
+          },
+          {
+            id: 4, icon: "🪨", title: "任务四：抱腹奇岩",
+            short: "寻找抱腹岩，见识「腹中能容」的天然奇观！",
+            place: "抱腹岩一带",
+            content: "抱腹岩是绵山著名奇观：巨大岩腔仿佛张开双臂，把古刹等建筑「抱」在怀中。站在观景点，感受大自然的力量，也可留意岩腹中的寺庙建筑。",
+            challenge: "拍一张能看出「岩腹」气势的打卡照。",
+            knowledge: "漫长的地质作用塑造了绵山陡峭岩壁与天然岩洞。抱腹岩因形似「怀抱」得名，岩腹中建有寺庙，是孩子们最容易记住的绵山标志景观。",
+            interact: "choice", cover: "assets/tasks/mianshan/task4.jpg",
+            warmup: {
+              title: "🪨 奇岩认名",
+              hint: "「抱腹岩」名字最可能来自？",
+              note: "认出抱腹形态",
+              choices: [
+                { label: "岩石形状像张开的腹部/怀抱", ok: true },
+                { label: "因为里面卖抱枕", ok: false },
+                { label: "因为禁止拥抱", ok: false },
+              ],
+            },
+            photo: { title: "抱腹岩打卡照", hint: "尽量拍出岩石「怀抱」的空间感！" },
+            quizzes: [
+              { q: "抱腹岩属于？", options: ["自然奇观 / 地质地貌", "人造过山车", "超市货架"], a: 0, tip: "大自然的杰作。" },
+              { q: "观看大型岩体时要注意？", options: ["站在安全区域，不翻越护栏", "往裂缝里钻", "敲石头带回家"], a: 0, tip: "保护自己也保护山。" },
+              { q: "为什么说绵山「寺险岩奇」？", options: ["古建险峻 + 岩石奇特", "只有停车场很奇", "因为路特别平"], a: 0, tip: "人文与自然双绝。" },
+            ],
+          },
+          {
+            id: 5, icon: "💧", title: "任务五：水涛听泉",
+            short: "走近水涛沟或山泉瀑布，用耳朵完成打卡！",
+            place: "水涛沟 / 瀑布栈道",
+            content: "如果行程包含水涛沟或山间瀑布栈道，停下脚步仔细听水声，看看水流如何从岩壁间跌落。夏天尤其清凉。",
+            challenge: "拍一张溪瀑、栈道或水花的打卡照（地面湿滑，慢行）。",
+            knowledge: "水塑造山谷，也滋养植被。听泉观瀑是认识水文与山地生态的好机会。湿滑路段请防滑慢行。",
+            interact: "choice", cover: "assets/tasks/mianshan/task5.jpg",
+            warmup: {
+              title: "👂 听泉辨声",
+              hint: "靠近瀑布时，正确且安全的做法是？",
+              note: "听泉也要注意安全",
+              choices: [
+                { label: "在栈道安全处听水声、慢慢走", ok: true },
+                { label: "跳进急流里游泳", ok: false },
+                { label: "把护栏拆掉方便拍照", ok: false },
+              ],
+            },
+            photo: { title: "水涛打卡照", hint: "拍瀑布、溪流或湿润的岩壁！" },
+            quizzes: [
+              { q: "山中水声主要来自？", options: ["溪流瀑布冲击岩石", "空调外机", "校车喇叭"], a: 0, tip: "水流能量很大。" },
+              { q: "潮湿栈道最重要的是？", options: ["防滑慢行", "冲刺跑步", "倒着走比赛"], a: 0, tip: "特工不莽撞。" },
+              { q: "欣赏完水景后应该？", options: ["带走垃圾，留下美丽", "把包装袋扔进水里", "折断树枝玩"], a: 0, tip: "青山常在。" },
+            ],
+          },
+          {
+            id: 6, icon: "📝", title: "任务六：山中手记",
+            short: "写下今日最深印象，完成绵山通关！",
+            place: "任意观景平台或休息处",
+            content: "回顾寒食故事、登云之路、古寺与奇岩水声，选出今天最难忘的一个瞬间，写成特工手记。",
+            challenge: "拍一张你最满意的山景收官照，并完成手记热身。",
+            knowledge: "旅行手记能帮你把风景变成记忆。绵山把忠义传说、宗教古建与自然奇观编织在一起，值得慢慢回味。",
+            interact: "text", cover: "assets/tasks/mianshan/task6.jpg",
+            warmup: {
+              title: "📝 今日山中印象",
+              hint: "至少写 8 个字，记录最难忘的瞬间。",
+              min: 8,
+              placeholder: "例如：抱腹岩好大，像大山在拥抱我们……",
+            },
+            photo: { title: "收官山景照", hint: "选一张最想给家人看的山景！" },
+            quizzes: [
+              { q: "绵山吸引游客的重要原因是？", options: ["历史文化 + 山水古建", "只有停车场", "没有风景"], a: 0, tip: "故事与风景并存。" },
+              { q: "完成绵山任务后，特工成为了？", options: ["更懂山西山水与传说的小使者", "职业拆护栏员", "专职乱丢垃圾"], a: 0, tip: "知识升级！" },
+              { q: "离开景区前记得？", options: ["检查随身物品、文明离园", "把石头装进口袋全带走", "涂鸦留名"], a: 0, tip: "好特工有好习惯。" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "hukou",
+        name: "壶口瀑布",
+        emoji: "🌊",
+        title: "壶口瀑布：黄河特工任务清单",
+        desc: "直面黄河怒涛，聆听「壶口」轰鸣！完成任务，成为母亲河小特工。",
+        role: "黄河时空小特工",
+        rewardTitle: "🏅 黄河时空小特工",
+        rewardText: "壶口任务全部完成！你已亲身感受黄河的力量与美丽。",
+        reportLabel: "壶口瀑布 · 时空特工任务报告",
+        reportProve: "壶口瀑布",
+        welcomeArt: "🎉🌊🐉🟨🎉",
+        reportCopy: {
+          1: "特工抵达黄河壶口，第一眼便被巨壶沸腾的气势震住。",
+          2: "在观景台听涛，分辨河水的低鸣与轰鸣。",
+          3: "了解「十里龙槽」，明白河水为何被挤成一束。",
+          4: "远眺孟门山或河心奇观，感受河床变迁的力量。",
+          5: "晴日寻彩虹，把水雾与阳光的魔术收进相机。",
+          6: "写下对母亲河的祝福，完成黄河通关。",
+        },
+        tasks: [
+          {
+            id: 1, icon: "🟨", title: "任务一：黄河第一观",
+            short: "站上观景台，亲眼看见「巨壶沸腾」！",
+            place: "壶口主瀑观景台",
+            content: "黄河流到晋陕峡谷的壶口一带，宽阔河面骤然收窄，浊浪从高处跌落，形如巨壶倾水、壶口沸腾，因此叫「壶口瀑布」。先安全地站在观景区域，整体感受它的气势。",
+            challenge: "拍一张能看见主瀑水花与气势的打卡照。",
+            knowledge: "壶口瀑布是黄河上著名的大瀑布，也是世上少见的大型黄色瀑布：黄河流经黄土高原后含沙量大，水色呈金黄。瀑布位于山西吉县与陕西宜川交界的峡谷中。",
+            interact: "choice", cover: "assets/tasks/hukou/task1.jpg",
+            warmup: {
+              title: "🌊 名字从哪来？",
+              hint: "「壶口」这个名字最形象的解释是？",
+              note: "理解壶口之名",
+              choices: [
+                { label: "河水收窄跌落，像从壶口倒出/巨壶沸腾", ok: true },
+                { label: "这里专门卖茶壶", ok: false },
+                { label: "因为禁止带水壶", ok: false },
+              ],
+            },
+            photo: { title: "主瀑打卡照", hint: "拍下瀑布主体与水雾（注意防滑防溅）！" },
+            quizzes: [
+              { q: "壶口瀑布位于哪条大河？", options: ["黄河", "长江", "珠江"], a: 0, tip: "中华母亲河。" },
+              { q: "瀑布看起来发黄，主要因为？", options: ["河水含沙量高", "有人倒了颜料", "太阳镜颜色不对"], a: 0, tip: "泥沙把水染成金黄。" },
+              { q: "在观景台正确做法是？", options: ["在安全区域观看，听指挥", "翻越护栏靠近边缘", "向瀑布扔石头"], a: 0, tip: "激流危险。" },
+            ],
+          },
+          {
+            id: 2, icon: "👂", title: "任务二：听涛辨声",
+            short: "闭上眼睛几秒，用耳朵感受黄河的力量！",
+            place: "观景台安全区域",
+            content: "壶口瀑布声如雷鸣，数里可闻。找一个相对安全、不太拥挤的位置，安静听 10 秒：是低沉的轰鸣，还是碎裂的水声？和爸爸妈妈说说你的感觉。",
+            challenge: "拍一张「听涛」姿势合影或水雾弥漫的场景照。",
+            knowledge: "巨大落差与狭窄河道让水流能量集中，冲击岩石产生强声与水雾。这也是认识「势能→动能」的生动课堂。",
+            interact: "choice", cover: "assets/tasks/hukou/task2.jpg",
+            warmup: {
+              title: "👂 声音从哪来？",
+              hint: "瀑布轰鸣的主要原因是？",
+              note: "听懂黄河之力",
+              choices: [
+                { label: "大量河水高速冲击河床与岩石", ok: true },
+                { label: "有人在播音响", ok: false },
+                { label: "风只吹树叶那么小声", ok: false },
+              ],
+            },
+            photo: { title: "听涛打卡照", hint: "拍水雾、观景人或「倾听」的瞬间！" },
+            quizzes: [
+              { q: "瀑布声音大，说明什么？", options: ["水流能量很强", "河水在睡觉", "完全没有水"], a: 0, tip: "能量可被听见。" },
+              { q: "听涛时更推荐？", options: ["站稳、短暂闭眼感受", "爬到最边缘", "把耳朵伸进水里"], a: 0, tip: "感受也要安全。" },
+              { q: "水雾打湿衣服时应该？", options: ["提前穿好外套，小心脚下", "抱怨黄河并乱扔垃圾", "推别人一把"], a: 0, tip: "有备无患。" },
+            ],
+          },
+          {
+            id: 3, icon: "🐉", title: "任务三：十里龙槽",
+            short: "弄清黄河为何在这里被「挤」成一束！",
+            place: "龙槽观景 / 解说牌附近",
+            content: "壶口瀑布之下，黄河在坚硬的石质河床中冲出一条又窄又深的槽，人们俗称「十里龙槽」（实际长度约数公里）。观察河道由瀑下归入深槽的样子，想象巨龙在槽中翻滚。",
+            challenge: "拍一张能看出河道狭窄/石槽走向的打卡照。",
+            knowledge: "「十里龙槽」是瀑布长期溯源侵蚀、河床不断下切后留下的深槽。黄河在壶口先收窄跌落，再顺槽奔腾而去，所以落差大、流速急、声势震耳。",
+            interact: "choice", cover: "assets/tasks/hukou/task3.jpg",
+            warmup: {
+              title: "🐉 龙槽是什么？",
+              hint: "「十里龙槽」更接近哪一种描述？",
+              note: "认识狭窄河槽",
+              choices: [
+                { label: "瀑布下游被冲刷出的狭窄石质深槽", ok: true },
+                { label: "一条真正的龙睡觉的床", ok: false },
+                { label: "游乐园的滑梯名字而已，与河无关", ok: false },
+              ],
+            },
+            photo: { title: "龙槽打卡照", hint: "拍出河道收窄或石槽线条感！" },
+            quizzes: [
+              { q: "河水进入狭窄龙槽后，通常会？", options: ["更急、更有力", "立刻消失", "变成固体水泥"], a: 0, tip: "同水量过窄口，速度加快。" },
+              { q: "十里龙槽主要由什么力量塑造？", options: ["长期水流冲刷与下切", "一夜之间用铲子挖成", "用积木搭的"], a: 0, tip: "地质时间很长。" },
+              { q: "观察龙槽时不要？", options: ["靠近危险边缘", "看解说牌", "在安全区拍照"], a: 0, tip: "好奇不等于冒险。" },
+            ],
+          },
+          {
+            id: 4, icon: "🏝️", title: "任务四：孟门远望",
+            short: "远眺孟门山等河心奇观，感受黄河改道的故事！",
+            place: "孟门山观景点（以景区实际开放为准）",
+            content: "在条件允许时远眺孟门山——它矗立于壶口下游的黄河之中，古有「九河之蹬」等说法，也常被称作黄河上的「门」。想想为什么坚硬的岩石能在急流中屹立；不同水位时，景象也会不同。",
+            challenge: "拍一张孟门山或河心岩石的远眺打卡照。",
+            knowledge: "孟门山是壶口下游河床中的著名奇观，与壶口、龙门并称黄河胜景。它是河流下切、瀑布位置上移过程中留在河心的岩石，水位高低会改变可见面貌。",
+            interact: "choice", cover: "assets/tasks/hukou/task4.jpg",
+            warmup: {
+              title: "🏝️ 河心石头",
+              hint: "孟门山最特别的地方是？",
+              note: "认识孟门奇观",
+              choices: [
+                { label: "矗立在黄河之中的山石奇观", ok: true },
+                { label: "一座室内商场", ok: false },
+                { label: "月球上的环形山", ok: false },
+              ],
+            },
+            photo: { title: "孟门打卡照", hint: "远眺河心山石，可含黄河水面！" },
+            quizzes: [
+              { q: "孟门山常被称作与黄河相关的？", options: ["河心奇观 /「黄河之门」一类胜景", "黄河游乐场售票处", "黄河地铁站"], a: 0, tip: "壶口下游的河心山石。" },
+              { q: "水位变化时，景色会？", options: ["有所不同", "永远一成不变", "变成沙漠"], a: 0, tip: "四季与水量影响景观。" },
+              { q: "远眺景点时应该用？", options: ["眼睛和相机，不翻越护栏", "游泳游过去摸一摸", "开船冲撞岩石"], a: 0, tip: "远观亦有收获。" },
+            ],
+          },
+          {
+            id: 5, icon: "🌈", title: "任务五：彩虹猎手",
+            short: "阳光 + 水雾 = 彩虹！试试能不能找到它！",
+            place: "主瀑附近水雾区（安全范围内）",
+            content: "晴天时，瀑布水雾在阳光照射下可能出现彩虹。变换站位与角度，耐心寻找。即使没有彩虹，水雾折射的光晕也值得记录。",
+            challenge: "拍一张彩虹、水雾光晕，或阳光穿透水雾的照片。",
+            knowledge: "彩虹是阳光在水滴中折射、反射形成的光学现象。壶口的水雾为观察彩虹提供了天然实验室。",
+            interact: "choice", cover: "assets/tasks/hukou/task5.jpg",
+            warmup: {
+              title: "🌈 彩虹怎么来？",
+              hint: "瀑布边看见彩虹，主要需要？",
+              note: "理解彩虹条件",
+              choices: [
+                { label: "阳光照射到水雾/水滴上", ok: true },
+                { label: "必须先放烟花", ok: false },
+                { label: "必须关掉太阳", ok: false },
+              ],
+            },
+            photo: { title: "彩虹/水雾照", hint: "有彩虹拍彩虹；没有就拍金色水雾！" },
+            quizzes: [
+              { q: "彩虹属于？", options: ["光学现象", "可以装瓶带走的固体", "一种蔬菜"], a: 0, tip: "光与水的魔术。" },
+              { q: "阴天不一定有彩虹，因为缺少？", options: ["合适的阳光条件", "黄河水", "观景台"], a: 0, tip: "光很重要。" },
+              { q: "猎彩虹时仍要？", options: ["注意脚下湿滑与安全边界", "只顾拍照往前冲", "推开其他游客"], a: 0, tip: "美景让给文明。" },
+            ],
+          },
+          {
+            id: 6, icon: "💛", title: "任务六：母亲河手记",
+            short: "写下对黄河的祝福，完成壶口通关！",
+            place: "观景台休息处",
+            content: "黄河是中华民族的母亲河。回顾今天的怒涛、龙槽、孟门与彩虹，用一句真诚的话，写下你对黄河的祝福或感受。",
+            challenge: "拍一张收官合影或最震撼的黄河照，并完成手记。",
+            knowledge: "认识黄河，既要感受它的壮美，也要理解保护母亲河、珍惜水资源的责任。小特工也可以做环保宣传员。",
+            interact: "text", cover: "assets/tasks/hukou/task6.jpg",
+            warmup: {
+              title: "💛 给黄河的话",
+              hint: "至少写 8 个字的祝福或感受。",
+              min: 8,
+              placeholder: "例如：黄河你好厉害，我们会保护你……",
+            },
+            photo: { title: "黄河收官照", hint: "选今天最震撼的一帧留给报告！" },
+            quizzes: [
+              { q: "黄河常被称为？", options: ["中华民族的母亲河", "世界上最小的溪流", "人工喷泉"], a: 0, tip: "文明的摇篮之一。" },
+              { q: "参观后我们能做的环保行动是？", options: ["不乱扔垃圾，宣传保护河流", "向河里倒油漆", "捕捉所有鱼带走"], a: 0, tip: "保护从身边开始。" },
+              { q: "壶口之行最想让特工记住的是？", options: ["黄河的力量、美丽与需要被保护", "护栏很好吃", "瀑布是假的"], a: 0, tip: "壮美与责任同行。" },
+            ],
+          },
+        ],
+      },
+    ];
+
+    /** @type {typeof LOCATIONS[number]} */
+    let currentLoc = LOCATIONS[0];
+    /** @type {typeof LOCATIONS[number]["tasks"]} */
+    let TASKS = currentLoc.tasks;
+    /** @type {Record<number, string>} */
+    let REPORT_COPY = currentLoc.reportCopy;
+
+    function getLocation(id) {
+      return LOCATIONS.find((l) => l.id === id) || LOCATIONS[0];
+    }
+
+    function syncLocationData() {
+      currentLoc = getLocation(state.locationId);
+      TASKS = currentLoc.tasks;
+      REPORT_COPY = currentLoc.reportCopy;
+      document.getElementById("progressBar")?.setAttribute?.("aria-valuemax", String(TASKS.length));
+      const bar = document.querySelector(".progress-bar");
+      if (bar) bar.setAttribute("aria-valuemax", String(TASKS.length));
+    }
+
+
+    let state = loadState();
+    /** @type {Record<number, { warmUp: boolean, quizIdx: number }>} */
+    let session = {};
+    let saveToastTimer = null;
+    syncLocationData();
+
+    function snapshotProgress() {
+      return {
+        done: { ...state.done },
+        notes: { ...state.notes },
+        challengeOk: { ...state.challengeOk },
+        photos: { ...state.photos },
+        photoTimes: { ...(state.photoTimes || {}) },
+      };
+    }
+
+    function applyProgress(p) {
+      const src = p || emptyProgress();
+      state.done = normalizeIdMap(src.done);
+      state.notes = normalizeIdMap(src.notes);
+      state.challengeOk = normalizeIdMap(src.challengeOk);
+      state.photos = normalizeIdMap(src.photos);
+      state.photoTimes = normalizeIdMap(src.photoTimes);
+    }
+
+    /** JSON 会把数字 key 变成字符串，统一转回数字 key */
+    function normalizeIdMap(obj) {
+      const out = {};
+      if (!obj || typeof obj !== "object") return out;
+      Object.keys(obj).forEach((k) => {
+        const n = Number(k);
+        out[Number.isFinite(n) ? n : k] = obj[k];
+      });
+      return out;
+    }
+
+    function normalizeSpots(spots) {
+      const out = {};
+      Object.keys(spots || {}).forEach((id) => {
+        const s = spots[id] || {};
+        out[id] = {
+          done: normalizeIdMap(s.done),
+          notes: normalizeIdMap(s.notes),
+          challengeOk: normalizeIdMap(s.challengeOk),
+          photos: normalizeIdMap(s.photos),
+          photoTimes: normalizeIdMap(s.photoTimes),
+        };
+      });
+      return out;
+    }
+
+    function buildPersistPayload() {
+      state.spots = state.spots || {};
+      state.spots[state.locationId] = snapshotProgress();
+      return {
+        nickname: state.nickname || "",
+        avatar: state.avatar || "",
+        welcomed: !!state.welcomed,
+        locationId: state.locationId || "pingyao",
+        spots: state.spots,
+        savedAt: Date.now(),
+        version: 5,
+      };
+    }
+
+    /** 配额不够时：去掉非当前景点的照片，尽量保住关卡进度 */
+    function slimPersistPayload(payload) {
+      const slimSpots = {};
+      Object.keys(payload.spots || {}).forEach((id) => {
+        const s = payload.spots[id] || emptyProgress();
+        slimSpots[id] = {
+          done: { ...(s.done || {}) },
+          notes: { ...(s.notes || {}) },
+          challengeOk: { ...(s.challengeOk || {}) },
+          photos: id === payload.locationId ? { ...(s.photos || {}) } : {},
+          photoTimes: id === payload.locationId ? { ...(s.photoTimes || {}) } : {},
+        };
+      });
+      return { ...payload, spots: slimSpots, slimmed: true };
+    }
+
+    function formatSavedAt(ts) {
+      if (!ts) return "尚未保存";
+      const diff = Date.now() - ts;
+      if (diff < 15_000) return "刚刚已保存";
+      if (diff < 60_000) return `${Math.floor(diff / 1000)} 秒前已保存`;
+      if (diff < 3600_000) return `${Math.floor(diff / 60000)} 分钟前已保存`;
+      const d = new Date(ts);
+      const hh = String(d.getHours()).padStart(2, "0");
+      const mm = String(d.getMinutes()).padStart(2, "0");
+      if (d.toDateString() === new Date().toDateString()) return `今天 ${hh}:${mm} 已保存`;
+      return `${d.getMonth() + 1}/${d.getDate()} ${hh}:${mm} 已保存`;
+    }
+
+    function updateSavePill(ok, ts) {
+      const el = document.getElementById("savePill");
+      if (!el) return;
+      el.classList.remove("ok", "err");
+      if (ok === false) {
+        el.classList.add("err");
+        el.textContent = "⚠️ 保存失败";
+        return;
+      }
+      if (ok === true) el.classList.add("ok");
+      const t = ts ?? state.savedAt;
+      el.textContent = t ? `💾 ${formatSavedAt(t)}` : "💾 进度自动保存";
+    }
+
+    function flashSaveToast(ok, msg) {
+      const el = document.getElementById("saveToast");
+      if (!el) return;
+      el.textContent = msg || (ok ? "进度已保存到本机" : "保存失败，请清理空间后重试");
+      el.classList.toggle("err", !ok);
+      el.classList.add("show");
+      if (saveToastTimer) clearTimeout(saveToastTimer);
+      saveToastTimer = setTimeout(() => el.classList.remove("show"), 1800);
+    }
+
+    function loadState() {
+      try {
+        let raw = localStorage.getItem(STORAGE_KEY);
+        let parsed = raw ? JSON.parse(raw) : null;
+
+        if (!parsed) {
+          const legacy = localStorage.getItem(LEGACY_KEY);
+          if (legacy) {
+            const old = JSON.parse(legacy);
+            parsed = {
+              nickname: old.nickname || "",
+              avatar: old.avatar || "",
+              welcomed: !!old.welcomed,
+              locationId: "pingyao",
+              spots: {
+                pingyao: {
+                  done: old.done || {},
+                  notes: old.notes || {},
+                  challengeOk: old.challengeOk || {},
+                  photos: old.photos || {},
+                  photoTimes: old.photoTimes || {},
+                },
+              },
+              savedAt: Date.now(),
+            };
+          }
+        }
+
+        if (parsed) {
+          const locationId = parsed.locationId || "pingyao";
+          let spots = parsed.spots || {};
+          if (!spots.pingyao && (parsed.done || parsed.photos)) {
+            spots.pingyao = {
+              done: parsed.done || {},
+              notes: parsed.notes || {},
+              challengeOk: parsed.challengeOk || {},
+              photos: parsed.photos || {},
+              photoTimes: parsed.photoTimes || {},
+            };
+          }
+          spots = normalizeSpots(spots);
+          const progress = spots[locationId] || emptyProgress();
+          return {
+            nickname: parsed.nickname || "",
+            avatar: parsed.avatar || "",
+            welcomed: !!parsed.welcomed,
+            locationId,
+            spots,
+            savedAt: parsed.savedAt || null,
+            done: normalizeIdMap(progress.done),
+            notes: normalizeIdMap(progress.notes),
+            challengeOk: normalizeIdMap(progress.challengeOk),
+            photos: normalizeIdMap(progress.photos),
+            photoTimes: normalizeIdMap(progress.photoTimes),
+          };
+        }
+      } catch (_) {}
+      return {
+        nickname: "",
+        avatar: "",
+        welcomed: false,
+        locationId: "pingyao",
+        spots: {},
+        savedAt: null,
+        ...emptyProgress(),
+      };
+    }
+
+    function saveState(opts = {}) {
+      const showToast = opts.toast === true;
+      const payload = buildPersistPayload();
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
+        state.savedAt = payload.savedAt;
+        updateSavePill(true, payload.savedAt);
+        if (showToast) flashSaveToast(true, opts.message || "进度已保存到本机");
+        return true;
+      } catch (_) {
+        try {
+          const slim = slimPersistPayload(payload);
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(slim));
+          state.spots = slim.spots;
+          applyProgress(slim.spots[slim.locationId] || emptyProgress());
+          state.savedAt = slim.savedAt;
+          updateSavePill(true, slim.savedAt);
+          flashSaveToast(true, "空间不足，已精简其他景点照片后保存");
+          if (showToast || opts.warnQuota !== false) {
+            alert("浏览器存储空间有点满：已优先保存当前进度；其他景点的打卡照片可能被清空，关卡勾选仍保留。");
+          }
+          return true;
+        } catch (err2) {
+          updateSavePill(false);
+          flashSaveToast(false);
+          alert("保存失败：本机存储已满。请删除部分打卡照片，或点「重置本景点」后再试。");
+          return false;
+        }
+      }
+    }
+
+    function switchLocation(id) {
+      if (!getLocation(id) || id === state.locationId) {
+        renderSpotNav();
+        return;
+      }
+      state.spots[state.locationId] = snapshotProgress();
+      state.locationId = id;
+      applyProgress(state.spots[id] || emptyProgress());
+      session = {};
+      syncLocationData();
+      saveState();
+      closeOverlay("taskOverlay");
+      closeOverlay("reportOverlay");
+      updateLocationChrome();
+      renderSpotNav();
+      renderGrid();
+      updateProgress();
+    }
+
+    function spotDoneCount(locId) {
+      const loc = getLocation(locId);
+      const p = (state.spots && state.spots[locId]) || (locId === state.locationId ? snapshotProgress() : emptyProgress());
+      return loc.tasks.filter((t) => p.done && p.done[t.id]).length;
+    }
+
+    function renderSpotNav() {
+      const nav = document.getElementById("spotNav");
+      if (!nav) return;
+      // keep current spot snapshot fresh for badge counts
+      state.spots[state.locationId] = snapshotProgress();
+      nav.innerHTML = LOCATIONS.map((loc) => {
+        const done = spotDoneCount(loc.id);
+        const total = loc.tasks.length;
+        const cleared = done === total && total > 0;
+        const active = loc.id === state.locationId;
+        return `
+          <button type="button" class="spot-tab${active ? " active" : ""}${cleared ? " cleared" : ""}" data-spot="${loc.id}" aria-pressed="${active}">
+            <span class="spot-emoji">${loc.emoji}</span>
+            ${loc.name}
+            <span class="spot-done">${done}/${total}${cleared ? " ✓" : ""}</span>
+          </button>`;
+      }).join("");
+      nav.querySelectorAll(".spot-tab").forEach((btn) => {
+        btn.addEventListener("click", () => switchLocation(btn.dataset.spot));
+      });
+    }
+
+    function updateLocationChrome() {
+      const loc = currentLoc;
+      document.getElementById("heroTitle").textContent = loc.title;
+      document.getElementById("heroDesc").textContent = loc.desc;
+      document.getElementById("rewardTitle").textContent = loc.rewardTitle;
+      document.getElementById("rewardDesc").textContent = loc.rewardText;
+      document.getElementById("taskSectionTitle").textContent = `${loc.emoji} ${loc.name} · 任务清单`;
+      document.title = `${loc.name} · 时空小特工任务清单`;
+    }
+
+    function photoCount() {
+      return TASKS.filter((t) => state.photos[t.id]).length;
+    }
+
+    function updateAlbum() {
+      const title = document.getElementById("albumTitle");
+      const strip = document.getElementById("albumStrip");
+      const items = TASKS.filter((t) => state.photos[t.id]);
+      if (!items.length) {
+        title.classList.remove("show");
+        strip.classList.remove("show");
+        strip.innerHTML = "";
+        return;
+      }
+      title.classList.add("show");
+      strip.classList.add("show");
+      strip.innerHTML = items.map((t) => {
+        const shortTitle = t.title.replace(/^任务[一二三四五六七八]：/, "");
+        return `
+        <button type="button" class="album-item" data-task-id="${escapeHtml(t.id)}" title="查看大图：${escapeHtml(t.photo.title)}" aria-label="查看大图：${escapeHtml(shortTitle)}">
+          <img src="${state.photos[t.id]}" alt="${escapeHtml(t.photo.title)}" />
+          <span>${escapeHtml(shortTitle)}</span>
+        </button>`;
+      }).join("");
+
+      strip.querySelectorAll(".album-item").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const id = Number(btn.getAttribute("data-task-id"));
+          if (Number.isFinite(id)) openPhotoView(id);
+        });
+      });
+    }
+
+    function canComplete(id) {
+      return !!state.challengeOk[id] && !!state.photos[id] && !state.done[id];
+    }
+
+    function updateCompleteBtn(id) {
+      const btn = document.getElementById("completeBtn");
+      if (!btn) return;
+      // 不用 native disabled，否则点不到；用 aria + 样式模拟不可用
+      btn.removeAttribute("disabled");
+      if (state.done[id]) {
+        btn.setAttribute("aria-disabled", "true");
+        btn.classList.add("is-disabled");
+        btn.textContent = "✓ 已完成";
+      } else if (canComplete(id)) {
+        btn.setAttribute("aria-disabled", "false");
+        btn.classList.remove("is-disabled");
+        btn.textContent = "完成任务 ✓";
+      } else if (state.challengeOk[id] && !state.photos[id]) {
+        btn.setAttribute("aria-disabled", "true");
+        btn.classList.add("is-disabled");
+        btn.textContent = "先拍照打卡";
+      } else {
+        btn.setAttribute("aria-disabled", "true");
+        btn.classList.add("is-disabled");
+        btn.textContent = "完成任务 ✓";
+      }
+    }
+
+    function doneCount() {
+      return TASKS.filter((t) => state.done[t.id]).length;
+    }
+
+    function updateProgress() {
+      const n = doneCount();
+      const total = TASKS.length;
+      document.getElementById("progressText").textContent = `${n} / ${total}`;
+      document.getElementById("progressFill").style.width = `${(n / total) * 100}%`;
+      document.querySelector(".progress-bar").setAttribute("aria-valuenow", String(n));
+
+      const pill = document.getElementById("statusPill");
+      const statusText = document.getElementById("statusText");
+      const ready = document.getElementById("readyPill");
+      const banner = document.getElementById("rewardBanner");
+
+      if (n === total) {
+        pill.classList.add("all-done");
+        statusText.textContent = "特工状态：全部任务完成！";
+        ready.textContent = `荣誉称号已解锁 · 打卡 ${photoCount()} 张 🏅`;
+        banner.classList.add("show");
+        document.getElementById("reportBtn").classList.add("show");
+      } else {
+        pill.classList.remove("all-done");
+        statusText.textContent = n === 0 ? "特工状态：待命出发" : "特工状态：任务进行中";
+        ready.textContent = n === 0
+          ? "准备好接受任务了吗？"
+          : `继续加油！还剩 ${total - n} 项 · 已打卡 ${photoCount()} 张`;
+        banner.classList.remove("show");
+        document.getElementById("reportBtn").classList.remove("show");
+      }
+      updateAlbum();
+      updateAgentBar();
+    }
+
+    function updateAgentBar() {
+      const bar = document.getElementById("agentBar");
+      if (!state.nickname || !state.avatar) {
+        bar.classList.remove("show");
+        return;
+      }
+      bar.classList.add("show");
+      document.getElementById("agentAvatarImg").src = state.avatar;
+      document.getElementById("agentNameText").textContent = state.nickname;
+      const role = document.getElementById("agentRoleText") || bar.querySelector(".agent-role");
+      if (role) {
+        role.textContent = doneCount() === TASKS.length
+          ? `${currentLoc.role} · 全部通关`
+          : `${currentLoc.role} · 任务进行中`;
+      }
+    }
+
+    function assetUrl(path) {
+      if (!path) return "";
+      if (/^(data:|blob:|https?:|file:)/i.test(path)) return path;
+      try {
+        return new URL(path, window.location.href).href;
+      } catch (_) {
+        return path;
+      }
+    }
+
+    function cssBgUrl(url) {
+      return String(url).replace(/\\/g, "\\\\").replace(/'/g, "%27").replace(/\)/g, "%29");
+    }
+
+    function renderGrid() {
+      const grid = document.getElementById("taskGrid");
+      grid.innerHTML = TASKS.map((t) => {
+        const done = !!state.done[t.id];
+        const photo = state.photos[t.id];
+        const cover = t.cover ? assetUrl(t.cover) : "";
+        const thumb = photo || cover;
+        const artStyle = thumb ? ` style="background-image:url('${cssBgUrl(thumb)}')"` : "";
+        const artClass = photo ? "card-art has-photo" : "card-art";
+        return `
+          <button type="button" class="task-card${done ? " done" : ""}" data-id="${t.id}" aria-label="${t.title}${done ? "（已完成）" : ""}">
+            <div class="card-top">
+              <span class="card-icon" aria-hidden="true">${t.icon}</span>
+              <div>
+                <div class="card-num">MISSION 0${t.id}</div>
+                <div class="card-title">${t.title.replace(/^任务[一二三四五六七八]：/, "")}</div>
+              </div>
+            </div>
+            <div class="${artClass}"${artStyle} aria-hidden="true">
+              ${cover && !photo ? `<img class="art-cover" src="${cover}" alt="" decoding="async" />` : ""}
+              ${!thumb ? `<span class="art-emoji">${t.icon}</span>` : ""}
+              ${photo ? `<span class="card-photo-badge">已打卡</span>` : ""}
+            </div>
+            <p class="card-desc">${t.short}</p>
+            <span class="card-check" aria-hidden="true"></span>
+          </button>`;
+      }).join("");
+
+      grid.querySelectorAll(".task-card").forEach((btn) => {
+        btn.addEventListener("click", () => openTask(Number(btn.dataset.id)));
+      });
+    }
+
+    function openTask(id) {
+      const task = TASKS.find((t) => t.id === id);
+      if (!task) return;
+
+      if (!session[id]) session[id] = { warmUp: false, quizIdx: 0 };
+
+      document.getElementById("taskIcon").textContent = task.icon;
+      document.getElementById("taskTitle").textContent = task.title;
+      document.getElementById("taskPlace").textContent = `📍 ${task.place}`;
+
+      const hero = document.getElementById("taskHero");
+      const heroImg = document.getElementById("taskHeroImg");
+      if (task.cover) {
+        heroImg.src = assetUrl(task.cover);
+        heroImg.alt = task.title;
+        hero.classList.add("show");
+      } else {
+        hero.classList.remove("show");
+        heroImg.removeAttribute("src");
+      }
+
+      const note = state.notes[id] || "";
+      const challenged = !!state.challengeOk[id];
+      const done = !!state.done[id];
+
+      document.getElementById("taskBody").innerHTML = `
+        <div class="info-block">
+          <h3>🎯 任务内容</h3>
+          <p>${task.content}</p>
+        </div>
+        <div class="info-block knowledge-box">
+          <h3>📚 知识点</h3>
+          <p>${task.knowledge}</p>
+        </div>
+        <div class="interact-zone" id="interactZone">
+          ${renderInteract(task, challenged, note)}
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn-ghost" data-close="taskOverlay">稍后再说</button>
+          <button type="button" class="btn-primary" id="completeBtn" style="margin-left:auto">完成任务 ✓</button>
+        </div>
+        ${note ? `<p class="note-log" style="color:rgba(232,238,245,0.55)">你的记录：${escapeHtml(note)}</p>` : ""}
+      `;
+
+      updateCompleteBtn(id);
+      if (challenged) {
+        bindPhoto(task);
+      } else {
+        bindInteract(task);
+      }
+      const completeBtn = document.getElementById("completeBtn");
+      if (completeBtn && !done) {
+        completeBtn.addEventListener("click", () => completeTask(task.id));
+      }
+
+      openOverlay("taskOverlay");
+    }
+
+    function escapeHtml(s) {
+      return String(s)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
+    }
+
+    function renderPhotoCheckin(task) {
+      const photo = state.photos[task.id];
+      const p = task.photo || { title: "打卡照", hint: "拍一张照片完成打卡吧！" };
+      const challenge = task.challenge || p.hint;
+      return `
+        <div class="photo-box" id="photoBox">
+          <span class="step-label">STEP 3 · 拍照打卡</span>
+          <h3>📷 ${escapeHtml(p.title)}</h3>
+          <p class="hint"><strong>⭐ 实地挑战：</strong>${escapeHtml(challenge)}</p>
+          <p class="hint" style="margin-top:0.25rem;opacity:0.9">${escapeHtml(p.hint)}</p>
+          <div class="photo-actions">
+            <label class="btn-photo primary">
+              📸 现场拍照
+              <input type="file" id="photoCamera" accept="image/*" capture="environment" />
+            </label>
+            ${photo ? `<button type="button" id="photoClear">重新拍照</button>` : ""}
+          </div>
+          <div class="photo-preview-wrap${photo ? " show" : ""}" id="photoPreviewWrap">
+            ${photo ? `<img id="photoPreview" src="${photo}" alt="打卡照片" />` : `<img id="photoPreview" alt="打卡照片" />`}
+            <span class="photo-stamp">时空特工 · 已打卡</span>
+          </div>
+        </div>
+      `;
+    }
+
+    function compressImage(file, maxSide = 960, quality = 0.72) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onerror = () => reject(new Error("read fail"));
+        reader.onload = () => {
+          const img = new Image();
+          img.onload = () => {
+            let { width, height } = img;
+            const scale = Math.min(1, maxSide / Math.max(width, height));
+            width = Math.round(width * scale);
+            height = Math.round(height * scale);
+            const canvas = document.createElement("canvas");
+            canvas.width = width;
+            canvas.height = height;
+            const ctx = canvas.getContext("2d");
+            ctx.drawImage(img, 0, 0, width, height);
+            resolve(canvas.toDataURL("image/jpeg", quality));
+          };
+          img.onerror = () => reject(new Error("img fail"));
+          img.src = reader.result;
+        };
+        reader.readAsDataURL(file);
+      });
+    }
+
+    function bindPhoto(task) {
+      const id = task.id;
+      const applyPhoto = async (file) => {
+        if (!file || !file.type.startsWith("image/")) {
+          showFeedback(false, "请选择一张图片哦～");
+          return;
+        }
+        try {
+          const dataUrl = await compressImage(file);
+          state.photos[id] = dataUrl;
+          state.photoTimes = state.photoTimes || {};
+          state.photoTimes[id] = Date.now();
+          saveState({ toast: true, message: "打卡照片已存入本机进度" });
+          const wrap = document.getElementById("photoPreviewWrap");
+          const img = document.getElementById("photoPreview");
+          if (img) img.src = dataUrl;
+          if (wrap) wrap.classList.add("show");
+          updateCompleteBtn(id);
+          updateAlbum();
+          renderGrid();
+          showFeedback(true, "打卡照片已保存！可以点「完成任务」啦 📷");
+          playBeep(988, 0.08);
+        } catch (_) {
+          showFeedback(false, "照片处理失败，换一张再试试～");
+        }
+      };
+
+      document.getElementById("photoCamera")?.addEventListener("change", (e) => {
+        const file = e.target.files?.[0];
+        if (file) applyPhoto(file);
+      });
+      document.getElementById("photoClear")?.addEventListener("click", () => {
+        delete state.photos[id];
+        if (state.photoTimes) delete state.photoTimes[id];
+        saveState();
+        const wrap = document.getElementById("photoPreviewWrap");
+        const img = document.getElementById("photoPreview");
+        if (img) img.removeAttribute("src");
+        if (wrap) wrap.classList.remove("show");
+        updateCompleteBtn(id);
+        updateAlbum();
+        renderGrid();
+        showFeedback(false, "已清除，重新拍一张吧～");
+      });
+    }
+
+    function renderWarmUp(task) {
+      switch (task.interact) {
+        case "wall":
+          return `
+            <span class="step-label">STEP 1 · 热身闯关</span>
+            <h3>🔎 找出「平遥」砖</h3>
+            <p class="hint">模拟城墙上哪块砖刻着「平遥」二字？</p>
+            <div class="choice-grid" id="warmChoices">
+              <button type="button" class="choice-btn" data-ok="0">砖块 A：刻着「太原」</button>
+              <button type="button" class="choice-btn" data-ok="1">砖块 B：刻着「平遥」</button>
+              <button type="button" class="choice-btn" data-ok="0">砖块 C：刻着「晋商」</button>
+            </div>`;
+        case "abacus":
+          return `
+            <span class="step-label">STEP 1 · 热身闯关</span>
+            <h3>🧮 拨动算盘</h3>
+            <p class="hint">点拨至少 3 颗珠子，感受账房先生的手艺！</p>
+            <div class="abacus" id="abacus">
+              ${[0, 1, 2, 3, 4].map((c) => `
+                <div class="bead-col">
+                  <button type="button" class="bead" data-col="${c}" aria-label="拨动第${c + 1}列"></button>
+                  <button type="button" class="bead" data-col="${c}" aria-label="拨动第${c + 1}列下珠"></button>
+                </div>`).join("")}
+            </div>
+            <p class="hint" id="beadCount">已拨动：0 / 3</p>
+            <button type="button" class="btn-primary" id="abacusSubmit" disabled>确认拨算完成</button>`;
+        case "escort":
+          return `
+            <span class="step-label">STEP 1 · 热身闯关</span>
+            <h3>⚔️ 镖师 POSE</h3>
+            <p class="hint">选出最像「护送镖车」的姿势！</p>
+            <div class="pose-grid" id="poseGrid">
+              <button type="button" class="pose-btn" data-ok="0" aria-label="睡觉">😴</button>
+              <button type="button" class="pose-btn" data-ok="1" aria-label="仗剑">⚔️</button>
+              <button type="button" class="pose-btn" data-ok="0" aria-label="吃饭">🍜</button>
+            </div>`;
+        case "yamen":
+          return `
+            <span class="step-label">STEP 1 · 热身闯关</span>
+            <h3>🕵️ 搜集证据</h3>
+            <p class="hint">小捕快先找对证物：县衙大堂高挂的是哪块匾？</p>
+            <div class="choice-grid" id="warmChoices">
+              <button type="button" class="choice-btn" data-ok="0">「欢迎光临」</button>
+              <button type="button" class="choice-btn" data-ok="1">「明镜高悬」</button>
+              <button type="button" class="choice-btn" data-ok="0">「今日特价」</button>
+            </div>`;
+        case "heritage":
+          return `
+            <span class="step-label">STEP 1 · 热身闯关</span>
+            <h3>🎁 非遗心头好</h3>
+            <p class="hint">选出最喜欢的非遗，并写一句理由（至少 4 个字）。</p>
+            <div class="choice-grid" style="margin-bottom:0.65rem" id="heritagePick">
+              <button type="button" class="choice-btn" data-pick="推光漆器">✨ 推光漆器</button>
+              <button type="button" class="choice-btn" data-pick="剪纸">✂️ 平遥剪纸</button>
+              <button type="button" class="choice-btn" data-pick="其他非遗">🧵 其他非遗</button>
+            </div>
+            <div class="input-row">
+              <input type="text" id="heritageWhy" placeholder="例如：亮得像镜子" maxlength="40" />
+              <button type="button" class="btn-primary" id="heritageSubmit">提交</button>
+            </div>`;
+        case "food":
+          return `
+            <span class="step-label">STEP 1 · 热身闯关</span>
+            <h3>🍜 美食打卡</h3>
+            <p class="hint">选出最爱小吃并打星！</p>
+            <div class="input-row" style="margin-bottom:0.5rem">
+              <select id="foodSelect">
+                <option value="">— 选择美食 —</option>
+                <option>平遥牛肉</option>
+                <option>碗托</option>
+                <option>栲栳栳</option>
+                <option>其他小吃</option>
+              </select>
+            </div>
+            <div class="star-rate" id="starRate" aria-label="味道评分">
+              ${[1, 2, 3, 4, 5].map((n) => `<button type="button" data-star="${n}" aria-label="${n}星">⭐</button>`).join("")}
+            </div>
+            <button type="button" class="btn-primary" id="foodSubmit">提交美食任务</button>`;
+        case "night":
+          return `
+            <span class="step-label">STEP 1 · 热身闯关</span>
+            <h3>🌙 光影印象</h3>
+            <p class="hint">写下印象最深的场景／人物（至少 6 个字）。</p>
+            <div class="input-row" style="flex-direction:column">
+              <textarea id="nightNote" placeholder="例如：走西口的晋商很勇敢……" maxlength="80"></textarea>
+              <button type="button" class="btn-primary" id="nightSubmit">提交印象</button>
+            </div>`;
+        case "choice": {
+          const w = task.warmup || {};
+          const choices = w.choices || [];
+          return `
+            <span class="step-label">STEP 1 · 热身闯关</span>
+            <h3>${escapeHtml(w.title || "热身闯关")}</h3>
+            <p class="hint">${escapeHtml(w.hint || "选出正确答案")}</p>
+            <div class="choice-grid" id="warmChoices">
+              ${choices.map((c) => `
+                <button type="button" class="choice-btn" data-ok="${c.ok ? 1 : 0}">${escapeHtml(c.label)}</button>
+              `).join("")}
+            </div>`;
+        }
+        case "text": {
+          const w = task.warmup || {};
+          return `
+            <span class="step-label">STEP 1 · 热身闯关</span>
+            <h3>${escapeHtml(w.title || "特工手记")}</h3>
+            <p class="hint">${escapeHtml(w.hint || "写下你的发现")}</p>
+            <div class="input-row" style="flex-direction:column">
+              <textarea id="textWarmNote" placeholder="${escapeHtml(w.placeholder || "写写看……")}" maxlength="80"></textarea>
+              <button type="button" class="btn-primary" id="textWarmSubmit">提交</button>
+            </div>`;
+        }
+        default:
+          return "";
+      }
+    }
+
+    function renderQuizPanel(task, unlocked, quizIdx) {
+      const quizzes = task.quizzes || [];
+      const q = quizzes[quizIdx];
+      if (!q) return "";
+
+      const dots = quizzes.map((_, i) => {
+        let cls = "quiz-dot";
+        if (i < quizIdx) cls += " done";
+        if (i === quizIdx) cls += " on";
+        return `<span class="${cls}"></span>`;
+      }).join("");
+
+      return `
+        <div id="quizLocked" class="${unlocked ? "unlocked" : ""}" style="margin-top:1rem;padding-top:0.85rem;border-top:1px dashed rgba(61,213,255,0.25)">
+          <span class="step-label">STEP 2 · 知识问答 ${quizIdx + 1}/${quizzes.length}</span>
+          <p class="hint" style="margin-bottom:0.5rem">${unlocked ? "答对全部题目才能完成特工认证！" : "先完成上面的热身闯关，才能解锁问答～"}</p>
+          <div class="quiz-progress">${dots}</div>
+          <div class="quiz-q">${escapeHtml(q.q)}</div>
+          <div class="choice-grid" id="quizChoices">
+            ${q.options.map((opt, i) => `
+              <button type="button" class="choice-btn" data-idx="${i}">${escapeHtml(opt)}</button>
+            `).join("")}
+          </div>
+          <p class="quiz-tip" id="quizTip">💡 ${escapeHtml(q.tip || "")}</p>
+        </div>`;
+    }
+
+    function renderInteract(task, challenged, note) {
+      if (challenged) {
+        return `
+          <h3>✅ 问答挑战已通过</h3>
+          <p class="hint">热身 + 知识问答过关！再完成下面的拍照打卡，就能点「完成任务」。</p>
+          <div class="feedback ok show" id="interactFeedback">特工认证进行中！${note ? "记录：" + escapeHtml(note) : ""}</div>
+          ${renderPhotoCheckin(task)}
+        `;
+      }
+
+      const s = session[task.id] || { warmUp: false, quizIdx: 0 };
+      return `
+        <div id="warmUpBlock">${renderWarmUp(task)}</div>
+        <p class="warmup-done-tag${s.warmUp ? " show" : ""}" id="warmDoneTag">✅ 热身完成！继续挑战知识问答 ↓</p>
+        <div class="feedback" id="interactFeedback"></div>
+        ${renderQuizPanel(task, s.warmUp, s.quizIdx)}
+      `;
+    }
+
+    function showFeedback(ok, msg) {
+      const el = document.getElementById("interactFeedback");
+      if (!el) return;
+      el.className = `feedback show ${ok ? "ok" : "bad"}`;
+      el.textContent = msg;
+    }
+
+    function unlockQuiz(taskId) {
+      session[taskId] = session[taskId] || { warmUp: false, quizIdx: 0 };
+      session[taskId].warmUp = true;
+      const tag = document.getElementById("warmDoneTag");
+      if (tag) tag.classList.add("show");
+      const quiz = document.getElementById("quizLocked");
+      if (quiz) quiz.classList.add("unlocked");
+      showFeedback(true, "热身成功！开始知识问答吧 📚");
+      playBeep(740, 0.08);
+    }
+
+    function passChallenge(taskId, note) {
+      state.challengeOk[taskId] = true;
+      if (note) state.notes[taskId] = note;
+      saveState();
+      playBeep(880, 0.08);
+      setTimeout(() => playBeep(1175, 0.1), 100);
+
+      const task = TASKS.find((t) => t.id === taskId);
+      const zone = document.getElementById("interactZone");
+      if (zone && task) {
+        zone.innerHTML = `
+          <h3>✅ 问答挑战已通过</h3>
+          <p class="hint">太棒了！现在进入拍照打卡，拍好照才能完成任务。</p>
+          <div class="feedback ok show" id="interactFeedback">问答全对！请拍照打卡 📷</div>
+          ${renderPhotoCheckin(task)}
+        `;
+        bindPhoto(task);
+      }
+      updateCompleteBtn(taskId);
+    }
+
+    function bindQuiz(task) {
+      const id = task.id;
+      const quizzes = task.quizzes || [];
+
+      document.querySelectorAll("#quizChoices .choice-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          if (!session[id]?.warmUp) {
+            showFeedback(false, "先完成热身闯关再答问哦！");
+            return;
+          }
+          const idx = Number(btn.dataset.idx);
+          const q = quizzes[session[id].quizIdx];
+          if (!q) return;
+
+          if (idx === q.a) {
+            btn.classList.add("correct");
+            document.querySelectorAll("#quizChoices .choice-btn").forEach((b) => { b.disabled = true; });
+            playBeep(880, 0.07);
+            session[id].quizIdx += 1;
+
+            if (session[id].quizIdx >= quizzes.length) {
+              const note = state.notes[id] || `问答 ${quizzes.length} 题全对`;
+              passChallenge(id, note);
+            } else {
+              showFeedback(true, `答对了！还有 ${quizzes.length - session[id].quizIdx} 题～`);
+              setTimeout(() => {
+                const zone = document.getElementById("interactZone");
+                if (!zone || state.challengeOk[id]) return;
+                // keep warm-up visually done: re-render quiz part only
+                const warm = document.getElementById("warmUpBlock");
+                const warmHtml = warm ? warm.innerHTML : "";
+                zone.innerHTML = `
+                  <div id="warmUpBlock">${warmHtml}</div>
+                  <p class="warmup-done-tag show" id="warmDoneTag">✅ 热身完成！继续挑战知识问答 ↓</p>
+                  <div class="feedback ok show" id="interactFeedback">继续加油！</div>
+                  ${renderQuizPanel(task, true, session[id].quizIdx)}
+                `;
+                // disable warm-up controls
+                zone.querySelectorAll("#warmUpBlock button, #warmUpBlock input, #warmUpBlock textarea, #warmUpBlock select").forEach((el) => {
+                  el.disabled = true;
+                });
+                bindQuiz(task);
+              }, 450);
+            }
+          } else {
+            btn.classList.add("wrong");
+            const tip = document.getElementById("quizTip");
+            if (tip) tip.classList.add("show");
+            showFeedback(false, "再想想～ 读一读上面的知识点，换个答案！");
+            playBeep(220, 0.15);
+            setTimeout(() => btn.classList.remove("wrong"), 500);
+          }
+        });
+      });
+    }
+
+    function bindInteract(task) {
+      const id = task.id;
+      session[id] = session[id] || { warmUp: false, quizIdx: 0 };
+      let warmNote = "";
+
+      const finishWarm = (note) => {
+        if (session[id].warmUp) return;
+        if (note) {
+          warmNote = note;
+          state.notes[id] = note;
+          saveState();
+        }
+        unlockQuiz(id);
+        document.querySelectorAll("#warmUpBlock button, #warmUpBlock input, #warmUpBlock textarea, #warmUpBlock select").forEach((el) => {
+          el.disabled = true;
+        });
+      };
+
+      if (task.interact === "wall" || task.interact === "yamen" || task.interact === "choice") {
+        document.querySelectorAll("#warmChoices .choice-btn").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const ok = btn.dataset.ok === "1";
+            if (ok) {
+              document.querySelectorAll("#warmChoices .choice-btn").forEach((b) => {
+                b.disabled = true;
+                if (b.dataset.ok === "1") b.classList.add("correct");
+              });
+              const note = task.interact === "wall"
+                ? "找到「平遥」砖"
+                : task.interact === "yamen"
+                  ? "找到「明镜高悬」"
+                  : (task.warmup && task.warmup.note) || "热身闯关通过";
+              finishWarm(note);
+            } else {
+              btn.classList.add("wrong");
+              showFeedback(false, "再找找看～");
+              playBeep(220, 0.12);
+              setTimeout(() => btn.classList.remove("wrong"), 500);
+            }
+          });
+        });
+      }
+
+      if (task.interact === "abacus") {
+        document.querySelectorAll("#abacus .bead").forEach((bead) => {
+          bead.addEventListener("click", () => {
+            bead.classList.toggle("active");
+            const count = document.querySelectorAll("#abacus .bead.active").length;
+            document.getElementById("beadCount").textContent = `已拨动：${count} / 3`;
+            document.getElementById("abacusSubmit").disabled = count < 3;
+            playBeep(520 + count * 40, 0.04);
+          });
+        });
+        document.getElementById("abacusSubmit")?.addEventListener("click", () => {
+          finishWarm("拨动算盘体验完成");
+        });
+      }
+
+      if (task.interact === "escort") {
+        document.querySelectorAll("#poseGrid .pose-btn").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            document.querySelectorAll("#poseGrid .pose-btn").forEach((b) => b.classList.remove("selected"));
+            btn.classList.add("selected");
+            if (btn.dataset.ok === "1") {
+              finishWarm("镖师POSE打卡");
+            } else {
+              showFeedback(false, "选仗剑护镖的姿势再试～");
+              playBeep(220, 0.12);
+            }
+          });
+        });
+      }
+
+      if (task.interact === "heritage") {
+        let pick = "";
+        document.querySelectorAll("#heritagePick .choice-btn").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            document.querySelectorAll("#heritagePick .choice-btn").forEach((b) => b.classList.remove("correct"));
+            btn.classList.add("correct");
+            pick = btn.dataset.pick;
+          });
+        });
+        document.getElementById("heritageSubmit")?.addEventListener("click", () => {
+          const why = (document.getElementById("heritageWhy").value || "").trim();
+          if (!pick) { showFeedback(false, "先选一件非遗作品哦！"); return; }
+          if (why.length < 4) { showFeedback(false, "理由至少写 4 个字～"); return; }
+          finishWarm(`${pick}：${why}`);
+        });
+      }
+
+      if (task.interact === "food") {
+        let stars = 0;
+        document.querySelectorAll("#starRate button").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            stars = Number(btn.dataset.star);
+            document.querySelectorAll("#starRate button").forEach((b) => {
+              b.classList.toggle("on", Number(b.dataset.star) <= stars);
+            });
+          });
+        });
+        document.getElementById("foodSubmit")?.addEventListener("click", () => {
+          const food = document.getElementById("foodSelect").value;
+          if (!food) { showFeedback(false, "先选出一道美食吧！"); return; }
+          if (stars < 1) { showFeedback(false, "给味道打个星吧～"); return; }
+          finishWarm(`${food} ${"⭐".repeat(stars)}`);
+        });
+      }
+
+      if (task.interact === "night") {
+        document.getElementById("nightSubmit")?.addEventListener("click", () => {
+          const note = (document.getElementById("nightNote").value || "").trim();
+          if (note.length < 6) { showFeedback(false, "再多写一点（至少 6 个字）～"); return; }
+          finishWarm(note);
+        });
+      }
+
+      if (task.interact === "text") {
+        document.getElementById("textWarmSubmit")?.addEventListener("click", () => {
+          const note = (document.getElementById("textWarmNote").value || "").trim();
+          const min = (task.warmup && task.warmup.min) || 6;
+          if (note.length < min) { showFeedback(false, `再多写一点（至少 ${min} 个字）～`); return; }
+          finishWarm(note);
+        });
+      }
+
+      // restore unlocked quiz if warm-up already done this session
+      if (session[id].warmUp) {
+        document.getElementById("quizLocked")?.classList.add("unlocked");
+        document.getElementById("warmDoneTag")?.classList.add("show");
+        document.querySelectorAll("#warmUpBlock button, #warmUpBlock input, #warmUpBlock textarea, #warmUpBlock select").forEach((el) => {
+          el.disabled = true;
+        });
+      }
+
+      bindQuiz(task);
+    }
+
+    function completeTask(id) {
+      if (state.done[id]) return;
+      if (!state.challengeOk[id] || !state.photos[id]) {
+        showFeedback(false, "请先完成作答");
+        return;
+      }
+      const already = !!state.done[id];
+      state.done[id] = true;
+      saveState({ toast: true, message: "任务进度已保存" });
+      renderGrid();
+      updateProgress();
+      closeOverlay("taskOverlay");
+
+      if (!already) {
+        burstConfetti();
+        playBeep(660, 0.08);
+        setTimeout(() => playBeep(880, 0.1), 90);
+        setTimeout(() => playBeep(1320, 0.12), 180);
+      }
+
+      if (doneCount() === TASKS.length) {
+        setTimeout(() => {
+          burstConfetti(40);
+          openReward();
+        }, 400);
+      }
+    }
+
+    function openReward() {
+      document.getElementById("taskIcon").textContent = "🏅";
+      document.getElementById("taskTitle").textContent = "荣誉称号已解锁！";
+      document.getElementById("taskPlace").textContent = state.nickname
+        ? `特工 ${state.nickname}`
+        : currentLoc.role;
+      document.getElementById("taskHero")?.classList.remove("show");
+      document.getElementById("taskBody").innerHTML = `
+        <div class="welcome-art">${currentLoc.welcomeArt}</div>
+        <div class="info-block challenge-box">
+          <h3>🏅 恭喜你${state.nickname ? "，" + escapeHtml(state.nickname) : ""}</h3>
+          <p>你完成了${escapeHtml(currentLoc.name)}全部 ${TASKS.length} 项时空任务，并留下 ${photoCount()} 张打卡照，正式成为「${escapeHtml(currentLoc.role)}」！现在可以生成专属图文任务报告，给爸爸妈妈看哦～</p>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn-ghost" data-close="taskOverlay">稍后再看</button>
+          <button type="button" class="btn-primary" id="openReportFromReward" style="margin-left:auto">📄 生成任务报告</button>
+        </div>`;
+      openOverlay("taskOverlay");
+      document.getElementById("openReportFromReward")?.addEventListener("click", () => {
+        closeOverlay("taskOverlay");
+        openReport();
+      });
+    }
+
+    function formatReportDate() {
+      const d = new Date();
+      return `${d.getFullYear()}年${d.getMonth() + 1}月${d.getDate()}日`;
+    }
+
+    function formatPhotoTime(ts) {
+      const n = Number(ts);
+      if (!n || !Number.isFinite(n)) return "";
+      const d = new Date(n);
+      if (Number.isNaN(d.getTime())) return "";
+      const pad = (v) => String(v).padStart(2, "0");
+      return `${d.getFullYear()}年${d.getMonth() + 1}月${d.getDate()}日 ${pad(d.getHours())}:${pad(d.getMinutes())}`;
+    }
+
+    /** 读取打卡时间；旧照片缺失时回填，保证下载必有日期水印 */
+    function resolvePhotoTime(taskId, { persist = false } = {}) {
+      state.photoTimes = state.photoTimes || {};
+      let ts = state.photoTimes[taskId];
+      if (!ts && state.photos && state.photos[taskId]) {
+        ts = Date.now();
+        state.photoTimes[taskId] = ts;
+        if (persist) {
+          try { saveState(); } catch (_) {}
+        }
+      }
+      return formatPhotoTime(ts);
+    }
+
+    function ensureAllPhotoTimes() {
+      state.photoTimes = state.photoTimes || {};
+      let changed = false;
+      TASKS.forEach((t) => {
+        if (state.photos[t.id] && !state.photoTimes[t.id]) {
+          state.photoTimes[t.id] = Date.now();
+          changed = true;
+        }
+      });
+      if (changed) {
+        try { saveState(); } catch (_) {}
+      }
+    }
+
+    function openReport() {
+      if (doneCount() < TASKS.length) {
+        alert("先完成全部任务，才能生成报告哦！");
+        return;
+      }
+      ensureAllPhotoTimes();
+      const name = state.nickname || "时空小特工";
+      const avatar = state.avatar || "";
+      const shots = photoCount();
+      const growClasses = ["grow-tall", "grow-wide", "grow-sq"];
+      const ratioWeights = [1.35, 0.92, 1.08, 1.2, 1.0, 1.35, 1.08];
+      const entryItems = TASKS.map((t, i) => {
+        const photo = state.photos[t.id];
+        const note = state.notes[t.id];
+        const story = REPORT_COPY[t.id] || t.short;
+        const shortTitle = t.title.replace(/^任务[一二三四五六七八]：/, "");
+        const stamp = photo ? resolvePhotoTime(t.id) : "";
+        const grow = growClasses[i % growClasses.length];
+        const weight = ratioWeights[i % ratioWeights.length] + (note ? 0.15 : 0.1);
+        const agentStamp = photo
+          ? `<div class="photo-stamp-agent">
+              ${avatar ? `<img src="${avatar}" alt="" />` : `<span class="stamp-avatar-fallback" aria-hidden="true">🕵️</span>`}
+              <div class="stamp-lines">
+                <div class="stamp-title">${t.icon} ${escapeHtml(shortTitle)}</div>
+                <div class="stamp-place">📍 ${escapeHtml(t.place)}</div>
+                ${stamp ? `<div class="stamp-time">🕒 ${escapeHtml(stamp)}</div>` : ""}
+              </div>
+            </div>`
+          : "";
+        const html = `
+          <article class="report-entry ${grow}">
+            <div class="photo-stage${photo ? " has-zoom" : " empty"}"${photo
+              ? ` role="button" tabindex="0" data-view-src="1" data-task-id="${escapeHtml(t.id)}" aria-label="查看大图：${escapeHtml(shortTitle)}"`
+              : ""}>
+              ${photo
+                ? `<img src="${photo}" alt="${escapeHtml(t.photo.title)}" loading="lazy" />`
+                : `<span>📷 本关暂无打卡照片</span>`}
+              ${agentStamp}
+              ${photo
+                ? ""
+                : `<div class="photo-meta">
+                <h4>${t.icon} ${escapeHtml(shortTitle)}</h4>
+                <div class="place">📍 ${escapeHtml(t.place)}</div>
+              </div>`}
+            </div>
+            <div class="entry-body">
+              ${note
+                ? `<p class="note">特工手记：${escapeHtml(note)}</p>`
+                : `<p class="caption">${escapeHtml(story)}</p>`}
+            </div>
+          </article>`;
+        return { html, weight };
+      });
+
+      const cols = [[], []];
+      const colWeights = [0, 0];
+      for (const item of entryItems) {
+        const side = colWeights[0] <= colWeights[1] ? 0 : 1;
+        cols[side].push(item.html);
+        colWeights[side] += item.weight;
+      }
+
+      document.getElementById("reportBody").innerHTML = `
+        <div id="reportCapture">
+          <div class="report-hero">
+            <div class="report-avatar-wrap">
+              ${avatar
+                ? `<img class="report-avatar" src="${avatar}" alt="特工头像" />`
+                : `<div class="report-avatar-fallback" aria-hidden="true">🕵️</div>`}
+            </div>
+            <h3>${escapeHtml(name)}</h3>
+            <div class="badge-row">
+              <span class="chip gold">${escapeHtml(currentLoc.role)}</span>
+              <span class="chip">${escapeHtml(currentLoc.name)}</span>
+              <span class="chip">📷 ${shots} 张打卡</span>
+            </div>
+            <div class="sub">${escapeHtml(currentLoc.reportLabel)} · ${formatReportDate()}</div>
+          </div>
+          <div class="report-gallery">
+            <div class="report-col">${cols[0].join("")}</div>
+            <div class="report-col">${cols[1].join("")}</div>
+          </div>
+          <div class="report-footer">
+            <strong>${escapeHtml(currentLoc.rewardTitle)}</strong>
+            以镜头记录旅途，把这份相册讲给爸爸妈妈听吧！<br />
+            —— ${escapeHtml(currentLoc.name)}时空特工系统
+          </div>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn-ghost" data-close="reportOverlay">关闭</button>
+          <button type="button" class="btn-ghost" id="downloadAllPhotosBtn">📦 批量下载全部照片</button>
+          <button type="button" class="btn-primary" id="saveReportImgBtn" style="margin-left:auto">📥 生成打卡报告</button>
+        </div>
+        <p class="save-img-status" id="saveImgStatus">正在生成带水印的相册，请稍候…</p>
+      `;
+      openOverlay("reportOverlay");
+      document.getElementById("saveReportImgBtn")?.addEventListener("click", () => saveReportAsImage());
+      document.getElementById("downloadAllPhotosBtn")?.addEventListener("click", () => downloadAllCheckinPhotos());
+      bindReportPhotoView();
+    }
+
+    let viewingPhotoTaskId = null;
+
+    function openPhotoView(taskId) {
+      const t = TASKS.find((x) => x.id === taskId);
+      const src = state.photos[taskId];
+      if (!t || !src) return;
+      viewingPhotoTaskId = taskId;
+      const shortTitle = t.title.replace(/^任务[一二三四五六七八]：/, "");
+      const stamp = resolvePhotoTime(taskId);
+      const img = document.getElementById("photoViewImg");
+      img.src = src;
+      img.alt = t.photo?.title || shortTitle;
+      document.getElementById("photoViewTitle").textContent = `${t.icon} ${shortTitle}`;
+      document.getElementById("photoViewMeta").textContent = stamp
+        ? `📍 ${t.place} · 🕒 ${stamp}`
+        : `📍 ${t.place}`;
+      openOverlay("photoViewOverlay");
+    }
+
+    function bindReportPhotoView() {
+      const body = document.getElementById("reportBody");
+      if (!body || body.dataset.photoViewBound === "1") return;
+      body.dataset.photoViewBound = "1";
+      const openFromTarget = (target) => {
+        const stage = target.closest(".photo-stage.has-zoom");
+        if (!stage) return;
+        const id = stage.getAttribute("data-task-id");
+        if (id) openPhotoView(id);
+      };
+      body.addEventListener("click", (e) => openFromTarget(e.target));
+      body.addEventListener("keydown", (e) => {
+        if (e.key !== "Enter" && e.key !== " ") return;
+        const stage = e.target.closest(".photo-stage.has-zoom");
+        if (!stage) return;
+        e.preventDefault();
+        openFromTarget(stage);
+      });
+    }
+
+    function loadImage(src) {
+      return new Promise((resolve) => {
+        if (!src) { resolve(null); return; }
+        const img = new Image();
+        img.onload = () => resolve(img);
+        img.onerror = () => resolve(null);
+        img.src = src;
+      });
+    }
+
+    function wrapText(ctx, text, maxWidth) {
+      const chars = String(text || "").split("");
+      const lines = [];
+      let line = "";
+      for (const ch of chars) {
+        const test = line + ch;
+        if (ctx.measureText(test).width > maxWidth && line) {
+          lines.push(line);
+          line = ch;
+        } else {
+          line = test;
+        }
+      }
+      if (line) lines.push(line);
+      return lines.length ? lines : [""];
+    }
+
+    function roundRect(ctx, x, y, w, h, r) {
+      const radius = Math.min(r, w / 2, h / 2);
+      ctx.beginPath();
+      ctx.moveTo(x + radius, y);
+      ctx.arcTo(x + w, y, x + w, y + h, radius);
+      ctx.arcTo(x + w, y + h, x, y + h, radius);
+      ctx.arcTo(x, y + h, x, y, radius);
+      ctx.arcTo(x, y, x + w, y, radius);
+      ctx.closePath();
+    }
+
+    /** 在照片区域绘制：特工头像 + 任务标题 + 地点 + 打卡时间 水印 */
+    function drawCheckinWatermark(ctx, {
+      x, y, w, h, avatarImg, title, place, time, compact = false, anchor = "bottom",
+    }) {
+      if (!title && !place && !time && !avatarImg) return;
+      const pad = Math.max(8, Math.round(w * (compact ? 0.028 : 0.022)));
+      const avR = Math.max(compact ? 14 : 22, Math.min(compact ? 26 : 42, Math.round(w * (compact ? 0.075 : 0.055))));
+      const fontTitle = Math.max(compact ? 11 : 17, Math.round(w * (compact ? 0.04 : 0.03)));
+      const fontPlace = Math.max(compact ? 10 : 15, Math.round(w * (compact ? 0.036 : 0.026)));
+      const fontTime = Math.max(compact ? 10 : 14, Math.round(w * (compact ? 0.034 : 0.024)));
+      const gap = Math.max(6, Math.round(avR * 0.35));
+      const lineGap = compact ? 3 : 4;
+      const titleText = title ? String(title) : "";
+      const placeText = place ? `📍 ${place}` : "";
+      const timeText = time ? `🕒 ${time}` : "";
+
+      ctx.save();
+      ctx.font = `800 ${fontTitle}px "Noto Sans SC", sans-serif`;
+      const titleW = titleText ? ctx.measureText(titleText).width : 0;
+      ctx.font = `700 ${fontPlace}px "Noto Sans SC", sans-serif`;
+      const placeW = placeText ? ctx.measureText(placeText).width : 0;
+      ctx.font = `600 ${fontTime}px "Noto Sans SC", sans-serif`;
+      const timeW = timeText ? ctx.measureText(timeText).width : 0;
+      const textW = Math.max(titleW, placeW, timeW);
+      const lines = [
+        titleText ? { text: titleText, font: `800 ${fontTitle}px "Noto Sans SC", sans-serif`, size: fontTitle, color: "#fff" } : null,
+        placeText ? { text: placeText, font: `700 ${fontPlace}px "Noto Sans SC", sans-serif`, size: fontPlace, color: "#7ae7ff" } : null,
+        timeText ? { text: timeText, font: `600 ${fontTime}px "Noto Sans SC", sans-serif`, size: fontTime, color: "rgba(255,255,255,0.95)" } : null,
+      ].filter(Boolean);
+      const textH = lines.reduce((s, line, i) => s + line.size + (i ? lineGap : 0), 0);
+      const boxH = Math.max(avR * 2, textH) + pad;
+      const boxW = Math.min(
+        w - pad * 2,
+        Math.max(avR * 2 + gap + textW + pad * 1.6, avR * 2 + pad * 2)
+      );
+      const boxX = x + pad;
+      const boxY = anchor === "top" ? y + pad : y + h - pad - boxH;
+
+      ctx.fillStyle = "rgba(0,0,0,0.52)";
+      ctx.strokeStyle = "rgba(255,255,255,0.22)";
+      ctx.lineWidth = 1;
+      roundRect(ctx, boxX, boxY, boxW, boxH, Math.min(boxH / 2, 18));
+      ctx.fill();
+      ctx.stroke();
+
+      const ax = boxX + pad * 0.55 + avR;
+      const ay = boxY + boxH / 2;
+
+      ctx.save();
+      ctx.beginPath();
+      ctx.arc(ax, ay, avR, 0, Math.PI * 2);
+      ctx.closePath();
+      ctx.clip();
+      if (avatarImg) {
+        const s = Math.max((avR * 2) / avatarImg.width, (avR * 2) / avatarImg.height);
+        const dw = avatarImg.width * s;
+        const dh = avatarImg.height * s;
+        ctx.drawImage(avatarImg, ax - dw / 2, ay - dh / 2, dw, dh);
+      } else {
+        ctx.fillStyle = "#1a2838";
+        ctx.fillRect(ax - avR, ay - avR, avR * 2, avR * 2);
+        ctx.fillStyle = "#7ae7ff";
+        ctx.font = `${Math.round(avR * 1.15)}px sans-serif`;
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        ctx.fillText("🕵️", ax, ay + 1);
+      }
+      ctx.restore();
+
+      ctx.strokeStyle = "#f0c14b";
+      ctx.lineWidth = Math.max(2, Math.round(avR * 0.12));
+      ctx.beginPath();
+      ctx.arc(ax, ay, avR, 0, Math.PI * 2);
+      ctx.stroke();
+
+      const tx = ax + avR + gap;
+      const maxTextW = Math.max(20, boxX + boxW - pad * 0.5 - tx);
+      let ty = ay - textH / 2;
+      ctx.textAlign = "left";
+      ctx.textBaseline = "top";
+      for (const line of lines) {
+        ctx.fillStyle = line.color;
+        ctx.font = line.font;
+        ctx.fillText(fitCanvasText(ctx, line.text, maxTextW), tx, ty);
+        ty += line.size + lineGap;
+      }
+      ctx.textBaseline = "alphabetic";
+      ctx.restore();
+    }
+
+    function fitCanvasText(ctx, text, maxWidth) {
+      if (!text) return "";
+      if (ctx.measureText(text).width <= maxWidth) return text;
+      let s = text;
+      while (s.length > 1 && ctx.measureText(`${s}…`).width > maxWidth) s = s.slice(0, -1);
+      return `${s}…`;
+    }
+
+    function triggerDownload(dataUrlOrBlob, filename) {
+      const a = document.createElement("a");
+      a.download = filename;
+      let revoke = null;
+      if (typeof Blob !== "undefined" && dataUrlOrBlob instanceof Blob) {
+        revoke = URL.createObjectURL(dataUrlOrBlob);
+        a.href = revoke;
+      } else {
+        a.href = dataUrlOrBlob;
+      }
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      if (revoke) setTimeout(() => URL.revokeObjectURL(revoke), 1500);
+    }
+
+    function dataUrlToUint8(dataUrl) {
+      const parts = String(dataUrl).split(",");
+      const bin = atob(parts[1] || "");
+      const out = new Uint8Array(bin.length);
+      for (let i = 0; i < bin.length; i++) out[i] = bin.charCodeAt(i);
+      return out;
+    }
+
+    const CRC32_TABLE = (() => {
+      const table = new Uint32Array(256);
+      for (let i = 0; i < 256; i++) {
+        let c = i;
+        for (let k = 0; k < 8; k++) c = (c & 1) ? (0xedb88320 ^ (c >>> 1)) : (c >>> 1);
+        table[i] = c >>> 0;
+      }
+      return table;
+    })();
+
+    function crc32(bytes) {
+      let c = 0xffffffff;
+      for (let i = 0; i < bytes.length; i++) {
+        c = CRC32_TABLE[(c ^ bytes[i]) & 0xff] ^ (c >>> 8);
+      }
+      return (c ^ 0xffffffff) >>> 0;
+    }
+
+    function u16(n) {
+      return [n & 0xff, (n >>> 8) & 0xff];
+    }
+
+    function u32(n) {
+      return [n & 0xff, (n >>> 8) & 0xff, (n >>> 16) & 0xff, (n >>> 24) & 0xff];
+    }
+
+    /** 无压缩 ZIP（STORE），适合已压缩的 JPEG 批量打包 */
+    function buildZipBlob(files) {
+      const encoder = new TextEncoder();
+      const parts = [];
+      const centrals = [];
+      let offset = 0;
+
+      const concatBytes = (chunks) => {
+        const total = chunks.reduce((s, c) => s + c.length, 0);
+        const out = new Uint8Array(total);
+        let p = 0;
+        for (const c of chunks) {
+          out.set(c, p);
+          p += c.length;
+        }
+        return out;
+      };
+
+      for (const file of files) {
+        const nameBytes = encoder.encode(file.name);
+        const data = file.data;
+        const crc = crc32(data);
+        const size = data.length;
+        const localHeader = new Uint8Array([
+          0x50, 0x4b, 0x03, 0x04,
+          ...u16(20),
+          ...u16(0),
+          ...u16(0),
+          ...u16(0),
+          ...u16(0),
+          ...u32(crc),
+          ...u32(size),
+          ...u32(size),
+          ...u16(nameBytes.length),
+          ...u16(0),
+        ]);
+        const localSize = localHeader.length + nameBytes.length + data.length;
+        parts.push(localHeader, nameBytes, data);
+
+        const central = new Uint8Array([
+          0x50, 0x4b, 0x01, 0x02,
+          ...u16(20),
+          ...u16(20),
+          ...u16(0),
+          ...u16(0),
+          ...u16(0),
+          ...u16(0),
+          ...u32(crc),
+          ...u32(size),
+          ...u32(size),
+          ...u16(nameBytes.length),
+          ...u16(0),
+          ...u16(0),
+          ...u16(0),
+          ...u16(0),
+          ...u32(0),
+          ...u32(offset),
+          ...nameBytes,
+        ]);
+        centrals.push(central);
+        offset += localSize;
+      }
+
+      const centralSize = centrals.reduce((s, c) => s + c.length, 0);
+      const end = new Uint8Array([
+        0x50, 0x4b, 0x05, 0x06,
+        ...u16(0),
+        ...u16(0),
+        ...u16(files.length),
+        ...u16(files.length),
+        ...u32(centralSize),
+        ...u32(offset),
+        ...u16(0),
+      ]);
+
+      return new Blob([concatBytes([...parts, ...centrals, end])], { type: "application/zip" });
+    }
+
+    function sleep(ms) {
+      return new Promise((resolve) => setTimeout(resolve, ms));
+    }
+
+    async function buildWatermarkedPhotoDataUrl(taskId) {
+      const t = TASKS.find((x) => x.id === taskId);
+      const src = state.photos[taskId];
+      if (!t || !src) return null;
+      const photoImg = await loadImage(src);
+      if (!photoImg) return null;
+      const avatarImg = await loadImage(state.avatar);
+      const time = resolvePhotoTime(taskId);
+      const maxSide = 1600;
+      const scale = Math.min(1, maxSide / Math.max(photoImg.width, photoImg.height));
+      const w = Math.round(photoImg.width * scale);
+      const h = Math.round(photoImg.height * scale);
+      const canvas = document.createElement("canvas");
+      canvas.width = w;
+      canvas.height = h;
+      const ctx = canvas.getContext("2d");
+      ctx.drawImage(photoImg, 0, 0, w, h);
+      drawCheckinWatermark(ctx, {
+        x: 0, y: 0, w, h,
+        avatarImg,
+        title: `${t.icon} ${t.title.replace(/^任务[一二三四五六七八]：/, "")}`,
+        place: t.place,
+        time,
+        compact: false,
+      });
+      return canvas.toDataURL("image/jpeg", 0.92);
+    }
+
+    function photoDownloadName(task, index, safeName) {
+      const shortTitle = task.title.replace(/^任务[一二三四五六七八]：/, "").replace(/[\\/:*?"<>|]/g, "_");
+      const num = String(index + 1).padStart(2, "0");
+      return `${num}_${currentLoc.name}_${shortTitle}_${safeName}.jpg`;
+    }
+
+    async function downloadWatermarkedPhoto(taskId) {
+      const t = TASKS.find((x) => x.id === taskId);
+      if (!t || !state.photos[taskId]) {
+        alert("这张打卡照还没有呢～");
+        return;
+      }
+      resolvePhotoTime(taskId, { persist: true });
+      const btn = document.getElementById("photoViewDownloadBtn");
+      if (btn) {
+        btn.disabled = true;
+        btn.textContent = "生成中…";
+      }
+      try {
+        const dataUrl = await buildWatermarkedPhotoDataUrl(taskId);
+        if (!dataUrl) throw new Error("build failed");
+        const safeName = (state.nickname || "时空小特工").replace(/[\\/:*?"<>|]/g, "_");
+        const idx = TASKS.findIndex((x) => x.id === taskId);
+        triggerDownload(dataUrl, photoDownloadName(t, Math.max(0, idx), safeName));
+        playBeep(880, 0.08);
+      } catch (err) {
+        console.error(err);
+        alert("下载失败，请再试一次～");
+      } finally {
+        if (btn) {
+          btn.disabled = false;
+          btn.textContent = "📥 下载打卡照";
+        }
+      }
+    }
+
+    async function downloadAllCheckinPhotos() {
+      const items = TASKS.filter((t) => state.photos[t.id]);
+      if (!items.length) {
+        alert("还没有打卡照片可以下载哦～");
+        return;
+      }
+      ensureAllPhotoTimes();
+
+      const albumBtn = document.getElementById("saveReportImgBtn");
+      const batchBtn = document.getElementById("downloadAllPhotosBtn");
+      const status = document.getElementById("saveImgStatus");
+      if (albumBtn) albumBtn.disabled = true;
+      if (batchBtn) {
+        batchBtn.disabled = true;
+        batchBtn.textContent = "打包中…";
+      }
+      if (status) {
+        status.textContent = `正在加水印并打包 0/${items.length}…`;
+        status.classList.add("show");
+      }
+
+      try {
+        const safeName = (state.nickname || "时空小特工").replace(/[\\/:*?"<>|]/g, "_");
+        const files = [];
+        for (let i = 0; i < items.length; i++) {
+          const t = items[i];
+          if (status) status.textContent = `正在加水印并打包 ${i + 1}/${items.length}…`;
+          const dataUrl = await buildWatermarkedPhotoDataUrl(t.id);
+          if (!dataUrl) continue;
+          files.push({
+            name: photoDownloadName(t, i, safeName),
+            data: dataUrlToUint8(dataUrl),
+          });
+          await sleep(30);
+        }
+        if (!files.length) throw new Error("no files");
+
+        if (status) status.textContent = "正在生成压缩包…";
+        const zipBlob = buildZipBlob(files);
+        triggerDownload(zipBlob, `${currentLoc.name}打卡照片_${safeName}.zip`);
+
+        if (status) {
+          status.textContent = `已打包下载 ${files.length} 张打卡照（含水印）～`;
+          setTimeout(() => status.classList.remove("show"), 3200);
+        }
+        playBeep(880, 0.08);
+      } catch (err) {
+        console.error(err);
+        alert("批量下载失败，请再试一次～");
+        if (status) status.classList.remove("show");
+      } finally {
+        if (albumBtn) albumBtn.disabled = false;
+        if (batchBtn) {
+          batchBtn.disabled = false;
+          batchBtn.textContent = "📦 批量下载全部照片";
+        }
+      }
+    }
+
+    function drawCover(ctx, img, x, y, w, h, r = 12) {
+      ctx.save();
+      roundRect(ctx, x, y, w, h, r);
+      ctx.clip();
+      if (img) {
+        const scale = Math.max(w / img.width, h / img.height);
+        const dw = img.width * scale;
+        const dh = img.height * scale;
+        ctx.drawImage(img, x + (w - dw) / 2, y + (h - dh) / 2, dw, dh);
+      } else {
+        ctx.fillStyle = "#1a2838";
+        ctx.fillRect(x, y, w, h);
+      }
+      ctx.restore();
+      ctx.strokeStyle = "rgba(61,213,255,0.35)";
+      ctx.lineWidth = 2;
+      roundRect(ctx, x, y, w, h, r);
+      ctx.stroke();
+    }
+
+    async function saveReportAsImage() {
+      const btn = document.getElementById("saveReportImgBtn");
+      const status = document.getElementById("saveImgStatus");
+      if (btn) {
+        btn.disabled = true;
+        btn.textContent = "生成中…";
+      }
+      if (status) {
+        status.textContent = "正在生成带水印的打卡相册，请稍候…";
+        status.classList.add("show");
+      }
+
+      try {
+        ensureAllPhotoTimes();
+        const name = state.nickname || "时空小特工";
+        const W = 900;
+        const pad = 28;
+        const gap = 14;
+        const contentW = W - pad * 2;
+        const colW = (contentW - gap) / 2;
+        const avatarR = 78;
+        const ratios = [3 / 4, 4 / 3, 1, 5 / 6, 4 / 5, 3 / 4, 1];
+
+        const avatarImg = await loadImage(state.avatar);
+        const photoImgs = {};
+        for (const t of TASKS) {
+          if (state.photos[t.id]) photoImgs[t.id] = await loadImage(state.photos[t.id]);
+        }
+
+        const measure = document.createElement("canvas").getContext("2d");
+
+        const cards = TASKS.map((t, i) => {
+          const img = photoImgs[t.id];
+          const shortTitle = t.title.replace(/^任务[一二三四五六七八]：/, "");
+          const story = REPORT_COPY[t.id] || t.short;
+          const note = state.notes[t.id] || "";
+          const photoTime = resolvePhotoTime(t.id);
+          const ratio = ratios[i % ratios.length];
+          const photoH = img ? Math.round(colW * ratio) : 120;
+          measure.font = "italic 18px 'Noto Sans SC', sans-serif";
+          const bodyText = note ? `特工手记：${note}` : story;
+          const bodyLines = wrapText(measure, bodyText, colW - 22).slice(0, 2);
+          const bodyH = 12 + bodyLines.length * 24 + 12;
+          return {
+            t, img, shortTitle, note, story, bodyText, bodyLines, photoTime,
+            photoH, cardH: photoH + bodyH, i,
+          };
+        });
+
+        const colCards = [[], []];
+        const colH = [0, 0];
+        for (const card of cards) {
+          const side = colH[0] <= colH[1] ? 0 : 1;
+          card.side = side;
+          const beforeGap = colCards[side].length ? gap : 0;
+          card.y = colH[side] + beforeGap;
+          colCards[side].push(card);
+          colH[side] = card.y + card.cardH;
+        }
+
+        // 把较矮一列的多余高度均摊到照片区，保证两列顶底齐平
+        const targetH = Math.max(colH[0], colH[1], 0);
+        for (let side = 0; side < 2; side++) {
+          const delta = targetH - colH[side];
+          if (delta <= 0 || !colCards[side].length) continue;
+          const stretchable = colCards[side].filter((c) => c.img);
+          const pool = stretchable.length ? stretchable : colCards[side];
+          const base = pool.reduce((s, c) => s + Math.max(c.photoH, 1), 0);
+          let used = 0;
+          pool.forEach((c, idx) => {
+            const bodyH = c.cardH - c.photoH;
+            const extra = idx === pool.length - 1
+              ? delta - used
+              : Math.round(delta * (c.photoH / base));
+            const add = Math.max(0, extra);
+            c.photoH += add;
+            c.cardH = c.photoH + bodyH;
+            used += add;
+          });
+          let y = 0;
+          colCards[side].forEach((c, idx) => {
+            if (idx) y += gap;
+            c.y = y;
+            y += c.cardH;
+          });
+          colH[side] = y;
+        }
+
+        for (const card of cards) {
+          card.x = pad + card.side * (colW + gap);
+        }
+        const galleryH = Math.max(colH[0], colH[1], 0);
+
+        let heroH = pad + 16 + avatarR * 2 + 26 + 48 + 42 + 28 + 20;
+        const footerH = 100;
+        const H = Math.ceil(heroH + galleryH + footerH + pad);
+
+        const canvas = document.createElement("canvas");
+        const scale = 2;
+        canvas.width = W * scale;
+        canvas.height = H * scale;
+        const ctx = canvas.getContext("2d");
+        ctx.scale(scale, scale);
+
+        const bg = ctx.createLinearGradient(0, 0, 0, H);
+        bg.addColorStop(0, "#0c1624");
+        bg.addColorStop(0.45, "#101a28");
+        bg.addColorStop(1, "#0a1018");
+        ctx.fillStyle = bg;
+        ctx.fillRect(0, 0, W, H);
+
+        ctx.strokeStyle = "rgba(61,213,255,0.4)";
+        ctx.lineWidth = 3;
+        roundRect(ctx, 10, 10, W - 20, H - 20, 20);
+        ctx.stroke();
+
+        let cy = pad + 16;
+        const cx = W / 2;
+
+        const glow = ctx.createRadialGradient(cx, cy + avatarR, 20, cx, cy + avatarR, avatarR + 36);
+        glow.addColorStop(0, "rgba(240,193,75,0.45)");
+        glow.addColorStop(1, "rgba(240,193,75,0)");
+        ctx.fillStyle = glow;
+        ctx.beginPath();
+        ctx.arc(cx, cy + avatarR, avatarR + 36, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.save();
+        ctx.beginPath();
+        ctx.arc(cx, cy + avatarR, avatarR, 0, Math.PI * 2);
+        ctx.closePath();
+        ctx.clip();
+        if (avatarImg) {
+          const s = Math.max((avatarR * 2) / avatarImg.width, (avatarR * 2) / avatarImg.height);
+          const dw = avatarImg.width * s;
+          const dh = avatarImg.height * s;
+          ctx.drawImage(avatarImg, cx - dw / 2, cy + avatarR - dh / 2, dw, dh);
+        } else {
+          ctx.fillStyle = "#1a2838";
+          ctx.fillRect(cx - avatarR, cy, avatarR * 2, avatarR * 2);
+          ctx.fillStyle = "#7ae7ff";
+          ctx.font = "64px sans-serif";
+          ctx.textAlign = "center";
+          ctx.textBaseline = "middle";
+          ctx.fillText("🕵️", cx, cy + avatarR + 4);
+          ctx.textBaseline = "alphabetic";
+        }
+        ctx.restore();
+
+        ctx.strokeStyle = "#f0c14b";
+        ctx.lineWidth = 5;
+        ctx.beginPath();
+        ctx.arc(cx, cy + avatarR, avatarR, 0, Math.PI * 2);
+        ctx.stroke();
+        ctx.strokeStyle = "rgba(61,213,255,0.55)";
+        ctx.lineWidth = 3;
+        ctx.beginPath();
+        ctx.arc(cx, cy + avatarR, avatarR + 6, 0, Math.PI * 2);
+        ctx.stroke();
+
+        cy += avatarR * 2 + 26;
+
+        ctx.fillStyle = "#f4f8fc";
+        ctx.font = "400 48px 'Ma Shan Zheng', 'Noto Sans SC', cursive";
+        ctx.textAlign = "center";
+        ctx.fillText(name, cx, cy);
+        cy += 28;
+
+        const chips = [currentLoc.role, currentLoc.name, `📷 ${photoCount()} 张`];
+        ctx.font = "700 20px 'Noto Sans SC', sans-serif";
+        const chipPads = chips.map((c) => ({ text: c, w: ctx.measureText(c).width + 28 }));
+        const chipsW = chipPads.reduce((a, c) => a + c.w, 0) + 10 * (chips.length - 1);
+        let chipX = cx - chipsW / 2;
+        chipPads.forEach((c, i) => {
+          const isGold = i === 0;
+          ctx.fillStyle = isGold ? "rgba(240,193,75,0.16)" : "rgba(61,213,255,0.12)";
+          ctx.strokeStyle = isGold ? "rgba(240,193,75,0.5)" : "rgba(61,213,255,0.4)";
+          ctx.lineWidth = 1.5;
+          roundRect(ctx, chipX, cy, c.w, 30, 15);
+          ctx.fill();
+          ctx.stroke();
+          ctx.fillStyle = isGold ? "#f0c14b" : "#7ae7ff";
+          ctx.fillText(c.text, chipX + c.w / 2, cy + 21);
+          chipX += c.w + 10;
+        });
+        cy += 42;
+
+        ctx.fillStyle = "rgba(232,238,245,0.65)";
+        ctx.font = "400 20px 'Noto Sans SC', sans-serif";
+        ctx.fillText(`${currentLoc.reportLabel} · ${formatReportDate()}`, cx, cy);
+        ctx.textAlign = "left";
+        cy += 24;
+
+        const galleryTop = cy;
+
+        function drawMasonryCard(card) {
+          const x = card.x;
+          const y = galleryTop + card.y;
+          const { img, photoH, cardH, shortTitle, t, bodyLines, note } = card;
+
+          ctx.fillStyle = "rgba(8,14,24,0.75)";
+          ctx.strokeStyle = "rgba(61,213,255,0.28)";
+          ctx.lineWidth = 1.5;
+          roundRect(ctx, x, y, colW, cardH, 14);
+          ctx.fill();
+          ctx.stroke();
+
+          ctx.save();
+          roundRect(ctx, x, y, colW, photoH, 14);
+          ctx.clip();
+          ctx.beginPath();
+          ctx.rect(x, y, colW, photoH);
+          ctx.clip();
+          if (img) {
+            const s = Math.max(colW / img.width, photoH / img.height);
+            const dw = img.width * s;
+            const dh = img.height * s;
+            ctx.drawImage(img, x + (colW - dw) / 2, y + (photoH - dh) / 2, dw, dh);
+            drawCheckinWatermark(ctx, {
+              x, y, w: colW, h: photoH,
+              avatarImg,
+              title: `${t.icon} ${shortTitle}`,
+              place: t.place,
+              time: card.photoTime,
+              compact: true,
+              anchor: "top",
+            });
+          } else {
+            ctx.fillStyle = "#0a121c";
+            ctx.fillRect(x, y, colW, photoH);
+            ctx.fillStyle = "rgba(232,238,245,0.55)";
+            ctx.font = "400 18px 'Noto Sans SC', sans-serif";
+            ctx.textAlign = "center";
+            ctx.fillText("📷 暂无照片", x + colW / 2, y + photoH / 2);
+            ctx.textAlign = "left";
+            const g = ctx.createLinearGradient(0, y + photoH - 56, 0, y + photoH);
+            g.addColorStop(0, "rgba(4,10,18,0)");
+            g.addColorStop(1, "rgba(4,10,18,0.88)");
+            ctx.fillStyle = g;
+            ctx.fillRect(x, y + photoH - 56, colW, 56);
+            ctx.fillStyle = "#fff";
+            ctx.font = "700 20px 'Noto Sans SC', sans-serif";
+            ctx.fillText(`${t.icon} ${shortTitle}`, x + 12, y + photoH - 18);
+          }
+          ctx.restore();
+
+          let ty = y + photoH + 20;
+          ctx.fillStyle = note ? "#f0c14b" : "rgba(232,238,245,0.75)";
+          ctx.font = note
+            ? "italic 17px 'Noto Sans SC', sans-serif"
+            : "400 17px 'Noto Sans SC', sans-serif";
+          for (const line of bodyLines) {
+            ctx.fillText(line, x + 11, ty);
+            ty += 24;
+          }
+        }
+
+        for (const card of cards) drawMasonryCard(card);
+
+        cy = galleryTop + galleryH + 8;
+
+        ctx.fillStyle = "rgba(240,193,75,0.14)";
+        ctx.strokeStyle = "rgba(240,193,75,0.4)";
+        roundRect(ctx, pad, cy, contentW, 88, 14);
+        ctx.fill();
+        ctx.stroke();
+        ctx.textAlign = "center";
+        ctx.fillStyle = "#f0c14b";
+        ctx.font = "400 32px 'Ma Shan Zheng', 'Noto Sans SC', cursive";
+        ctx.fillText(currentLoc.rewardTitle, cx, cy + 34);
+        ctx.fillStyle = "rgba(232,238,245,0.8)";
+        ctx.font = "400 18px 'Noto Sans SC', sans-serif";
+        ctx.fillText("以镜头记录旅途，把这份相册讲给爸爸妈妈听吧！", cx, cy + 58);
+        ctx.fillText(`—— ${currentLoc.name}时空特工系统`, cx, cy + 78);
+        ctx.textAlign = "left";
+
+        const safeName = (state.nickname || "时空小特工").replace(/[\\/:*?"<>|]/g, "_");
+        triggerDownload(canvas.toDataURL("image/png"), `${currentLoc.name}特工打卡相册_${safeName}.png`);
+
+        if (status) {
+          status.textContent = "相册已下载（含时间·地点·头像水印）～";
+          setTimeout(() => status.classList.remove("show"), 2800);
+        }
+        playBeep(880, 0.08);
+      } catch (err) {
+        console.error(err);
+        alert("保存图片失败，请再试一次～");
+        if (status) status.classList.remove("show");
+      } finally {
+        if (btn) {
+          btn.disabled = false;
+          btn.textContent = "📥 生成打卡报告";
+        }
+      }
+    }
+
+    /* Audio */
+    let audioCtx;
+    function playBeep(freq, dur) {
+      try {
+        audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
+        const o = audioCtx.createOscillator();
+        const g = audioCtx.createGain();
+        o.type = "sine";
+        o.frequency.value = freq;
+        g.gain.value = 0.05;
+        o.connect(g);
+        g.connect(audioCtx.destination);
+        o.start();
+        g.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + dur);
+        o.stop(audioCtx.currentTime + dur);
+      } catch (_) {}
+    }
+
+    function burstConfetti(n = 28) {
+      const box = document.getElementById("confetti");
+      const colors = ["#2ecfff", "#e8b84a", "#c62828", "#3dd68c", "#ff8a65", "#fff"];
+      for (let i = 0; i < n; i++) {
+        const el = document.createElement("i");
+        el.style.left = `${Math.random() * 100}%`;
+        el.style.background = colors[i % colors.length];
+        el.style.animationDuration = `${1.4 + Math.random() * 1.6}s`;
+        el.style.transform = `rotate(${Math.random() * 360}deg)`;
+        box.appendChild(el);
+        setTimeout(() => el.remove(), 3200);
+      }
+    }
+
+    /* Overlay helpers */
+    function openOverlay(id) {
+      document.getElementById(id).classList.add("open");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeOverlay(id) {
+      document.getElementById(id).classList.remove("open");
+      if (id === "reportOverlay") {
+        document.getElementById("photoViewOverlay")?.classList.remove("open");
+      }
+      if (![...document.querySelectorAll(".overlay.open")].length) {
+        document.body.style.overflow = "";
+      }
+    }
+
+    document.querySelectorAll("[data-close]").forEach((el) => {
+      el.addEventListener("click", () => closeOverlay(el.getAttribute("data-close")));
+    });
+
+    document.querySelectorAll(".overlay").forEach((ov) => {
+      ov.addEventListener("click", (e) => {
+        if (e.target !== ov) return;
+        if (ov.id === "welcomeOverlay" && !(state.welcomed && state.nickname && state.avatar)) return;
+        closeOverlay(ov.id);
+      });
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        if (document.getElementById("photoViewOverlay")?.classList.contains("open")) {
+          closeOverlay("photoViewOverlay");
+          return;
+        }
+        if (document.getElementById("avatarCamOverlay")?.classList.contains("open")) {
+          closeAvatarCamera();
+          return;
+        }
+        document.querySelectorAll(".overlay.open").forEach((ov) => {
+          if (ov.id === "welcomeOverlay" && !(state.welcomed && state.nickname && state.avatar)) return;
+          if (ov.id === "avatarCamOverlay") return;
+          closeOverlay(ov.id);
+        });
+      }
+    });
+
+    document.getElementById("taskOverlay").addEventListener("click", (e) => {
+      const t = e.target.closest("[data-close]");
+      if (t) closeOverlay(t.getAttribute("data-close"));
+    });
+
+    document.getElementById("reportOverlay").addEventListener("click", (e) => {
+      const t = e.target.closest("[data-close]");
+      if (t) closeOverlay(t.getAttribute("data-close"));
+    });
+
+    document.getElementById("photoViewClose")?.addEventListener("click", () => {
+      closeOverlay("photoViewOverlay");
+    });
+
+    document.getElementById("photoViewCloseBtn")?.addEventListener("click", () => {
+      closeOverlay("photoViewOverlay");
+    });
+
+    document.getElementById("photoViewDownloadBtn")?.addEventListener("click", () => {
+      if (viewingPhotoTaskId != null) downloadWatermarkedPhoto(viewingPhotoTaskId);
+    });
+
+    document.getElementById("reportBtn").addEventListener("click", () => openReport());
+
+    let avatarStream = null;
+    let avatarShotDataUrl = "";
+
+    function stopAvatarCamera() {
+      if (avatarStream) {
+        avatarStream.getTracks().forEach((t) => t.stop());
+        avatarStream = null;
+      }
+      const video = document.getElementById("avatarCamVideo");
+      if (video) video.srcObject = null;
+    }
+
+    function resetAvatarCamUi() {
+      avatarShotDataUrl = "";
+      const stage = document.getElementById("avatarCamStage");
+      stage?.classList.remove("shot");
+      document.getElementById("avatarCamShot").style.display = "";
+      document.getElementById("avatarCamUse").style.display = "none";
+      document.getElementById("avatarCamRetake").style.display = "none";
+      document.getElementById("avatarCamHint").textContent = "请对准自己，点击下方快门拍照";
+      document.getElementById("avatarCamError").classList.remove("show");
+    }
+
+    async function openAvatarCamera() {
+      resetAvatarCamUi();
+      const changing = !!(state.welcomed && state.avatar);
+      document.getElementById("avatarCamTitle").textContent = changing ? "更换特工照片" : "拍摄特工头像";
+      document.getElementById("avatarCamSub").textContent = changing
+        ? "重新拍照替换头像 · 仅支持现场拍照"
+        : "仅支持现场拍照，不能从相册选择";
+      document.getElementById("avatarCamUse").textContent = changing ? "✓ 确认更换" : "✓ 使用这张";
+      const errEl = document.getElementById("avatarCamError");
+      if (!navigator.mediaDevices?.getUserMedia) {
+        errEl.textContent = "当前环境不支持摄像头，请用手机浏览器打开本页后再试";
+        errEl.classList.add("show");
+        openOverlay("avatarCamOverlay");
+        return;
+      }
+      openOverlay("avatarCamOverlay");
+      try {
+        stopAvatarCamera();
+        avatarStream = await navigator.mediaDevices.getUserMedia({
+          audio: false,
+          video: {
+            facingMode: { ideal: "user" },
+            width: { ideal: 720 },
+            height: { ideal: 960 },
+          },
+        });
+        const video = document.getElementById("avatarCamVideo");
+        video.srcObject = avatarStream;
+        await video.play();
+        errEl.classList.remove("show");
+      } catch (_) {
+        errEl.textContent = "无法打开摄像头，请允许相机权限后重试（需用手机或电脑摄像头）";
+        errEl.classList.add("show");
+      }
+    }
+
+    function closeAvatarCamera() {
+      stopAvatarCamera();
+      resetAvatarCamUi();
+      closeOverlay("avatarCamOverlay");
+    }
+
+    function applyAvatarDataUrl(dataUrl) {
+      pendingAvatar = dataUrl;
+      const preview = document.getElementById("welcomeAvatarPreview");
+      const pick = document.getElementById("avatarPick");
+      if (preview) preview.src = dataUrl;
+      if (pick) pick.classList.add("has-img");
+      document.getElementById("profileError")?.classList.remove("show");
+
+      // 已登记特工：立刻写入并保存
+      if (state.welcomed) {
+        state.avatar = dataUrl;
+        saveState({ toast: true, message: "特工照片已更换并保存" });
+        updateAgentBar();
+      }
+    }
+
+    document.getElementById("avatarCameraBtn").addEventListener("click", () => openAvatarCamera());
+    document.getElementById("avatarPick").addEventListener("click", () => openAvatarCamera());
+    document.getElementById("changeAvatarBtn")?.addEventListener("click", (e) => {
+      e.stopPropagation();
+      openAvatarCamera();
+    });
+    document.getElementById("changeAvatarTextBtn")?.addEventListener("click", (e) => {
+      e.stopPropagation();
+      openAvatarCamera();
+    });
+    document.getElementById("avatarCamClose").addEventListener("click", () => closeAvatarCamera());
+
+    document.getElementById("avatarCamOverlay").addEventListener("click", (e) => {
+      if (e.target.id === "avatarCamOverlay") closeAvatarCamera();
+    });
+
+    document.getElementById("avatarCamShot").addEventListener("click", () => {
+      const video = document.getElementById("avatarCamVideo");
+      const canvas = document.getElementById("avatarCamCanvas");
+      if (!video.videoWidth) {
+        const errEl = document.getElementById("avatarCamError");
+        errEl.textContent = "摄像头还没准备好，稍等一下再拍～";
+        errEl.classList.add("show");
+        return;
+      }
+      const side = Math.min(video.videoWidth, video.videoHeight);
+      const sx = (video.videoWidth - side) / 2;
+      const sy = (video.videoHeight - side) / 2;
+      const out = 320;
+      canvas.width = out;
+      canvas.height = out;
+      const ctx = canvas.getContext("2d");
+      // mirror to match preview
+      ctx.translate(out, 0);
+      ctx.scale(-1, 1);
+      ctx.drawImage(video, sx, sy, side, side, 0, 0, out, out);
+      avatarShotDataUrl = canvas.toDataURL("image/jpeg", 0.82);
+      document.getElementById("avatarCamStage").classList.add("shot");
+      document.getElementById("avatarCamShot").style.display = "none";
+      document.getElementById("avatarCamUse").style.display = "";
+      document.getElementById("avatarCamRetake").style.display = "";
+      document.getElementById("avatarCamHint").textContent = "满意就点确认，不满意可重拍";
+      document.getElementById("avatarCamError").classList.remove("show");
+      playBeep(988, 0.06);
+    });
+
+    document.getElementById("avatarCamRetake").addEventListener("click", () => {
+      avatarShotDataUrl = "";
+      document.getElementById("avatarCamStage").classList.remove("shot");
+      document.getElementById("avatarCamShot").style.display = "";
+      document.getElementById("avatarCamUse").style.display = "none";
+      document.getElementById("avatarCamRetake").style.display = "none";
+      document.getElementById("avatarCamHint").textContent = "请对准自己，点击下方快门拍照";
+    });
+
+    document.getElementById("avatarCamUse").addEventListener("click", () => {
+      if (!avatarShotDataUrl) return;
+      applyAvatarDataUrl(avatarShotDataUrl);
+      closeAvatarCamera();
+      playBeep(740, 0.08);
+    });
+
+    document.getElementById("startBtn").addEventListener("click", () => {
+      const nick = (document.getElementById("nickInput").value || "").trim();
+      const err = document.getElementById("profileError");
+      if (!pendingAvatar && !state.avatar) {
+        err.textContent = "请先拍照设置头像～";
+        err.classList.add("show");
+        return;
+      }
+      if (nick.length < 1) {
+        err.textContent = "请填写特工昵称～";
+        err.classList.add("show");
+        return;
+      }
+      state.nickname = nick.slice(0, 12);
+      state.avatar = pendingAvatar || state.avatar;
+      state.welcomed = true;
+      saveState({ toast: true, message: "特工档案已保存，下次打开可继续" });
+      updateAgentBar();
+      closeOverlay("welcomeOverlay");
+      playBeep(740, 0.1);
+    });
+
+    document.getElementById("resetBtn").addEventListener("click", () => {
+      const locName = currentLoc.name;
+      if (!confirm(`确定要清空「${locName}」的任务进度和打卡照片吗？\n（特工昵称与头像会保留；其他景点进度不受影响）`)) return;
+      applyProgress(emptyProgress());
+      state.spots[state.locationId] = emptyProgress();
+      session = {};
+      saveState({ toast: true, message: `已清空「${locName}」进度` });
+      renderSpotNav();
+      renderGrid();
+      updateProgress();
+      playBeep(220, 0.1);
+    });
+
+    /* Init */
+    updateLocationChrome();
+    renderSpotNav();
+    renderGrid();
+    updateProgress();
+    updateSavePill(!!state.savedAt, state.savedAt);
+
+    // 离开页面 / 切到后台时再落盘一次，防止漏存
+    const flushSave = () => { try { saveState(); } catch (_) {} };
+    window.addEventListener("pagehide", () => { stopAvatarCamera(); flushSave(); });
+    document.addEventListener("visibilitychange", () => {
+      if (document.visibilityState === "hidden") flushSave();
+      else updateSavePill(!!state.savedAt, state.savedAt);
+    });
+    setInterval(() => updateSavePill(!!state.savedAt, state.savedAt), 30_000);
+
+    if (state.welcomed && state.nickname && state.avatar) {
+      closeOverlay("welcomeOverlay");
+      updateAgentBar();
+    } else {
+      state.welcomed = false;
+      if (state.nickname) document.getElementById("nickInput").value = state.nickname;
+      if (state.avatar) {
+        pendingAvatar = state.avatar;
+        document.getElementById("welcomeAvatarPreview").src = state.avatar;
+        document.getElementById("avatarPick").classList.add("has-img");
+      }
+      openOverlay("welcomeOverlay");
+    }
+  </script>
+</body>
+</html>

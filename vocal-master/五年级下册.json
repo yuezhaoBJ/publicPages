@@ -1,0 +1,1087 @@
+[
+  {
+    "en": "writer",
+    "zh": "作家",
+    "emoji": "✍️",
+    "category": "People",
+    "id": 91
+  },
+  {
+    "en": "future",
+    "zh": "未来，将来",
+    "emoji": "🔮",
+    "category": "Time",
+    "id": 92
+  },
+  {
+    "en": "sick",
+    "zh": "生病的",
+    "emoji": "🤒",
+    "category": "Health",
+    "id": 93
+  },
+  {
+    "en": "born",
+    "zh": "出生；天生的",
+    "emoji": "👶",
+    "category": "Life",
+    "id": 94
+  },
+  {
+    "en": "fall over",
+    "zh": "跌倒",
+    "emoji": "🤸",
+    "category": "Action",
+    "id": 95
+  },
+  {
+    "en": "from then on",
+    "zh": "从那时起",
+    "emoji": "⏳",
+    "category": "Time",
+    "id": 96
+  },
+  {
+    "en": "come true",
+    "zh": "（希望或愿望）实现",
+    "emoji": "✨",
+    "category": "Achievement",
+    "id": 97
+  },
+  {
+    "en": "exercise",
+    "zh": "锻炼；练习",
+    "emoji": "🏋️",
+    "category": "Health",
+    "id": 98
+  },
+  {
+    "en": "minute",
+    "zh": "分钟，分；一会儿",
+    "emoji": "🕒",
+    "category": "Time",
+    "id": 99
+  },
+  {
+    "en": "take ... lesson",
+    "zh": "上……课程",
+    "emoji": "📚",
+    "category": "Education",
+    "id": 100
+  },
+  {
+    "en": "give up",
+    "zh": "放弃，认输",
+    "emoji": "🏳️",
+    "category": "Action",
+    "id": 101
+  },
+  {
+    "en": "scientist",
+    "zh": "科学家",
+    "emoji": "🔬",
+    "category": "People",
+    "id": 102
+  },
+  {
+    "en": "the Medal of the Republic",
+    "zh": "共和国勋章",
+    "emoji": "🏅",
+    "category": "Awards",
+    "id": 103
+  },
+  {
+    "en": "honour",
+    "zh": "荣誉",
+    "emoji": "🎖️",
+    "category": "Awards",
+    "id": 104
+  },
+  {
+    "en": "hybrid rice",
+    "zh": "杂交水稻",
+    "emoji": "🌾",
+    "category": "Agriculture",
+    "id": 105
+  },
+  {
+    "en": "once",
+    "zh": "一次；曾经",
+    "emoji": "1️⃣",
+    "category": "Time",
+    "id": 106
+  },
+  {
+    "en": "farmer",
+    "zh": "农民，农夫",
+    "emoji": "👩‍🌾",
+    "category": "People",
+    "id": 107
+  },
+  {
+    "en": "invent",
+    "zh": "发明",
+    "emoji": "💡",
+    "category": "Action",
+    "id": 108
+  },
+  {
+    "en": "output",
+    "zh": "产量",
+    "emoji": "📈",
+    "category": "Economy",
+    "id": 109
+  },
+  {
+    "en": "each",
+    "zh": "每个，各，各自",
+    "emoji": "🔢",
+    "category": "General",
+    "id": 110
+  },
+  {
+    "en": "square",
+    "zh": "广场；正方形",
+    "emoji": "◼️",
+    "category": "Shapes & Places",
+    "id": 111
+  },
+  {
+    "en": "the Summer Palace",
+    "zh": "颐和园",
+    "emoji": "🏯",
+    "category": "Places",
+    "id": 112
+  },
+  {
+    "en": "well-kept",
+    "zh": "保存完好的",
+    "emoji": "👌",
+    "category": "Quality",
+    "id": 113
+  },
+  {
+    "en": "colourful",
+    "zh": "五彩缤纷的；生动的",
+    "emoji": "🌈",
+    "category": "Description",
+    "id": 114
+  },
+  {
+    "en": "international",
+    "zh": "国际的；国际上的",
+    "emoji": "🌍",
+    "category": "General",
+    "id": 115
+  },
+  {
+    "en": "airport",
+    "zh": "机场",
+    "emoji": "✈️",
+    "category": "Places",
+    "id": 116
+  },
+  {
+    "en": "modern",
+    "zh": "现代的；近代的",
+    "emoji": "🏙️",
+    "category": "Description",
+    "id": 117
+  },
+  {
+    "en": "computer",
+    "zh": "计算机；电脑",
+    "emoji": "💻",
+    "category": "Technology",
+    "id": 118
+  },
+  {
+    "en": "subway",
+    "zh": "地铁",
+    "emoji": "🚇",
+    "category": "Transport",
+    "id": 119
+  },
+  {
+    "en": "line",
+    "zh": "线，线条；行，排",
+    "emoji": "➖",
+    "category": "Shapes",
+    "id": 120
+  },
+  {
+    "en": "its",
+    "zh": "它的",
+    "emoji": "📍",
+    "category": "General",
+    "id": 121
+  },
+  {
+    "en": "Beijing roast duck",
+    "zh": "北京烤鸭",
+    "emoji": "🦆",
+    "category": "Food",
+    "id": 122
+  },
+  {
+    "en": "hot pot",
+    "zh": "火锅",
+    "emoji": "🍲",
+    "category": "Food",
+    "id": 123
+  },
+  {
+    "en": "Central Axis",
+    "zh": "中轴线",
+    "emoji": "🛤️",
+    "category": "Places",
+    "id": 124
+  },
+  {
+    "en": "Bell and Drum Towers",
+    "zh": "钟鼓楼",
+    "emoji": "🔔🥁",
+    "category": "Places",
+    "id": 125
+  },
+  {
+    "en": "northern",
+    "zh": "在北部的；北方的",
+    "emoji": "⬆️",
+    "category": "Direction",
+    "id": 126
+  },
+  {
+    "en": "end",
+    "zh": "最后部分；末尾；（使）结束",
+    "emoji": "🏁",
+    "category": "General",
+    "id": 127
+  },
+  {
+    "en": "bird's-eye view",
+    "zh": "鸟瞰",
+    "emoji": "🦅",
+    "category": "View",
+    "id": 128
+  },
+  {
+    "en": "the Palace Museum",
+    "zh": "故宫博物院",
+    "emoji": "🏯",
+    "category": "Places",
+    "id": 129
+  },
+  {
+    "en": "wooden",
+    "zh": "木质的",
+    "emoji": "🪵",
+    "category": "Material",
+    "id": 130
+  },
+  {
+    "en": "palace",
+    "zh": "宫殿；大厦",
+    "emoji": "🏰",
+    "category": "Places",
+    "id": 131
+  },
+  {
+    "en": "treasure",
+    "zh": "财富；财宝",
+    "emoji": "💰",
+    "category": "Wealth",
+    "id": 132
+  },
+  {
+    "en": "bus",
+    "zh": "公交车，巴士",
+    "emoji": "🚌",
+    "category": "Transport",
+    "id": 133
+  },
+  {
+    "en": "gate",
+    "zh": "大门；登机口",
+    "emoji": "🚪",
+    "category": "Places",
+    "id": 134
+  },
+  {
+    "en": "Tian'anmen Square Complex",
+    "zh": "天安门广场及建筑群",
+    "emoji": "🀄",
+    "category": "Places",
+    "id": 135
+  },
+  {
+    "en": "southern",
+    "zh": "南部的；南方的",
+    "emoji": "⬇️",
+    "category": "Direction",
+    "id": 136
+  },
+  {
+    "en": "own",
+    "zh": "自己的；拥有",
+    "emoji": "🔑",
+    "category": "Possession",
+    "id": 137
+  },
+  {
+    "en": "young",
+    "zh": "年轻的；青少年的",
+    "emoji": "🧒",
+    "category": "People",
+    "id": 138
+  },
+  {
+    "en": "Bird's Nest",
+    "zh": "鸟巢",
+    "emoji": "🐦",
+    "category": "Places",
+    "id": 139
+  },
+  {
+    "en": "well-known",
+    "zh": "众所周知的；著名的",
+    "emoji": "⭐",
+    "category": "Description",
+    "id": 140
+  },
+  {
+    "en": "hold",
+    "zh": "召开，举行",
+    "emoji": "🤝",
+    "category": "Action",
+    "id": 141
+  },
+  {
+    "en": "ceremony",
+    "zh": "仪式；典礼",
+    "emoji": "🎉",
+    "category": "Event",
+    "id": 142
+  },
+  {
+    "en": "come out",
+    "zh": "出来，出现",
+    "emoji": "🚶‍♂️",
+    "category": "Phrasal Verb",
+    "id": 530
+  },
+  {
+    "en": "job",
+    "zh": "工作",
+    "emoji": "💼",
+    "category": "Work",
+    "id": 531
+  },
+  {
+    "en": "cabbage",
+    "zh": "卷心菜",
+    "emoji": "🥬",
+    "category": "Food",
+    "id": 532
+  },
+  {
+    "en": "come from",
+    "zh": "来自",
+    "emoji": "🌍",
+    "category": "Phrasal Verb",
+    "id": 533
+  },
+  {
+    "en": "give",
+    "zh": "提供；给予",
+    "emoji": "🎁",
+    "category": "Verb",
+    "id": 534
+  },
+  {
+    "en": "else",
+    "zh": "其他的，另外的；此外",
+    "emoji": "➕",
+    "category": "Adjective",
+    "id": 535
+  },
+  {
+    "en": "Mother's Day",
+    "zh": "母亲节",
+    "emoji": "👩‍👧",
+    "category": "Holiday",
+    "id": 536
+  },
+  {
+    "en": "Teachers' Day",
+    "zh": "教师节",
+    "emoji": "👩‍🏫",
+    "category": "Holiday",
+    "id": 537
+  },
+  {
+    "en": "pear",
+    "zh": "梨",
+    "emoji": "🍐",
+    "category": "Food",
+    "id": 538
+  },
+  {
+    "en": "peach",
+    "zh": "桃子",
+    "emoji": "🍑",
+    "category": "Food",
+    "id": 539
+  },
+  {
+    "en": "wood",
+    "zh": "木材，木料",
+    "emoji": "🪵",
+    "category": "Material",
+    "id": 540
+  },
+  {
+    "en": "paper",
+    "zh": "纸",
+    "emoji": "📄",
+    "category": "Material",
+    "id": 541
+  },
+  {
+    "en": "table",
+    "zh": "桌子，餐桌，饭桌",
+    "emoji": "🪑",
+    "category": "Furniture",
+    "id": 542
+  },
+  {
+    "en": "chair",
+    "zh": "(单人)椅子",
+    "emoji": "🪑",
+    "category": "Furniture",
+    "id": 543
+  },
+  {
+    "en": "house",
+    "zh": "房子，住宅；大楼",
+    "emoji": "🏠",
+    "category": "Building",
+    "id": 544
+  },
+  {
+    "en": "wash away",
+    "zh": "冲走",
+    "emoji": "🌊",
+    "category": "Phrasal Verb",
+    "id": 545
+  },
+  {
+    "en": "in short",
+    "zh": "简而言之",
+    "emoji": "📝",
+    "category": "Phrase",
+    "id": 546
+  },
+  {
+    "en": "medicine",
+    "zh": "药，药品",
+    "emoji": "💊",
+    "category": "Health",
+    "id": 547
+  },
+  {
+    "en": "balance",
+    "zh": "平衡",
+    "emoji": "⚖️",
+    "category": "Concept",
+    "id": 548
+  },
+  {
+    "en": "recycle",
+    "zh": "回收利用；使再循环",
+    "emoji": "♻️",
+    "category": "Environment",
+    "id": 549
+  },
+  {
+    "en": "print",
+    "zh": "打印；印刷",
+    "emoji": "🖨️",
+    "category": "Action",
+    "id": 550
+  },
+  {
+    "en": "step on",
+    "zh": "踩在......上",
+    "emoji": "👣",
+    "category": "Phrasal Verb",
+    "id": 551
+  },
+  {
+    "en": "go shopping",
+    "zh": "去购物",
+    "emoji": "🛍️",
+    "category": "Action",
+    "id": 552
+  },
+  {
+    "en": "toy",
+    "zh": "玩具",
+    "emoji": "🧸",
+    "category": "Item",
+    "id": 553
+  },
+  {
+    "en": "quite a few",
+    "zh": "不少，很多",
+    "emoji": "🔢",
+    "category": "Phrase",
+    "id": 554
+  },
+  {
+    "en": "go well with ...",
+    "zh": "跟......搭配得好",
+    "emoji": "✔️",
+    "category": "Phrase",
+    "id": 555
+  },
+  {
+    "en": "try ... on",
+    "zh": "试一试",
+    "emoji": "👗",
+    "category": "Phrase",
+    "id": 556
+  },
+  {
+    "en": "pair",
+    "zh": "一双，一对",
+    "emoji": "👟",
+    "category": "Clothing",
+    "id": 557
+  },
+  {
+    "en": "shoe",
+    "zh": "鞋子",
+    "emoji": "👞",
+    "category": "Clothing",
+    "id": 558
+  },
+  {
+    "en": "size",
+    "zh": "大小，尺码",
+    "emoji": "📏",
+    "category": "Measurement",
+    "id": 559
+  },
+  {
+    "en": "comfortable",
+    "zh": "舒适的，舒服的",
+    "emoji": "🛋️",
+    "category": "Adjective",
+    "id": 560
+  },
+  {
+    "en": "off",
+    "zh": "减价；关掉",
+    "emoji": "❌",
+    "category": "Adverb",
+    "id": 561
+  },
+  {
+    "en": "flea market",
+    "zh": "跳蚤市场",
+    "emoji": "🛒",
+    "category": "Place",
+    "id": 562
+  },
+  {
+    "en": "sell",
+    "zh": "卖，出售",
+    "emoji": "💰",
+    "category": "Action",
+    "id": 563
+  },
+  {
+    "en": "ago",
+    "zh": "之前，以前",
+    "emoji": "⌛",
+    "category": "Adverb",
+    "id": 564
+  },
+  {
+    "en": "white",
+    "zh": "白色；白色的，白的",
+    "emoji": "⚪",
+    "category": "Color",
+    "id": 565
+  },
+  {
+    "en": "shape",
+    "zh": "形状，外形，轮廓",
+    "emoji": "🔷",
+    "category": "Noun",
+    "id": 566
+  },
+  {
+    "en": "online",
+    "zh": "网上的；在网上",
+    "emoji": "💻",
+    "category": "Adjective",
+    "id": 567
+  },
+  {
+    "en": "choose",
+    "zh": "选择",
+    "emoji": "🤔",
+    "category": "Verb",
+    "id": 568
+  },
+  {
+    "en": "app (=application)",
+    "zh": "应用程序，应用软件",
+    "emoji": "📱",
+    "category": "Technology",
+    "id": 569
+  },
+  {
+    "en": "goods",
+    "zh": "货物；商品",
+    "emoji": "📦",
+    "category": "Noun",
+    "id": 570
+  },
+  {
+    "en": "decide",
+    "zh": "确定；选定",
+    "emoji": "✅",
+    "category": "Verb",
+    "id": 571
+  },
+  {
+    "en": "address",
+    "zh": "地址",
+    "emoji": "🏠",
+    "category": "Noun",
+    "id": 572
+  },
+  {
+    "en": "pay",
+    "zh": "付款；偿还；给予",
+    "emoji": "💵",
+    "category": "Verb",
+    "id": 573
+  },
+  {
+    "en": "worker",
+    "zh": "工人；员工",
+    "emoji": "👷",
+    "category": "Occupation",
+    "id": 574
+  },
+  {
+    "en": "pilot",
+    "zh": "飞行员；驾驶飞行器",
+    "emoji": "🛩️",
+    "category": "Occupation",
+    "id": 575
+  },
+  {
+    "en": "astronaut",
+    "zh": "宇航员；航天员",
+    "emoji": "👨‍🚀",
+    "category": "Occupation",
+    "id": 576
+  },
+  {
+    "en": "be interested in ...",
+    "zh": "对……感兴趣",
+    "emoji": "✨",
+    "category": "Phrase",
+    "id": 577
+  },
+  {
+    "en": "rocket",
+    "zh": "火箭",
+    "emoji": "🚀",
+    "category": "Transportation",
+    "id": 578
+  },
+  {
+    "en": "launch",
+    "zh": "发射",
+    "emoji": "🚀",
+    "category": "Verb",
+    "id": 579
+  },
+  {
+    "en": "spaceship",
+    "zh": "宇宙飞船",
+    "emoji": "🛸",
+    "category": "Transportation",
+    "id": 580
+  },
+  {
+    "en": "research",
+    "zh": "研究；做研究",
+    "emoji": "🔬",
+    "category": "Action",
+    "id": 581
+  },
+  {
+    "en": "mess",
+    "zh": "杂乱，凌乱",
+    "emoji": "💥",
+    "category": "state",
+    "id": 631
+  },
+  {
+    "en": "yesterday",
+    "zh": "昨天",
+    "emoji": "📅",
+    "category": "time",
+    "id": 632
+  },
+  {
+    "en": "whose",
+    "zh": "谁的",
+    "emoji": "❓",
+    "category": "pronoun",
+    "id": 633
+  },
+  {
+    "en": "living room",
+    "zh": "客厅；起居室",
+    "emoji": "🛋️",
+    "category": "place",
+    "id": 634
+  },
+  {
+    "en": "happen",
+    "zh": "发生",
+    "emoji": "⚡",
+    "category": "verb",
+    "id": 635
+  },
+  {
+    "en": "wet",
+    "zh": "弄湿，把……尿湿；湿的，潮的",
+    "emoji": "💧",
+    "category": "state",
+    "id": 636
+  },
+  {
+    "en": "forget",
+    "zh": "遗忘；忘记",
+    "emoji": "❌🧠",
+    "category": "verb",
+    "id": 637
+  },
+  {
+    "en": "deal with",
+    "zh": "处理",
+    "emoji": "🤝",
+    "category": "verb",
+    "id": 638
+  },
+  {
+    "en": "bring",
+    "zh": "拿来；带到；引起",
+    "emoji": "👜",
+    "category": "verb",
+    "id": 639
+  },
+  {
+    "en": "back",
+    "zh": "往回；后面；背部",
+    "emoji": "↩️",
+    "category": "direction",
+    "id": 640
+  },
+  {
+    "en": "list",
+    "zh": "列表，清单",
+    "emoji": "📋",
+    "category": "noun",
+    "id": 641
+  },
+  {
+    "en": "check",
+    "zh": "检查，核对；查看",
+    "emoji": "✔️",
+    "category": "verb",
+    "id": 642
+  },
+  {
+    "en": "method",
+    "zh": "方法",
+    "emoji": "🧪",
+    "category": "noun",
+    "id": 643
+  },
+  {
+    "en": "word",
+    "zh": "词汇，单词",
+    "emoji": "🔤",
+    "category": "noun",
+    "id": 644
+  },
+  {
+    "en": "Ms (AmE Ms.)",
+    "zh": "女士（用于婚姻状况不明或不愿提及婚姻状况的女子的姓或姓名之前）",
+    "emoji": "👩",
+    "category": "title",
+    "id": 645
+  },
+  {
+    "en": "card",
+    "zh": "卡，卡片",
+    "emoji": "💳",
+    "category": "noun",
+    "id": 646
+  },
+  {
+    "en": "go over",
+    "zh": "温习；重复",
+    "emoji": "🔄",
+    "category": "verb",
+    "id": 647
+  },
+  {
+    "en": "free",
+    "zh": "自由的；免费的",
+    "emoji": "🆓",
+    "category": "adjective",
+    "id": 648
+  },
+  {
+    "en": "song",
+    "zh": "歌，歌曲",
+    "emoji": "🎵",
+    "category": "noun",
+    "id": 649
+  },
+  {
+    "en": "aloud",
+    "zh": "大声地",
+    "emoji": "🗣️",
+    "category": "adverb",
+    "id": 650
+  },
+  {
+    "en": "solve",
+    "zh": "解决；处理",
+    "emoji": "🧩",
+    "category": "verb",
+    "id": 651
+  },
+  {
+    "en": "break",
+    "zh": "打破，打碎；损坏",
+    "emoji": "💔",
+    "category": "verb",
+    "id": 652
+  },
+  {
+    "en": "afraid",
+    "zh": "害怕的；担忧的",
+    "emoji": "😨",
+    "category": "adjective",
+    "id": 653
+  },
+  {
+    "en": "close",
+    "zh": "关闭；合上",
+    "emoji": "🔒",
+    "category": "verb",
+    "id": 654
+  },
+  {
+    "en": "window",
+    "zh": "窗户",
+    "emoji": "🪟",
+    "category": "noun",
+    "id": 655
+  },
+  {
+    "en": "away",
+    "zh": "不在，离开",
+    "emoji": "🚶‍♂️",
+    "category": "adverb",
+    "id": 656
+  },
+  {
+    "en": "put up",
+    "zh": "张贴",
+    "emoji": "📌",
+    "category": "verb",
+    "id": 657
+  },
+  {
+    "en": "notice",
+    "zh": "布告；通知",
+    "emoji": "📢",
+    "category": "noun",
+    "id": 658
+  },
+  {
+    "en": "picture",
+    "zh": "照片，图像",
+    "emoji": "🖼️",
+    "category": "noun",
+    "id": 659
+  },
+  {
+    "en": "phone",
+    "zh": "电话",
+    "emoji": "📞",
+    "category": "noun",
+    "id": 660
+  },
+  {
+    "en": "part",
+    "zh": "部分；（动植物的）器官，部位",
+    "emoji": "🧩",
+    "category": "noun",
+    "id": 661
+  },
+  {
+    "en": "grass",
+    "zh": "草，小草；草地",
+    "emoji": "🌿",
+    "category": "plant",
+    "id": 662
+  },
+  {
+    "en": "root",
+    "zh": "（植物的）根，根茎",
+    "emoji": "🌱",
+    "category": "plant",
+    "id": 663
+  },
+  {
+    "en": "stem",
+    "zh": "（植物的）茎，干",
+    "emoji": "🌿",
+    "category": "plant",
+    "id": 664
+  },
+  {
+    "en": "seed",
+    "zh": "种子，籽",
+    "emoji": "🌰",
+    "category": "plant",
+    "id": 665
+  },
+  {
+    "en": "ground",
+    "zh": "地，地面；土地",
+    "emoji": "🌍",
+    "category": "nature",
+    "id": 666
+  },
+  {
+    "en": "take in",
+    "zh": "吸收",
+    "emoji": "🌬️",
+    "category": "verb",
+    "id": 667
+  },
+  {
+    "en": "soil",
+    "zh": "泥土，土壤",
+    "emoji": "🟫",
+    "category": "nature",
+    "id": 668
+  },
+  {
+    "en": "carry",
+    "zh": "运输；传输(水、电等)",
+    "emoji": "🚚",
+    "category": "verb",
+    "id": 669
+  },
+  {
+    "en": "protect",
+    "zh": "保护",
+    "emoji": "🛡️",
+    "category": "verb",
+    "id": 670
+  },
+  {
+    "en": "foot (pl. feet)",
+    "zh": "脚，足",
+    "emoji": "🦶",
+    "category": "body",
+    "id": 671
+  },
+  {
+    "en": "wind",
+    "zh": "风",
+    "emoji": "💨",
+    "category": "nature",
+    "id": 672
+  },
+  {
+    "en": "take ... away",
+    "zh": "把……带走",
+    "emoji": "🚶",
+    "category": "verb",
+    "id": 673
+  },
+  {
+    "en": "stick",
+    "zh": "粘，贴；棍，棍状物",
+    "emoji": "🥢",
+    "category": "object",
+    "id": 674
+  },
+  {
+    "en": "thick",
+    "zh": "厚的；粗的",
+    "emoji": "🧱",
+    "category": "adjective",
+    "id": 675
+  },
+  {
+    "en": "growth",
+    "zh": "成长；生长",
+    "emoji": "🌱",
+    "category": "noun",
+    "id": 676
+  },
+  {
+    "en": "bean",
+    "zh": "豆，菜豆；豆科植物",
+    "emoji": "🫘",
+    "category": "plant",
+    "id": 677
+  },
+  {
+    "en": "begin",
+    "zh": "开始，开端",
+    "emoji": "🔛",
+    "category": "verb",
+    "id": 678
+  },
+  {
+    "en": "sunlight",
+    "zh": "阳光，日光",
+    "emoji": "☀️",
+    "category": "nature",
+    "id": 679
+  },
+  {
+    "en": "little by little",
+    "zh": "逐渐地，渐渐地",
+    "emoji": "➕",
+    "category": "adverb",
+    "id": 680
+  },
+  {
+    "en": "pod",
+    "zh": "豆荚",
+    "emoji": "🟢",
+    "category": "plant",
+    "id": 681
+  }
+]

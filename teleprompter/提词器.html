@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            font-family: monospace;
+            /* 设置页面高度占满视口 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            flex-direction: column;
+            font-size: 60px;
+            background-color: #0E0C23;
+            color: #ffffff;
+            /* 禁止页面滚动 */
+        }
+
+        #linesContainer {
+
+            /* 容器高度明确 */
+            overflow-y: auto;
+            /* 启用滚动条 */
+
+            /* 容器宽度 */
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .highlight {
+            margin: 20px 0px;
+            font-size: 120px !important;
+            color: #ffffff !important;
+            font-weight: bold;
+            background: #973DDD;
+        }
+
+
+        .secondHighlight {
+            font-size: 100px;
+        }
+
+        .thirdHighlight {
+            font-size: 80px;
+        }
+
+        .lines {
+            margin-top: 20px;
+        }
+
+        span.role {
+            border-radius: 10px;
+            color: white !important;
+        }
+
+        .role {
+            margin-right: 10px;
+        }
+
+        div.erdog {
+            color: #FECE31
+        }
+
+        .erdog .role {
+            background: #FECE31
+        }
+
+        div.songjiang {
+            color: #F082AC
+        }
+
+        .songjiang .role {
+            background: #F082AC
+        }
+
+
+        div.laotou {
+            color: #77E0B3
+        }
+
+        .laotou .role {
+            background: #77E0B3
+        }
+
+
+        div.shiqian {
+            color: #FF7A53
+        }
+
+        .shiqian .role {
+            background: #FF7A53
+        }
+
+
+        div.wusong {
+            color: #6b8cff
+        }
+
+        .wusong .role {
+            background: #6b8cff
+        }
+
+        div.gaoqiu {
+            color: #3AB5E0
+        }
+
+        .gaoqiu .role {
+            background: #3AB5E0
+        }
+
+        div.shiguan {
+            color: #6F54DF
+        }
+
+        .shiguan .role {
+            background: #6F54DF
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <input type="file" id="fileInput" accept=".txt"> -->
+    <div class="lines" id="linesContainer"></div>
+
+    <script>
+        const fileInput = document.getElementById('fileInput');
+        const linesContainer = document.getElementById('linesContainer');
+        // let lines = [];
+        let currentIndex = 0;
+
+        // Function to highlight the current line
+        function highlightCurrentLine() {
+
+            // Ensure highlighted line is centered in the viewport
+            const highlightedLine = document.querySelectorAll('#linesContainer>div')[currentIndex];
+            const secondHighlight = document.querySelectorAll('#linesContainer>div')[currentIndex + 1];
+            const thirdHighlight = document.querySelectorAll('#linesContainer>div')[currentIndex + 2];
+
+
+            if (highlightedLine) {
+
+                document.querySelectorAll('#linesContainer>div').forEach((d, index) => {
+                    d.classList.remove('highlight');
+                    d.classList.remove('secondHighlight');
+                    d.classList.remove('thirdHighlight');
+                });
+
+                // Add highlight to the clicked div
+                highlightedLine.classList.add('highlight');
+                secondHighlight?.classList.add('secondHighlight');
+                thirdHighlight?.classList.add('thirdHighlight');
+
+                setTimeout(() => {
+                    const containerHeight = linesContainer.offsetHeight;
+                    const lineHeight = highlightedLine.offsetHeight;
+                    const lineOffsetTop = highlightedLine.offsetTop;
+
+                    // Calculate scroll position to center the highlighted line
+                    const scrollTop = lineOffsetTop - (containerHeight / 2) + (lineHeight / 2);
+                    linesContainer.scrollTo({
+                        top: scrollTop,
+                        behavior: 'smooth',
+                    })
+                    highlightedLine.offsetHeight;
+                }, 1);
+            }
+        }
+
+        // Function to move to the next line
+        function nextLine() {
+            if (currentIndex < lines.length - 1) {
+                currentIndex++;
+                highlightCurrentLine();
+            }
+        }
+
+        // Function to move to the previous line
+        function previousLine() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                highlightCurrentLine();
+            }
+        }
+
+        // Function to render lines
+        function renderLines() {
+            linesContainer.innerHTML = '';
+            lines.forEach((line, index) => {
+                const div = document.createElement('div');
+
+                if (line.startsWith('二狗')) {
+                    div.classList.add('erdog');
+                }
+                if (line.startsWith('宋江')) {
+                    div.classList.add('songjiang');
+                }
+                if (line.startsWith('牢头')) {
+                    div.classList.add('laotou');
+                }
+                if (line.startsWith('时迁')) {
+                    div.classList.add('shiqian');
+                }
+                if (line.startsWith('武松')) {
+                    div.classList.add('wusong');
+                }
+                if (line.startsWith('高俅')) {
+                    div.classList.add('gaoqiu');
+                }
+                if (line.startsWith('史官')) {
+                    div.classList.add('shiguan');
+                }
+
+                ['二狗', '宋江', '牢头', '时迁', '武松', '高俅', '史官'].map((text) => {
+                    line = line.replace(new RegExp(`^${text}`), `<span class='role'>${text}</span>`);
+                });
+
+                div.innerHTML = line;
+                linesContainer.appendChild(div);
+            });
+
+            attachClickHandlers();
+        }
+
+        // Function to handle click on divs
+        function attachClickHandlers() {
+            const divs = document.querySelectorAll('#linesContainer div');
+            divs.forEach((div, index) => {
+                div.addEventListener('click', () => {
+                    currentIndex = index;
+                    highlightCurrentLine();
+                });
+            });
+        }
+
+        // // Handle file input change
+        // fileInput.addEventListener('change', (event) => {
+        //     const file = event.target.files[0];
+        //     if (file) {
+        //         const reader = new FileReader();
+        //         reader.onload = (e) => {
+        //             // Split text content into lines
+        //             lines = e.target.result.split('\n').map(line => line.trim()).filter(line => line);
+        //             renderLines();
+        //             currentIndex = 0;
+        //             highlightCurrentLine();
+        //         };
+        //         reader.readAsText(file);
+        //     }
+        // });
+
+        // Listen for the down arrow key to go to the next line
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'ArrowDown') {
+                nextLine();
+            } else if (event.key === 'ArrowUp') {
+                previousLine();
+            }
+        });
+
+        const text = `
+        牢头 哎，你们两个，吃饭了。二狗。
+二狗 哎。
+牢头 馒头咸菜、
+二狗 牢头大哥，这饭菜也太简陋了。
+牢头 在牢里你还想吃什么?
+二狗 哎....
+牢头 来，你的，八菜一汤，一个火锅，一碗茅台。烤全羊一会儿给你上来啊。
+二狗 不是你为啥吃这么丰盛啊?
+宋江 小兄弟，你要想吃的话，你吃好了。
+二狗 那你吃啥呀?
+宋江 我上一顿还没吃完呢
+二狗 卧…太丰盛了!那我不客气了啊，你人真好，谢谢啊。哎，我想问一下，你为啥待遇这么好啊?
+宋江 哎，毕竟是断头饭嘛。
+二狗 留着当夜宵吧。
+宋江 小兄弟怎么称呼啊?
+二狗 啊，我叫二狗。
+宋江 哪个二狗?
+二狗 这俩儿字儿，有哪个呀，就是最普通的二狗。
+宋江 好名字!
+二狗 你呢?
+宋江 在下宋江!
+二狗 梁山那个宋江?
+宋江 行不更名坐不改姓，及时雨宋江是也
+二狗 我真没想到，在牢里能碰见您，
+宋江 小兄弟是为何被关进这大牢啊?
+二狗 我是因为昨天吹唢呐扰民，我让人拘留一天，明儿我就放了。
+宋江 那咱俩差不多呀，我也就在这待一天。
+二狗 是吗?
+宋江 我明儿斩首。
+二狗 差好多呀。您是怎么闹到要斩首的呀?
+宋江 哎呀，即兴写了一首小诗，冒犯了高俅高太尉。
+二狗 写诗这么严重啊?写的啥呀?
+宋江 哎，我在这墙上又写了一遍。
+二狗 不是这也太潦草了，看不清啊。
+宋江 终一生度世人和终一世度一人。都不如砍死高俅那个老贼!砍他!弄丫的!
+二狗 这么直白也叫诗吗?
+宋江 哈哈哈，失态了。小兄弟，既然你我狱友一场，不如今日结为异姓兄弟如何呀?
+二狗 结拜?
+宋江 不求同年同月同日生，但求...
+二狗 哎!可不敢同日死啊!明儿我就放了。
+宋江 哎~死不了的，今天我就会救你出去。
+二狗 不用了，明儿我就放了。
+宋江 一会儿我的兄弟们会来劫狱，到时候把你一起劫走。
+二狗 明儿我就放了!
+宋江 既然明儿你就放了，那今天我就把你救走!
+二狗 为啥呀!明儿我就放了!
+宋江 明天走，那是你等来的自由。但你今天走，那是你争取来的自由!
+二狗 你这么一说，我就完全不明白了。这也太抽象了!
+宋江 哎呀，你怎么不明白呀，狗剩兄弟
+二狗 我叫二狗!
+牢头 吵什么呢?吵什么呢?
+二狗 呃
+牢头 干嘛呢
+二狗 没干嘛呀，玩抽象呢
+牢头 我抽你信不信!哎，这墙上写的什么呀?啊?
+二狗 还好写的潦草哈哈
+牢头 终一生度... 反诗!
+二狗 咋看出来的呀?!
+牢头 谁写的!
+宋江 哼!我写的!
+牢头 你上一边去!当我瞎呢?这不有落款吗?二狗。
+二狗 字体都不一样!
+牢头 好你个二狗，刑期加一个月。好好反省啊。
+二狗 不是，哎，为啥加一个月!
+牢头 老实点。
+二狗 大哥，哎..
+宋江 不好意思啊，让你刑期加重了，三狗。
+二狗 二狗
+宋江 我今天一定会带你出去的。
+二狗 你别折腾了，英雄。我就扰个民，我待一天。我现在待一个月了。我再也不玩抽象了。
+宋江 哎你放心吧，我们梁山的兄弟早已经在来的路上了。
+二狗 梁山好汉。我听说过，108个英雄各个身怀绝技，
+宋江 你对我们梁山好汉如此了解，莫不是早就想加入我们了。
+二狗 那倒没有，吃面的时候收集过你们的水浒卡。
+时迁 梁山好汉，时迁来也!
+二狗  鼓上蚤时迁!
+宋江 时迁兄弟。
+时迁 宋江哥哥，我这就来救你!
+宋江 好!
+二狗 这是要发功了吗?这可是梁山轻功最好的英雄啊!这一招轻功….拜年了嘛。
+宋江 哎呀，石迁兄弟，过年好啊!
+时迁 这叫什么话。哥哥，我这就带你出去。
+宋江 好!
+时迁 闲人闪开!哥，你是不是吃胖了。
+二狗 绝对的!
+宋江 哎呀，最近在这牢房内，食欲不好，根本吃不下呀
+二狗 帝王蟹狗吃的。
+时迁 这位吐槽怪是?
+宋江 哦，我来介绍，这位是土狗兄弟
+二狗 二狗
+宋江 这是咱们梁山第109位好汉
+时迁 来了?老弟。
+二狗 我没入伙呢。
+宋江 他今天会和咱们一起越狱
+时迁 走!
+宋江 走。
+二狗 哎呀，我不走!二位英雄，我待一个月我就放了
+宋江 唉，那是因为你还不了解你时迁哥哥。
+二狗 我为啥要了解时迁啊?
+宋江 时迁在我们梁山上那是响当当的小偷。
+二狗 有什么好骄傲的
+时迁 拿着。
+二狗 唔，我的钱袋，不是你什么时候偷的呀。
+时迁  拿着。
+二狗 这也太快了吧，您离他远一点吧，啊，这太可怕了。
+宋江 哈哈，你看时迁兄弟有如此的身手。那他路过狱卒之时，怎会不拿那最重要的东西啊?得手了吧。
+时迁 当然了!哥哥，拿着。
+宋江 有了这钥匙…
+时迁 拿钥匙吗
+宋江 那这是?
+时迁 狱卒的钱袋
+二狗 拿人钱袋干啥呀!
+宋江 哎，不要激动嘛，奶狗兄弟。
+二狗 二狗。
+宋江 今天我们一定会带你出去的。
+二狗 出不去了，你俩自己都出不去。
+时迁 小看我们梁山好汉。半柱香以内，我没有带哥哥出去，花荣将军自会联络我们。
+二狗 百步穿杨的神射手花荣。
+宋江 这你也知道。莫不是你水浒卡集齐了?
+二狗 没少吃面。
+时迁 兄弟小心!
+二狗 哇!好险啊。这是冲我来的吗?
+时迁 这是花荣将军发的信息啊，
+二狗 这上面写的是..…
+时迁 在吗。
+二狗 问这干啥呀!
+宋江 兄弟小心!
+二狗 哎呦，这就是冲我来的吧。
+宋江 这上面写的是，让时迁还我钱袋。
+时迁 不好意思啊。哎!兄弟小心!
+时迁 箭呢?
+二狗 没看见。
+牢头 这呢!草船借箭呢?啊!二狗，你敢袭击狱卒?!
+二狗 没有啊，我连个弓都没有
+牢头 所以用手里剑啊，刑期加一年!
+时迁 狗官，不要为难素人。
+牢头 哎，这怎么多一个人啊，你谁啊?
+时迁 行不更名，坐不改姓。老子梁山好汉…
+牢头 行了!多一个多一个吧，没少就行。
+时迁 哎，待我出去.
+二狗 哎呀!完了!我就扰个民，我待一天。我现在待一年啦!!
+宋江 别喊啊，热狗
+二狗 二狗。
+宋江 一天也好，一年也罢，咱们今天肯定是要出去的呀
+二狗 咋出去呀!
+时迁 这区区的牢房还能困得住我?我用轻功出去，拿完钥匙再回来救你们嘛。等等。
+宋江 怎么了?
+时迁 有情况。不好，我被卡住了
+宋江/二狗 哎呀!
+二狗 这不完了吗!
+牢头 武松，快走
+二狗 打虎英雄武松?
+牢头 进去!老实点啊。
+二狗 是被抓了吗?
+武松 你这人真是超野蛮的诶
+二狗 这武松跟我想的太不一样了
+宋江 武松兄弟。
+武松 宋江鸽鸽。
+时迁 武松哥哥。
+宋江 武松兄弟一定是为了救我们，故意被抓进来的吧。哈哈哈哈
+武松 哈哈哈哈，不似啊。我前段时间不是喝醉酒打死只老虎吗。
+时迁 打死老虎是要坐牢的吗?
+武松 啊没有，我回来路上酒驾了
+武松/宋江 哈哈哈哈
+二狗 这爽朗个啥呢?
+武松 则位朋友似?
+宋江 我来给你介绍一下，这是咱们梁山第109位好汉，细狗
+二狗 二狗!
+武松 朋友放心啊，我一定会带你们粗去的
+二狗 哎呀你拉倒吧。你自己都被铐住了。
+武松 则种东西怎么可能难得住我行者武松呢。骚微让一下好了
+宋江 好。
+武松 救命，拜托!
+二狗 行者行不行啊。
+武松 你不知道啊，我武松是喝醉酒打死的老虎，喝醉酒杀的西门庆，喝醉酒打的蒋门神。这索明什么?
+二狗 哦，你酒品超差
+武松  似我喝酒才会变强啊。
+宋江 哎呀，武松兄弟。这牢饭里恰好有一碗茅台啊。
+武松 谢鸽鸽，啊!来劲儿咧!
+二狗 啊，太强了吧!
+武松 酒是粮食精，越喝越年轻!
+二狗 喝完酒口音都变了吗!
+武松 这区区的牢门儿。诶!酒劲过了。
+二狗 醒酒这么快啊。
+武松 又来劲了!酒是粮食精，越喝越年轻
+二狗 醒更快了呀，那你扔它干啥呀?
+武松 酒是粮食精.....
+宋江 直接来吧!
+武松 诶!
+宋江 来，兄弟，你先走!
+二狗 哎，别别。不行不行，我不能走
+武松 坚持不住了...
+宋江 太好了，你越狱成功了。
+二狗 放我进去啊。
+时迁 不用管我们，快走!
+宋江 回头写信，常联系。
+二狗 不行，让狱卒发现我在外边，我就完啦。我完了，我。
+牢头 二狗!你提反诗，袭击狱卒，越狱，甚至还吹唢呐扰民
+二狗 吹唢呐最严重吗?
+牢头 你罪大恶极!我现在上报大理寺，你死罪!给我进去。
+二狗 哎?不是，这咋量的刑啊这是!
+牢头 别难过啊，死刑也有好处的，断头饭很丰盛的。来，给2号犯人上个火锅。
+二狗 这对啥说话呢!
+宋江 哎，兄弟，不用担心。
+二狗 担心倒是不担心了，请务必带我出去!
+宋江 哎呀，这是怎么想通的呀?
+二狗 很难想不通啊。想不通，死这儿了。三位，有没有什么新的越狱计划呀。
+武松 放心好了，兄弟们已经在几里地姿外埋伏好了。只要一炷香的时间，我没有救鸽鸽们出去，到时候我们提前安排好的那个唢呐司，就会吹响唢呐
+宋江 唢呐一响，全军出击
+时迁 特意嘱咐他要加紧练习
+宋江 哈哈哈哈哈哈哈
+二狗 厚，你们说那个唢呐师，厚。他有没有可能因为努力练习，扰民，让人家抓起来了内?
+宋江 这不完了吗!
+时迁/武松 这不完了吗!
+二狗 完了呀!
+时迁 你有没有公德，为啥要扰民啊?
+二狗 努力还有错啦?!
+牢头 高太尉到!
+二狗 高太尉？这就是高太尉吗?看着太年轻了。
+史官 高太尉迟到。
+二狗 您不是高太尉啊
+史官 我不是啊。
+二狗 那您是?
+史官 我是史官，负责记录高太尉的一言一行。
+牢头 高--太--尉--到!
+二狗 高太尉。
+高俅 哈哈哈哈哈哈哈哈
+牢头 大胆!还不下跪!
+牢头 哎妈，不是让您跪，不是让您跪，
+高俅 伺候皇上伺候惯了。
+史官 高太尉，在大牢，给宋江下跪。
+高俅 不是你谁啊你是?
+史官 啊我是新来的史官。
+高俅 好，那我说，你记。
+史官 好嘞。
+高俅 大胆宋江，见了本官，因何不跪呀?
+宋江 哼!
+史官 宋江，打心眼儿里瞧不起，高太尉
+高俅 题写反诗，按律当斩!
+宋江 哼!
+史官 宋江，暗骂了一声 狗官
+高俅 你信不信，我只要动一个小手指头即可荡平梁山，片甲不留，哼哼哼哼…
+史官 高俅，吹了个牛B。
+高俅 把这史官先给我斩了来，
+史官 你，斩不了我，我有块免死金牌。
+高俅 来 给老师搬一座。
+高俅 提写反诗，就是死罪。但是皇上有意收编了你们这些梁山的反贼，去剿灭别的山的反贼，所以这个人，就是我给你找的替身。
+二狗 我?别呀。
+宋江 住手!他的命，我今天保定了
+时迁 我唐山的。
+武松 我三东的。
+史官 哎，我北京的。
+高俅 听得懂人话吗，你坐下，你坐下。
+高俅 你要是听我的话，就即刻滚回梁山。否则的话，我就按着这水浒卡，一张一张的把你们都杀了。
+高俅 是保一个，还是保一百零八个?这个道理，我说的再明白不过了吧。
+二狗 大人，搞错了吧大人，我不是宋江。我就吹了个唢呐，我明天我就放了
+宋江 对不住了，二狗兄弟。
+二狗 这时候叫我名字有啥用啊。
+高俅 来人!
+刽子手 在!
+高俅 子时三刻已到，将贼首宋江，就地斩首!
+二狗 我是二狗，我不是宋江。
+刽子手 子时三刻已到，斩首!
+宋江 刀下留人!
+刽子手 诶呦，啊--好俗的套路啊!
+高俅 你们怎么又回来了?
+宋江 二狗兄弟，我们回来救你来了。
+二狗 那你们走啥呀!!
+武松 酒是粮食精，越喝越年轻。
+宋江 时迁兄弟，得手了吧?
+时迁 拿着。
+宋江 我们答应过你，今天一定会带你出去。
+二狗 没道理呀!
+宋江 兄弟，不讲道理，讲义气!
+宋江 梁山好汉，及时雨宋江在此。
+武松 行者武松，在此!
+时迁 鼓上蚤时迁在此!
+二狗 小喇叭二狗，在!此!
+
+李逵 黑旋风李逵在此!
+扈三娘 一丈青扈三娘在此!
+刘欢 好汉歌刘欢，在此!
+工作人员 总控之眼导演组、百宝匠道具组、铁面先锋场控组，在此!
+高俅 这都谁啊!
+宋江 兄弟们，咱们今天就替天行道，砍死高俅那个老贼砍丫的!
+`
+        const lines = text.split('\n').map(line => line.trim()).filter(line => line);
+        renderLines();
+        currentIndex = 0;
+        highlightCurrentLine();
+    </script>
+</body>
+
+</html>

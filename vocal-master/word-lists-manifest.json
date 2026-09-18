@@ -1,0 +1,12 @@
+[
+  {
+    "id": "primary-phrases",
+    "name": "小学必背短语",
+    "filename": "小学必背短语.json"
+  },
+  {
+    "id": "primary-hf",
+    "name": "小学高频词",
+    "filename": "小学高频词.json"
+  }
+]

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knowledge Graph - ArcGIS Feature Service</title>
+    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🧠 Deep Reinforcement Learning Knowledge Graph</h1>
+            <p>Agent DRL Research Topics & Resources</p>
+        </div>
+
+        <div class="controls">
+            <div class="controls-left">
+                <button class="btn btn-primary" onclick="loadData()">🔄 Load Data</button>
+                <button class="btn btn-secondary" onclick="resetView()" id="resetBtn" style="display: none;">🏠 Back to Overview</button>
+                <button class="btn btn-secondary" onclick="expandAll()" id="expandBtn" style="display: none;">📖 Expand All</button>
+                <a href="https://survey123.arcgis.com/share/af503dce7c7347b0964bd3c39c541829" target="_blank" class="btn btn-secondary">📝 Add New Resource</a>
+                <a href="https://survey123.arcgis.com/share/af503dce7c7347b0964bd3c39c541829/result/data" target="_blank" class="btn btn-secondary">📊 View Resources</a>
+            </div>
+            <div id="status" class="status">Ready to load data</div>
+        </div>
+
+        <div class="graph-container">
+            <div id="graph"></div>
+            <div class="legend">
+                <div style="font-weight: bold; margin-bottom: 10px;">Legend</div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #8b9dc7;"></div>
+                <span>Core Topic</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #a67bb8;"></div>
+                <span>Category</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #9d6bb3;"></div>
+                <span>Subcategory</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #a8b3b4;"></div>
+                <span>Unexplored Direction</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #d88b8b;"></div>
+                <span>Explored Direction</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #7db8b3;"></div>
+                <span>Resource</span>
+            </div>
+            </div>
+            <div class="info-panel" id="infoPanel">
+                <span class="close" onclick="closeInfoPanel()">&times;</span>
+                <h3 id="infoTitle"></h3>
+                <div id="infoContent"></div>
+            </div>
+        </div>
+
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-label">Resources</div>
+                <div class="stat-value" id="resourceCount">0</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-label">Contributors</div>
+                <div class="stat-value" id="contributorCount">0</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-label">Research Directions</div>
+                <div class="stat-value" id="directionCount">0</div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/graph.js"></script>
+</body>
+</html>
